@@ -1,5 +1,6 @@
 <nav class="main-nav navbar navbar-expand-lg">
     <div class="site-logo"><a class="" href="{{ LaravelLocalization::localizeUrl('/#hero-block') }}"><img class="logo-icon" src="{{asset('/images/botsad.png')}}" alt="logo"></a></div>
+    @include('common.authnav')
     <div class="navbar-btn order-lg-2"><a class="btn btn-secondary" href="{{ LaravelLocalization::localizeUrl('/register') }}" target="">{{ __('navigation.register') }}</a></div>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">

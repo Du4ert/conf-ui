@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
@@ -26,7 +29,12 @@ Route::get('/contributor/register', function () {
 });
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
+
+// Route::get('profile', function () {
+//     // Only verified users may enter...
+// })->middleware('verified');  Для примера действия с аутентификацией
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
