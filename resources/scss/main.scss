@@ -1,0 +1,18 @@
+// @import "normalize";
+@import 'bootstrap/scss/bootstrap';
+// @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+// @import '@fortawesome/fontawesome-free/scss/regular.scss';
+// @import '@fortawesome/fontawesome-free/scss/solid.scss';
+// @import '@fortawesome/fontawesome-free/scss/brands.scss';
+@import 'theme';
+
+.register {
+    padding-top: 100px;
+    header {
+        background: $theme-bg-dark;
+    }
+}
+
+.hero-logo {
+    width: 100px;
+}
