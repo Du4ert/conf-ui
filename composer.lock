@@ -4,8 +4,102 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb650d4386cded77a2b50289bd503ccb",
+    "content-hash": "e92a9712704c9e571b12cbd96d48c5fe",
     "packages": [
+        {
+            "name": "balping/laravel-blade-function",
+            "version": "v0.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/balping/laravel-blade-function.git",
+                "reference": "d0719698c69ec64d71df6eccf4c872b02e5b49a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/balping%2Flaravel-blade-function/repository/archive.zip?sha=d0719698c69ec64d71df6eccf4c872b02e5b49a8",
+                "reference": "d0719698c69ec64d71df6eccf4c872b02e5b49a8",
+                "shasum": ""
+            },
+            "require": {
+                "balping/laravel-version": "^1.0.0",
+                "illuminate/support": "^5.1|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^9.0",
+                "phpunit/phpunit": "^11.0|^12.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Balping\\BladeFunction\\BladeFunctionServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Balping\\BladeFunction\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Balázs Dura-Kovács"
+                }
+            ],
+            "description": "This Laravel 5.1+ package lets you declare functions inside blade templates.",
+            "keywords": [
+                "blade",
+                "directive",
+                "function",
+                "laravel",
+                "template"
+            ],
+            "support": {
+                "issues": "https://gitlab.com/balping/laravel-blade-function/-/issues",
+                "source": "https://gitlab.com/balping/laravel-blade-function/-/tree/v0.4.3"
+            },
+            "time": "2024-03-30T18:23:30+00:00"
+        },
+        {
+            "name": "balping/laravel-version",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/balping/laravel-version.git",
+                "reference": "508951aa635c767187f4064943714ce7e2daea5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/balping/laravel-version/zipball/508951aa635c767187f4064943714ce7e2daea5a",
+                "reference": "508951aa635c767187f4064943714ce7e2daea5a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Balping\\LaravelVersion\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Balázs Dura-Kovács"
+                }
+            ],
+            "description": "Simple wrapper class around version compare",
+            "support": {
+                "issues": "https://github.com/balping/laravel-version/issues",
+                "source": "https://github.com/balping/laravel-version/tree/master"
+            },
+            "time": "2017-08-12T13:18:36+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.12.1",
