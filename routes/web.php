@@ -35,7 +35,14 @@ Auth::routes(['verify' => true]);
 //     // Only verified users may enter...
 // })->middleware('verified');  Для примера действия с аутентификацией
 
+// Для админов
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::get('/', [App\Http\Controllers\AdminController::class, 'index']);
+    // Другие маршруты для администраторов
+});
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 });
