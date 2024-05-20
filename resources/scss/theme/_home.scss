@@ -76,6 +76,14 @@
 }
 
 
+/* Banner */
+.banner {
+	position: relative;
+	@include background-size(cover);
+	height: 220px;
+	padding-top: 130px;
+	
+}
 
 /* Hero Block */
 .hero-block {

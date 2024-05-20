@@ -22,7 +22,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('welcome');
 
 Route::get('/contributor/register', function () {
     return view('register');
