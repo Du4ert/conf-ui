@@ -23,7 +23,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 // Главная страница конференции
 Route::get('/', function () {
     return view('index');
-})->name('homepage');
+})->name('welcome');
 
 
 // Регистрация, аутентификация
