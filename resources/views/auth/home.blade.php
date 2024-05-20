@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 @section('header')
-{{ __('Dashboard') }}
+{{ __('auth.dashboard') }}
 @endsection
 
 @section('body')
@@ -9,7 +9,7 @@
             {{ session('status') }}
         </div>
     @endif
-    {{ __('You are logged in!') }}
+    {{ __('auth.logged_in') }}
     <h1>User home</h1>
 
     <div class="container h-100 mt-5">
