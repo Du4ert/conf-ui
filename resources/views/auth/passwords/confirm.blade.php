@@ -1,13 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.auth')
+@section('header')
+{{ __('Confirm Password') }}
+@endsection
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Confirm Password') }}</div>
+@section('body')
 
-                <div class="card-body">
                     {{ __('Please confirm your password before continuing.') }}
 
                     <form method="POST" action="{{ route('password.confirm') }}">
@@ -41,9 +38,4 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection

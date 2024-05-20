@@ -31,11 +31,18 @@ Auth::routes(['verify' => true]);
 // Для обычных пользователей
 
 // Страница зарегистрированного пользователя
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\UserController::class, 'home'])->name('home');
+Route::put('/update', [App\Http\Controllers\UserController::class, 'updateSelf'])->name('user.updateSelf');
+
 
 // Для админов
 Route::prefix('admin')->group(function () {
-    Route::get('/', [App\Http\Controllers\AdminController::class, 'index']);
+    Route::get('/', [App\Http\Controllers\UserController::class, 'list'])->name('user.list');
+    Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'getUser'])->name('user.get');
+    Route::get('/user/{id}/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
+    Route::put('/user/{id}/update', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
+    Route::delete('/user/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('user.destroy');
+    // Route::get('/', [App\Http\Controllers\AdminController::class, 'index']);
 });
 
 });
