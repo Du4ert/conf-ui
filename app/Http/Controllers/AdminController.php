@@ -12,7 +12,9 @@ class AdminController extends BaseController
 
     public function __construct()
     {
-        // $this->middleware('adminCheck');
+        $this->middleware('auth');
+        $this->middleware('verified');
+        $this->middleware('admin');
     }
 
     //      * Show the application dashboard.

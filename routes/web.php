@@ -20,29 +20,22 @@ use Illuminate\Http\Request;
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
 
+// Главная страница конференции
 Route::get('/', function () {
     return view('index');
-})->name('welcome');
-
-Route::get('/contributor/register', function () {
-    return view('register');
-});
+})->name('homepage');
 
 
+// Регистрация, аутентификация
 Auth::routes(['verify' => true]);
+// Для обычных пользователей
 
-// Route::get('profile', function () {
-//     // Only verified users may enter...
-// })->middleware('verified');  Для примера действия с аутентификацией
-
-// Для админов
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
-    Route::get('/', [App\Http\Controllers\AdminController::class, 'index']);
-    // Другие маршруты для администраторов
-});
-
-
+// Страница зарегистрированного пользователя
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Для админов
+Route::prefix('admin')->group(function () {
+    Route::get('/', [App\Http\Controllers\AdminController::class, 'index']);
+});
 
 });
