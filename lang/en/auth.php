@@ -18,4 +18,6 @@ return [
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'logged_in' => 'You are logged in!',
     'dashboard' => 'Dashboard',
+    'password_field' => 'password',
+    'password_confirm' => 'confirm password',
 ];

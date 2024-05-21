@@ -35,9 +35,9 @@ class UserController extends Controller
 
     public function updateSelf(Request $request)
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-          ]);
+        // $request->validate([
+        //     'name' => ['required', 'string', 'max:255'],
+        //   ]);
         $user = auth()->user();
         $user->update($request->all());
 

@@ -49,9 +49,19 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'first_name' => ['required', 'string', 'min:2'],
+            'last_name' => ['required', 'string', 'min:2'],
+            'middle_name',
+            'organization_title',
+            'job_title',
+            'rank_title',
+            'thesis_body',
+            'thesis_coauthors',
+            'file_path',
+            'pay_status',
+            'accepted_status',
         ]);
     }
 
@@ -64,9 +74,19 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'middle_name' => $data['middle_name'],
+            'organization_title' => $data['organization_title'],
+            'job_title' => $data['job_title'],
+            'rank_title' => $data['rank_title'],
+            'thesis_body' => $data['thesis_body'],
+            'thesis_coauthors' => $data['thesis_coauthors'],
+            'file_path' => $data['file_path'] ?? null,
+            'pay_status' => $data['pay_status'] ?? false,
+            'accepted_status' => $data['accepted_status'] ?? false,
         ]);
     }
 }

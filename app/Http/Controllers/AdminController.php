@@ -34,9 +34,9 @@ public function edit(Request $request, $id)
 
 public function update(Request $request, $id)
 {
-    $request->validate([
-        'name' => ['required', 'string', 'max:255'],
-      ]);
+    // $request->validate([
+    //     'name' => ['required', 'string', 'max:255'],
+    //   ]);
     $user = User::find($id);
     $user->update($request->all());
 

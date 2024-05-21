@@ -1,68 +1,120 @@
 @extends('layouts.auth')
 @section('header')
-{{ __('Register') }}
+    {{ __('auth.register') }}
 @endsection
 
 @section('body')
-<form method="POST" action="{{ route('register') }}">
-    @csrf
-
-    <div class="row mb-3">
-        <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
-        <div class="col-md-6">
-            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-            @error('name')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
+    {{-- Show validtion errors --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
-    </div>
+    @endif
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
 
-    <div class="row mb-3">
-        <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+        @include('auth.layout.field', ['field_name' => 'first_name', 'required' => true])
+        @include('auth.layout.field', ['field_name' => 'last_name', 'required' => true])
+        @include('auth.layout.field', ['field_name' => 'middle_name'])
+        @include('auth.layout.field', ['field_name' => 'organization_title'])
+        @include('auth.layout.field', ['field_name' => 'rank_title'])
+        @include('auth.layout.field', ['field_name' => 'job_title'])
+        @include('auth.layout.email')
+        @include('auth.layout.password')
+        @include('auth.layout.field', ['field_name' => 'thesis_coauthors'])
 
-        <div class="col-md-6">
-            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-            @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
+        <div class="row mb-3">
+            <label class="col-md-4 col-form-label text-md-end" for="thesis">{{ __('auth.thesis_body') }}<span
+                    class="text-danger">*</span></label>
+            <div class="col-md-6">
+                <textarea name="thesis_body" id="thesis_body" cols="30" rows="10"></textarea>
+            </div>
         </div>
-    </div>
 
-    <div class="row mb-3">
-        <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
-        <div class="col-md-6">
-            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+        <div class="row mb-3">
+            <label for="role" class="col-md-4 col-form-label text-md-end">Я регистрируюсь с<span
+                    class="text-danger">*</span></label><br>
+            <div class="col-md-6">
+                <div class="form-check form-check-inline">
+                    <label class="form-label">
+                        <input class="form-check-input" type="radio" name="type" value="presenter"
+                            onClick="hideInputDiv();" {{ old('type') == 'presenter' ? 'checked' : '' }}>
+                        {{ __('auth.live') }}
+                    </label>
+                </div>
 
-            @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
+                <div class="form-check form-check-inline">
+                    <label class="form-label">
+                        <input id="poster_radio" class="form-check-input" type="radio" name="type" value="poster"
+                            onChange="showInputDiv();" {{ old('type') == 'poster' ? 'checked' : '' }}>
+                        {{ __('auth.poster') }}
+                    </label>
+                </div>
+            </div>
+
+            <div id="poster_input" class="row mb-3" style="display: none;">
+                {{-- <input type="file" name="poster_image"> --}}
+            </div>
+
+
+            <div class="row mb-3">
+                <div class="col-md10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="policy" name="policy"
+                            onchange="toggleSubmit();">
+                        <label class="form-check-label text-secondary" for="policy">
+                            Я согласен с политикой обработки персональных данных <a href="#policy.pdf"
+                                target="_blank">(политика
+                                в отношении работы с
+                                персональными данными участников конференции)</a>.
+                        </label>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div>
 
-    <div class="row mb-3">
-        <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-        <div class="col-md-6">
-            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+        <div class="row mb-0">
+            <div class="col-md-6 offset-md-6">
+                <button disabled id="submit" type="submit" class="btn btn-primary">
+                    {{ __('auth.register') }}
+                </button>
+            </div>
         </div>
-    </div>
+    </form>
 
-    <div class="row mb-0">
-        <div class="col-md-6 offset-md-4">
-            <button type="submit" class="btn btn-primary">
-                {{ __('Register') }}
-            </button>
-        </div>
-    </div>
-</form>
+
+    <script>
+        const checkbox = document.getElementById("poster_radio");
+        const posterInput = document.getElementById("poster_input");
+        const policy = document.getElementById("policy");
+        const submit = document.getElementById("submit");
+
+
+        //function that will show hidden inputs when clicked
+        function showInputDiv() {
+            if (checkbox.checked = true) {
+                posterInput.style.display = "block";
+            }
+        }
+
+        function toggleSubmit() {
+            if (policy.checked) {
+                submit.disabled = false;
+            } else {
+                submit.disabled = true;
+            }
+        }
+
+        //function that will hide the inputs when another checkbox is clicked
+        function hideInputDiv() {
+            posterInput.style.display = "none";
+        }
+    </script>
 @endsection
