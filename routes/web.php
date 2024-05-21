@@ -32,16 +32,17 @@ Auth::routes(['verify' => true]);
 
 // Страница зарегистрированного пользователя
 Route::get('/home', [App\Http\Controllers\UserController::class, 'home'])->name('home');
+Route::get('/edit', [App\Http\Controllers\UserController::class, 'editSelf'])->name('user.editSelf');
 Route::put('/update', [App\Http\Controllers\UserController::class, 'updateSelf'])->name('user.updateSelf');
 
 
 // Для админов
 Route::prefix('admin')->group(function () {
-    Route::get('/', [App\Http\Controllers\UserController::class, 'list'])->name('user.list');
-    Route::get('/user/{id}', [App\Http\Controllers\UserController::class, 'getUser'])->name('user.get');
-    Route::get('/user/{id}/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
-    Route::put('/user/{id}/update', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
-    Route::delete('/user/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('user.destroy');
+    Route::get('/', [App\Http\Controllers\AdminController::class, 'list'])->name('user.list');
+    Route::get('/user/{id}', [App\Http\Controllers\AdminController::class, 'getUser'])->name('user.get');
+    Route::get('/user/{id}/edit', [App\Http\Controllers\AdminController::class, 'edit'])->name('user.edit');
+    Route::put('/user/{id}/update', [App\Http\Controllers\AdminController::class, 'update'])->name('user.update');
+    Route::delete('/user/{id}', [App\Http\Controllers\AdminController::class, 'destroy'])->name('user.destroy');
     // Route::get('/', [App\Http\Controllers\AdminController::class, 'index']);
 });
 

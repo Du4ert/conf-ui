@@ -16,28 +16,21 @@ class UserController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('verified');
-        $this->middleware('admin')->except(['home', 'updateSelf']);
+        // $this->middleware('admin')->except(['home', 'updateSelf']);
     }
 
 
-
+// Common user
     public function home()
     {
       $user = auth()->user();
       return view('auth.home', compact('user'));
     }
 
-    public function getUser(Request $request, $id)
+    public function editSelf(Request $request)
     {
-        $user = User::find($id);
-        return view('admin.edit', compact('user'));
-    }
-
-
-    public function edit(Request $request, $id)
-    {
-      $user = User::find($id);
-        return view('admin.edit', compact('user'));
+      $user = auth()->user();
+      return view('auth.home', compact('user'))->with(['editable' => true]);
     }
 
     public function updateSelf(Request $request)
@@ -49,31 +42,5 @@ class UserController extends Controller
         $user->update($request->all());
 
         return redirect()->route('home')->with('status', 'Profile updated successfully');
-    }
-
-    public function update(Request $request, $id)
-    {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-          ]);
-        $user = User::find($id);
-        $user->update($request->all());
-
-        return redirect()->route('user.edit', ['id' => $id])->with('status', 'Profile updated successfully');
-    }
-
-    public function destroy($id)
-    {
-      $user = User::find($id);
-      $user->delete();
-      return redirect()->route('user.list')
-        ->with('success', 'Post deleted successfully');
-    }
-
-
-    public function list()
-    {
-      $users = User::all();
-      return view('admin.index', compact('users'));
     }
 }
