@@ -13,7 +13,7 @@
 
     <!-- Fonts -->
 
-    @vite(['resources/scss/main.scss', 'resources/js/app.js'])
+    @vite(['resources/scss/main.scss', 'resources/js/app.js', 'resources/js/main-page.js'])
     <script>
         var locale = '{{ config('app.locale') }}';
     </script>
@@ -21,10 +21,6 @@
 
 <body>
 @include('common.header')
-
-@if(Route::currentRouteName() !== 'welcome')
-    @include('common.banner');
-@endif
 
 @yield('content')
 
