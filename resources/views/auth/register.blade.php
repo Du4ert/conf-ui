@@ -4,6 +4,7 @@
 @endsection
 
 @section('body')
+
     {{-- Show validtion errors --}}
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -14,6 +15,7 @@
             </ul>
         </div>
     @endif
+
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -25,44 +27,9 @@
         @include('auth.layout.field', ['field_name' => 'job_title'])
         @include('auth.layout.email')
         @include('auth.layout.password')
-        @include('auth.layout.field', ['field_name' => 'thesis_coauthors'])
 
 
-        <div class="row mb-3">
-            <label class="col-md-4 col-form-label text-md-end" for="thesis">{{ __('auth.thesis_body') }}<span
-                    class="text-danger">*</span></label>
-            <div class="col-md-6">
-                <textarea name="thesis_body" id="thesis_body" cols="30" rows="10"></textarea>
-            </div>
-        </div>
-
-
-        <div class="row mb-3">
-            <label for="role" class="col-md-4 col-form-label text-md-end">Я регистрируюсь с<span
-                    class="text-danger">*</span></label><br>
-            <div class="col-md-6">
-                <div class="form-check form-check-inline">
-                    <label class="form-label">
-                        <input class="form-check-input" type="radio" name="type" value="presenter"
-                            onClick="hideInputDiv();" {{ old('type') == 'presenter' ? 'checked' : '' }}>
-                        {{ __('auth.live') }}
-                    </label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                    <label class="form-label">
-                        <input id="poster_radio" class="form-check-input" type="radio" name="type" value="poster"
-                            onChange="showInputDiv();" {{ old('type') == 'poster' ? 'checked' : '' }}>
-                        {{ __('auth.poster') }}
-                    </label>
-                </div>
-            </div>
-
-            <div id="poster_input" class="row mb-3" style="display: none;">
-                {{-- <input type="file" name="poster_image"> --}}
-            </div>
-
-
+        {{-- Policy --}}
             <div class="row mb-3">
                 <div class="col-md10">
                     <div class="form-check">
@@ -80,6 +47,7 @@
 
         </div>
 
+        {{-- Submit --}}
         <div class="row mb-0">
             <div class="col-md-6 offset-md-6">
                 <button disabled id="submit" type="submit" class="btn btn-primary">
@@ -91,18 +59,9 @@
 
 
     <script>
-        const checkbox = document.getElementById("poster_radio");
-        const posterInput = document.getElementById("poster_input");
         const policy = document.getElementById("policy");
         const submit = document.getElementById("submit");
 
-
-        //function that will show hidden inputs when clicked
-        function showInputDiv() {
-            if (checkbox.checked = true) {
-                posterInput.style.display = "block";
-            }
-        }
 
         function toggleSubmit() {
             if (policy.checked) {
@@ -110,11 +69,6 @@
             } else {
                 submit.disabled = true;
             }
-        }
-
-        //function that will hide the inputs when another checkbox is clicked
-        function hideInputDiv() {
-            posterInput.style.display = "none";
         }
     </script>
 @endsection

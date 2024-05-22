@@ -57,11 +57,11 @@ class RegisterController extends Controller
             'organization_title',
             'job_title',
             'rank_title',
-            'thesis_body',
-            'thesis_coauthors',
-            'file_path',
             'pay_status',
             'accepted_status',
+            // 'thesis_body',
+            // 'thesis_coauthors',
+            // 'file_path',
         ]);
     }
 
@@ -82,11 +82,11 @@ class RegisterController extends Controller
             'organization_title' => $data['organization_title'],
             'job_title' => $data['job_title'],
             'rank_title' => $data['rank_title'],
-            'thesis_body' => $data['thesis_body'],
-            'thesis_coauthors' => $data['thesis_coauthors'],
-            'file_path' => $data['file_path'] ?? null,
             'pay_status' => $data['pay_status'] ?? false,
             'accepted_status' => $data['accepted_status'] ?? false,
+            // 'thesis_body' => $data['thesis_body'],
+            // 'thesis_coauthors' => $data['thesis_coauthors'],
+            // 'file_path' => $data['file_path'] ?? null,
         ]);
     }
 }
