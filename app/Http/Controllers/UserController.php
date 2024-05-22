@@ -23,7 +23,8 @@ class UserController extends Controller
     public function home()
     {
       $user = auth()->user();
-      return view('auth.home', compact('user'));
+      $thesis = $user->thesis;
+      return view('auth.home', compact('user', 'thesis'));
     }
 
     public function editSelf(Request $request)

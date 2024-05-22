@@ -45,7 +45,7 @@ public function destroy($id)
   $user = User::findOrFail($id);
   $user->delete();
   return redirect()->route('user.list')
-    ->with('success', 'Post deleted successfully');
+    ->with('status', 'Post deleted successfully');
 }
 
 

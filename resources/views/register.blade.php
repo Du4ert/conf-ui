@@ -22,31 +22,28 @@
                     </div>
                 </div>
 
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
+                @include('auth.layout.status')
 
                 @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
 
                 <form class="" method="POST" action="{{ route('store') }}">
                     @csrf
                     <div class="row gy-2 gy-md-3 overflow-hidden">
-                        
+
                         <div class="col-12">
                             <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
-                            <input id="email" type="email" class="form-control " name="email" value="{{session('form_data.email') ?? ''}}"
-                                autocomplete="email" placeholder="name@example.com" required="">
+                            <input id="email" type="email" class="form-control " name="email"
+                                value="{{ session('form_data.email') ?? '' }}" autocomplete="email"
+                                placeholder="name@example.com" required="">
                             <small class="fst-italic form-text text-muted">На этот адрес придёт ссылка для
                                 подтверждения
                                 регистрации</small>
@@ -54,27 +51,27 @@
 
                         <div class="col-12">
                             <label for="lastName" class="form-label">Фамилия<span class="text-danger">*</span></label>
-                            <input id="lastname" type="text" class="form-control " name="lastname" value="{{session('form_data.lastname') ?? ''}}"
-                                required="" autocomplete="family-name">
+                            <input id="lastname" type="text" class="form-control " name="lastname"
+                                value="{{ session('form_data.lastname') ?? '' }}" required="" autocomplete="family-name">
                         </div>
 
                         <div class="col-12">
                             <label class="form-label" for="firstname">Имя</label><span class="text-danger">*</span>
-                            <input id="firstname" type="text" class="form-control " name="firstname" value="{{session('form_data.firstname') ?? ''}}"
-                                autocomplete="given-name">
+                            <input id="firstname" type="text" class="form-control " name="firstname"
+                                value="{{ session('form_data.firstname') ?? '' }}" autocomplete="given-name">
                         </div>
 
                         <div class="col-12">
                             <label class="form-label" for="surname">Отчество</label><span class="text-danger">*</span>
-                            <input id="surname" type="text" class="form-control " name="surname" value="{{session('form_data.surname') ?? ''}}"
-                                autocomplete="additional-name">
+                            <input id="surname" type="text" class="form-control " name="surname"
+                                value="{{ session('form_data.surname') ?? '' }}" autocomplete="additional-name">
                         </div>
 
                         <div class="col-12">
                             <label class="form-label" for="organization">Организация<span
                                     class="text-danger">*</span></label>
                             <input id="organization" type="text" class="form-control " name="organization"
-                                value="{{session('form_data.organization') ?? ''}}" required="">
+                                value="{{ session('form_data.organization') ?? '' }}" required="">
                             <small class="fst-italic form-text text-muted">
                                 Введите полное название вашей организации, например Федеральный
                                 исследовательский центр
@@ -88,14 +85,14 @@
                                 <div class="col-12 col-md-6">
                                     <label class="form-label" for="job">Должность</label>
                                     <input id="job" type="text" class="form-control " name="job"
-                                        value="{{session('form_data.job') ?? ''}}">
+                                        value="{{ session('form_data.job') ?? '' }}">
                                     <small class="fst-italic form-text text-muted">Поставьте "-" если нет
                                         должности</small>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label class="form-label" for="rank">Степень, звание</label>
                                     <input id="rank" type="text" class="form-control " name="rank"
-                                        value="{{session('form_data.rank') ?? ''}}">
+                                        value="{{ session('form_data.rank') ?? '' }}">
                                     <small class="fst-italic form-text text-muted">Поставьте "-" если нет
                                         степени и
                                         звания</small>
@@ -105,8 +102,7 @@
 
                         <div class="col-12">
                             <div>
-                                <label class="form-label" for="thesis">Тезисы</label><span
-                                    class="text-danger">*</span>
+                                <label class="form-label" for="thesis">Тезисы</label><span class="text-danger">*</span>
                             </div>
                             <textarea name="thesis" id="thesis" cols="30" rows="10"></textarea>
                         </div>
@@ -117,16 +113,16 @@
                                         class="text-danger">*</span></label><br>
                                 <div class="form-check form-check-inline">
                                     <label class="form-label">
-                                        <input class="form-check-input" type="radio" name="type"
-                                            value="presenter" onClick="hideInputDiv();" checked>
+                                        <input class="form-check-input" type="radio" name="type" value="presenter"
+                                            onClick="hideInputDiv();" checked>
                                         докладом
                                     </label>
                                 </div>
 
                                 <div class="form-check form-check-inline">
                                     <label class="form-label">
-                                        <input id="poster_radio" class="form-check-input" type="radio"
-                                            name="type" value="poster" onChange="showInputDiv();">
+                                        <input id="poster_radio" class="form-check-input" type="radio" name="type"
+                                            value="poster" onChange="showInputDiv();">
                                         постерным докладом
                                     </label>
                                 </div>
@@ -194,5 +190,5 @@
             inputDiv.style.display = "none";
         }
     </script>
-    
+
 @endsection

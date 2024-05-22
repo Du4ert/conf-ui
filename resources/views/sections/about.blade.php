@@ -17,7 +17,7 @@
 
             </div>
 
-            <div class="areas-list  mb-3">
+            <div class="areas-list  mb-3 lead">
                 <h4 class="text-center mb-4">Программа конференции включает следующие направления:</h4>
                 <ol class="list-group text-start d-inline-block">
                     <li>Геномика, транскриптомика и биоинформатика растений. </li>

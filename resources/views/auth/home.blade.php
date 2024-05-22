@@ -24,11 +24,9 @@
 
 @section('body')
     {{-- Show status --}}
-    @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
+    @include('auth.layout.status')
+
+    
     {{ __('auth.logged_in') }}
     {{-- Show validtion errors --}}
     @if ($errors->any())
@@ -70,5 +68,7 @@
     @endif
 
     </form>
+
+    @include('auth.thesis')
 
 @endsection

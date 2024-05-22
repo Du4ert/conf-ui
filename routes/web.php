@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ThesisController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,19 +34,23 @@ Auth::routes(['verify' => true]);
 // Для обычных пользователей
 
 // Страница зарегистрированного пользователя
-Route::get('/home', [App\Http\Controllers\UserController::class, 'home'])->name('home');
-Route::get('/edit', [App\Http\Controllers\UserController::class, 'editSelf'])->name('user.editSelf');
-Route::put('/update', [App\Http\Controllers\UserController::class, 'updateSelf'])->name('user.updateSelf');
+Route::get('/home', [UserController::class, 'home'])->name('home');
+Route::get('/edit', [UserController::class, 'editSelf'])->name('user.editSelf');
+Route::put('/update', [UserController::class, 'updateSelf'])->name('user.updateSelf');
+Route::post('/update/thesis', [ThesisController::class, 'store'])->name('thesis.store');
+Route::get('/theses/{id}/download', [ThesisController::class, 'download'])->name('thesis.download');
+
+
 
 
 // Для админов
 Route::prefix('admin')->group(function () {
-    Route::get('/', [App\Http\Controllers\AdminController::class, 'list'])->name('user.list');
-    Route::get('/user/{id}', [App\Http\Controllers\AdminController::class, 'getUser'])->name('user.get');
-    Route::get('/user/{id}/edit', [App\Http\Controllers\AdminController::class, 'edit'])->name('user.edit');
-    Route::put('/user/{id}/update', [App\Http\Controllers\AdminController::class, 'update'])->name('user.update');
-    Route::delete('/user/{id}', [App\Http\Controllers\AdminController::class, 'destroy'])->name('user.destroy');
-    // Route::get('/', [App\Http\Controllers\AdminController::class, 'index']);
+    Route::get('/', [AdminController::class, 'list'])->name('user.list');
+    Route::get('/user/{id}', [AdminController::class, 'getUser'])->name('user.get');
+    Route::get('/user/{id}/edit', [AdminController::class, 'edit'])->name('user.edit');
+    Route::put('/user/{id}/update', [AdminController::class, 'update'])->name('user.update');
+    Route::delete('/user/{id}', [AdminController::class, 'destroy'])->name('user.destroy');
+    // Route::get('/', [AdminController::class, 'index']);
 });
 
 });
