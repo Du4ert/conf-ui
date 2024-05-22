@@ -84,9 +84,7 @@ class RegisterController extends Controller
             'rank_title' => $data['rank_title'],
             'pay_status' => $data['pay_status'] ?? false,
             'accepted_status' => $data['accepted_status'] ?? false,
-            // 'thesis_body' => $data['thesis_body'],
-            // 'thesis_coauthors' => $data['thesis_coauthors'],
-            // 'file_path' => $data['file_path'] ?? null,
+
         ]);
     }
 }

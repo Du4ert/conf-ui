@@ -30,9 +30,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'rank_title',
         'pay_status',
         'accepted_status',
-         // 'thesis_body',
-        // 'thesis_coauthors',
-        // 'file_path',
+    ];
+
+    // Fields with default values
+    protected $attributes = [
+        'pay_status' => false,
+        'accepted_status' => false,
     ];
 
     /**

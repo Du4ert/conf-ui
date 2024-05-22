@@ -22,19 +22,19 @@ class AdminController extends BaseController
 // Admin
 public function getUser(Request $request, $id)
 {
-    $user = User::find($id);
+    $user = User::findOrFail($id);
     return view('admin.home', compact('user'));
 }
 
 public function edit(Request $request, $id)
 {
-    $user = User::find($id);
+    $user = User::findOrFail($id);
     return view('admin.home', compact('user'))->with(['editable' => true]);
 }
 
 public function update(Request $request, $id)
 {
-    $user = User::find($id);
+    $user = User::findOrFail($id);
     $user->update($request->all());
 
     return redirect()->route('user.get', ['id' => $id])->with('status', 'Profile updated successfully');
@@ -42,7 +42,7 @@ public function update(Request $request, $id)
 
 public function destroy($id)
 {
-  $user = User::find($id);
+  $user = User::findOrFail($id);
   $user->delete();
   return redirect()->route('user.list')
     ->with('success', 'Post deleted successfully');
