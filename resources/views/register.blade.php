@@ -22,7 +22,7 @@
                     </div>
                 </div>
 
-                @include('auth.layout.status')
+                @include('auth.layout.success')
 
                 @if ($errors->any())
                     <div class="alert alert-danger">

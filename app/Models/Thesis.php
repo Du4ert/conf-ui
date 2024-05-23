@@ -16,7 +16,8 @@ class Thesis extends Model
 
     protected $fillable = [
         'title',
-        'file_path',
+        'file',
+        // 'file_path',
         'user_id'
     ];
 }

@@ -15,7 +15,7 @@
     @endif
     @if (!$editable)
         <a href="{{ $admin ? route('user.edit', $user->id) : route('user.editSelf') }}" class="btn btn-warning"
-            role="button">Edit</a>
+            role="button"><i class="fa fa-edit"></i> Edit</a>
     @else
     <a href="{{ $admin ? route('user.get', $user->id) : route('home') }}" class="btn btn-warning"
         role="button"><i class="fa fa-arrow-left"></i></a>
@@ -23,8 +23,8 @@
 @endsection
 
 @section('body')
-    {{-- Show status --}}
-    @include('auth.layout.status')
+    {{-- Show success --}}
+    @include('auth.layout.success')
 
     
     {{ __('auth.logged_in') }}
@@ -61,6 +61,7 @@
         <div class="row mb-0">
             <div class="col-md-6 offset-md-6">
                 <button id="submit" type="submit" class="btn btn-primary">
+                    <i class="fa fa-save"></i>
                     {{ __('auth.submit') }}
                 </button>
             </div>

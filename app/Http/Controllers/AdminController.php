@@ -37,7 +37,7 @@ public function update(Request $request, $id)
     $user = User::findOrFail($id);
     $user->update($request->all());
 
-    return redirect()->route('user.get', ['id' => $id])->with('status', 'Profile updated successfully');
+    return redirect()->route('user.get', ['id' => $id])->with('success', 'Profile updated successfully');
 }
 
 public function destroy($id)
@@ -45,7 +45,7 @@ public function destroy($id)
   $user = User::findOrFail($id);
   $user->delete();
   return redirect()->route('user.list')
-    ->with('status', 'Post deleted successfully');
+    ->with('success', 'Post deleted successfully');
 }
 
 

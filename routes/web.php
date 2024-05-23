@@ -37,8 +37,13 @@ Auth::routes(['verify' => true]);
 Route::get('/home', [UserController::class, 'home'])->name('home');
 Route::get('/edit', [UserController::class, 'editSelf'])->name('user.editSelf');
 Route::put('/update', [UserController::class, 'updateSelf'])->name('user.updateSelf');
+
+
+Route::get('/thesis/{id}/download', [ThesisController::class, 'download'])->name('thesis.download');
+Route::get('image-upload', [ThesisController::class, 'index'])->name('thesis.get');
 Route::post('/update/thesis', [ThesisController::class, 'store'])->name('thesis.store');
-Route::get('/theses/{id}/download', [ThesisController::class, 'download'])->name('thesis.download');
+Route::delete('/thesis/{id}/delete', [ThesisController::class, 'delete'])->name('thesis.delete');
+
 
 
 
