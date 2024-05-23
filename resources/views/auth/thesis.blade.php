@@ -1,9 +1,9 @@
 {{-- In work --}}
 <h2 class="text-center">{{ __('auth.thesis') }}</h2>
-@if ($thesis)
+@isset ($thesis)
 <div class="row mb-3">
         <div class="col-md-6 offset-4">
-            <a href="{{ route('thesis.download', $thesis->id) }}" alt="download" title="{{ $thesis->title }}"><i class="fa fa-file" aria-hidden="true"></i></a>
+            <a href="{{ route('thesis.download', $thesis->id) }}" alt="download" title="{{ $thesis->title }}"><i class="fas fa-file-download" aria-hidden="true"></i></a>
             {{-- {{ $thesis=> }} --}}
         </div>
 </div>
@@ -33,7 +33,7 @@
     </div>
 
 </form>
-@endif
+@endisset
 
 
 
