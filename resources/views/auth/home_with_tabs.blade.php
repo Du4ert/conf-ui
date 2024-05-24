@@ -39,7 +39,7 @@
         </div>
     @endif
     @if ($editable)
-        <form id="main-form" action="{{ $admin ? route('user.update', $user->id) : route('user.updateSelf') }}" method="post">
+        <form action="{{ $admin ? route('user.update', $user->id) : route('user.updateSelf') }}" method="post">
             @csrf
             @method('PUT')
     @endif
@@ -48,6 +48,22 @@
         <h4>{{ $user->email }}</h4>
     </div>
 
+    <ul class="nav  nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                role="tab" aria-controls="home" aria-selected="true">{{ __('auth.home') }}</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#files" type="button"
+                role="tab" aria-controls="files" aria-selected="false">{{ __('auth.files') }}</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#coauthors" type="button"
+                role="tab" aria-controls="coauthors" aria-selected="false">{{ __('auth.coauthors') }}</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active mt-3" id="home" role="tabpanel" aria-labelledby="home-tab">
             @include('auth.layout.field_home', ['field_name' => 'first_name', 'required' => true])
             @include('auth.layout.field_home', ['field_name' => 'last_name', 'required' => true])
             @include('auth.layout.field_home', ['field_name' => 'middle_name'])
@@ -58,15 +74,19 @@
 
             @include('auth.layout.field_home', ['field_name' => 'thesis_title_ru'])
             @include('auth.layout.field_home', ['field_name' => 'thesis_title_en'])
-        </form>
-
+        </div>
+        <div class="tab-pane fade mt-3" id="files" role="tabpanel" aria-labelledby="files-tab">
             {{-- Операции со связанными файлами --}}
             @foreach ($fileByTypes as $type => $file)
                 @include('auth.layout.file', ['file' => $file ?? null, 'type' => $type])
             @endforeach
-
+        </div>
+        <div class="tab-pane fade mt-3" id="coauthors" role="tabpanel" aria-labelledby="coauthors-tab">
             {{-- Операции со связанными соавторами --}}
             Соавторы
+        </div>
+    </div>
+
 
 
     {{-- @include('auth.layout.password') --}}
@@ -75,12 +95,14 @@
     @if ($editable)
         <div class="row mb-0">
             <div class="col-md-6 offset-md-6">
-                <button id="submit" type="submit" class="btn btn-primary" form="main-form">
+                <button id="submit" type="submit" class="btn btn-primary">
                     <i class="fa fa-save"></i>
                     {{ __('auth.save') }}
                 </button>
             </div>
         </div>
     @endif
+
+    </form>
 
 @endsection

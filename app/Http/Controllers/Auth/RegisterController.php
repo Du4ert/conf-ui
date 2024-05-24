@@ -59,9 +59,6 @@ class RegisterController extends Controller
             'rank_title',
             'pay_status',
             'accepted_status',
-            // 'thesis_body',
-            // 'thesis_coauthors',
-            // 'file_path',
         ]);
     }
 

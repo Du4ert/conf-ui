@@ -13,6 +13,7 @@ return [
     |
     */
 
+    
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
@@ -21,7 +22,9 @@ return [
     'password_field' => 'password',
     'password_confirm' => 'confirm password',
 
+    'save' => 'Save',
 
+    'email' => 'Email',
     'first_name' => 'Name',
     'last_name' => 'Last name',
     'middle_name' => 'Surname',
@@ -30,5 +33,11 @@ return [
     'job_title' => 'Job title',
 
     'homepage_title' => 'User dashboard',
+    'home' => 'Main info',
+    'files' => 'Files',
+    'coauthors' => 'Coauthors',
+    'phone' => 'Phone number',
+    'thesis_title_ru' => 'Report title RU',
+    'thesis_title_en' => 'Report title EN',
     
 ];

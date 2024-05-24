@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Files;
+use App\Models\File;
 
 class FileController extends Controller
 {
@@ -38,7 +38,7 @@ class FileController extends Controller
         $fileName = $type . '-' . time() . '.' . $extension;
         $file->storeAs('public/' . $userId . '/', $fileName);
 
-        $file = new Files([
+        $file = new File([
             'type' => $type,
             'file' => $fileName,
             'user_id' => $userId,
@@ -55,7 +55,7 @@ class FileController extends Controller
 
         public function download($id, $type = 'file')
     {
-        $file = Files::findOrFail($id);
+        $file = File::findOrFail($id);
         $userId = $file->user_id;
         
         $filePath = public_path('storage/' . $userId . '/' . $file->file);
@@ -66,7 +66,7 @@ class FileController extends Controller
 
     public function delete(Request $request, $id)
     {
-        $file = Files::findOrFail($id);
+        $file = File::findOrFail($id);
         $userId = $file->user_id;
 
         $filePath = public_path('storage/' . $userId . '/' . $file->file);

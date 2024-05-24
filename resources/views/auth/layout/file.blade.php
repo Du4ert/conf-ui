@@ -1,4 +1,8 @@
 {{-- $type - file type ['thesis_ru', 'thesis_en', 'poster'] --}}
+@php
+$formDelete = $type . '-delete-form';
+$formUpload = $type . '-upload-form';
+@endphp
 
 <div id="{{$type}}" class="card col-md-6 offset-4">
     <h6  class="card-header p-3">{{ __('file.' . $type) }}
@@ -9,17 +13,17 @@
         @if ($file != null)
         
             <div id="#file-download" class="file-download">
-                <form action="{{ route('file.delete', $file->id) }}" method="post">
+                <form id="{{ $formDelete }}" action="{{ route('file.delete', $file->id) }}" method="post">
                     @csrf
                     <a class="btn  text-primary" href="{{ route('file.download', $file->id) }}"><i
                             class="far fa-file-alt me-1"></i>{{ $file->type . '.' . pathinfo($file->file, PATHINFO_EXTENSION) }}</a>
                     @method('DELETE')
-                    <button type="submit" class="btn btn-link text-danger"><i class="fa fa-trash"></i></button>
+                    <button form="{{ $formDelete }}" type="submit" class="btn btn-link text-danger"><i class="fa fa-trash"></i></button>
                 </form>
             </div>
         @else
             <div  class="file-upload">
-                <form action="{{ route('file.store', $user->id) }}" method="POST" enctype="multipart/form-data" class="mt-2">
+                <form id="{{ $formUpload }}" action="{{ route('file.store', $user->id) }}" method="POST" enctype="multipart/form-data" class="mt-2">
                     @csrf
 
                     <div class="alert alert-danger print-error-msg" style="display:none">
@@ -31,7 +35,7 @@
 
                     <div class="mb-3">
                         <label class="form-label" for="inputFile">Select file:</label>
-                        <input type="file" name="file" id="inputFile"
+                        <input form="{{ $formUpload }}" type="file" name="file" id="inputFile"
                             class="form-control @error('file') is-invalid @enderror">
                         <small>{{ __('file.extensions') }} (.doc, .docx, .pdf, .txt)</small>
 
@@ -52,7 +56,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-success"><i class="fas fa-upload"></i> Upload</button>
+                        <button form="{{ $formUpload }}" type="submit" class="btn btn-success"><i class="fas fa-upload"></i> Upload</button>
                     </div>
 
                 </form>

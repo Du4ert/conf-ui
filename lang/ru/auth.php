@@ -21,6 +21,10 @@ return [
     'password_field' => 'пароль',
     'password_confirm' => 'подтвердите пароль',
 
+    'save' => 'Сохранить',
+
+
+    'email' => 'Email',
     'first_name' => 'Имя',
     'last_name' => 'Фамилия',
     'middle_name' => 'Отчество',
@@ -30,5 +34,11 @@ return [
 
 
     'homepage_title' => 'Личный кабинет',
+    'home' => 'Главное',
+    'files' => 'Файлы',
+    'coauthors' => 'Соавторы',
+    'phone' => 'Номер телефона',
+    'thesis_title_ru' => 'Название доклада RU',
+    'thesis_title_en' => 'Название доклада EN',
 
 ];

@@ -6,6 +6,9 @@
 @section('body')
     <h1>Hello admin</h1>
     @foreach ($users as $user)
+    @if ($user->role === 'admin')
+     @continue
+    @endif
     <div class="col-sm">
       <div class="card">
         <div class="card-header">

@@ -12,9 +12,14 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-        public function thesis()
+    public function files()
     {
-        return $this->hasOne(Thesis::class);
+        return $this->hasMany(File::class);
+    }
+
+    public function coauthors()
+    {
+        return $this->hasMany(Coauthor::class);
     }
 
     protected $fileTypes = [
@@ -23,10 +28,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'poster',
     ];
 
-    public function files()
-    {
-        return $this->hasMany(Files::class);
-    }
 
     public function fileByTypes ($files)
     {
@@ -44,7 +45,6 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
         'email',
         'password',
         'role',
@@ -56,6 +56,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'rank_title',
         'pay_status',
         'accepted_status',
+        'phone',
+        'thesis_title_ru',
+        'thesis_title_en',
+        'section',
+        'report_form'
     ];
 
     // Fields with default values

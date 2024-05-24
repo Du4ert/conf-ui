@@ -40,11 +40,6 @@ Route::get('/edit', [UserController::class, 'editSelf'])->name('user.editSelf');
 Route::put('/update', [UserController::class, 'updateSelf'])->name('user.updateSelf');
 
 
-// Route::get('/thesis/{id}/download', [ThesisController::class, 'download'])->name('thesis.download');
-// Route::post('/update/thesis', [ThesisController::class, 'store'])->name('thesis.store');
-// Route::delete('/thesis/{id}/delete', [ThesisController::class, 'delete'])->name('thesis.delete');
-
-
 // Операции с файлами
 Route::get('/{userId}/file/download', [FileController::class, 'download'])->name('file.download');
 Route::post('/{userId}/file/store', [FileController::class, 'store'])->name('file.store');
@@ -59,7 +54,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/user/{id}/edit', [AdminController::class, 'edit'])->name('user.edit');
     Route::put('/user/{id}/update', [AdminController::class, 'update'])->name('user.update');
     Route::delete('/user/{id}', [AdminController::class, 'destroy'])->name('user.destroy');
-    // Route::get('/', [AdminController::class, 'index']);
 });
 
 });
