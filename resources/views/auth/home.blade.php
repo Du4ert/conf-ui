@@ -9,25 +9,27 @@
 
 @extends('layouts.auth')
 @section('header')
-    {{ __('auth.dashboard') }}
+    <strong class="float-left align-middle">{{ __('auth.dashboard') }}</strong>
+
     @if ($admin)
         <a class="btn btn-success" href="{{ route('user.list') }}"><i class="fa fa-home"></i></a>
     @endif
+
     @if (!$editable)
-        <a href="{{ $admin ? route('user.edit', $user->id) : route('user.editSelf') }}" class="btn btn-warning"
+        <a href="{{ $admin ? route('user.edit', $user->id) : route('user.editSelf') }}" class="btn btn-warning float-end"
             role="button"><i class="fa fa-edit"></i> Edit</a>
+
     @else
     <a href="{{ $admin ? route('user.get', $user->id) : route('home') }}" class="btn btn-warning"
         role="button"><i class="fa fa-arrow-left"></i></a>
     @endif
+
 @endsection
 
 @section('body')
     {{-- Show success --}}
     @include('auth.layout.success')
 
-    
-    {{ __('auth.logged_in') }}
     {{-- Show validtion errors --}}
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -56,7 +58,7 @@
     @include('auth.layout.field_home', ['field_name' => 'job_title'])
     {{-- @include('auth.layout.password') --}}
 
-
+<hr />
     @if ($editable)
         <div class="row mb-0">
             <div class="col-md-6 offset-md-6">

@@ -1,9 +1,9 @@
 {{-- $type - file type ['thesis_ru', 'thesis_en', 'poster'] --}}
 
-<div id="{{$type}}" class="card mt-5 col-md-5">
-    <h4  class="card-header p-3">{{ __('file.' . $type) }}
+<div id="{{$type}}" class="card col-md-6 offset-4">
+    <h6  class="card-header p-3">{{ __('file.' . $type) }}
         {{-- <button role="button" class="add btn btn-success float-sm-end"><i class="fa fa-plus"></i></button> --}}
-    </h4>
+    </h6>
     
     <div class="card-body">
         @if ($file != null)
