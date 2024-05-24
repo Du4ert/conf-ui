@@ -22,6 +22,17 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Files::class);
     }
 
+    public function fileByTypes ($files)
+    {
+        $fileByTypes = [
+            'thesis_ru' => $files->where('type', 'thesis_ru')->first(),
+            'thesis_en' => $files->where('type', 'thesis_en')->first(),
+            'poster' => $files->where('type', 'poster')->first(),
+          ];
+
+          return $fileByTypes;
+    }
+
     /**
      * The attributes that are mass assignable.
      *

@@ -26,7 +26,6 @@ class FileController extends Controller
     public function store(Request $request, $userId)
     {
         $file = $request->file;
-        $extension = $file->extension();
 
         $validatedData = $request->validate([
             'type' => 'required|string|max:50',
@@ -34,6 +33,7 @@ class FileController extends Controller
         ]);
 
         $type = $validatedData['type'];
+        $extension = $file->extension();
 
         $fileName = $type . '-' . time() . '.' . $extension;
         $file->storeAs('public/' . $userId . '/', $fileName);
@@ -49,13 +49,13 @@ class FileController extends Controller
         if ($request->ajax()) {
             return response()->json(['success', 'Тезис успешно сохранен.']);
         } else {
-            return redirect()->route('home')->with('success', 'Тезис успешно сохранен.');
+            return back()->with('success', 'Тезис успешно сохранен.');
         }
     }
 
         public function download($id, $type = 'file')
     {
-        $file = Files::findOrFail($id)->first();
+        $file = Files::findOrFail($id);
         $userId = $file->user_id;
         
         $filePath = public_path('storage/' . $userId . '/' . $file->file);
@@ -66,7 +66,7 @@ class FileController extends Controller
 
     public function delete(Request $request, $id)
     {
-        $file = Files::findOrFail($id)->first();
+        $file = Files::findOrFail($id);
         $userId = $file->user_id;
 
         $filePath = public_path('storage/' . $userId . '/' . $file->file);

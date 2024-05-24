@@ -28,11 +28,7 @@ class UserController extends Controller
       $user = auth()->user();
       $files = $user->files;
 
-      $fileByTypes = [
-        'thesis_ru' => $files->where('type', 'thesis_ru')->first(),
-        'thesis_en' => $files->where('type', 'thesis_en')->first(),
-        'poster' => $files->where('type', 'poster')->first(),
-      ];
+      $fileByTypes = $user->fileByTypes($files);
 
       return view('auth.home', compact('user', 'fileByTypes'));
     }

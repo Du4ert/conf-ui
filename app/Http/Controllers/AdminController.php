@@ -23,13 +23,21 @@ class AdminController extends BaseController
 public function getUser(Request $request, $id)
 {
     $user = User::findOrFail($id);
-    return view('admin.home', compact('user'));
+
+    $files = $user->files;
+    $fileByTypes = $user->fileByTypes($files);
+
+    return view('admin.home', compact('user', 'fileByTypes'));
 }
 
 public function edit(Request $request, $id)
 {
     $user = User::findOrFail($id);
-    return view('admin.home', compact('user'))->with(['editable' => true]);
+    
+    $files = $user->files;
+    $fileByTypes = $user->fileByTypes($files);
+    
+    return view('admin.home', compact('user', 'fileByTypes'))->with(['editable' => true]);
 }
 
 public function update(Request $request, $id)

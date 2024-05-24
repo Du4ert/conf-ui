@@ -72,7 +72,7 @@
 
 {{-- Операции со связанными файлами --}}
     @foreach ($fileByTypes as $type => $file)
-            @include('auth.file', ['file' => $file ?? null, 'type' => $type])
+            @include('auth.layout.file', ['file' => $file ?? null, 'type' => $type])
     @endforeach
 
 @endsection
