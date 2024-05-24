@@ -17,6 +17,12 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Thesis::class);
     }
 
+    protected $fileTypes = [
+        'thesis_ru',
+        'thesis_en',
+        'poster',
+    ];
+
     public function files()
     {
         return $this->hasMany(Files::class);
@@ -24,11 +30,10 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function fileByTypes ($files)
     {
-        $fileByTypes = [
-            'thesis_ru' => $files->where('type', 'thesis_ru')->first(),
-            'thesis_en' => $files->where('type', 'thesis_en')->first(),
-            'poster' => $files->where('type', 'poster')->first(),
-          ];
+        $fileByTypes = [];
+        foreach ($this->fileTypes as $type) {
+            $fileByTypes[$type] = $files->where('type', $type)->first();
+        }
 
           return $fileByTypes;
     }
