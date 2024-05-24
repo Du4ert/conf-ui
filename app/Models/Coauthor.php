@@ -9,14 +9,13 @@ class Coauthor extends Model
 {
     use HasFactory;
 
-    return $this->belongsTo(User::class);
-
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
     protected $fillable = [
+        'user_id',
         'participate',
         'first_name',
         'last_name',

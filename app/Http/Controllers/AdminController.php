@@ -25,9 +25,11 @@ public function getUser(Request $request, $id)
     $user = User::findOrFail($id);
 
     $files = $user->files;
+    $coauthors = $user->coauthors;
+
     $fileByTypes = $user->fileByTypes($files);
 
-    return view('admin.home', compact('user', 'fileByTypes'));
+    return view('admin.home', compact('user', 'fileByTypes', 'coauthors'));
 }
 
 public function edit(Request $request, $id)

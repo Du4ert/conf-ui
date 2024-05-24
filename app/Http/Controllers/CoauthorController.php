@@ -18,9 +18,11 @@ class CoauthorController extends Controller
         $this->middleware('verified');
     }
     
-    public function show()
+    public function show($id)
     {
-//
+        $author = Coauthor::findOrFail($id);
+        
+        return view('author', compact('author'));
     }
 
     public function store(Request $request, $userId)
@@ -28,53 +30,39 @@ class CoauthorController extends Controller
         $author = $request->author;
 
         $validatedData = $request->validate([
-            'type' => 'required|string|max:50',
-            'author' => 'required|mimes:doc,docx,pdf,txt,jpg,png,gif'
+            'first_name' => ['required', 'string', 'min:2'],
+            'last_name' => ['required', 'string', 'min:2'],
+            'middle_name',
+            'organization_title',
+            'job_title',
+            'rank_title',
+            'participate',
         ]);
 
-        $type = $validatedData['type'];
-        $extension = $author->extension();
-
-        $authorName = $type . '-' . time() . '.' . $extension;
-        $author->storeAs('public/' . $userId . '/', $authorName);
-
         $author = new Coauthor([
-            'type' => $type,
-            'author' => $authorName,
             'user_id' => $userId,
+            'first_name' => $request['first_name'],
+            'last_name' => $request['last_name'],
+            'middle_name' => $request['middle_name'],
+            'organization_title' => $request['organization_title'],
+            'job_title' => $request['job_title'],
+            'rank_title' => $request['rank_title'],
+            'participate' => $request['participate'] ?? false,
         ]);
 
         $author->save();
 
         if ($request->ajax()) {
-            return response()->json(['success', 'Тезис успешно сохранен.']);
+            return response()->json(['success', 'Автор добавлен.']);
         } else {
-            return back()->with('success', 'Тезис успешно сохранен.');
+            return back()->with('success', 'Автор добавлен.');
         }
-    }
-
-        public function download($id, $type = 'author')
-    {
-        $author = Coauthor::findOrFail($id);
-        $userId = $author->user_id;
-        
-        $authorPath = public_path('storage/' . $userId . '/' . $author->author);
-        
-        return response()->download($authorPath, $author->author);
     }
 
 
     public function delete(Request $request, $id)
     {
         $author = Coauthor::findOrFail($id);
-        $userId = $author->user_id;
-
-        $authorPath = public_path('storage/' . $userId . '/' . $author->author);
-
-        if (author_exists($authorPath)) {
-            unlink($authorPath);
-        }
-    
         $author->delete();
 
         if ($request->ajax()) {

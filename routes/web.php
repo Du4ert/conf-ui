@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ThesisController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\CoauthorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +44,11 @@ Route::put('/update', [UserController::class, 'updateSelf'])->name('user.updateS
 Route::get('/{userId}/file/download', [FileController::class, 'download'])->name('file.download');
 Route::post('/{userId}/file/store', [FileController::class, 'store'])->name('file.store');
 Route::delete('/file/{id}/delete', [FileController::class, 'delete'])->name('file.delete');
+
+
+// Route::get('/{userId}/file/download', [FileController::class, 'download'])->name('file.download');
+Route::post('/{userId}/coauthor/store', [CoauthorController::class, 'store'])->name('coauthor.store');
+Route::delete('/coauthor/{id}/delete', [CoauthorController::class, 'delete'])->name('coauthor.delete');
 
 
 

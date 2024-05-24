@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('coauthors', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->boolean('participate');
             $table->string('first_name');
             $table->string('last_name');
@@ -20,7 +21,6 @@ return new class extends Migration
             $table->string('organization_title')->nullable();
             $table->string('job_title')->nullable();
             $table->string('rank_title')->nullable();
-
             $table->rememberToken();
             $table->timestamps();
         });

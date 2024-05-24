@@ -4,7 +4,7 @@
 @endsection
 
 @section('body')
-@include('auth.layout.success')
+@include('user.parts.success')
 
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf

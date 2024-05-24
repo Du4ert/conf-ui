@@ -27,10 +27,11 @@ class UserController extends Controller
     {
       $user = auth()->user();
       $files = $user->files;
+      $coauthors = $user->coauthors;
 
       $fileByTypes = $user->fileByTypes($files);
 
-      return view('auth.home', compact('user', 'fileByTypes'));
+      return view('user.home', compact('user', 'fileByTypes', 'coauthors'));
     }
 
     public function editSelf(Request $request)
@@ -38,13 +39,11 @@ class UserController extends Controller
 
       $user = auth()->user();
       $files = $user->files;
-      $fileByTypes = [
-        'thesis_ru' => $files->where('type', 'thesis_ru')->first(),
-        'thesis_en' => $files->where('type', 'thesis_en')->first(),
-        'poster' => $files->where('type', 'poster')->first(),
-      ];
+      $coauthors = $user->coauthors;
 
-      return view('auth.home', compact('user', 'fileByTypes'))->with(['editable' => true]);
+      $fileByTypes = $user->fileByTypes($files);
+
+      return view('user.home', compact('user', 'fileByTypes', 'coauthors'))->with(['editable' => true]);
     }
 
     public function updateSelf(Request $request)

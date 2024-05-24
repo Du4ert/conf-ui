@@ -77,8 +77,8 @@ class RegisterController extends Controller
             'last_name' => $data['last_name'],
             'middle_name' => $data['middle_name'],
             'organization_title' => $data['organization_title'],
-            'job_title' => $data['job_title'],
-            'rank_title' => $data['rank_title'],
+            'job_title' => $data['job_title'] ?? null,
+            'rank_title' => $data['rank_title'] ?? null,
             'pay_status' => $data['pay_status'] ?? false,
             'accepted_status' => $data['accepted_status'] ?? false,
 

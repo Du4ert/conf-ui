@@ -1,1 +1,1 @@
-@include('auth.home', ['admin' => true])
+@include('user.home', ['admin' => true])
