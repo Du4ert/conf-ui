@@ -22,11 +22,11 @@
                     <div id="countdown-box" class="countdown-box"></div>
                 </div><!--//event-countdown-->
             </div>
-            <h1 class="hero-heading mb-2">НБС-ННЦ</h1>
-            <div class="hero-meta mb-3"><i class="far fa-calendar-alt me-2"></i>12 - 15 Oct <i
-                    class="fas fa-map-marker-alt mx-2"></i>Москва, Россия</div>
-            <div class="hero-intro mb-4">Курчатовский геномный центр <br>Конференция.</div>
-            <div class="hero-cta"><a class="btn btn-primary btn-lg" href="{{ LaravelLocalization::localizeUrl('/register') }}">Принять участие</a>
+            <h1 class="hero-heading mb-2">GenBio</h1>
+            <div class="hero-meta mb-3"><i class="far fa-calendar-alt me-2"></i>12 - 15 {{ __('main.month_oct')}} <i
+                    class="fas fa-map-marker-alt mx-2"></i>{{ __('main.location') }}</div>
+            <div class="hero-intro mb-4">{{ __('main.center_full') }} <br>{{ __('main.conf') }}.</div>
+            <div class="hero-cta"><a class="btn btn-primary btn-lg" href="{{ LaravelLocalization::localizeUrl('/register') }}">{{ __('main.participate')}}</a>
             </div>
 
         </div><!--//hero-text-block-->

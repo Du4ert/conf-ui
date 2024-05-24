@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Thesis;
-use Illuminate\Support\Facades\Storage;
 
 class ThesisController extends Controller
 {

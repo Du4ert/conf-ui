@@ -20,4 +20,15 @@ return [
     'dashboard' => 'Dashboard',
     'password_field' => 'password',
     'password_confirm' => 'confirm password',
+
+
+    'first_name' => 'Name',
+    'last_name' => 'Last name',
+    'middle_name' => 'Surname',
+    'organization_title' => 'Organization',
+    'rank_title' => 'Rank',
+    'job_title' => 'Job title',
+
+    'homepage_title' => 'User dashboard',
+    
 ];

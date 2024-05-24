@@ -166,7 +166,6 @@
                 </div><!--//card-->
             </div><!--//col-->
         </div><!--//row-->
-        <div class="speakers-cta text-center py-3"><a class="btn btn-primary btn-lg" href="/register" target="">{{ __('navigation.register') }}</a></div>
     </div><!--//container-->
     
 </section><!--//speakers-section-->

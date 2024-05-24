@@ -17,6 +17,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Thesis::class);
     }
 
+    public function files()
+    {
+        return $this->hasMany(Files::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *

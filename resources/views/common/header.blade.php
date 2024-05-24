@@ -15,7 +15,7 @@ function setClass($class_name = 'scrollto') {
 }
 @endphp
 
-<header id="header" class="header fixed-top">	    
+<header id="header" class="header fixed-top px-3">	    
 	<nav class="main-nav navbar navbar-expand-lg">
 		<div class="site-logo"><a class="{{ setClass('scrollto') }}" href="{{ navUrl('#hero-block')}}"><img class="logo-icon" src="{{asset('images/botsad.png')}}" alt="logo"></a></div>
 		@include('common.authnav')
@@ -33,7 +33,8 @@ function setClass($class_name = 'scrollto') {
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#about-section')}}">{{ __('navigation.about') }}</a></li>                                              
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#organizer-section')}}">{{ __('navigation.organizer') }}</a></li>
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#speakers-section')}}">{{ __('navigation.people') }}</a></li>
-		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#schedule-section')}}">{{ __('navigation.dates') }}</a></li>
+		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#dates-section')}}">{{ __('navigation.dates') }}</a></li>
+		{{-- <li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#schedule-section')}}">{{ __('navigation.dates') }}</a></li> --}}
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#tickets-section')}}">{{ __('navigation.fee') }}</a></li>
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#venue-section')}}">{{ __('navigation.venue') }}</a></li>
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#sponsors-section')}}">{{ __('navigation.partners') }}</a></li>

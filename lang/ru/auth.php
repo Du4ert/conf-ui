@@ -21,4 +21,14 @@ return [
     'password_field' => 'пароль',
     'password_confirm' => 'подтвердите пароль',
 
+    'first_name' => 'Имя',
+    'last_name' => 'Фамилия',
+    'middle_name' => 'Отчество',
+    'organization_title' => 'Организация',
+    'rank_title' => 'Звание',
+    'job_title' => 'Должность',
+
+
+    'homepage_title' => 'Личный кабинет',
+
 ];

@@ -1,4 +1,4 @@
-<footer class="footer py-5 theme-bg-primary">
+<footer class="footer py-5 theme-bg-dark text-white">
     <div class="container text-center">
         
         <ul class="social-list list-inline mb-4"> 

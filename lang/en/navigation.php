@@ -24,4 +24,7 @@ return [
     'fee' => 'Price',
     'organizer' => 'Organizers',
 
+
+    'conference_title' => 'НБС-ННЦ Конференция',
+
 ];

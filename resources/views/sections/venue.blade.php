@@ -4,8 +4,8 @@
         <div class="row gx-5 py-lg-5">
             <div class="col-12 col-lg-7 h-100">
                 <div class="desc">
-                    <h4 class="text-white mb-3">How To Get Here</h4>
-                    <p>Your venue info goes here. Sed feugiat nibh lorem, a laoreet sem aliquet ut. Praesent tincidunt efficitur nisi, ut eleifend diam tempor sit amet. Aliquam volutpat ex feugiat, semper urna a, pharetra lacus. Sed eget eros cursus, consequat lectus ultricies, efficitur metus. Sed sit amet mauris faucibus magna finibus convallis vel quis justo. Curabitur ultricies sagittis erat, quis faucibus lectus tempor vitae. Proin sodales, elit vitae accumsan efficitur, orci quam molestie orci, accumsan tincidunt dui turpis sed libero. Duis id vehicula ex. In quis pellentesque lorem, ut sollicitudin mauris.</p>
+                    <h4 class="text-white mb-3">Как добраться</h4>
+                    <p>В 2024 годуконференция будет проводиться во Всероссийском научно-исследовательском институте сельскохозяйственной биотехнологии(г.Москва, ФГБНУ ВНИИСБ). </p>
                     
                     <div class="row pt-3">
                         <div class="col-12 col-md-6 mb-4">

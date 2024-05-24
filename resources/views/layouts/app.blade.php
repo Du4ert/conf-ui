@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ asset('favicon.png') }}">
     {{-- <title>{{ $title }}</title> --}}
-    <title>Conf-UI</title>
+    <title>GenBio 2024</title>
 
     <!-- Fonts -->
 

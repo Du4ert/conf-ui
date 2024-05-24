@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Authentication Language Lines
+    | Main page Language Lines
     |--------------------------------------------------------------------------
     |
     | The following language lines are used during authentication for various
@@ -13,13 +13,6 @@ return [
     |
     */
 
-    'conf_name' => 'GenBio',
-    'center_abbr' => 'НБС-ННЦ',
-    'center_full' => 'Курчатовский геномный центр',
-    'location' => 'Москва, Россия',
-    'conf' => 'Конференция',
-    'month_oct' => 'Окт.',
-    'participate' => 'Принять участие',
 
 
 ];

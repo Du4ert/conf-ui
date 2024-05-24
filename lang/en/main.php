@@ -13,6 +13,12 @@ return [
     |
     */
 
-
+    'conf_name' => 'GenBio',
+    'center_abbr' => 'NBC-NNC',
+    'center_full' => 'Kurchatov Genome Center',
+    'location' => 'Moscow, Russian Federation',
+    'conf' => 'Conference',
+    'month_oct' => 'Oct',
+    'participate' => 'Participate',
 
 ];

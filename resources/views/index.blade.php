@@ -7,7 +7,8 @@
 @include('sections.organizer')
 @include('sections.included')
 @include('sections.speakers')
-@include('sections.schedule')
+@include('sections.dates')
+{{-- @include('sections.schedule') --}}
 @include('sections.tickets')
 @include('sections.venue')
 @include('sections.sponsors')
