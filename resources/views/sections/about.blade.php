@@ -33,6 +33,14 @@
                 </ul>
             </div><!--//areas-list-->
 
+            <ul class="list-group list-unstyled forms-list mb-3 lead">
+                <h4 class="text-center mb-4">Формы участия:</h4>
+                <li><li><i class="fas fa-user-graduate me-4"></i>устный доклад на пленарном заседании (по предложению оргкомитета);</li>
+                <li><li><i class="fas fa-user me-4"></i>устный доклад на секции;</li>
+                <li><li><i class="fas fa-image me-4"></i>стендовое сообщение;</li>
+                <li><li><i class="far fa-user me-4"></i>заочное участие.</li>
+            </ul>
+
 
             <p>По материалам конференции будет опубликован сборник тезисов, зарегистрированный в наукометрической базе
                 РИНЦ, присвоен DOI.
@@ -52,16 +60,7 @@
 
                 <p><strong>В рамках конференции предполагается организация школы молодых ученых "Геномика и биотехнология растений".</strong>
                 </p>
-        
 
-{{-- <hr /> --}}
-            <ul class="list-group list-unstyled forms-list mb-3 lead">
-                <h4 class="text-center mb-4">Формы участия:</h4>
-                <li><li><i class="fas fa-user-graduate me-4"></i>устный доклад на пленарном заседании (по предложению оргкомитета);</li>
-                <li><li><i class="fas fa-user me-4"></i>устный доклад на секции;</li>
-                <li><li><i class="fas fa-image me-4"></i>стендовое сообщение;</li>
-                <li><li><i class="far fa-user me-4"></i>заочное участие.</li>
-            </ul>
 
 
 

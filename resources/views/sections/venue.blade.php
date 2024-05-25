@@ -10,36 +10,36 @@
                     <div class="row pt-3">
                         <div class="col-12 col-md-6 mb-4">
                             <div class="grid-item p-4">
-                                <h5 class="text-white mb-3 title"><i class="fas fa-plane-departure me-2"></i>By Plane</h5>
+                                <h5 class="text-white mb-3 title"><i class="fas fa-plane-departure me-2"></i>Самолетом</h5>
                                 <p>Aliquam gravida, enim et efficitur feugiat, tellus ligula scelerisque orci, et sagittis erat lectus sit amet orci.</p>
                                 <a class="text-white" href="#">Search Tickets &rarr;</a>
                             </div><!--//grid-item-->
                         </div><!--col-->
                         <div class="col-12 col-md-6 mb-4">
                             <div class="grid-item p-4">
-                                <h5 class="text-white mb-3 title"><i class="fas fa-car me-2"></i>By Car</h5>
+                                <h5 class="text-white mb-3 title"><i class="fas fa-car me-2"></i>На машине</h5>
                                 <p>Aliquam gravida, enim et efficitur feugiat, tellus ligula scelerisque orci, et sagittis erat lectus sit amet orci.</p>
                                 <a class="text-white" href="#">Check Route &rarr;</a>
                             </div><!--//grid-item-->
                         </div><!--col-->
                         <div class="col-12 col-md-6 mb-4">
                             <div class="grid-item p-4">
-                                <h5 class="text-white mb-3 title"><i class="fas fa-bus-alt me-2"></i>By Bus</h5>
+                                <h5 class="text-white mb-3 title"><i class="fas fa-bus-alt me-2"></i>На автобусе</h5>
                                 <p>Aliquam gravida, enim et efficitur feugiat, tellus ligula scelerisque orci, et sagittis erat lectus sit amet orci. </p>
                                 <a class="text-white" href="#">Book Tickets &rarr;</a>
                             </div><!--//grid-item-->
                         </div><!--col-->
                         <div class="col-12 col-md-6 mb-4">
                             <div class="grid-item p-4">
-                                <h5 class="text-white mb-3 title"><i class="fas fa-subway me-2"></i>By Train</h5>
+                                <h5 class="text-white mb-3 title"><i class="fas fa-subway me-2"></i>Поездом</h5>
                                 <p>Aliquam gravida, enim et efficitur feugiat, tellus ligula scelerisque orci, et sagittis erat lectus sit amet orci.</p>
                                 <a class="text-white" href="#">Book Tickets &rarr;</a>
                             </div><!--//grid-item-->
                         </div><!--col-->
                     </div><!--//row-->
-                    <h4 class="text-white mb-4 mt-3 mt-lg-5">Facilities &amp; Accommodations</h4>
-                    <p>Your venue info goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat magna eu accumsan mattis. Duis non augue porttitor, fringilla velit vitae, ultricies eros. Sed libero eros, tristique ac orci nec, hendrerit dictum lacus. Aenean iaculis massa felis, eget venenatis turpis lacinia sit amet. </p>
-                    <a class="btn btn-ghost" href="#">Search Hotels</a>
+                    {{-- <h4 class="text-white mb-4 mt-3 mt-lg-5">Facilities &amp; Accommodations</h4> --}}
+                    {{-- <p>Your venue info goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat magna eu accumsan mattis. Duis non augue porttitor, fringilla velit vitae, ultricies eros. Sed libero eros, tristique ac orci nec, hendrerit dictum lacus. Aenean iaculis massa felis, eget venenatis turpis lacinia sit amet. </p> --}}
+                    {{-- <a class="btn btn-ghost" href="#">Search Hotels</a> --}}
                 </div><!--//desc-->
             </div><!--//col-->
             <div class="col-12 col-xl-3 col-lg-4 offset-lg-1 position-relative h-100 mt-5 mt-lg-0">
@@ -47,7 +47,7 @@
                     <div class="figure figure-1"><img class="shadow" src="{{asset('/images/venue/venue-1.jpg')}}" alt=""></div>
                     <div class="figure figure-2"><img class="shadow" src="{{asset('/images/venue/venue-2.jpg')}}" alt=""></div>
                     <div class="figure figure-3"><img class="shadow" src="{{asset('/images/venue/venue-3.jpg')}}" alt=""></div>
-                    <div class="figure figure-4"><img class="shadow" src="{{asset('/images/venue/venue-4.jpg')}}" alt=""></div>
+                    {{-- <div class="figure figure-4"><img class="shadow" src="{{asset('/images/venue/venue-4.jpg')}}" alt=""></div> --}}
                 </div><!--//figures-holder-->
             </div><!--//col-->
         </div><!--//row-->

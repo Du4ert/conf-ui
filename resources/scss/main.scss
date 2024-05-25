@@ -17,3 +17,14 @@
 .hero-logo {
     width: 100px;
 }
+
+.organizer {
+    .figure {
+        position: relative;
+        
+        img {
+            border: 10px solid #fff;
+            max-width: 100%;
+        }
+    }
+}
