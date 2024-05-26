@@ -21,7 +21,7 @@ return [
     'last_name' => 'Фамилия',
     'middle_name' => 'Отчество',
     'organization_title' => 'Организация',
-    'rank_title' => 'Звание',
+    'rank_title' => 'Степень',
     'job_title' => 'Должность',
 
 

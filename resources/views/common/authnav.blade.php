@@ -19,11 +19,11 @@
             {{ Str::limit(Auth::user()->email, 15, '...') }}
         </a>
 
-        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{ route('home') }}">
+        <div class="dropdown-menu dropdown-menu-end text-white theme-bg-dark" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-white" href="{{ route('home') }}">
                 {{ __('Home') }}
             </a>
-            <a class="dropdown-item" href="{{ route('logout') }}"
+            <a class="dropdown-item text-white" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}

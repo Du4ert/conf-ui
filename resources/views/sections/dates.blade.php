@@ -1,53 +1,51 @@
-<section id="dates-section" class="schedule-section section">
-    <div class="container">
-        <h3 class="section-heading text-center mb-5">Важные даты</h3>
+<section id="dates-section" class="dates-section section">
+        <div class="container">
+        <h3 class="section-heading text-center mb-5 pb-lg-5">Важные даты</h3>
 
-          <div class="row date mb-5">
-            <div class="col-12 col-md-4 p-2 p-lg-4">
-                <div class="card rounded-0 border-0">
-                    <div class="card-body p-0">
-                        <div class="heading  text-center p-3">
-                            <h4 class="text-white mb-0">1.07.2024</h4>
-                        </div>
-                        <div class="info p-3">
-                            <div class="text-center">
-                                Последний день принятия регистрационной формы. 
-                            </div>
-                        </div><!--//info-->
-                    </div><!--//card-body-->
-                </div><!--//card-->
-            </div><!--//col-->
+            <div class="row">
+              <div class="col-lg-12">
+          
+                <div class="horizontal-timeline">
+          
+                  <ul class="list-inline items">
+                    <li class="list-inline-item items-list">
+                      <div class="px-4">
+                        <div class="event-date badge bg-info">1 июля</div>
+                        <h5 class="pt-2">Регистрация</h5>
+                        <p class="text-muted">Последний день принятия регистрационной формы. </p>
+                      </div>
+                    </li>
+                    <li class="list-inline-item items-list">
+                      <div class="px-4">
+                        <div class="event-date badge bg-success">1 июля</div>
+                        <h5 class="pt-2">Ранняя оплата</h5>
+                        <p class="text-muted">Последний день ранней оплаты регистрационного взноса. 
+                        </p>
+                      </div>
+                    </li>
+                    <li class="list-inline-item items-list">
+                      <div class="px-4">
+                        <div class="event-date badge bg-danger">15 августа</div>
+                        <h5 class="pt-2">Тезисы</h5>
+                        <p class="text-muted">Последний день приема тезисов для публикации.</p>
+                      </div>
+                    </li>
+                    <li class="list-inline-item items-list">
+                      <div class="px-4">
+                        <div class="event-date badge bg-warning">12 октября</div>
+                        <h5 class="pt-2">Начало</h5>
+                        <p class="text-muted">Начало конференции.</br>
+                            Welcomeparty!
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+          
+                </div>
+          
+              </div>
+            </div>
 
-                <div class="col-12 col-md-4 p-2 p-lg-4">
-                    <div class="card rounded-0 border-0">
-                        <div class="card-body p-0">
-                            <div class="heading  text-center p-3">
-                                <h4 class="text-white mb-0">15.08.2024</h4>
-                            </div>
-                            <div class="info p-3">
-                                <div class="text-center">
-                                    Последний день приема тезисов для публикации.
-                                </div>
-                            </div><!--//info-->
-                        </div><!--//card-body-->
-                    </div><!--//card-->
-                </div><!--//col-->
 
-                    <div class="col-12 col-md-4 p-2 p-lg-4">
-                        <div class="card rounded-0 border-0">
-                            <div class="card-body p-0">
-                                <div class="heading  text-center p-3">
-                                    <h4 class="text-white mb-0">01.07.2024</h4>
-                                </div>
-                                <div class="info p-3">
-                                    <div class="text-center">
-                                        Последний день ранней оплаты регистрационного взноса.
-                                    </div>
-                                </div><!--//info-->
-                            </div><!--//card-body-->
-                        </div><!--//card-->
-                    </div><!--//col-->
-
-        </div><!--//date-->
     </div><!--//container-->
 </section><!--//schedule-section-->

@@ -42,9 +42,7 @@ function setClass($class_name = 'scrollto') {
 		@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
 		@if ($localeCode !== LaravelLocalization::getCurrentLocale())
 		<li class="nav-item">
-			<a class="nav-link language-flag flag-{{ $localeCode }}" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, []) }}">
-				{{-- {{ $properties['native'] }} --}}
-			</a>
+			<a class="nav-link language-flag flag-{{ $localeCode }}" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, []) }}"></a>
 		</li>
 		@endif
 		@endforeach

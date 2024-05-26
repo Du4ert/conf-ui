@@ -21,6 +21,7 @@
 
 <body>
 @include('common.header')
+<div class="bg-image"></div>
 
 @yield('content')
 

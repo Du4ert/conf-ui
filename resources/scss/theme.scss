@@ -2,12 +2,14 @@
 // Define theme colour scheme
 $hero-text-color: #fff;
 // $theme-color-primary: #098dcf;
-$theme-color-primary: #406fb4;
+$theme-color-primary: #2b98e0;
 $theme-color-secondary: #EC645E;
+$theme-color-feature: #ffb1b1;
 $theme-text-color-primary: #141c25;
 $theme-text-color-secondary: lighten($theme-text-color-primary, 25%);
 $theme-text-color-light: lighten($theme-text-color-primary, 40%);
-$theme-bg-light: #f0f6fa;
+// $theme-bg-light: #f0b686;
+$theme-bg-light: #f0f6fa; 
 $theme-bg-primary: $theme-color-primary;
 $theme-bg-dark: $theme-text-color-primary;
 $theme-border-color:  #e5ecf4;
