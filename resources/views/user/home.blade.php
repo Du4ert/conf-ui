@@ -51,11 +51,11 @@
 
     <ul class="nav  nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+            <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
                 role="tab" aria-controls="home" aria-selected="true">{{ __('auth.home') }}</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="file-tab" data-bs-toggle="tab" data-bs-target="#files" type="button"
+            <button class="nav-link active" id="file-tab" data-bs-toggle="tab" data-bs-target="#files" type="button"
                 role="tab" aria-controls="files" aria-selected="false">{{ __('auth.files') }}</button>
         </li>
         <li class="nav-item" role="presentation">
@@ -65,7 +65,7 @@
     </ul>
 
     <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active mt-3" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="tab-pane fade show  mt-3" id="home" role="tabpanel" aria-labelledby="home-tab">
             @include('user.parts.field_home', ['field_name' => 'last_name', 'required' => true])
             @include('user.parts.field_home', ['field_name' => 'first_name', 'required' => true])
             @include('user.parts.field_home', ['field_name' => 'middle_name'])
@@ -78,7 +78,7 @@
             @include('user.parts.field_home', ['field_name' => 'thesis_title_en'])
 
             <div class="row mb-3">
-                <label class="col-md-4 col-form-label text-md-end" for="section">Научное направление (секция)</label>
+                <label class="col-md-4  col-form-label text-md-end" for="section">Научное направление (секция)</label>
                 <div class="col-md-6">
                     <select form="main-form" class="form-select" name="section" aria-label="Default select example"
                         {{ $editable ? '' : 'disabled' }}>
@@ -112,12 +112,14 @@
     </div>
     </form>
 
-        <div class="tab-pane fade show mt-3" id="files" role="tabpanel" aria-labelledby="files-tab">
+        <div class="active tab-pane fade show mt-3" id="files" role="tabpanel" aria-labelledby="files-tab">
+    
             
             {{-- Операции со связанными файлами --}}
             @foreach ($fileByTypes as $type => $file)
                 @include('user.parts.file', ['file' => $file ?? null, 'type' => $type])
             @endforeach
+            
         </div>
 
         <div class="tab-pane fade show  mt-3" id="coauthors" role="tabpanel" aria-labelledby="coauthors-tab">

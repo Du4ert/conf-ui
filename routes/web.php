@@ -41,7 +41,7 @@ Route::put('/update', [UserController::class, 'updateSelf'])->name('user.updateS
 
 
 // Операции с файлами
-Route::get('/{userId}/file/download', [FileController::class, 'download'])->name('file.download');
+Route::get('/file/{userId}/download', [FileController::class, 'download'])->name('file.download');
 Route::post('/{userId}/file/store', [FileController::class, 'store'])->name('file.store');
 Route::delete('/file/{id}/delete', [FileController::class, 'delete'])->name('file.delete');
 
