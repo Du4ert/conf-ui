@@ -47,6 +47,8 @@ Route::delete('/file/{id}/delete', [FileController::class, 'delete'])->name('fil
 
 
 // Route::get('/{userId}/file/download', [FileController::class, 'download'])->name('file.download');
+Route::get('/coauthor/{id}/show', [CoauthorController::class, 'show'])->name('coauthor.show');
+Route::post('/coauthor/{id}/update', [CoauthorController::class, 'update'])->name('coauthor.update');
 Route::post('/{userId}/coauthor/store', [CoauthorController::class, 'store'])->name('coauthor.store');
 Route::delete('/coauthor/{id}/delete', [CoauthorController::class, 'delete'])->name('coauthor.delete');
 

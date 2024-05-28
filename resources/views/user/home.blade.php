@@ -49,17 +49,17 @@
         <h4>{{ $user->email }}</h4>
     </div>
 
-    <ul class="nav  nav-tabs" id="myTab" role="tablist">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
                 role="tab" aria-controls="home" aria-selected="true">{{ __('auth.home') }}</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="file-tab" data-bs-toggle="tab" data-bs-target="#files" type="button"
+            <button class="nav-link" id="file-tab" data-bs-toggle="tab" data-bs-target="#files" type="button"
                 role="tab" aria-controls="files" aria-selected="false">{{ __('auth.files') }}</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="coauthors-tab" data-bs-toggle="tab" data-bs-target="#coauthors" type="button"
+            <button class="nav-link active" id="coauthors-tab" data-bs-toggle="tab" data-bs-target="#coauthors" type="button"
                 role="tab" aria-controls="coauthors" aria-selected="false">{{ __('auth.coauthors') }}</button>
         </li>
     </ul>
@@ -112,7 +112,7 @@
     </div>
     </form>
 
-        <div class="active tab-pane fade show mt-3" id="files" role="tabpanel" aria-labelledby="files-tab">
+        <div class="tab-pane fade show mt-3" id="files" role="tabpanel" aria-labelledby="files-tab">
     
             
             {{-- Операции со связанными файлами --}}
@@ -122,21 +122,21 @@
             
         </div>
 
-        <div class="tab-pane fade show  mt-3" id="coauthors" role="tabpanel" aria-labelledby="coauthors-tab">
+        <div class="tab-pane fade show mt-3 active" id="coauthors" role="tabpanel" aria-labelledby="coauthors-tab">
 
             {{-- Операции со связанными соавторами --}}
             @foreach ($coauthors as $author)
                 @include('user.parts.coauthor', ['author' => $author])
             @endforeach
-            @include('user.parts.coauthor_add')
+            @include('user.parts.coauthor_modal')
         </div>
 
 
     @if ($editable)
-                <button id="submit" type="submit" class="btn btn-primary offset-md-6  mb-3 mt-3 float-end" form="main-form">
-                    <i class="fa fa-save"></i>
-                    {{ __('auth.save') }}
-                </button>
+            <button id="submit" type="submit" class="btn btn-primary offset-md-6  mb-3 mt-3 float-end" form="main-form">
+                <i class="fa fa-save"></i>
+                {{ __('auth.save') }}
+            </button>
     @endif
     </div>
 

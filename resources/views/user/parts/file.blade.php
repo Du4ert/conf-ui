@@ -18,19 +18,38 @@
 
     <div class="form-group mb-3">
         <div class="input-group border-success">
-            <span @if (!$file) style="display: none" @endif class="success-icon rounded-start bg-success input-group-text px-3 text-muted" ><i
+            <span @if (!$file) style="display: none" @endif
+            class="success-icon rounded-start bg-success input-group-text px-3 text-muted" ><i
                     class="fas fa-check fa-lg text-white"></i></span>
-            <span @if ($file) style="display: none" @endif class="danger-icon rounded-start bg-danger input-group-text px-3 text-muted"><i
+                    
+            <span @if ($file) style="display: none" @endif
+               class="danger-icon rounded-start bg-danger input-group-text px-3 text-muted"><i
                     class="fas fa-exclamation-circle fa-lg text-white"></i></span>
-            <input form="{{ $formUpload }}" type="file" role="file" name="file" class="upload-input file d-none">
-            <input type="text" disabled class="upload-text form-control" placeholder=" {{ __('file.' . $type) }}">
-            <button @if ($file) style="display: none" @endif class="upload-browse  btn btn-info px-4" role="browse" type="button"><i class="fas fa-folder-open"></i> {{ __('file.browse') }}</button>
-            <button @if ($file) style="display: none" @endif form="{{ $formUpload }}" class="upload-button btn btn-primary rounded-end px-4" role="submit" type="submit"><i
-                    class="fas fa-save"></i> {{ __('file.save') }}</button>
-            <a @if (!$file) style="display: none" @endif class="download-link btn btn-primary" href="{{ route('file.download', $file->id ?? 'idTemp') }}"><i
-                        class="fa fa-download"></i> {{ __('file.download') }}</a>
-            <button @if (!$file) style="display: none" @endif form="{{ $formUpload }}" data-id="{{ $file->id ?? '' }}" role="delete" class="delete-button btn btn-danger px-4" 
-                type="button"><i class="fas fa-trash"></i> {{ __('file.delete') }}</button>
+
+            <input form="{{ $formUpload }}" 
+              type="file" role="file" name="file" 
+              class="upload-input file d-none">
+
+            <input disabled
+                type="text"  placeholder=" {{ __('file.' . $type) }}"
+                class="upload-text form-control" >
+                
+            <button @if ($file) style="display: none" @endif 
+                form="{{ $formUpload }}"
+                class="upload-browse  btn btn-info px-4" role="browse" type="button"><i class="fas fa-folder-open"></i> {{ __('file.browse') }}</button>
+
+            <button @if ($file) style="display: none" @endif 
+            form="{{ $formUpload }}" role="submit" type="submit"
+            class="upload-button btn btn-primary rounded-end px-4"><i class="fas fa-save"></i> {{ __('file.save') }}</button>
+
+            <a @if (!$file) style="display: none" @endif 
+              href="{{ route('file.download', $file->id ?? 'idTemp') }}"
+                class="download-link btn btn-primary"><i class="fa fa-download"></i> {{ __('file.download') }}</a>
+
+            <button @if (!$file) style="display: none" @endif 
+            form="{{ $formUpload }}" data-id="{{ $file->id ?? '' }}" role="delete" type="button"
+            class="delete-button btn btn-danger px-4"><i class="fas fa-trash"></i> {{ __('file.delete') }}</button>
+
         </div>
         <div class="text-muted ms-3"><small>{{ __('file.extensions') }} (.doc, .docx, .pdf, .txt)</small></div>
     </div>
@@ -127,7 +146,7 @@
             alert.find('ul').html('');
 
             $.each(response.responseJSON.errors, function(key, value) {
-                console.log(key + '-' + value);
+                // console.log(key + '-' + value);
                 alert.find('ul').append('<li>' + value + '</li>');
             });
         }

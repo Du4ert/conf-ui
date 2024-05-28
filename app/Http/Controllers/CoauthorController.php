@@ -21,8 +21,7 @@ class CoauthorController extends Controller
     public function show($id)
     {
         $author = Coauthor::findOrFail($id);
-        
-        return view('author', compact('author'));
+        return view('user.parts.coauthor', compact('author'));
     }
 
     public function store(Request $request, $userId)
@@ -53,9 +52,21 @@ class CoauthorController extends Controller
         $author->save();
 
         if ($request->ajax()) {
-            return response()->json(['success', 'Автор добавлен.']);
+            return response()->json(['success'=> 'Author added.', 'id' => $author->id]);
         } else {
-            return back()->with('success', 'Автор добавлен.');
+            return back()->with('success', 'Author added.');
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        $author = Coauthor::findOrFail($id);
+        $author->update($request->all());
+        
+        if ($request->ajax()) {
+            return response()->json(['success', 'Author edited.']);
+        } else {
+            return back()->with('success', 'Author edited.');
         }
     }
 
@@ -66,9 +77,9 @@ class CoauthorController extends Controller
         $author->delete();
 
         if ($request->ajax()) {
-            return response()->json(['success', 'Coauthor deleted']);
+            return response()->json(['success', 'Author deleted']);
         } else {
-            return back()->with('success', 'Coauthor deleted');
+            return back()->with('success', 'Author deleted');
         }
         
     }
