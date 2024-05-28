@@ -22,12 +22,12 @@
         @endif
 
             
-            @include('user.parts.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'last_name', 'required' => true])
-            @include('user.parts.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'first_name', 'required' => true,])
-            @include('user.parts.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'middle_name'])
-            @include('user.parts.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'organization_title'])
-            @include('user.parts.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'rank_title'])
-            @include('user.parts.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'job_title'])
+            @include('user.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'last_name', 'required' => true])
+            @include('user.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'first_name', 'required' => true,])
+            @include('user.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'middle_name'])
+            @include('user.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'organization_title'])
+            @include('user.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'rank_title'])
+            @include('user.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'job_title'])
 
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="1" name="participate">

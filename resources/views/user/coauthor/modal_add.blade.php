@@ -15,19 +15,19 @@
     <form id="coauthor-form" action="{{ route('coauthor.store', $user->id) }}" method="POST"
         class="mt-2">
         @csrf
-        @include('user.parts.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'last_name', 'required' => true])
-        @include('user.parts.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'first_name', 'required' => true,])
-        @include('user.parts.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'middle_name'])
-        @include('user.parts.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'organization_title'])
-        @include('user.parts.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'rank_title'])
-        @include('user.parts.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'job_title'])
+        @include('user.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'last_name', 'required' => true])
+        @include('user.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'first_name', 'required' => true,])
+        @include('user.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'middle_name'])
+        @include('user.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'organization_title'])
+        @include('user.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'rank_title'])
+        @include('user.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'job_title'])
 
-        <div class="form-check">
+        {{-- <div class="form-check">
             <input class="form-check-input" type="checkbox" value="1" name="participate">
             <label class="form-check-label" for="coauthor-form">
                 {{ __('coauthor.participate') }}
             </label>
-        </div>
+        </div> --}}
     </form>
 </div>
 <div class="modal-footer">
@@ -62,13 +62,13 @@
             url: SITEURL + '/coauthor/' + id + '/show',
             type: "GET",
             success: function(response) {
-                console.log('success');
+                // console.log('success');
                 coauthors.append(response);
-                console.log(response);
+                // console.log(response);
             },
             error: function(response) {
-                console.log('error');
-                console.log(response);
+                // console.log('error');
+                // console.log(response);
                 // alertError(response);
             }
         });

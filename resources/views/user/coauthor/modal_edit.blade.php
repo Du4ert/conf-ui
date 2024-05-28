@@ -19,19 +19,19 @@
                 <form id="{{ $author->id }}-coauthor-form" class="coauthor-edit-form" action="{{ route('coauthor.update', $author->id ) }}" method="POST" class="mt-2">
                     @csrf
 
-                    @include('user.parts.coauthor.field', ['form' => $author->id . '-coauthor-form', 'field_name' => 'last_name', 'required' => true])
-                    @include('user.parts.coauthor.field', ['form' => $author->id . '-coauthor-form', 'field_name' => 'first_name', 'required' => true,])
-                    @include('user.parts.coauthor.field', ['form' => $author->id . '-coauthor-form', 'field_name' => 'middle_name'])
-                    @include('user.parts.coauthor.field', ['form' => $author->id . '-coauthor-form', 'field_name' => 'organization_title'])
-                    @include('user.parts.coauthor.field', ['form' => $author->id . '-coauthor-form', 'field_name' => 'rank_title'])
-                    @include('user.parts.coauthor.field', ['form' => $author->id . '-coauthor-form', 'field_name' => 'job_title'])
+                    @include('user.coauthor.field', ['form' => $author->id . '-coauthor-form', 'field_name' => 'last_name', 'required' => true])
+                    @include('user.coauthor.field', ['form' => $author->id . '-coauthor-form', 'field_name' => 'first_name', 'required' => true,])
+                    @include('user.coauthor.field', ['form' => $author->id . '-coauthor-form', 'field_name' => 'middle_name'])
+                    @include('user.coauthor.field', ['form' => $author->id . '-coauthor-form', 'field_name' => 'organization_title'])
+                    @include('user.coauthor.field', ['form' => $author->id . '-coauthor-form', 'field_name' => 'rank_title'])
+                    @include('user.coauthor.field', ['form' => $author->id . '-coauthor-form', 'field_name' => 'job_title'])
 
-                    <div class="form-check">
-                        <input class="form-check-input participate-check" type="checkbox" value="{{ $author->participate }}" name="participate">
+                    {{-- <div class="form-check">
+                        <input  @checked($author->participate)  form="{{ $author->id . '-coauthor-form' }}" class="form-check-input participate-check" type="checkbox" name="participate">
                         <label class="form-check-label" for="coauthor-form">
                             {{ __('coauthor.participate') }}
                         </label>
-                    </div>
+                    </div> --}}
                 </form>
             </div>
             <div class="modal-footer">
@@ -45,6 +45,7 @@
 
 
 <script type="module">
+    console.log('script LOAD');
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -60,12 +61,6 @@
     const formAdd = modal.find('.coauthor-edit-form');
     const buttonSave = modal.find('.coauthor-save');
     const modalClose = modal.find('.coauthor-close');
-    const participate = modal.find('.participate-check');
-
-    if(participate.val() == 1){
-        participate.prop({checked: true});
-    }
-    console.log(participate.val());
     
     function reloadCoauthor(id) {
 
@@ -74,6 +69,7 @@
             type: "GET",
             success: function(response) {
                 coauthors.find('[data-id=' + id +']').replaceWith(response);
+                // console.log(coauthors.find('[data-id=' + id +']'));
             },
             error: function(response) {
                 // alertError(response);
@@ -83,9 +79,10 @@
     }
     
     formAdd.on('submit', function(e) {
-        console.log('submit');
+        // console.log('submit');
     e.preventDefault();
     const formData = new FormData(this);
+    // console.log(formData.participate);
     
     $.ajax({
         url: $(this).attr('action'),
@@ -104,7 +101,7 @@
     });
     
     buttonSave.on('click', (e) => {
-        console.log('click');
+        // console.log('click');
     formAdd.submit();
     });
     

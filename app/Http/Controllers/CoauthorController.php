@@ -21,21 +21,29 @@ class CoauthorController extends Controller
     public function show($id)
     {
         $author = Coauthor::findOrFail($id);
-        return view('user.parts.coauthor.show', compact('author'));
+        return view('user.coauthor.show', compact('author'));
     }
+
+
+    public function modal($id)
+    {
+        $author = Coauthor::findOrFail($id);
+        return view('user.coauthor.modal_js', compact('author'));
+    }
+
 
     public function store(Request $request, $userId)
     {
         $author = $request->author;
 
         $validatedData = $request->validate([
-            'first_name' => ['required', 'string', 'min:2'],
-            'last_name' => ['required', 'string', 'min:2'],
-            'middle_name',
-            'organization_title',
-            'job_title',
-            'rank_title',
-            'participate',
+            'first_name' => 'required|string|min:2|max:50',
+            'last_name' => 'required|string|min:2|max:50',
+            'middle_name' => 'nullable|string|max:50',
+            'organization_title' => 'nullable|string|max:50',
+            'job_title' => 'nullable|string|max:50',
+            'rank_title' => 'nullable|string|max:50',
+            'participate' => 'nullable|boolean',
         ]);
 
         $author = new Coauthor([
@@ -63,13 +71,13 @@ class CoauthorController extends Controller
         $author = Coauthor::findOrFail($id);
 
         $validatedData = $request->validate([
-            'first_name' => ['required', 'string', 'min:2'],
-            'last_name' => ['required', 'string', 'min:2'],
-            'middle_name',
-            'organization_title',
-            'job_title',
-            'rank_title',
-            'participate',
+            'first_name' => 'required|string|min:2|max:50',
+            'last_name' => 'required|string|min:2|max:50',
+            'middle_name' => 'nullable|string|max:50',
+            'organization_title' => 'nullable|string|max:50',
+            'job_title' => 'nullable|string|max:50',
+            'rank_title' => 'nullable|string|max:50',
+            'participate' => 'boolean',
         ]);
 
         $author->update($validatedData);

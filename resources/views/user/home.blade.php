@@ -66,19 +66,19 @@
 
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show  mt-3" id="home" role="tabpanel" aria-labelledby="home-tab">
-            @include('user.parts.inputs.field_home', ['field_name' => 'last_name', 'required' => true])
-            @include('user.parts.inputs.field_home', ['field_name' => 'first_name', 'required' => true])
-            @include('user.parts.inputs.field_home', ['field_name' => 'middle_name'])
-            @include('user.parts.inputs.field_home', ['field_name' => 'organization_title'])
-            @include('user.parts.inputs.field_home', ['field_name' => 'rank_title'])
-            @include('user.parts.inputs.field_home', ['field_name' => 'job_title'])
-            @include('user.parts.inputs.field_home', ['field_name' => 'phone'])
+            @include('user.inputs.field_home', ['field_name' => 'last_name', 'required' => true])
+            @include('user.inputs.field_home', ['field_name' => 'first_name', 'required' => true])
+            @include('user.inputs.field_home', ['field_name' => 'middle_name'])
+            @include('user.inputs.field_home', ['field_name' => 'organization_title'])
+            @include('user.inputs.field_home', ['field_name' => 'rank_title'])
+            @include('user.inputs.field_home', ['field_name' => 'job_title'])
+            @include('user.inputs.field_home', ['field_name' => 'phone'])
 
-            @include('user.parts.inputs.field_home', ['field_name' => 'thesis_title_ru'])
-            @include('user.parts.inputs.field_home', ['field_name' => 'thesis_title_en'])
+            @include('user.inputs.field_home', ['field_name' => 'thesis_title_ru'])
+            @include('user.inputs.field_home', ['field_name' => 'thesis_title_en'])
 
-            @include('user.parts.inputs.section')
-            @include('user.parts.inputs.report_form')
+            @include('user.inputs.section')
+            @include('user.inputs.report_form')
             
     </div>
     </form>
@@ -86,7 +86,7 @@
         <div class="tab-pane fade show mt-3" id="files" role="tabpanel" aria-labelledby="files-tab">
             {{-- Операции со связанными файлами --}}
             @foreach ($fileByTypes as $type => $file)
-                @include('user.parts.file.show', ['file' => $file ?? null, 'type' => $type])
+                @include('user.file.show', ['file' => $file ?? null, 'type' => $type])
             @endforeach
             
         </div>
@@ -95,10 +95,10 @@
             {{-- Операции со связанными соавторами --}}
             <ul class="coauthors-list list-unstyled">
             @foreach ($coauthors as $author)
-                @include('user.parts.coauthor.show', ['author' => $author])
+                @include('user.coauthor.show', ['author' => $author])
             @endforeach
             </ul>
-            @include('user.parts.coauthor.add')
+            @include('user.coauthor.add')
         </div>
 
     @if ($editable)
