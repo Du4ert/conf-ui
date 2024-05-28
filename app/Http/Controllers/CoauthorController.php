@@ -61,10 +61,21 @@ class CoauthorController extends Controller
     public function update(Request $request, $id)
     {
         $author = Coauthor::findOrFail($id);
-        $author->update($request->all());
+
+        $validatedData = $request->validate([
+            'first_name' => ['required', 'string', 'min:2'],
+            'last_name' => ['required', 'string', 'min:2'],
+            'middle_name',
+            'organization_title',
+            'job_title',
+            'rank_title',
+            'participate',
+        ]);
+
+        $author->update($validatedData);
         
         if ($request->ajax()) {
-            return response()->json(['success', 'Author edited.']);
+            return response()->json(['success' => 'Author edited.', 'id' => $author->id]);
         } else {
             return back()->with('success', 'Author edited.');
         }

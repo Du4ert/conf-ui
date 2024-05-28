@@ -101,7 +101,6 @@
             @include('user.parts.coauthor.add')
         </div>
 
-
     @if ($editable)
             <button id="submit" type="submit" class="btn btn-primary offset-md-6  mb-3 mt-3 float-end" form="main-form">
                 <i class="fa fa-save"></i>
@@ -109,6 +108,5 @@
             </button>
     @endif
     </div>
-
 
 @endsection

@@ -11,6 +11,10 @@ if (!isset($form)) {
     <label for="{{  $field_name }}" class="col-md-4 col-form-label text-md-end">{{ __('auth.' . $field_name) }}@isset($required)<span class="text-danger">*</span> @endisset
     </label>
     <div class="col-md-6">
-        <input form="{{ $form }}" id="{{ $field_name }}" @isset($required) required @endisset type="text" class="form-control" name="{{ $field_name }}" autocomplete="{{ $field_name }}"  value="{{ old($field_name) }}">
+        <input form="{{ $form }}" @isset($required) required @endisset type="text" class="form-control" name="{{ $field_name }}" autocomplete="{{ $field_name }}"  value="{{ old($field_name) }}">
     </div>
+
+    {{-- <div class="col-md-6">
+        <input form="{{ $form }}" id="{{ $field_name }}" @isset($required) required @endisset type="text" class="form-control" name="{{ $field_name }}" autocomplete="{{ $field_name }}"  value="{{ old($field_name) }}">
+    </div> --}}
 </div>
