@@ -21,7 +21,7 @@ class CoauthorController extends Controller
     public function show($id)
     {
         $author = Coauthor::findOrFail($id);
-        return view('user.parts.coauthor', compact('author'));
+        return view('user.parts.coauthor.show', compact('author'));
     }
 
     public function store(Request $request, $userId)

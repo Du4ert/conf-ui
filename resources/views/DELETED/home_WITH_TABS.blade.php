@@ -64,16 +64,16 @@
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active mt-3" id="home" role="tabpanel" aria-labelledby="home-tab">
-            @include('user.parts.field_home', ['field_name' => 'first_name', 'required' => true])
-            @include('user.parts.field_home', ['field_name' => 'last_name', 'required' => true])
-            @include('user.parts.field_home', ['field_name' => 'middle_name'])
-            @include('user.parts.field_home', ['field_name' => 'organization_title'])
-            @include('user.parts.field_home', ['field_name' => 'rank_title'])
-            @include('user.parts.field_home', ['field_name' => 'job_title'])
-            @include('user.parts.field_home', ['field_name' => 'phone'])
+            @include('user.parts.inputs.field_home', ['field_name' => 'first_name', 'required' => true])
+            @include('user.parts.inputs.field_home', ['field_name' => 'last_name', 'required' => true])
+            @include('user.parts.inputs.field_home', ['field_name' => 'middle_name'])
+            @include('user.parts.inputs.field_home', ['field_name' => 'organization_title'])
+            @include('user.parts.inputs.field_home', ['field_name' => 'rank_title'])
+            @include('user.parts.inputs.field_home', ['field_name' => 'job_title'])
+            @include('user.parts.inputs.field_home', ['field_name' => 'phone'])
 
-            @include('user.parts.field_home', ['field_name' => 'thesis_title_ru'])
-            @include('user.parts.field_home', ['field_name' => 'thesis_title_en'])
+            @include('user.parts.inputs.field_home', ['field_name' => 'thesis_title_ru'])
+            @include('user.parts.inputs.field_home', ['field_name' => 'thesis_title_en'])
         </div>
         <div class="tab-pane fade mt-3" id="files" role="tabpanel" aria-labelledby="files-tab">
             {{-- Операции со связанными файлами --}}

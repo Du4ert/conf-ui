@@ -66,69 +66,39 @@
 
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show  mt-3" id="home" role="tabpanel" aria-labelledby="home-tab">
-            @include('user.parts.field_home', ['field_name' => 'last_name', 'required' => true])
-            @include('user.parts.field_home', ['field_name' => 'first_name', 'required' => true])
-            @include('user.parts.field_home', ['field_name' => 'middle_name'])
-            @include('user.parts.field_home', ['field_name' => 'organization_title'])
-            @include('user.parts.field_home', ['field_name' => 'rank_title'])
-            @include('user.parts.field_home', ['field_name' => 'job_title'])
-            @include('user.parts.field_home', ['field_name' => 'phone'])
+            @include('user.parts.inputs.field_home', ['field_name' => 'last_name', 'required' => true])
+            @include('user.parts.inputs.field_home', ['field_name' => 'first_name', 'required' => true])
+            @include('user.parts.inputs.field_home', ['field_name' => 'middle_name'])
+            @include('user.parts.inputs.field_home', ['field_name' => 'organization_title'])
+            @include('user.parts.inputs.field_home', ['field_name' => 'rank_title'])
+            @include('user.parts.inputs.field_home', ['field_name' => 'job_title'])
+            @include('user.parts.inputs.field_home', ['field_name' => 'phone'])
 
-            @include('user.parts.field_home', ['field_name' => 'thesis_title_ru'])
-            @include('user.parts.field_home', ['field_name' => 'thesis_title_en'])
+            @include('user.parts.inputs.field_home', ['field_name' => 'thesis_title_ru'])
+            @include('user.parts.inputs.field_home', ['field_name' => 'thesis_title_en'])
 
-            <div class="row mb-3">
-                <label class="col-md-4  col-form-label text-md-end" for="section">Научное направление (секция)</label>
-                <div class="col-md-6">
-                    <select form="main-form" class="form-select" name="section" aria-label="Default select example"
-                        {{ $editable ? '' : 'disabled' }}>
-                        <option value="1">Геномика, транскриптомика и биоинформатика растений</option>
-                        <option value="2">Биотехнология и биоинженерия растений</option>
-                        <option value="3">Селекция сельскохозяйственных растений</option>
-                        <option value="4">Работа с биоресурсными коллекциями растений, методы сохранения генофонда
-                        </option>
-                    </select>
-                    <script>
-                        const sectionSelect = document.querySelector('select[name="section"]');
-                        sectionSelect.value = {{ $user->section }}
-                    </script>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-md-4 col-form-label text-md-end" for="report_form">Форма доклада</label>
-                <div class="col-md-6">
-                    <select form="main-form" class="form-select" name="report_form" aria-label="Default select example"
-                        {{ $editable ? '' : 'disabled' }}>
-                        <option value="1">Устный доклад на секции</option>
-                        <option value="2">Стендовое сообщение</option>
-                        <option value="3">Заочное участие</option>
-                    </select>
-                </div>
-            </div>
-            <script>
-                let reportSelect = document.querySelector('select[name="report_form"]');
-                reportSelect.value = {{ $user->report_form }}
-            </script>
+            @include('user.parts.inputs.section')
+            @include('user.parts.inputs.report_form')
+            
     </div>
     </form>
 
         <div class="tab-pane fade show mt-3" id="files" role="tabpanel" aria-labelledby="files-tab">
-    
-            
             {{-- Операции со связанными файлами --}}
             @foreach ($fileByTypes as $type => $file)
-                @include('user.parts.file', ['file' => $file ?? null, 'type' => $type])
+                @include('user.parts.file.show', ['file' => $file ?? null, 'type' => $type])
             @endforeach
             
         </div>
 
         <div class="tab-pane fade show mt-3 active" id="coauthors" role="tabpanel" aria-labelledby="coauthors-tab">
-
             {{-- Операции со связанными соавторами --}}
+            <ul class="coauthors-list list-unstyled">
             @foreach ($coauthors as $author)
-                @include('user.parts.coauthor', ['author' => $author])
+                @include('user.parts.coauthor.show', ['author' => $author])
             @endforeach
-            @include('user.parts.coauthor_modal')
+            </ul>
+            @include('user.parts.coauthor.add')
         </div>
 
 

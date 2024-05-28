@@ -19,12 +19,12 @@
     <form id="main-form" method="POST" action="{{ route('register') }}">
         @csrf
 
-        @include('user.parts.field', ['field_name' => 'last_name', 'required' => true])
-        @include('user.parts.field', ['field_name' => 'first_name', 'required' => true])
-        @include('user.parts.field', ['field_name' => 'middle_name'])
-        @include('user.parts.field', ['field_name' => 'organization_title'])
-        {{-- @include('user.parts.field', ['field_name' => 'rank_title']) --}}
-        {{-- @include('user.parts.field', ['field_name' => 'job_title']) --}}
+        @include('user.parts.inputs.field', ['field_name' => 'last_name', 'required' => true])
+        @include('user.parts.inputs.field', ['field_name' => 'first_name', 'required' => true])
+        @include('user.parts.inputs.field', ['field_name' => 'middle_name'])
+        @include('user.parts.inputs.field', ['field_name' => 'organization_title'])
+        {{-- @include('user.parts.inputs.field', ['field_name' => 'rank_title']) --}}
+        {{-- @include('user.parts.inputs.field', ['field_name' => 'job_title']) --}}
         @include('user.parts.email')
         @include('user.parts.password')
 

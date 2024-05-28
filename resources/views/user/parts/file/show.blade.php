@@ -146,9 +146,10 @@
             alert.find('ul').html('');
 
             $.each(response.responseJSON.errors, function(key, value) {
-                // console.log(key + '-' + value);
                 alert.find('ul').append('<li>' + value + '</li>');
             });
         }
-    });
+});
+
+
 </script>
