@@ -161,7 +161,7 @@
     </div>
 
 
-    @include('common.footer')
+    {{-- @include('common.footer') --}}
 
     <script>
         const checkbox = document.getElementById("poster_radio");

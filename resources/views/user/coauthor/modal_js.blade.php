@@ -42,7 +42,6 @@
 
 
 <script type="module">
-    // console.log('script LOAD');
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -84,16 +83,13 @@
         
 
     function loadCoauthor(id) {
-    console.log('load-' + id);
     $.get({
         url: SITEURL + '/coauthor/' + id + '/show',
         // type: "GET",
         success: function(response) {
-            console.log('success');
             coauthors.append(response);
         },
         error: function(response) {
-            console.log('error');
         }
     });
 
@@ -105,7 +101,6 @@
             type: "GET",
             success: function(response) {
                 const coauthor = coauthors.find('[data-id=' + id +']');
-                // console.log(coauthor);
                 coauthor.replaceWith(response)
             },
             error: function(response) {
@@ -139,12 +134,10 @@
         processData: false,
         contentType: false,
         success: function(response) {
-            console.log('add submit success');
             modalClose.click();
             loadCoauthor(response.id);
         },
         error: function(response) {
-            console.log('add submit error');
             alertError(response);
         }
     });

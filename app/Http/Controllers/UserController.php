@@ -22,6 +22,13 @@ class UserController extends Controller
     }
 
 
+    public function get($id)
+    {
+        $user = User::findOrFail($id);
+        return response()->json($user);
+    }
+
+
 // Common user
     public function home()
     {

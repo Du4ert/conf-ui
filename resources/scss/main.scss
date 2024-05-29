@@ -8,6 +8,19 @@
 // @import '@fortawesome/fontawesome-free/scss/brands.scss';
 @import 'theme';
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+.main {
+    flex: 1;
+}
+
+.footer {
+    flex-shrink: 0;
+}
 
 #spinner-div {
     position: fixed;

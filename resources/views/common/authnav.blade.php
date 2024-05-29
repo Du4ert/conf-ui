@@ -1,5 +1,5 @@
 <!-- Right Side Of Navbar -->
-<ul class="navbar-nav auth-nav">
+<ul class="navbar-nav auth-nav navbar-dark">
 <!-- Authentication Links -->
 @guest
     @if (Route::has('login'))
@@ -19,11 +19,11 @@
             {{ Str::limit(Auth::user()->email, 15, '...') }}
         </a>
 
-        <div class="dropdown-menu dropdown-menu-end text-white theme-bg-dark" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-white" href="{{ route('home') }}">
+        <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ route('home') }}">
                 {{ __('Home') }}
             </a>
-            <a class="dropdown-item text-white" href="{{ route('logout') }}"
+            <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}

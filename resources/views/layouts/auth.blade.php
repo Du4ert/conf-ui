@@ -23,6 +23,8 @@
 @include('common.header')
 @include('common.banner');
 
+<div class="main">
+    
 <div class="container">
     <div class="row justify-content-center mb-4">
         <div class="col-md-8">
@@ -31,12 +33,16 @@
                     @yield('header')
                 </div>
                 <div class="card-body">
+
                   @yield('body')
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+</div>{{-- /main  --}}
 
 @include('common.footer')
 

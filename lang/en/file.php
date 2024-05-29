@@ -15,7 +15,7 @@ return [
 
     'thesis_ru' => 'Thesis file in Russian',
     'thesis_en' => 'Thesis file in English',
-    'poster' => 'Poster file'
+    'poster' => 'Poster file',
 
     'browse' => 'Download',
     'save' => 'Save',

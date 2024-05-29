@@ -23,7 +23,11 @@
 @include('common.header')
 <div class="bg-image"></div>
 
-@yield('content')
+<div class="main">
+
+    @yield('content')
+
+</div>{{-- /main  --}}
 
 @include('common.footer')
 </body>
