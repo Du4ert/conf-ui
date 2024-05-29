@@ -62,14 +62,9 @@
             url: SITEURL + '/coauthor/' + id + '/show',
             type: "GET",
             success: function(response) {
-                // console.log('success');
                 coauthors.append(response);
-                // console.log(response);
             },
             error: function(response) {
-                // console.log('error');
-                // console.log(response);
-                // alertError(response);
             }
         });
     

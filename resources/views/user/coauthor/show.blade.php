@@ -6,55 +6,19 @@ $formDelete = $author->id . '-form-delete';
 
 <span>{{ $author->last_name }} {{ $author->first_name }} {{ $author->middle_name }}</span>
 
-    <button type="button" class="btn btn-link text-primary edit-button" data-bs-toggle="modal" data-bs-target="#{{ $author->id }}-coauthorModalEdit"><i class="fa fa-edit"></i>
+    <button type="button" class="btn btn-link text-primary coauthor-edit-button" data-bs-toggle="modal" data-bs-target="#coauthorModal" data-id="{{$author->id}}"><i class="fa fa-edit"></i>
     </button>
 
     <form id="{{ $formDelete }}" class="d-inline" action="{{ route('coauthor.delete', $author->id) }}" method="post">
         @csrf
         @method('DELETE')
     
-        <button form="{{ $formDelete }}" data-id="{{ $author->id ?? '' }}" type="submit" class="btn btn-link text-danger delete-button"><i class="fa fa-trash"></i></button>
+        <button form="{{ $formDelete }}" data-id="{{ $author->id ?? '' }}" type="button" class="btn btn-link text-danger coauthor-delete-button"><i class="fa fa-trash"></i></button>
     </form>
 
 <p>
     <small>{{ $author->job_title }} {{ $author->rank_title }} {{ $author->organization_title }} </small>
 </p>
 {{-- <p>{{ $author->participate ? __('coauthor.participate') : '' }}</p> --}}
-</div>
 
-
-@include('user.coauthor.modal_edit')
 </li>
-
-
-
-
-<script type="module">
-    $.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
-
-$(document).ready(function() {
-const SITEURL = '{{ URL::to('') }}';
-const formDelete = $('#{{ $formDelete }}');
-const deleteButton = formDelete.find('.delete-button');
-
-deleteButton.on('click', (e) => {
-    e.preventDefault();
-
-    $.ajax({
-        url: SITEURL + '/coauthor/' + deleteButton.data('id') + '/delete',
-        type: "DELETE",
-        success: function(response) {
-            formDelete.parents('.coauthor-list-item').remove();
-        },
-        error: function(response) {
-            // console.log(response);
-        }
-    });
-})
-});
-
-</script>

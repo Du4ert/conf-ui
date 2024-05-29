@@ -39,6 +39,11 @@
 </div>
 
 @include('common.footer')
+
+<div id="spinner-div" class="pt-5">
+    <div class="spinner-border text-primary" role="status">
+    </div>
+</div>
 </body>
 
 </html>

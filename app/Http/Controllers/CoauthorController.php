@@ -25,6 +25,13 @@ class CoauthorController extends Controller
     }
 
 
+    public function get($id)
+    {
+        $author = Coauthor::findOrFail($id);
+        return response()->json($author);
+    }
+
+
     public function modal($id)
     {
         $author = Coauthor::findOrFail($id);
