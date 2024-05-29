@@ -51,7 +51,7 @@
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
                 role="tab" aria-controls="home" aria-selected="true">{{ __('auth.home') }}</button>
         </li>
         <li class="nav-item" role="presentation">
@@ -59,7 +59,7 @@
                 role="tab" aria-controls="files" aria-selected="false">{{ __('auth.files') }}</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="coauthors-tab" data-bs-toggle="tab" data-bs-target="#coauthors" type="button"
+            <button class="nav-link" id="coauthors-tab" data-bs-toggle="tab" data-bs-target="#coauthors" type="button"
                 role="tab" aria-controls="coauthors" aria-selected="false">{{ __('auth.coauthors') }}</button>
         </li>
     </ul>
@@ -83,22 +83,13 @@
     </div>
     </form>
 
-        <div class="tab-pane fade show mt-3" id="files" role="tabpanel" aria-labelledby="files-tab">
+        <div class="tab-pane fade show mt-3 active" id="files" role="tabpanel" aria-labelledby="files-tab">
             {{-- Операции со связанными файлами --}}
-            @foreach ($fileByTypes as $type => $file)
-                @include('user.file.show', ['file' => $file ?? null, 'type' => $type])
-            @endforeach
-            
+            @include('user.parts.files')
         </div>
 
-        <div class="tab-pane fade show mt-3 active" id="coauthors" role="tabpanel" aria-labelledby="coauthors-tab">
-            {{-- Операции со связанными соавторами --}}
-            <ul class="coauthors-list list-unstyled">
-            @foreach ($coauthors as $author)
-                @include('user.coauthor.show', ['author' => $author])
-            @endforeach
-            </ul>
-            @include('user.coauthor.add')
+        <div class="tab-pane fade show mt-3" id="coauthors" role="tabpanel" aria-labelledby="coauthors-tab">
+            @include('user.parts.coauthors')
         </div>
 
     @if ($editable)

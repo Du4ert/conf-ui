@@ -25,7 +25,10 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $fileTypes = [
         'thesis_ru',
         'thesis_en',
+        'thesis2_ru',
+        'thesis2_en',
         'poster',
+        'payment',
     ];
 
 
