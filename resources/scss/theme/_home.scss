@@ -42,10 +42,10 @@
 			height: 33px;
 		}
 		.flag-ru {
-			background: url('/resources/images/flag_ru.png');
+			background: url('~images/images/flag_ru.png');
 		}
 		.flag-en {
-			background: url('/resources/images/flag_en.png');
+			background: url('~images/images/flag_en.png');
 		}
 	}
 
@@ -71,7 +71,7 @@
     padding: 0.4rem 0.5rem;
     outline: none !important;
 	.navbar-toggler-icon {
-	    background: url('/resources/images/bars.svg') no-repeat left top;
+	    background: url('~images/bars.svg') no-repeat left top;
 	    height: 20px;
 	    width: 27px;
 	}
@@ -121,13 +121,13 @@
 		height: 100%;
 	}
 	.carousel-item-1 {
-		background: url('/resources/images/hero-1.jpg') no-repeat center center;
+		background: url('~images/hero-1.jpg') no-repeat center center;
 	}
 	.carousel-item-2 {
-		background: url('/resources/images/hero-2.jpg') no-repeat center center;
+		background: url('~images/hero-2.jpg') no-repeat center center;
 	}
 	.carousel-item-3 {
-		background: url('/resources/images/hero-3.jpg') no-repeat center center;
+		background: url('~images/hero-3.jpg') no-repeat center center;
 	}
 }
 

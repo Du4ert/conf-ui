@@ -49,7 +49,7 @@
                     {{-- <a class="btn btn-ghost" href="#">Search Hotels</a> --}}
                 </div><!--//desc-->
             </div><!--//col-->
-            <div class="col-12 col-xl-3 col-lg-4 offset-lg-1 position-relative h-100 mt-5 mt-lg-0">
+            <div class="col-12 col-xl-3 col-lg-4 offset-lg-1 position-relative h-100 mt-5 mt-lg-0 d-none d-md-block">
                 <div class="figures-holder">
                     <div class="figure figure-1"><img class="shadow" src="{{asset('/images/venue/venue-1.jpg')}}" alt=""></div>
                     <div class="figure figure-2"><img class="shadow" src="{{asset('/images/venue/venue-2.jpg')}}" alt=""></div>

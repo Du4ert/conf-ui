@@ -1,8 +1,9 @@
 /* ============= Base ============= */
-
+@import "fonts";
 /*********** Theme Generic **********/
 body {
-    font-family: 'Roboto', sans-serif;
+    // font-family: 'Manrope', 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $theme-text-color-secondary;
@@ -10,7 +11,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Manrope', 'Montserrat', sans-serif;
+	// font-family: 'Macherie', 'Montserrat', sans-serif;
 	color: $theme-text-color-primary;
 	font-weight: 700;
 }
