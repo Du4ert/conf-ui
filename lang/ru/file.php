@@ -21,4 +21,11 @@ return [
     'save' => 'Сохранить',
     'delete' => 'Удалить',
     'download' => 'Скачать',
+
+    'agreement' => 'Договор',
+    'payment' => 'Оплата',
+    'main' => 'Main page',
+    'home' => 'Profile page',
+
+    'committee' => 'Оргкомитет',
 ];

@@ -21,5 +21,7 @@ return [
     'save' => 'Save',
     'delete' => 'Delete',
     'download' => 'Download',
+    'agreement' => 'Agreement',
+    'payment' => 'Payment',
 
 ];

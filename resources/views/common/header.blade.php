@@ -32,7 +32,7 @@ function setClass($class_name = 'scrollto') {
 	<ul class="nav navbar-nav">					
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#about-section')}}">{{ __('navigation.about') }}</a></li>                                              
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#organizer-section')}}">{{ __('navigation.organizer') }}</a></li>
-		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#speakers-section')}}">{{ __('navigation.people') }}</a></li>
+		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#committee-section')}}">{{ __('navigation.committee') }}</a></li>
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#dates-section')}}">{{ __('navigation.dates') }}</a></li>
 		{{-- <li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#schedule-section')}}">{{ __('navigation.dates') }}</a></li> --}}
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#payment-section')}}">{{ __('navigation.fee') }}</a></li>

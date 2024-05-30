@@ -27,7 +27,8 @@ class User extends Authenticatable implements MustVerifyEmail
         // 'thesis_en',
         // 'thesis2_ru',
         // 'thesis2_en',
-        'poster',
+        // 'poster',
+        'agreement',
         'payment',
     ];
 
@@ -49,6 +50,16 @@ class User extends Authenticatable implements MustVerifyEmail
           return $fileByTypes;
     }
 
+    public function thesisByTypes ($theses)
+    {
+        $thesisByTypes = [];
+        foreach ($this->thesisTypes as $type) {
+            $thesisByTypes[$type] = $theses->where('type', $type)->first();
+        }
+
+          return $thesisByTypes;
+    }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -59,18 +70,20 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'role',
         'first_name',
+        'first_name_en',
         'last_name',
+        'last_name_en',
         'middle_name',
+        'middle_name_en',
         'organization_title',
+        'organization_title_en',
         'job_title',
+        'job_title_en',
         'rank_title',
+        'rank_title_en',
         'phone',
         'pay_status',
         'accepted_status',
-        // 'thesis_title_ru',
-        // 'thesis_title_en',
-        // 'section',
-        // 'report_form'
     ];
 
     // Fields with default values

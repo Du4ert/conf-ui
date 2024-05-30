@@ -35,9 +35,29 @@ class UserController extends Controller
       $files = $user->files;
     //   $coauthors = $user->coauthors;
 
+      // $fileByTypes = $user->fileByTypes($files);
+
+      return view('user.home', compact('user'));
+    }
+
+    public function reports()
+    {
+      $user = auth()->user();
+      $theses = $user->theses;
+
+      $thesisByTypes = $user->thesisByTypes($theses);
+
+      return view('user.reports', compact('user', 'thesisByTypes'));
+    }
+
+    public function files()
+    {
+      $user = auth()->user();
+      $files = $user->files;
+
       $fileByTypes = $user->fileByTypes($files);
 
-      return view('user.home', compact('user', 'fileByTypes'));
+      return view('user.files', compact('user', 'fileByTypes'));
     }
 
     public function editSelf(Request $request)

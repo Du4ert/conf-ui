@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('theses', function (Blueprint $table) {
             $table->id();
             $table->string('type');
-            $table->string('title');
+            // $table->string('title');
             $table->text('text');
             $table->boolean('accepted_status')->default(false);
-            // $table->string('thesis_title');
+            $table->string('thesis_title');
             $table->string('section')->default('genomics');
             $table->string('report_form')->default('oral');
             $table->unsignedBigInteger('user_id');

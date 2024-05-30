@@ -38,9 +38,16 @@ Auth::routes(['verify' => true]);
 
 // Страница зарегистрированного пользователя
 Route::get('/home/{id?}', [UserController::class, 'home'])->name('home');
-Route::get('/edit', [UserController::class, 'editSelf'])->name('user.editSelf');
-Route::put('/update', [UserController::class, 'updateSelf'])->name('user.updateSelf');
+Route::get('/reports', [UserController::class, 'reports'])->name('reports');
+Route::get('/files', [UserController::class, 'files'])->name('files');
+Route::get('/edit', [UserController::class, 'editSelf'])->name('editSelf');
+Route::put('/update', [UserController::class, 'updateSelf'])->name('updateSelf');
 
+
+// Операции с Тезисами
+// Route::get('/{userId}/thesis/download', [ThesisController::class, 'download'])->name('thesis.download');
+Route::post('/{userId}/thesis/store', [ThesisController::class, 'store'])->name('thesis.store');
+Route::delete('/thesis/{id}/delete', [ThesisController::class, 'delete'])->name('thesis.delete');
 
 // Операции с файлами
 Route::get('/file/{userId}/download', [FileController::class, 'download'])->name('file.download');
@@ -65,5 +72,12 @@ Route::prefix('admin')->group(function () {
     Route::put('/user/{id}/update', [AdminController::class, 'update'])->name('user.update');
     Route::delete('/user/{id}', [AdminController::class, 'destroy'])->name('user.destroy');
 });
+
+// Отдельные страницы
+Route::get('/policy', function() {
+    return view('pages.policy');
+})->name('policy');
+
+
 
 });

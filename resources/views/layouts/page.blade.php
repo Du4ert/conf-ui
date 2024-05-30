@@ -27,17 +27,10 @@
     
 <div class="container">
     <div class="row justify-content-center mb-4">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header d-flex align-items-center justify-content-between">
-                    @yield('header')
-                </div>
-                <div class="card-body">
 
-                  @yield('body')
 
-                </div>
-            </div>
+                @yield('content')
+
         </div>
     </div>
 </div>
@@ -46,10 +39,6 @@
 
 @include('common.footer')
 
-<div id="spinner-div" class="pt-5">
-    <div class="spinner-border text-primary" role="status">
-    </div>
-</div>
 </body>
 
 </html>

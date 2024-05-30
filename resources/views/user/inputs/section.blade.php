@@ -1,12 +1,21 @@
+@php
+if (!isset($field_name)) {
+    $field_name = '';
+}
+
+if (!isset($form)) {
+    $form = 'user-form';
+}
+@endphp
 <div class="row mb-3">
     <label class="col-md-4  col-form-label text-md-end" for="section">Научное направление (секция)</label>
     <div class="col-md-6">
-        <select form="main-form" class="form-select" name="section" aria-label="Default select example"
+        <select form="{{ $form }}" class="form-select" name="section" aria-label="Default select example"
             {{ $editable ? '' : 'disabled' }}>
-            <option value="1">Геномика, транскриптомика и биоинформатика растений</option>
-            <option value="2">Биотехнология и биоинженерия растений</option>
-            <option value="3">Селекция сельскохозяйственных растений</option>
-            <option value="4">Работа с биоресурсными коллекциями растений, методы сохранения генофонда
+            <option value="genomics">Геномика, транскриптомика и биоинформатика растений</option>
+            <option value="biotechnology">Биотехнология и биоинженерия растений</option>
+            <option value="breeding">Селекция сельскохозяйственных растений</option>
+            <option value="bioresource">Работа с биоресурсными коллекциями растений, методы сохранения генофонда
             </option>
         </select>
         <script>

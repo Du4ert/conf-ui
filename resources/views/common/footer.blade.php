@@ -9,11 +9,11 @@
         
         
         <ul class="footer-links list-inline mx-auto mb-4">
-            <li class="list-inline-item"><a href="#">{{ __('main.agreement')}}</a></li>
+            <li class="list-inline-item"><a href="{{ route('policy') }}">{{ __('main.agreement')}}</a></li>
             <li class="list-inline-item">|</li>
-            <li class="list-inline-item"><a href="#">{{ __('main.terms') }}</a></li>
+            <li class="list-inline-item"><a href="/">{{ __('main.main') }}</a></li>
             <li class="list-inline-item">|</li>
-            <li class="list-inline-item me-0"><a href="#">{{ __('main.confidencial') }}</a></li>
+            <li class="list-inline-item me-0"><a href="{{ route('home') }}">{{ __('main.home') }}</a></li>
         </ul><!--//footer-link-->
         
          <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->

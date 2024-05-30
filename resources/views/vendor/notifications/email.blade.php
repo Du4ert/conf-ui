@@ -4,9 +4,9 @@
 # {{ $greeting }}
 @else
 @if ($level === 'error')
-# @lang('Whoops!')
+# @lang('Whoops! / Упс')
 @else
-# @lang('Hello!')
+# @lang('Hello! / Приветствуем!')
 @endif
 @endif
 
@@ -39,7 +39,7 @@
 @if (! empty($salutation))
 {{ $salutation }}
 @else
-@lang('Regards'),<br>
+@lang('Regards / С уважением'),<br>
 {{ config('app.name') }}
 @endif
 

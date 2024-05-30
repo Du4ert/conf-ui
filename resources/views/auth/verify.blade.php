@@ -1,19 +1,20 @@
 @extends('layouts.auth')
 @section('header')
-{{ __('Verify Your Email Address') }}
+{{ __('email.verify') }}
 @endsection
 
 @section('body')
                     @if (session('resent'))
                         <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
+                            {{ __('email.validation_link') }}
                         </div>
                     @endif
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
+                    {{ __('email.check_link') }}
+                    <br/>
+                    {{ __('email.not_recieve') }},
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline text-primary">{{ __('click here to request another') }}</button>.
+                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline text-primary">{{ __('email.click') }}</button>.
                     </form>
 @endsection

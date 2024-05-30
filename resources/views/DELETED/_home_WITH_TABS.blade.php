@@ -16,7 +16,7 @@
     @endif
 
     @if (!$editable)
-        <a href="{{ $admin ? route('user.edit', $user->id) : route('user.editSelf') }}" class="btn btn-warning float-end"
+        <a href="{{ $admin ? route('user.edit', $user->id) : route('editSelf') }}" class="btn btn-warning float-end"
             role="button"><i class="fa fa-edit"></i> Edit</a>
     @else
         <a href="{{ $admin ? route('user.get', $user->id) : route('home') }}" class="btn btn-warning" role="button"><i
@@ -39,7 +39,7 @@
         </div>
     @endif
     @if ($editable)
-        <form action="{{ $admin ? route('user.update', $user->id) : route('user.updateSelf') }}" method="post">
+        <form action="{{ $admin ? route('user.update', $user->id) : route('updateSelf') }}" method="post">
             @csrf
             @method('PUT')
     @endif

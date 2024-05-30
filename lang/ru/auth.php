@@ -26,15 +26,23 @@ return [
     'password_confirm' => 'подтвердите пароль',
 
     'save' => 'Сохранить',
+    'edit' => 'Редактировать',
 
 
     'email' => 'Email',
     'first_name' => 'Имя',
+    'first_name_en' => 'Имя ENG',
     'last_name' => 'Фамилия',
+    'last_name_en' => 'Фамилия ENG',
     'middle_name' => 'Отчество',
+    'middle_name_en' => 'Отчество ENG',
     'organization_title' => 'Организация',
-    'rank_title' => 'Звание',
+    'organization_title_en' => 'Организация ENG',
+    'rank_title' => 'Степень',
+    'rank_title_en' => 'Степень ENG',
     'job_title' => 'Должность',
+    'job_title_en' => 'Должность ENG',
+
 
 
     'homepage_title' => 'Личный кабинет',
@@ -42,7 +50,19 @@ return [
     'files' => 'Файлы',
     'coauthors' => 'Соавторы',
     'phone' => 'Номер телефона',
-    'thesis_title_ru' => 'Название доклада RU',
+    'thesis_title' => 'Название доклада',
     'thesis_title_en' => 'Название доклада EN',
+    'thesis_text' => 'Текст доклада',
+    'thesis_text_en' => 'Текст доклада EN',
+
+    'russian' => 'Русский',
+    'english' => 'Английский',
+
+    'theses' => 'Тезисы',
+    'thesis' => 'Тезис',
+    'report' => 'Доклад',
+    'reports' => 'Доклады',
+
+    'documents' => 'Документы',
 
 ];

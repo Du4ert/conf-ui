@@ -26,14 +26,21 @@ return [
     'password_confirm' => 'confirm password',
 
     'save' => 'Save',
+    'edit' => 'Edit',
 
     'email' => 'Email',
-    'first_name' => 'Name',
-    'last_name' => 'Last name',
-    'middle_name' => 'Surname',
-    'organization_title' => 'Organization',
-    'rank_title' => 'Rank',
-    'job_title' => 'Job title',
+    'first_name' => 'Name RUS',
+    'first_name_en' => 'Name',
+    'last_name' => 'Last name RUS',
+    'last_name_en' => 'Last name',
+    'middle_name' => 'Surname RUS',
+    'middle_name_en' => 'Surname',
+    'organization_title' => 'Organization RUS',
+    'organization_title_en' => 'Organization',
+    'rank_title' => 'Rank RUS',
+    'rank_title_en' => 'Rank',
+    'job_title' => 'Job title RUS',
+    'job_title_en' => 'Job title',
 
     'homepage_title' => 'User dashboard',
     'home' => 'Main info',
@@ -41,6 +48,17 @@ return [
     'coauthors' => 'Coauthors',
     'phone' => 'Phone number',
     'thesis_title_ru' => 'Report title RU',
-    'thesis_title_en' => 'Report title EN',
-    
+    'thesis_title_en' => 'Report title',
+    'russian' => 'Russian',
+    'english' => 'English',
+
+    'thesis_text' => 'Thesis text RU',
+    'thesis_text_en' => 'Thesis text',
+    'theses' => 'Theses',
+    'thesis' => 'Thesis',
+    'report' => 'Report',
+    'reports' => 'Reports',
+
+    'documents' => 'Documents',
+
 ];

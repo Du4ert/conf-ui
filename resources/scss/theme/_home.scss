@@ -97,7 +97,7 @@
 }
 
 .hero-block-mask {
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.2);
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -121,13 +121,14 @@
 		height: 100%;
 	}
 	.carousel-item-1 {
-		background: url('~images/hero-1.jpg') no-repeat center center;
+		background: url('~images/hero-flowers_full.png') no-repeat center center;
+		background-size: cover;
 	}
 	.carousel-item-2 {
-		background: url('~images/hero-2.jpg') no-repeat center center;
+		background: url('~images/hero-1.jpg') no-repeat center center;
 	}
 	.carousel-item-3 {
-		background: url('~images/hero-3.jpg') no-repeat center center;
+		background: url('~images/hero-2.jpg') no-repeat center center;
 	}
 }
 

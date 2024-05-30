@@ -36,19 +36,19 @@
                 
             <button @if ($file) style="display: none" @endif 
                 form="{{ $formUpload }}"
-                class="upload-browse  btn btn-info px-4" role="browse" type="button"><i class="fas fa-folder-open"></i> {{ __('file.browse') }}</button>
+                class="upload-browse  btn btn-info px-4" role="browse" type="button" role="{{ __('file.browse') }}"><i class="fas fa-folder-open"></i></button>
 
             <button @if ($file) style="display: none" @endif 
             form="{{ $formUpload }}" role="submit" type="submit"
-            class="upload-button btn btn-primary rounded-end px-4"><i class="fas fa-save"></i> {{ __('file.save') }}</button>
+            class="upload-button btn btn-primary rounded-end px-4" role="{{ __('file.save') }}"><i class="fas fa-save"></i></button>
 
             <a @if (!$file) style="display: none" @endif 
               href="{{ route('file.download', $file->id ?? 'idTemp') }}"
-                class="download-link btn btn-primary"><i class="fa fa-download"></i> {{ __('file.download') }}</a>
+                class="download-link btn btn-primary" role="{{ __('file.download') }}"><i class="fa fa-download"></i></a>
 
             <button @if (!$file) style="display: none" @endif 
             form="{{ $formUpload }}" data-id="{{ $file->id ?? '' }}" role="delete" type="button"
-            class="delete-button btn btn-danger px-4"><i class="fas fa-trash"></i> {{ __('file.delete') }}</button>
+            class="delete-button btn btn-danger px-4" role="{{ __('file.delete') }}"><i class="fas fa-trash"></i></button>
 
         </div>
         <div class="text-muted ms-3"><small>{{ __('file.extensions') }} (.doc, .docx, .pdf, .txt)</small></div>

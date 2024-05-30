@@ -2,8 +2,8 @@
     <div class="container">
 
 
-        <h3 class="section-heading text-center mb-3">Докладчики</h3>
-        <div class="section-intro text-center single-col-max mx-auto mb-5">Вступительный текст</div>
+        <h3 class="section-heading text-center mb-3">Reporters</h3>
+        <div class="section-intro text-center single-col-max mx-auto mb-5">Introductory text</div>
         <div class="row">
             <div class="col-6 col-lg-3 mb-4">
                 <div class="card rounded-0">
