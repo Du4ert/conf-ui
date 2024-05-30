@@ -23,17 +23,17 @@ return new class extends Migration
             $table->string('organization_title')->nullable();
             $table->string('job_title')->nullable();
             $table->string('rank_title')->nullable();
-            $table->string('file')->nullable();
+            // $table->string('file')->nullable();
             $table->boolean('pay_status')->default(false);
             $table->boolean('accepted_status')->default(false);
             $table->rememberToken();
             $table->timestamps();
 
             $table->string('phone')->nullable();
-            $table->string('thesis_title_ru')->nullable();
-            $table->string('thesis_title_en')->nullable();
-            $table->string('section')->nullable();
-            $table->string('report_form')->nullable();
+            // $table->string('thesis_title_ru')->nullable();
+            // $table->string('thesis_title_en')->nullable();
+            // $table->string('section')->nullable();
+            // $table->string('report_form')->nullable();
         });
     }
 

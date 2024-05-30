@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('coauthors', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->boolean('participate');
+            $table->unsignedBigInteger('thesis_id');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('middle_name')->nullable();
             $table->string('organization_title')->nullable();
             $table->string('job_title')->nullable();
             $table->string('rank_title')->nullable();
+            $table->foreign('thesis_id')->references('id')->on('theses')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });

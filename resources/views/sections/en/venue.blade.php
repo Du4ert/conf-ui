@@ -1,11 +1,11 @@
 <section id="venue-section" class="venue-section section  theme-bg-primary text-white">
     <div class="container">
-        <h3 class="section-heading text-center mb-5 text-white">Место проведения</h3>
+        <h3 class="section-heading text-center mb-5 text-white">Location</h3>
         <div class="row gx-5 py-lg-5">
             <div class="col-12 col-lg-7 h-100">
                 <div class="desc">
-                    <h4 class="text-white mb-3">Как добраться</h4>
-                    <p>В 2024 годуконференция будет проводиться во Всероссийском научно-исследовательском институте сельскохозяйственной биотехнологии(г.Москва, ФГБНУ ВНИИСБ). </p>
+                    <h4 class="text-white mb-3">How to get</h4>
+                    <p>Conference will be held from 7 to 11 October 2024, <strong>in Moscow (Russia)</strong> and is organised within the framework of the National Project "Science and Universities" for the establishment of the Kurchatov Genomic Centre.</p>
                     
                     <div class="row pt-3">
                         {{-- <div class="col-12 col-md-6 mb-4"> --}}
@@ -24,20 +24,20 @@
                         {{-- </div><!--col--> --}}
                         <div class="col-12 col-md-6 mb-4 column-flex">
                             <div class="grid-item p-4">
-                                <h5 class="text-white mb-3 title"><i class="fas fa-bus-alt me-2"></i>Наземный транспорт</h5>
-                                <p>Трамвай № 27, остановка «Институт биотехнологии» </p>
+                                <h5 class="text-white mb-3 title"><i class="fas fa-bus-alt me-2"></i>Ground transport</h5>
+                                <p>Tram number 27, stop "Institute of Biotechnology" </p>
                             </div><!--//grid-item-->
                         </div><!--col-->
                         <div class="col-12 col-md-6 mb-4 column-flex">
                             <div class="grid-item p-4">
-                                <h5 class="text-white mb-3 title"><i class="fas fa-subway me-2"></i>Метро</h5>
-                                <p>Станции «Дмитровская», «Тимирязевская», «Войковская» </p>
+                                <h5 class="text-white mb-3 title"><i class="fas fa-subway me-2"></i>Metro</h5>
+                                <p>Stations "Dmitrovskaya", "Timiryazevskaya", "Voikovskaya"</p>
                             </div><!--//grid-item-->
                         </div><!--col-->
 
                         <div class="col-12 col-md-8 col-lg-8">
                             <div class="grid-item p-4">
-                                <h5 class="text-white mb-3 title"><i class="fas fa-car me-2"></i>Карта</h5>
+                                <h5 class="text-white mb-3 title"><i class="fas fa-car me-2"></i>Map</h5>
                                 <iframe src="https://yandex.ru/map-widget/v1/?lang=ru_RU&amp;scroll=false&amp;source=constructor-api&amp;um=constructor%3Ayu89NHPRT_VstAUyklvf-bYxxaqHUmVd" frameborder="0" allowfullscreen="true" width="100%" height="300px" style="display: block;"></iframe>
                             </div><!--//grid-item-->
                         </div><!--col-->

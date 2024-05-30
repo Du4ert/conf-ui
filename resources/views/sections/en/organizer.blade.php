@@ -1,15 +1,15 @@
 <section id="organizer-section" class="organizer-section section theme-bg-light">
     <div class="container">
         <div class="row organizer-list mb-3">
-            <h3 class="section-heading text-center mb-5">Организаторы конференции:</h3>
+            <h3 class="section-heading text-center mb-5">Conference organizers:</h3>
 
                 <div class="row align-items-center organizer mb-4">
                   <div class="col-8 mb-4 mb-md-0 mx-auto col-md-4 col-lg-4 figure">
                     <img src="{{ asset('/images/organizer/institute-1.png') }}" class="img-fluid w-100 shadow" alt="ФГБУН «Ордена Трудового Красного Знамени Никитский ботанический сад – Национальный научный центр РАН»">
                   </div>
                   <div class="col-md-8 col-lg-7 offset-lg-1">
-                      <h5 class="card-title mb-2">ФГБУН «Ордена Трудового Красного Знамени Никитский ботанический сад – Национальный научный центр РАН»</h5>
-                      <p class="card-text">Государственный ботанический сад близ Ялты, комплексное научно-исследовательское учреждение, ведущее работы по вопросам ботаники, плодоводства и растениеводства.</p>
+                      <h5 class="card-title mb-2">FGBUN "Order of the Red Banner of Labour Nikita Botanical Garden - National Scientific Centre of the Russian Academy of Sciences". </h5>
+                      <p class="card-text">The State Botanical Garden near Yalta, a comprehensive research institution, conducting work on botany, fruiting and crop production.</p>
                   </div>
                 </div>
 

@@ -53,12 +53,12 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'first_name' => ['required', 'string', 'min:2'],
             'last_name' => ['required', 'string', 'min:2'],
-            'middle_name',
-            'organization_title',
-            'job_title',
-            'rank_title',
-            'pay_status',
-            'accepted_status',
+            'middle_name' => 'nullable|string|max:50',
+            'organization_title' => 'nullable|string|max:50',
+            'job_title' => 'nullable|string|max:50',
+            'rank_title' => 'nullable|string|max:50',
+            'pay_status' => 'nullable|boolean',
+            'accepted_status' => 'nullable|boolean',
         ]);
     }
 

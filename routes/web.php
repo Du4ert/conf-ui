@@ -7,6 +7,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\CoauthorController;
+use App\Http\Controllers\ThesisController;
+use App\Http\Controllers\PosterController;
 
 /*
 |--------------------------------------------------------------------------

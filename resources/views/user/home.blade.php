@@ -51,16 +51,15 @@
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+            <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
                 role="tab" aria-controls="home" aria-selected="true">{{ __('auth.home') }}</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="thesis-tab" data-bs-toggle="tab" data-bs-target="#thesis" type="button"     role="tab" aria-controls="thesis" aria-selected="false">{{ __('user.thesis') }}</button>
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="file-tab" data-bs-toggle="tab" data-bs-target="#files" type="button"
                 role="tab" aria-controls="files" aria-selected="false">{{ __('auth.files') }}</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="coauthors-tab" data-bs-toggle="tab" data-bs-target="#coauthors" type="button"
-                role="tab" aria-controls="coauthors" aria-selected="false">{{ __('auth.coauthors') }}</button>
         </li>
     </ul>
 
@@ -74,23 +73,27 @@
             @include('user.inputs.field_home', ['field_name' => 'job_title'])
             @include('user.inputs.field_home', ['field_name' => 'phone'])
 
-            @include('user.inputs.field_home', ['field_name' => 'thesis_title_ru'])
-            @include('user.inputs.field_home', ['field_name' => 'thesis_title_en'])
+            {{-- @include('user.inputs.field_home', ['field_name' => 'thesis_title_ru']) --}}
+            {{-- @include('user.inputs.field_home', ['field_name' => 'thesis_title_en']) --}}
 
-            @include('user.inputs.section')
-            @include('user.inputs.report_form')
+            {{-- @include('user.inputs.section') --}}
+            {{-- @include('user.inputs.report_form') --}}
             
     </div>
     </form>
 
-        <div class="tab-pane fade show mt-3 active" id="files" role="tabpanel" aria-labelledby="files-tab">
+    <div class="tab-pane fade show  mt-3 active" id="thesis" role="tabpanel" aria-labelledby="home-tab">
+@include('user.thesis.add')
+    </div>
+
+        <div class="tab-pane fade show mt-3" id="files" role="tabpanel" aria-labelledby="files-tab">
             {{-- Операции со связанными файлами --}}
             @include('user.parts.files')
         </div>
 
-        <div class="tab-pane fade show mt-3" id="coauthors" role="tabpanel" aria-labelledby="coauthors-tab">
+        {{-- <div class="tab-pane fade show mt-3" id="coauthors" role="tabpanel" aria-labelledby="coauthors-tab">
             @include('user.parts.coauthors')
-        </div>
+        </div> --}}
 
     @if ($editable)
             <button id="submit" type="submit" class="btn btn-primary offset-md-6  mb-3 mt-3 float-end" form="main-form">

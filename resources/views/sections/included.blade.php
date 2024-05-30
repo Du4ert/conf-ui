@@ -16,4 +16,4 @@
 </div><!--//offers-->
 
 </div><!--//container-->
-</section><!--//tickets-section-->
+</section><!--//payment-section-->

@@ -1,16 +1,16 @@
 <!-- Right Side Of Navbar -->
-<ul class="navbar-nav auth-nav navbar-dark">
+<ul class="navbar-nav auth-nav navbar-dark ms-2 flex-row">
 <!-- Authentication Links -->
 @guest
     @if (Route::has('login'))
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+            <a class="nav-link" href="{{ route('login') }}">{{ __('auth.login') }}</a>
         </li>
     @endif
 
     @if (Route::has('register'))
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+            <a class="nav-link" href="{{ route('register') }}">{{ __('auth.register') }}</a>
         </li>
     @endif
 @else
@@ -21,12 +21,12 @@
 
         <div class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{ route('home') }}">
-                {{ __('Home') }}
+                {{ __('auth.profile') }}
             </a>
             <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
+                {{ __('auth.logout') }}
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -35,4 +35,12 @@
         </div>
     </li>
 @endguest
+
+@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+@if ($localeCode !== LaravelLocalization::getCurrentLocale())
+<li class="nav-item ms-2">
+    <a class="nav-link language-flag flag-{{ $localeCode }}" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, []) }}"></a>
+</li>
+@endif
+@endforeach
 </ul>

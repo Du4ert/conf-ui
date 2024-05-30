@@ -12,7 +12,10 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    'login' => 'Войти',
+    'home' => 'Главное',
+    'profile' => 'Профиль',
+    'logout' => 'Выйти',
     'register' => 'Регистрация',
     'failed' => 'Эти учетные данные не соответствуют нашим записям.',
     'password' => 'Предоставленный пароль неверен.',

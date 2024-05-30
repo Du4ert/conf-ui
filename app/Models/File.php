@@ -17,6 +17,7 @@ class File extends Model
     protected $fillable = [
         'type',
         'file',
-        'user_id'
+        'user_id',
+        // 'thesis_id',
     ];
 }

@@ -12,7 +12,10 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    'login' => 'Login',
+    'home' => 'Home',
+    'profile' => 'Profile',
+    'logout' => 'Logout',
     'register' => 'Register',
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',

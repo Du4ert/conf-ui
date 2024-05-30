@@ -23,6 +23,7 @@ return [
     'register' => 'Register',
     'fee' => 'Price',
     'organizer' => 'Organizers',
+    'contacts' => 'Contacts',
 
 
     'conference_title' => 'НБС-ННЦ Конференция',

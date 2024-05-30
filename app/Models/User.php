@@ -17,18 +17,25 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(File::class);
     }
 
-    public function coauthors()
+    public function theses()
     {
-        return $this->hasMany(Coauthor::class);
+        return $this->hasMany(Thesis::class);
     }
 
     protected $fileTypes = [
+        // 'thesis_ru',
+        // 'thesis_en',
+        // 'thesis2_ru',
+        // 'thesis2_en',
+        'poster',
+        'payment',
+    ];
+
+    protected $thesisTypes = [
         'thesis_ru',
         'thesis_en',
         'thesis2_ru',
         'thesis2_en',
-        'poster',
-        'payment',
     ];
 
 
@@ -57,13 +64,13 @@ class User extends Authenticatable implements MustVerifyEmail
         'organization_title',
         'job_title',
         'rank_title',
+        'phone',
         'pay_status',
         'accepted_status',
-        'phone',
-        'thesis_title_ru',
-        'thesis_title_en',
-        'section',
-        'report_form'
+        // 'thesis_title_ru',
+        // 'thesis_title_en',
+        // 'section',
+        // 'report_form'
     ];
 
     // Fields with default values

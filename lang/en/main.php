@@ -20,5 +20,8 @@ return [
     'conf' => 'Conference',
     'month_oct' => 'Oct',
     'participate' => 'Participate',
+    'agreement' => 'Agreement',
+    'terms' => 'Terms',
+    'confidencial' => 'Confidential',
 
 ];

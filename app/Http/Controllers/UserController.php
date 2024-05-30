@@ -13,7 +13,6 @@ class UserController extends Controller
      * @return void
      */
 
-    public $avaliableFileTypes = ['thesis_ru', 'thesis_en', 'poster'];
 
     public function __construct()
     {
@@ -34,11 +33,11 @@ class UserController extends Controller
     {
       $user = auth()->user();
       $files = $user->files;
-      $coauthors = $user->coauthors;
+    //   $coauthors = $user->coauthors;
 
       $fileByTypes = $user->fileByTypes($files);
 
-      return view('user.home', compact('user', 'fileByTypes', 'coauthors'));
+      return view('user.home', compact('user', 'fileByTypes'));
     }
 
     public function editSelf(Request $request)
@@ -46,11 +45,11 @@ class UserController extends Controller
 
       $user = auth()->user();
       $files = $user->files;
-      $coauthors = $user->coauthors;
+    //   $coauthors = $user->coauthors;
 
       $fileByTypes = $user->fileByTypes($files);
 
-      return view('user.home', compact('user', 'fileByTypes', 'coauthors'))->with(['editable' => true]);
+      return view('user.home', compact('user', 'fileByTypes'))->with(['editable' => true]);
     }
 
     public function updateSelf(Request $request)

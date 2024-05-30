@@ -11,11 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('files', function (Blueprint $table) {
+        Schema::create('theses', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
             $table->string('type');
-            $table->string('file');
+            $table->string('title');
+            $table->text('text');
+            $table->boolean('accepted_status')->default(false);
+            // $table->string('thesis_title');
+            $table->string('section')->default('genomics');
+            $table->string('report_form')->default('oral');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
@@ -26,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('files');
+        Schema::dropIfExists('theses');
     }
 };

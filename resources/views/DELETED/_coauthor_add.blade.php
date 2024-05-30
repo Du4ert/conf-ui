@@ -29,12 +29,12 @@
             @include('user.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'rank_title'])
             @include('user.inputs.field', ['form' => 'coauthor-form', 'field_name' => 'job_title'])
 
-            <div class="form-check">
+            {{-- <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="1" name="participate">
                 <label class="form-check-label" for="coauthor-form">
                   Будет участвовать?
                 </label>
-            </div>
+            </div> --}}
 
     </div>
 

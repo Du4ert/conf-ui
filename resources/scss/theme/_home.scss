@@ -407,7 +407,7 @@
 	}
 }
 
-/* Tickets Section */
+/* Payment Section */
 .offers-list {
 	li {
 		padding-top: 0.5rem;
@@ -720,9 +720,7 @@
 
 // Medium devices (tablets, less than 992px)
 @media (max-width: 991.98px) {
-    .header-has-bg {
-		background: $theme-bg-dark;
-	}
+
 	.venue-section {
 	     overflow-x: hidden;
 		.figure {
@@ -755,7 +753,9 @@
 
 // Large devices (desktops, less than 1200px)
 @media (max-width: 1199.98px) { 
-	
+	.header-has-bg {
+		background: $theme-bg-dark;
+	}
  }
 
 
