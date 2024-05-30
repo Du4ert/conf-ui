@@ -1,11 +1,11 @@
-<section id="payment-section" class="payment-section section theme-bg-light">
+<section id="payment-section" class="payment-section section conf-bg-light">
     <div class="container">
         <h3 class="section-heading text-center mb-3">Организационный взнос </h3>
         <div class="section-intro single-col-max mx-auto mb-4">Оргвзнос включает расходы на публикацию, комплект участника, кофе-брейки и welcomeparty.Оплату проживания, проезд и питание участники осуществляют самостоятельно. Заочным участникам будут отправлены все материалы конференции после завершения работы конференции </div>
         
 
         <ul class="list-group mx-auto">
-          <li class="list-group-item p-3  theme-bg-primary text-white">
+          <li class="list-group-item p-3  conf-bg-primary text-white">
             <div class="row">
               <div class="col-4">Категория участника и форма участия</div>
               <div class="col-4 text-end">Ранняя оплата (до 01.07.2024), руб.</div>

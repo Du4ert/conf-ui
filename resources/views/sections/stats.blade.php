@@ -1,4 +1,4 @@
-<div class="stats-block theme-bg-primary text-white py-4 text-center">
+<div class="stats-block conf-bg-primary text-white py-4 text-center">
     <div class="container">
         <div class="row">
             <div class="col-6 col-md-3">

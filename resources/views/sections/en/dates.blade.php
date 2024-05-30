@@ -1,4 +1,4 @@
-<section id="dates-section" class="dates-section section">
+<section id="dates-section" class="dates-section section conf-bg-white">
         <div class="container">
         <h3 class="section-heading text-center mb-5 pb-lg-5">Important dates</h3>
 

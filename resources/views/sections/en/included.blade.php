@@ -1,4 +1,4 @@
-<section id="included-section" class="included-section section  theme-bg-primary">
+<section id="included-section" class="included-section section  conf-bg-primary">
     <div class="container">
         <h3 class="section-heading text-center text-white mb-3">Planned</h3>
 

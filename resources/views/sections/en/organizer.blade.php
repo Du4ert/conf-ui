@@ -1,4 +1,4 @@
-<section id="organizer-section" class="organizer-section section theme-bg-light">
+<section id="organizer-section" class="organizer-section section conf-bg-primary">
     <div class="container">
         <div class="row organizer-list mb-3">
             <h3 class="section-heading text-center mb-5">Conference organizers:</h3>

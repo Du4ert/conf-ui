@@ -1,4 +1,4 @@
-<section id="venue-section" class="venue-section section  theme-bg-primary text-white">
+<section id="venue-section" class="venue-section section  conf-bg-primary bg-green text-white ">
     <div class="container">
         <h3 class="section-heading text-center mb-5 text-white">Место проведения</h3>
         <div class="row gx-5 py-lg-5">

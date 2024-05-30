@@ -8,7 +8,7 @@
 >Speaker Name</h4>
             </div>
             <div class="modal-body p-0">
-                <div class="theme-bg-light p-5">
+                <div class="conf-bg-primary p-5">
                     <div class="row">
                         <div class="col-12 col-md-auto text-center">
                             <img class="profile-image mb-3 mb-md-0 me-md-4 rounded-circle mx-auto" src="{{asset('/images/speakers/speaker-1.jpg')}}" alt="" />

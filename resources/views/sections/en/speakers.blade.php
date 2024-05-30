@@ -1,4 +1,4 @@
-<section id="speakers-section" class="speakers-section section">
+<section id="speakers-section" class="speakers-section section conf-bg-white">
     <div class="container">
 
 

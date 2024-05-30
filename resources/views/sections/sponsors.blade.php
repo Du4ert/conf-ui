@@ -1,4 +1,4 @@
-<section id="sponsors-section" class="sponsors-section section">
+<section id="sponsors-section" class="sponsors-section section conf-bg-white">
     <div class="container">
         <h3 class="section-heading text-center mb-3">Спонсоры и Партнёры</h3>
         {{-- <div class="section-intro text-center single-col-max mx-auto mb-5">Want to become a sponsor? Get in touch lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat magna eu accumsan mattis.</div> --}}

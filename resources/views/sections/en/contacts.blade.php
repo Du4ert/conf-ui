@@ -1,4 +1,4 @@
-<section id="contacts-section" class="contacts-section section theme-bg-light text-center">
+<section id="contacts-section" class="contacts-section section conf-bg-light text-center">
     <div class="container">
         <h3 class="section-heading text-center mb-5">Contacts</h3>
         <div class="section-intro single-col-max mx-auto mb-4">

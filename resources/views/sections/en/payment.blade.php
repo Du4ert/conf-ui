@@ -1,11 +1,11 @@
-<section id="payment-section" class="payment-section section theme-bg-light">
+<section id="payment-section" class="payment-section section conf-bg-light">
     <div class="container">
         <h3 class="section-heading text-center mb-3">Organisation fee </h3>
         <div class="section-intro single-col-max mx-auto mb-4">Organisation fee includes publication costs, participant's kit, coffee breaks and welcomeparty. Participants are responsible for their own accommodation, travel and meals. All conference materials will be sent to absentee participants after the conference is over.</div>
         
 
         <ul class="list-group mx-auto">
-          <li class="list-group-item p-3  theme-bg-primary text-white">
+          <li class="list-group-item p-3  conf-bg-primary text-white">
             <div class="row">
               <div class="col-4">Participant category
                 and form of participation
