@@ -23,5 +23,7 @@ return [
     'agreement' => 'Agreement',
     'terms' => 'Terms',
     'confidencial' => 'Confidential',
+    'main' => 'Main page',
+    'home' => 'User Profile',
 
 ];
