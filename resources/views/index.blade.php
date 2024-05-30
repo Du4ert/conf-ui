@@ -5,8 +5,8 @@
 {{-- @include('sections.stats') --}}
 @include('sections.hero')
 @include('sections.about')
-@include('sections.included')
 @include('sections.organizer')
+@include('sections.included')
 @include('sections.speakers')
 @include('sections.dates')
 {{-- @include('sections.schedule') --}}
@@ -19,8 +19,8 @@
 {{-- @include('sections.en.stats') --}}
 @include('sections.en.hero')
 @include('sections.en.about')
-@include('sections.en.included')
 @include('sections.en.organizer')
+@include('sections.en.included')
 @include('sections.en.speakers')
 @include('sections.en.dates')
 {{-- @include('sections.en.schedule') --}}

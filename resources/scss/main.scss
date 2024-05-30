@@ -125,7 +125,7 @@ body {
         left: 0px;
         background-size: cover;
         background: url($img);
-        opacity: 0.4;
+        opacity: 0.3;
         z-index: -1;
         // background-attachment: fixed;
       }
@@ -140,8 +140,8 @@ body {
 
 .conf-bg-light { 
     position: relative;
-    background-color: rgba($theme-bg-light, 0.85);
-    @include bg-before('~images/background/bg-person-bw.jpg');
+    background-color: rgba($theme-bg-light, 1);
+    // @include bg-before('~images/background/bg-person-bw.jpg');
 }
 
 .conf-bg-white { 
@@ -154,7 +154,7 @@ body {
         right: 0px;
         bottom: 0px;
         left: 0px;
-        background: url('~images/background/bg-dna.png') left no-repeat;
+        // background: url('~images/background/bg-person.jpg') left no-repeat;
         background-size: cover;
         opacity: 0.08;
         z-index: -1;
