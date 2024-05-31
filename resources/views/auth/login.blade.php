@@ -41,7 +41,7 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('_auth.remember_me') }}
+                                        {{ __('auth.remember_me') }}
                                     </label>
                                 </div>
                             </div>
