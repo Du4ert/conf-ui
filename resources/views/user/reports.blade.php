@@ -19,9 +19,16 @@
     @include('user.parts.error')
     
 
+@php
+$thesis_ru = $thesisByTypes['thesis_ru'];
+$thesis_en = $thesisByTypes['thesis_en'];
+@endphp
     @isset ($thesisByTypes)
            @foreach ($thesisByTypes as $type => $thesis)
              @include('user.thesis.show', ['thesis' => $thesis ?? null, 'type' => $type])
+             @if ($type === 'thesis_en' and $thesis == null)
+                 @break
+             @endif
         @endforeach
     @endif
 
