@@ -8,7 +8,7 @@
                 d.Yalta, PGT Nikita, Nikitsky Spusk, 52
             </p>
             <h5>Secretary of the Organizational Committee:</h5>
-            <p>Tsyupka Valentina</p>
+            <p>Valentina Tsyupka</p>
             <p><i class="fa fa-phone"></i> +7 (978) 803-81-98</p>
             <p>Elina Chelebieva</p>
             <p><i class="fa fa-phone"></i> +7 (978) 801-30-73</p>

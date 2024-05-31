@@ -8,8 +8,10 @@
                 г. Ялта, пгт Никита, Никитский спуск, 52
             </p>
             <h5>Cекретарь организационного комитета:</h5>
+            <p>Валентина Цюпка</p>
+            <p><i class="fa fa-phone"></i> +7 (978) 803-81-98</p>
             <p>Элина Челебиева</p>
-            <p><i class="fa fa-phone"></i> моб. +7 (978) 000-00-00</p>
+            <p><i class="fa fa-phone"></i> +7 (978) 801-30-73</p>
          <p><i class="fa fa-envelope"></i> <a href="mailto:conf@genbio.nikitsad.ru">conf@genbio.nikitsad.ru</a></p>
         </div>
         
