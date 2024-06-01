@@ -39,14 +39,15 @@ Auth::routes(['verify' => true]);
 // Страница зарегистрированного пользователя
 Route::get('/home/{id?}', [UserController::class, 'home'])->name('home');
 Route::get('/reports', [UserController::class, 'reports'])->name('reports');
-Route::get('/files', [UserController::class, 'files'])->name('files');
+Route::get('/files', [UserController::class, 'documents'])->name('documents');
 Route::get('/edit', [UserController::class, 'editSelf'])->name('editSelf');
 Route::put('/update', [UserController::class, 'updateSelf'])->name('updateSelf');
 
 
 // Операции с Тезисами
-// Route::get('/{userId}/thesis/download', [ThesisController::class, 'download'])->name('thesis.download');
+Route::get('/thesis/{id}show', [ThesisController::class, 'show'])->name('thesis.show');
 Route::post('/{userId}/thesis/store', [ThesisController::class, 'store'])->name('thesis.store');
+Route::post('/{userId}/thesis/add', [ThesisController::class, 'add'])->name('thesis.add');
 Route::delete('/thesis/{id}/delete', [ThesisController::class, 'delete'])->name('thesis.delete');
 
 // Операции с файлами

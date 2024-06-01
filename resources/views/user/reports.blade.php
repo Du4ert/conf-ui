@@ -20,9 +20,12 @@
     
 
 @php
-$thesis_ru = $thesisByTypes['thesis_ru'];
-$thesis_en = $thesisByTypes['thesis_en'];
+$thesis_ru = $thesisByTypes['thesis_ru'] ?? null;
+$thesis_en = $thesisByTypes['thesis_en'] ?? null;
+$thesis1_ru = $thesisByTypes['thesis_ru'] ?? null;
+$thesis2_en = $thesisByTypes['thesis_en'] ?? null;
 @endphp
+
     @isset ($thesisByTypes)
            @foreach ($thesisByTypes as $type => $thesis)
              @include('user.thesis.show', ['thesis' => $thesis ?? null, 'type' => $type])

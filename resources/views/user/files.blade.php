@@ -13,6 +13,7 @@
 @endsection
 
 @section('body')
+
 <h4 class="mb-3 text-center">{{ __('auth.documents') }}</h4>
     @include('user.parts.success')
     @include('user.parts.error')

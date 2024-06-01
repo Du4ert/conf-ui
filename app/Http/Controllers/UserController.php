@@ -50,7 +50,7 @@ class UserController extends Controller
       return view('user.reports', compact('user', 'thesisByTypes'));
     }
 
-    public function files()
+    public function documents()
     {
       $user = auth()->user();
       $files = $user->files;

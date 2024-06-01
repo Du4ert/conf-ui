@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('posters', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('thesis_id');
-            $table->string('type');
             $table->string('file');
             $table->foreign('thesis_id')->references('id')->on('theses')->onDelete('cascade');
             $table->timestamps();

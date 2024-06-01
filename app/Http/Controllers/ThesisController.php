@@ -11,6 +11,8 @@ class ThesisController extends Controller
         $this->middleware('auth');
         $this->middleware('verified');
     }
+
+    
     public function show($id)
     {
         $thesis = Thesis::findOrFail($id);
@@ -25,10 +27,38 @@ class ThesisController extends Controller
     }
 
 
+    public function add(Request $request, $userId)
+    {
+        $validatedData = $request->validate([
+            // 'type' => 'required|string|max:50',
+            'thesis_title' => 'nullable|string|max:50',
+            'thesis_title' => 'nullable|string|max:50',
+            'section' => 'required|string',
+            'report_form' => 'required|string',
+            'text' => 'required|string',
+        ]);
+
+        $sameTypes = Thesis::where('user_id', $userId)->where('type', $type)->count();
+        if ( $sameTypes >= 1) {
+
+            if ($request->ajax()) {
+                return response()->json(['errors' => 'User can only have one thesis for each type.']);
+            } else {
+            return back()->withErrors('User can only have one thesis for each type.');
+            }
+        }
+
+
+        if ($request->ajax()) {
+            return response()->json(['success' => 'Доклад создан.']);
+        } else {
+            return back()->with('success', 'Доклад создан.');
+        }
+    }
+
+
     public function store(Request $request, $userId)
     {
-        
-
         $validatedData = $request->validate([
             'type' => 'required|string|max:50',
             'thesis_title' => 'required|string|max:50',

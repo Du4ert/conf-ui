@@ -20,5 +20,5 @@ if (!isset($form)) {
 </div>
 <script>
     let reportSelect = document.querySelector('select[name="report_form"]');
-    reportSelect.value = {{ $thesis->report_form }}
+    reportSelect.value = {{ $thesis->report_form ?? null }}
 </script>

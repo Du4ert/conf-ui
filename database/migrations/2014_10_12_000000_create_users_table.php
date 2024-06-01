@@ -18,22 +18,22 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('first_name');
+            $table->string('first_name_en');
             $table->string('last_name');
+            $table->string('last_name_en');
             $table->string('middle_name')->nullable();
-            $table->string('organization_title')->nullable();
+            $table->string('middle_name_en')->nullable();
+            $table->string('organization_title');
+            $table->string('organization_title_en');
             $table->string('job_title')->nullable();
+            $table->string('job_title_en')->nullable();
             $table->string('rank_title')->nullable();
-            // $table->string('file')->nullable();
+            $table->string('rank_title_en')->nullable();
             $table->boolean('pay_status')->default(false);
             $table->boolean('accepted_status')->default(false);
+            $table->string('phone')->nullable();
             $table->rememberToken();
             $table->timestamps();
-
-            $table->string('phone')->nullable();
-            // $table->string('thesis_title_ru')->nullable();
-            // $table->string('thesis_title_en')->nullable();
-            // $table->string('section')->nullable();
-            // $table->string('report_form')->nullable();
         });
     }
 

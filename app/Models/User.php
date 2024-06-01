@@ -32,12 +32,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'payment',
     ];
 
-    protected $thesisTypes = [
-        'thesis_ru',
-        'thesis_en',
-        'thesis2_ru',
-        'thesis2_en',
-    ];
+    // protected $thesisTypes = [
+    //     'thesis_ru',
+    //     'thesis_en',
+    //     'thesis2_ru',
+    //     'thesis2_en',
+    // ];
 
 
     public function fileByTypes ($files)
@@ -50,15 +50,15 @@ class User extends Authenticatable implements MustVerifyEmail
           return $fileByTypes;
     }
 
-    public function thesisByTypes ($theses)
-    {
-        $thesisByTypes = [];
-        foreach ($this->thesisTypes as $type) {
-            $thesisByTypes[$type] = $theses->where('type', $type)->first();
-        }
+    // public function thesisByTypes ($theses)
+    // {
+    //     $thesisByTypes = [];
+    //     foreach ($this->thesisTypes as $type) {
+    //         $thesisByTypes[$type] = $theses->where('type', $type)->first();
+    //     }
 
-          return $thesisByTypes;
-    }
+    //       return $thesisByTypes;
+    // }
 
     /**
      * The attributes that are mass assignable.
