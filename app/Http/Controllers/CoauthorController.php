@@ -39,7 +39,7 @@ class CoauthorController extends Controller
     }
 
 
-    public function store(Request $request, $thesisId = null)
+    public function store(Request $request, $thesisId)
     {
         $author = $request->author;
 
@@ -55,7 +55,7 @@ class CoauthorController extends Controller
         ]);
 
         $author = new Coauthor([
-            'user_id' => $thesisId,
+            'thesis_id' => $thesisId,
             'first_name' => $request['first_name'],
             'first_name_en' => $request['first_name_en'],
             'last_name' => $request['last_name'],

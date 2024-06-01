@@ -74,7 +74,29 @@ class UserController extends Controller
     public function updateSelf(Request $request)
     {
         $user = auth()->user();
-        $user->update($request->all());
+
+        $validatedData = $request->validate([
+          // 'email' => 'required|string|email|max:255|unique:users',
+          // 'password' => 'required|string|min:8|confirmed',
+          'first_name' => 'required|string|min:2',
+          'first_name_en' => 'required|string|min:2',
+          'last_name' => 'required|string|min:2',
+          'last_name_en' => 'required|string|min:2',
+          'middle_name' => 'nullable|string|max:50',
+          'middle_name_en' => 'nullable|string|max:50',
+          'organization_title' => 'required|string|max:50',
+          'organization_title' => 'required|string|max:50',            
+          'job_title' => 'nullable|string|max:50',
+          'job_title_en' => 'nullable|string|max:50',
+          'rank_title' => 'nullable|string|max:50',
+          'rank_title_en' => 'nullable|string|max:50',
+          // 'pay_status' => 'nullable|boolean',
+          // 'accepted_status' => 'nullable|boolean',
+        ]);
+
+        $user->update($validatedData);
+
+        // $user->update($request->all());
 
         return redirect()->route('home')->with('status', 'Profile updated successfully');
     }

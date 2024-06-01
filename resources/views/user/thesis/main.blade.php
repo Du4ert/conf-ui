@@ -9,10 +9,10 @@
 
             <div class="row form-group mb-2">
                 <div class="col-lg-6">
-                    @include('user.inputs.field', ['field_name' => 'thesis_title', 'required' => true, 'form' => 'thesis-form'])
+                    @include('user.thesis.field', ['field_name' => 'thesis_title', 'required' => true, 'form' => 'thesis-form'])
                 </div>
                 <div class="col-lg-6">
-                    @include('user.inputs.field', ['field_name' => 'thesis_title_en', 'required' => true, 'form' => 'thesis-form'])
+                    @include('user.thesis.field', ['field_name' => 'thesis_title_en', 'required' => true, 'form' => 'thesis-form'])
                 </div>
             </div>
 

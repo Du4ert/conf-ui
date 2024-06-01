@@ -1,9 +1,9 @@
 @if ($errors->any())
 <div class="alert alert-danger">
-    <ul>
+    <ul clas="list-unstyled">
         @foreach ($errors->all() as $error)
-        <i class="fas fa-exclamation-circle"></i>
-            <li>{{ $error }}</li>
+        
+            <li><i class="fas fa-exclamation-circle me-2"></i>{{ $error }}</li>
         @endforeach
     </ul>
 </div>

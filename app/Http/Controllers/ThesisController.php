@@ -44,15 +44,36 @@ class ThesisController extends Controller
             }
         }
 
-        
+        $thesis = new Thesis([
+            'user_id' => $user->id,
+        ]);
+        $thesis->save();
 
-        return view('user.thesis.create', compact('user'));
+        return redirect()->route('thesis.edit', $thesis->id);
     }
 
 
-    public function store(Request $request)
+    public function edit($id) {
+        $thesis = Thesis::findOrFail($id);
+
+        $user = $thesis->user;
+        $authors = $thesis->coauthors;
+
+        return view('user.thesis.edit', compact('thesis', 'user', 'authors'));
+    }
+
+    public function update(Request $request, $id) {
+        $thesis = Thesis::findOrFail($id);
+
+        $thesis->update($request->all());
+
+        return redirect()->route('reports')->with('success', 'Report updated successfully');
+    }
+
+
+    public function submit(Request $request, $id)
     {
-        $userId = auth()->user()->id;
+        // $userId = auth()->user()->id;
         
 
         $validatedData = $request->validate([
@@ -60,27 +81,21 @@ class ThesisController extends Controller
             'thesis_title_en' => 'required|string|max:50',
             'section' => 'required|in:genomics,biotechnology,breeding,bioresource',
             'report_form' => 'required|in:oral,poster,absentee',
-            'text' => 'nullable|string',
-            'text_en' => 'nullable|string',
+            'text' => 'required|string',
+            'text_en' => 'required|string',
         ]);
 
-        $thesis = new Thesis([
-            'user_id' => $userId,
-            'thesis_title' => $request['thesis_title'],
-            'thesis_title_en' => $request['thesis_title_en'],
-            'text' => $request['text'],
-            'text_en' => $request['text_en'],
-            'section' => $request['section'],
-            'report_form' => $request['report_form'],
-        ]);
+        $thesis = Thesis::findOrFail($id);
 
-        $thesis->id = session()->get('id');
-        $thesis->save();
+        // $thesis->id = session()->get('id');
+        // $thesis->save();
+        $validatedData['submitted_status'] = true;
+        $thesis->update($validatedData);
 
-        $authors = Coauthor::whereIn('id', $request['coauthor'])->update(['thesis_id' => $thesis->id]);
+        // $authors = Coauthor::whereIn('id', $request['coauthor'])->update(['thesis_id' => $thesis->id]);
 
 
-        return redirect()->route('reports')->with('status', 'Thesis created successfully');
+        return redirect()->route('reports')->with('status', 'Thesis submitted successfully');
     }
 
         public function download($id)

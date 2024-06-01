@@ -23,7 +23,7 @@
 @endif
 @endif
 
-@if (count($theses) <= 2)
+@if (count($theses) < 2)
 <a href="{{ route('thesis.create') }}" class="btn btn-primary" role="button">{{ __('auth.report_add' )}}<i
     class="fa fa-plus ms-2"></i></a>
 @endif

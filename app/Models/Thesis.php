@@ -35,6 +35,7 @@ class Thesis extends Model
         'text_en',
         'section',
         'report_form',
+        'submitted_status',
     ];
 
 }

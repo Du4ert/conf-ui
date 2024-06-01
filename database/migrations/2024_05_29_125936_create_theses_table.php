@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
             $table->text('text')->nullable();
             $table->text('text_en')->nullable();
-            $table->string('thesis_title');
-            $table->string('thesis_title_en');
+            $table->string('thesis_title')->nullable();
+            $table->string('thesis_title_en')->nullable();
             $table->string('section')->default('genomics');
             $table->string('report_form')->default('oral');
             $table->boolean('accepted_status')->default(false);
+            $table->boolean('submitted_status')->default(false);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

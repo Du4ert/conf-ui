@@ -46,6 +46,13 @@ if (!isset($formDelete)) {
                 <form id="{{ $formDelete }}" class="d-inline" action="{{ route('thesis.delete', $thesis->id) }}" method="post">
                     @csrf
                     @method('DELETE')
+
+                        <div class="col-md-6 offset-md-4">
+                            <a href="{{ route('thesis.edit', $thesis->id) }}" type="button" class="btn btn-primary offset-md-6  mb-3 mt-3 float-end">
+                                {{ __('auth.edit') }}<i
+                                class="fa fa-edit ms-2"></i>
+                            </a>
+                        </div>
                 
                     <button form="{{ $formDelete }}" data-id="{{ $thesis->id ?? '' }}" type="submit" class="btn btn-link text-danger coauthor-delete-button"><i class="fa fa-trash"></i>{{ __('auth.delete') }}</button>
                 </form>
