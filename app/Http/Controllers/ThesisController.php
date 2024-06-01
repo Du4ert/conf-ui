@@ -44,6 +44,8 @@ class ThesisController extends Controller
             }
         }
 
+        
+
         return view('user.thesis.create', compact('user'));
     }
 
@@ -78,7 +80,7 @@ class ThesisController extends Controller
         $authors = Coauthor::whereIn('id', $request['coauthor'])->update(['thesis_id' => $thesis->id]);
 
 
-        redirect()->route('reports')->with('status', 'Thesis created successfully');
+        return redirect()->route('reports')->with('status', 'Thesis created successfully');
     }
 
         public function download($id)

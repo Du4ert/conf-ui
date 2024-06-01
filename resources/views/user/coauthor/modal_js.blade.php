@@ -22,15 +22,35 @@
 
                 <form id="modal-coauthor-form" class="modal-coauthor-form" action="{{ route('coauthor.store') }}" data-action="add" method="POST" class="mt-2">
                     @csrf
-                
-                    @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'last_name', 'required' => true])
-                    @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'last_name_en', 'required' => true])
-                    @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'first_name', 'required' => true,])
-                    @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'first_name_en', 'required' => true,])
-                    @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'middle_name'])
-                    @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'middle_name_en'])
-                    @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'organization_title'])
-                    @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'organization_title_en'])
+
+@include('user.parts.languages_head')
+
+<div class="row form-group mb-2">
+    <div class="col-lg-6">
+@include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'last_name', 'required' => true])
+    </div>
+    <div class="col-lg-6">
+@include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'last_name_en', 'required' => true])
+    </div>
+                    
+                    <div class="row form-group mb-2">
+                        <div class="col-lg-6">@include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'first_name', 'required' => true,])</div>
+                        <div class="col-lg-6">@include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'first_name_en', 'required' => true,])</div>
+                    </div>
+                    <div class="row form-group mb-2">
+                        <div class="col-lg-6">@include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'middle_name'])</div>
+                        <div class="col-lg-6">@include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'middle_name_en'])</div>
+                    </div>
+
+                    <input  checked  form="modal-coauthor-form" class="form-check-input user-organization" type="checkbox" name="user_organization">
+                        <label class="form-check-label" for="coauthor-form">
+                            {{ __('auth.user_organization') }}
+                    </label>
+                    
+                    <div class="row form-group mb-2">
+                        <div class="col-lg-6">@include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'organization_title'])</div>
+                        <div class="col-lg-6">@include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'organization_title_en'])</div>
+                    </div>
 
                     {{-- <div class="form-check">
                         <input  @checked($author->participate)  form="{{ $author->id . '-coauthor-form' }}" class="form-check-input participate-check" type="checkbox" name="participate">
@@ -66,6 +86,13 @@
     const form = modal.find('#modal-coauthor-form');
     const buttonSave = modal.find('.coauthor-save');
     const modalClose = modal.find('.coauthor-close');
+    const orgCheck = modal.find('.user-organization');
+
+    orgCheck.on('change', function(e) ) {
+        if ($(this).val() == true) {
+            
+        }
+    }
 
 
     $(document).on('click', '.coauthor-add-button', function(e) {

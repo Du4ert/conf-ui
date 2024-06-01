@@ -16,7 +16,7 @@
 <div class="alert alert-danger d-flex align-items-center" role="alert">
     <i class="fas fa-exclamation-circle fa-lg me-2"></i>
     <div>
-        Вы должны зарегистрировать хотя бы один доклад
+        {{ __('auth.report_alert') }}
     </div>
   </div>
 
