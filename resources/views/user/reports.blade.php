@@ -5,11 +5,9 @@
 
 @section('body')
     <h4 class="mb-3 text-center">{{ __('auth.reports') }}</h4>
-    
-    @include('user.parts.success')
-    @include('user.parts.error')
-    
 
+
+@if ($theses != null)
 @foreach ($theses as $thesis)
     @include('user.thesis.show')
 @endforeach
@@ -22,6 +20,7 @@
     </div>
   </div>
 
+@endif
 @endif
 
 @if (count($theses) <= 2)

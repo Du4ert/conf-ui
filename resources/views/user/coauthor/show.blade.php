@@ -12,6 +12,7 @@ $formDelete = $author->id . '-form-delete';
 <div class="coauthor-controls">
     <button type="button" class="btn btn-link text-primary coauthor-edit-button" data-bs-toggle="modal" data-bs-target="#coauthorModal" data-id="{{$author->id}}"><i class="fa fa-edit"></i>
     </button>
+    <input type="text" hidden name="coauthor[{{$author->id}}]" value="{{ $author->id }}" form="thesis-form">
 
     <form id="{{ $formDelete }}" class="d-inline" action="{{ route('coauthor.delete', $author->id) }}" method="post">
         @csrf

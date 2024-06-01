@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Thesis;
+use App\Models\Coauthor;
 
 class ThesisController extends Controller
 {
@@ -50,6 +51,7 @@ class ThesisController extends Controller
     public function store(Request $request)
     {
         $userId = auth()->user()->id;
+        
 
         $validatedData = $request->validate([
             'thesis_title' => 'required|string|max:50',
@@ -70,9 +72,13 @@ class ThesisController extends Controller
             'report_form' => $request['report_form'],
         ]);
 
-        $thesis->save();;
+        $thesis->id = session()->get('id');
+        $thesis->save();
 
-        return back()->with('success', 'Thesis created succesfully.');
+        $authors = Coauthor::whereIn('id', $request['coauthor'])->update(['thesis_id' => $thesis->id]);
+
+
+        redirect()->route('reports')->with('status', 'Thesis created successfully');
     }
 
         public function download($id)
