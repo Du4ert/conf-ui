@@ -45,10 +45,9 @@ class UserController extends Controller
       $user = auth()->user();
       $theses = $user->theses;
 
-      $thesisByTypes = $user->thesisByTypes($theses);
-
-      return view('user.reports', compact('user', 'thesisByTypes'));
+      return view('user.reports', compact('user', 'theses'));
     }
+
 
     public function documents()
     {

@@ -9,13 +9,10 @@
 
 @extends('layouts.auth')
 @section('header')
-    @include('user.parts.home-navigation')
+    @include('user.parts.navigation', ['page' => 'home'])
 @endsection
 
 @section('body')
-    @include('user.parts.success')
-    @include('user.parts.error')
-
     <h4 class="mb-3 text-center">{{ $user->email }}</h4>
 
     {{-- Основные данные --}}

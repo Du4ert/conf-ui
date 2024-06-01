@@ -45,9 +45,9 @@ Route::put('/update', [UserController::class, 'updateSelf'])->name('updateSelf')
 
 
 // Операции с Тезисами
+Route::get('/thesis/create', [ThesisController::class, 'create'])->name('thesis.create');
+Route::post('/thesis/store', [ThesisController::class, 'store'])->name('thesis.store');
 Route::get('/thesis/{id}show', [ThesisController::class, 'show'])->name('thesis.show');
-Route::post('/{userId}/thesis/store', [ThesisController::class, 'store'])->name('thesis.store');
-Route::post('/{userId}/thesis/add', [ThesisController::class, 'add'])->name('thesis.add');
 Route::delete('/thesis/{id}/delete', [ThesisController::class, 'delete'])->name('thesis.delete');
 
 // Операции с файлами
@@ -55,7 +55,7 @@ Route::get('/file/{userId}/download', [FileController::class, 'download'])->name
 Route::post('/{userId}/file/store', [FileController::class, 'store'])->name('file.store');
 Route::delete('/file/{id}/delete', [FileController::class, 'delete'])->name('file.delete');
 
-
+// Операции с соавторами
 // Route::get('/{userId}/file/download', [FileController::class, 'download'])->name('file.download');
 Route::get('/coauthor/get/{id}', [CoauthorController::class, 'get'])->name('coauthor.get');
 Route::get('/coauthor/{id}/show', [CoauthorController::class, 'show'])->name('coauthor.show');

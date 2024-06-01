@@ -9,7 +9,7 @@
 
 @extends('layouts.auth')
 @section('header')
-    @include('user.parts.home-navigation')
+    @include('user.parts.navigation')
 @endsection
 
 @section('body')

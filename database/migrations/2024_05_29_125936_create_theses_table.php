@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('theses', function (Blueprint $table) {
             $table->id();
-            $table->text('text');
-            $table->text('text_en');
+            $table->text('text')->nullable();
+            $table->text('text_en')->nullable();
             $table->string('thesis_title');
             $table->string('thesis_title_en');
             $table->string('section')->default('genomics');

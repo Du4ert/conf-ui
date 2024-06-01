@@ -1,15 +1,6 @@
-@php
-    if (!isset($editable)) {
-        $editable = true;
-    }
-    if (!isset($admin)) {
-        $admin = false;
-    }
-@endphp
-
 @extends('layouts.auth')
 @section('header')
-    @include('user.parts.home-navigation')
+    @include('user.parts.navigation', ['page' => 'reports'])
 @endsection
 
 @section('body')
@@ -19,21 +10,24 @@
     @include('user.parts.error')
     
 
-@php
-$thesis_ru = $thesisByTypes['thesis_ru'] ?? null;
-$thesis_en = $thesisByTypes['thesis_en'] ?? null;
-$thesis1_ru = $thesisByTypes['thesis_ru'] ?? null;
-$thesis2_en = $thesisByTypes['thesis_en'] ?? null;
-@endphp
+@foreach ($theses as $thesis)
+    @include('user.thesis.show')
+@endforeach
 
-    @isset ($thesisByTypes)
-           @foreach ($thesisByTypes as $type => $thesis)
-             @include('user.thesis.show', ['thesis' => $thesis ?? null, 'type' => $type])
-             @if ($type === 'thesis_en' and $thesis == null)
-                 @break
-             @endif
-        @endforeach
-    @endif
+@if(count($theses) < 1)
+<div class="alert alert-danger d-flex align-items-center" role="alert">
+    <i class="fas fa-exclamation-circle fa-lg me-2"></i>
+    <div>
+        Вы должны зарегистрировать хотя бы один доклад
+    </div>
+  </div>
+
+@endif
+
+@if (count($theses) <= 2)
+<a href="{{ route('thesis.create') }}" class="btn btn-primary" role="button">{{ __('auth.report_add' )}}<i
+    class="fa fa-plus ms-2"></i></a>
+@endif
 
 
 @endsection

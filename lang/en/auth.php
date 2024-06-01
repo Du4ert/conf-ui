@@ -64,6 +64,8 @@ return [
     'thesis' => 'Thesis',
     'report' => 'Report',
     'reports' => 'Reports',
+    'report_add' => 'Submit a report',
+    'report_alert' => 'You must register at least one report.',
 
     'documents' => 'Documents',
 

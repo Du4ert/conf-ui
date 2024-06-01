@@ -27,4 +27,14 @@ class Thesis extends Model
         return $this->belongsTo(User::class);
     }
 
+    protected $fillable = [
+        'user_id',
+        'thesis_title',
+        'thesis_title_en',
+        'text',
+        'text_en',
+        'section',
+        'report_form',
+    ];
+
 }

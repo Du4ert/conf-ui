@@ -33,7 +33,8 @@
                     @yield('header')
                 </div>
                 <div class="card-body">
-
+                    @include('user.parts.success')
+                    @include('user.parts.error')
                   @yield('body')
 
                 </div>

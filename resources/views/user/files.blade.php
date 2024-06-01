@@ -1,15 +1,6 @@
-@php
-    if (!isset($editable)) {
-        $editable = true;
-    }
-    if (!isset($admin)) {
-        $admin = false;
-    }
-@endphp
-
 @extends('layouts.auth')
 @section('header')
-    @include('user.parts.home-navigation')
+    @include('user.parts.navigation', ['page' => 'documents'])
 @endsection
 
 @section('body')

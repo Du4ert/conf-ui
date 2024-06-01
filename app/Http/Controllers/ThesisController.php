@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Thesis;
 
 class ThesisController extends Controller
 {
@@ -27,65 +28,54 @@ class ThesisController extends Controller
     }
 
 
-    public function add(Request $request, $userId)
+    public function create(Request $request)
     {
-        $validatedData = $request->validate([
-            // 'type' => 'required|string|max:50',
-            'thesis_title' => 'nullable|string|max:50',
-            'thesis_title' => 'nullable|string|max:50',
-            'section' => 'required|string',
-            'report_form' => 'required|string',
-            'text' => 'required|string',
-        ]);
+        $user = auth()->user();
+        $theses = $user->theses;
 
-        $sameTypes = Thesis::where('user_id', $userId)->where('type', $type)->count();
-        if ( $sameTypes >= 1) {
+        // Не больше 2х
+        if ( $theses->count() >= 2 ) {
 
             if ($request->ajax()) {
-                return response()->json(['errors' => 'User can only have one thesis for each type.']);
+                return response()->json(['errors' => 'User can only have two theses.']);
             } else {
-            return back()->withErrors('User can only have one thesis for each type.');
+            return back()->withErrors('User can only have two theses.');
             }
         }
 
-
-        if ($request->ajax()) {
-            return response()->json(['success' => 'Доклад создан.']);
-        } else {
-            return back()->with('success', 'Доклад создан.');
-        }
+        return view('user.thesis.create', compact('user'));
     }
 
 
-    public function store(Request $request, $userId)
+    public function store(Request $request)
     {
+        $userId = auth()->user()->id;
+
         $validatedData = $request->validate([
-            'type' => 'required|string|max:50',
             'thesis_title' => 'required|string|max:50',
-            'section' => 'required|string',
-            'report_form' => 'required|string',
-            'text' => 'required|string',
+            'thesis_title_en' => 'required|string|max:50',
+            'section' => 'required|in:genomics,biotechnology,breeding,bioresource',
+            'report_form' => 'required|in:oral,poster,absentee',
+            'text' => 'nullable|string',
+            'text_en' => 'nullable|string',
         ]);
 
-        $sameTypes = Thesis::where('user_id', $userId)->where('type', $type)->count();
-        if ( $sameTypes >= 1) {
+        $thesis = new Thesis([
+            'user_id' => $userId,
+            'thesis_title' => $request['thesis_title'],
+            'thesis_title_en' => $request['thesis_title_en'],
+            'text' => $request['text'],
+            'text_en' => $request['text_en'],
+            'section' => $request['section'],
+            'report_form' => $request['report_form'],
+        ]);
 
-            if ($request->ajax()) {
-                return response()->json(['errors' => 'User can only have one thesis for each type.']);
-            } else {
-            return back()->withErrors('User can only have one thesis for each type.');
-            }
-        }
+        $thesis->save();;
 
-
-        if ($request->ajax()) {
-            return response()->json(['success' => 'Тезис успешно сохранен.']);
-        } else {
-            return back()->with('success', 'Тезис успешно сохранен.');
-        }
+        return back()->with('success', 'Thesis created succesfully.');
     }
 
-        public function download($id, $type = 'file')
+        public function download($id)
     {
         // $thesis = Thesis::findOrFail($id);
         
