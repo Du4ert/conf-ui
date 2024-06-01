@@ -16,12 +16,13 @@ class Coauthor extends Model
 
     protected $fillable = [
         'thesis_id',
-        // 'participate',
         'first_name',
+        'first_name_en',
         'last_name',
+        'last_name_en',
         'middle_name',
+        'middle_name_en',
         'organization_title',
-        'job_title',
-        'rank_title',
+        'organization_title_en',
     ];
 }

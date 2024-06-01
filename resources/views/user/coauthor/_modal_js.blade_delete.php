@@ -20,17 +20,15 @@
                     <ul></ul>
                 </div>
 
-                <form id="modal-coauthor-form" class="modal-coauthor-form" action="{{ route('coauthor.store') }}" data-action="add" method="POST" class="mt-2">
+                <form id="modal-coauthor-form" class="modal-coauthor-form" action="{{ route('coauthor.store', $thesisId) }}" data-action="add" method="POST" class="mt-2">
                     @csrf
-                
+
                     @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'last_name', 'required' => true])
-                    @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'last_name_en', 'required' => true])
                     @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'first_name', 'required' => true,])
-                    @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'first_name_en', 'required' => true,])
                     @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'middle_name'])
-                    @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'middle_name_en'])
                     @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'organization_title'])
-                    @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'organization_title_en'])
+                    @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'rank_title'])
+                    @include('user.coauthor.field', ['form' => 'modal-coauthor-form', 'field_name' => 'job_title'])
 
                     {{-- <div class="form-check">
                         <input  @checked($author->participate)  form="{{ $author->id . '-coauthor-form' }}" class="form-check-input participate-check" type="checkbox" name="participate">
@@ -61,7 +59,7 @@
     
     const SITEURL = '{{ URL::to('') }}';
     
-    const coauthors = $('.coauthors-list');
+    const coauthors = $('#coauthors .coauthors-list');
     const modal = $('#coauthorModal');
     const form = modal.find('#modal-coauthor-form');
     const buttonSave = modal.find('.coauthor-save');

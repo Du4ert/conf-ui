@@ -39,29 +39,31 @@ class CoauthorController extends Controller
     }
 
 
-    public function store(Request $request, $userId)
+    public function store(Request $request, $thesisId = null)
     {
         $author = $request->author;
 
         $validatedData = $request->validate([
             'first_name' => 'required|string|min:2|max:50',
+            'first_name_en' => 'required|string|min:2|max:50',
             'last_name' => 'required|string|min:2|max:50',
+            'last_name_en' => 'required|string|min:2|max:50',
             'middle_name' => 'nullable|string|max:50',
+            'middle_name_en' => 'nullable|string|max:50',
             'organization_title' => 'nullable|string|max:50',
-            'job_title' => 'nullable|string|max:50',
-            'rank_title' => 'nullable|string|max:50',
-            'participate' => 'nullable|boolean',
+            'organization_title_en' => 'nullable|string|max:50',
         ]);
 
         $author = new Coauthor([
-            'user_id' => $userId,
+            'user_id' => $thesisId,
             'first_name' => $request['first_name'],
+            'first_name_en' => $request['first_name_en'],
             'last_name' => $request['last_name'],
+            'last_name_en' => $request['last_name_en'],
             'middle_name' => $request['middle_name'],
+            'middle_name_en' => $request['middle_name_en'],
             'organization_title' => $request['organization_title'],
-            'job_title' => $request['job_title'],
-            'rank_title' => $request['rank_title'],
-            'participate' => $request['participate'] ?? false,
+            'organization_title_en' => $request['organization_title_en'],
         ]);
 
         $author->save();

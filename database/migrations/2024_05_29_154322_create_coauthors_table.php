@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('coauthors', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('thesis_id');
+            $table->unsignedBigInteger('thesis_id')->nullable();
             $table->string('first_name');
             $table->string('first_name_en');
             $table->string('last_name');

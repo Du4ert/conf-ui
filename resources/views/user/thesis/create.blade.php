@@ -52,7 +52,10 @@
                     </div>
                  </div>
         </div>
+    </form>
 
+@include('user.coauthor.list')
+    
                 {{-- Submit --}}
                 <div class="row mb-3 float-end">
                     <div class="col-md-6 offset-md-4">
@@ -61,5 +64,4 @@
                         </button>
                     </div>
                 </div>
-    </form>
 @endsection
