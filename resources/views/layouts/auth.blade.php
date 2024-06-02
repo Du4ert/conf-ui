@@ -18,48 +18,53 @@
         var locale = '{{ config('app.locale') }}';
     </script>
 
-<script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-<script type="text/javascript">
-bkLib.onDomLoaded(function() {
-    nicEditors.allTextAreas({buttonList : ['removeformat', 'bold','italic','underline', 'subscript', 'superscript', 'center', 'right', 'justify', 'ol', 'ul']});
- }); </script>
+    <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        bkLib.onDomLoaded(function() {
+            nicEditors.allTextAreas({
+                buttonList: ['removeformat', 'bold', 'italic', 'underline', 'subscript', 'superscript',
+                    'center', 'right', 'justify', 'ol', 'ul'
+                ]
+            });
+        });
+    </script>
 
 </head>
 
 <body>
-@include('common.header')
-@include('common.banner')
+    @include('common.header')
+    @include('common.banner')
 
-<div class="main mt-4">
-    
-<div class="container">
-    <div class="row justify-content-center mb-4">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header d-flex align-items-center justify-content-between">
-                    @yield('header')
+    <div class="main mt-4">
+
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            @yield('header')
+                        </div>
+                        <div class="card-body">
+                            @include('user.parts.success')
+                            @include('user.parts.error')
+                            @yield('body')
+                        </div>
+                        <div class="card-footer">
+                            @yield('footer')
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    @include('user.parts.success')
-                    @include('user.parts.error')
-                    @yield('body')
-                </div>
-                  <div class="card-footer">
-                    @yield('footer')
-                  </div>
             </div>
         </div>
+
+    </div>{{-- /main  --}}
+
+    @include('common.footer')
+
+    <div id="spinner-div" class="pt-5 justify-content-center align-items-center">
+        <div class="spinner-border text-primary" role="status">
+        </div>
     </div>
-</div>
-
-</div>{{-- /main  --}}
-
-@include('common.footer')
-
-<div id="spinner-div" class="pt-5">
-    <div class="spinner-border text-primary" role="status">
-    </div>
-</div>
 </body>
 
 </html>

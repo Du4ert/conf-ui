@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Thesis;
 use App\Models\Coauthor;
+use PDF;
 
 class ThesisController extends Controller
 {
@@ -98,11 +99,21 @@ class ThesisController extends Controller
         return redirect()->route('reports')->with('status', 'Thesis submitted successfully');
     }
 
-        public function download($id)
+    public function download($id)
     {
-        // $thesis = Thesis::findOrFail($id);
-        // return response()->json($thesis));
-    }
+        $thesis = Thesis::findOrFail($id);
+
+        if ($thesis->accepted_status || $thesis->submitted_status ) {
+            return abort('404');
+        }
+
+        $user = $thesis->user;
+        $authors = $thesis->coauthors;
+              
+        $pdf = PDF::loadView('user.thesis.downloadPDF', compact('thesis', 'user', 'authors'));
+       
+        return $pdf->download('thesis.pdf');
+}
 
 
     public function delete(Request $request, $id)

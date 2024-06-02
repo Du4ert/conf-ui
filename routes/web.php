@@ -51,6 +51,7 @@ Route::post('/thesis/{id}/update', [ThesisController::class, 'update'])->name('t
 Route::post('/thesis/{id}/submit', [ThesisController::class, 'submit'])->name('thesis.submit');
 Route::get('/thesis/{id}/show', [ThesisController::class, 'show'])->name('thesis.show');
 Route::delete('/thesis/{id}/delete', [ThesisController::class, 'delete'])->name('thesis.delete');
+Route::get('/thesis/{id}/download', [ThesisController::class, 'download'])->name('thesis.download');
 
 // Операции с файлами
 Route::get('/file/{userId}/download', [FileController::class, 'download'])->name('file.download');
