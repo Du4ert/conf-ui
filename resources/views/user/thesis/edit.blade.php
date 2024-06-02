@@ -33,11 +33,23 @@
     </div>
 
     <script type="module">
+const text = $('#text');
+const textEn = $('#text_en');
+new nicEditor({buttonList : ['bold','italic']});
+
+$(document).ready(function() {
+    nicEditors.findEditor('text').setContent(text.html());
+nicEditors.findEditor('text_en').setContent(textEn.html());
+});
+
+
         const form = $('#thesis-form');
         const saveButton = $('#save-button');
         const submitButton = $('#submit-button');
 
         submitButton.on('click', function(e) {
+            
+            // nicEditors.findEditor('<you_textarea_id>').saveContent();
             form.attr('action', submitButton.data('action'));
             form.submit();
         });
@@ -45,6 +57,8 @@
 
         saveButton.on('click', function(e) {
             e.preventDefault();
+            nicEditors.findEditor('text').saveContent();
+            nicEditors.findEditor('text_en').saveContent();
             form.attr('action', saveButton.data('action'));
             form.submit();
         });

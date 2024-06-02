@@ -17,13 +17,18 @@
     <script>
         var locale = '{{ config('app.locale') }}';
     </script>
+    <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    bkLib.onDomLoaded(function() {
+        nicEditors.allTextAreas({buttonList : ['bold','italic','underline', 'subscript', 'superscript']});
+     }); ;</script>
 </head>
 
 <body>
 @include('common.header')
-@include('common.banner');
+@include('common.banner')
 
-<div class="main">
+<div class="main mt-4">
     
 <div class="container">
     <div class="row justify-content-center mb-4">
