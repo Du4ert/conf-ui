@@ -74,6 +74,8 @@ return [
     'thesis_create' => 'Регистрация доклада',
     'thesis_save' => 'Подать',
     'coauthor_add' => 'Добавить соавтора',
+    'thesis_submitted' => 'Тезисы на проверке',
+    'thesis_accepted' => 'Тезисы приняты',
 
     'documents' => 'Документы',
 

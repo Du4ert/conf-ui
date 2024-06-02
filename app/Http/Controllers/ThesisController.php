@@ -56,6 +56,10 @@ class ThesisController extends Controller
     public function edit($id) {
         $thesis = Thesis::findOrFail($id);
 
+        if ($thesis->accepted_status || $thesis->submitted_status ) {
+            return abort('404');
+        }
+
         $user = $thesis->user;
         $authors = $thesis->coauthors;
 
@@ -73,7 +77,6 @@ class ThesisController extends Controller
 
     public function submit(Request $request, $id)
     {
-        // $userId = auth()->user()->id;
         
 
         $validatedData = $request->validate([
@@ -87,12 +90,9 @@ class ThesisController extends Controller
 
         $thesis = Thesis::findOrFail($id);
 
-        // $thesis->id = session()->get('id');
-        // $thesis->save();
         $validatedData['submitted_status'] = true;
         $thesis->update($validatedData);
 
-        // $authors = Coauthor::whereIn('id', $request['coauthor'])->update(['thesis_id' => $thesis->id]);
 
 
         return redirect()->route('reports')->with('status', 'Thesis submitted successfully');
@@ -101,7 +101,6 @@ class ThesisController extends Controller
         public function download($id)
     {
         // $thesis = Thesis::findOrFail($id);
-        
         // return response()->json($thesis));
     }
 

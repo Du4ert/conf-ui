@@ -70,6 +70,8 @@ return [
     'thesis_create' => 'Report registration',
     'thesis_save' => 'Register',
     'coauthor_add' => 'Add the co -authors',
+    'thesis_submitted' => 'Theses on the check',
+    'thesis_accepted' => 'Theses are accepted',
 
     'documents' => 'Documents',
 

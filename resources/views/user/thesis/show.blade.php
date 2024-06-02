@@ -13,15 +13,6 @@
         <div class="row">
             <div class="col-md-12">
                 <dl class="row">
-                    <dt class="col-4  mb-2">{{ __('auth.thesis_title') }}</dt>
-                    <dd class="col-8">
-                        {{ $thesis->thesis_title }}
-                    </dd>
-
-                    <dt class="col-4  mb-2">{{ __('auth.thesis_title_en') }}</dt>
-                    <dd class="col-8">
-                        {{ $thesis->thesis_title_en }}
-                    </dd>
 
                     <dt class="col-4  mb-2">{{ __('auth.report_form') }}</dt>
                     <dd class="col-8">
@@ -50,17 +41,30 @@
         </div>
     </div>
 
-    <div class="card-footer">
-        <form id="{{ $formDelete }}" class="" action="{{ route('thesis.delete', $thesis->id) }}" method="post">
-            <div class="d-flex align-items-center justify-content-end">
-            @csrf
-            @method('DELETE')
-        
-            <button form="{{ $formDelete }}" data-id="{{ $thesis->id ?? '' }}" type="submit" class="btn btn-danger me-2"><i class="fa fa-trash"></i></button>
-        
-            <a href="{{ route('thesis.edit', $thesis->id) }}" type="button" class="btn btn-primary"><i class="fa fa-edit"></i></a>
-        </div>
-        </form>
-      </div>
+@if ($thesis->accepted_status == true)
+<div class="card-footer bg-success bg-opacity-25">
+    <i class="fas fa-circle-check fa-lg me-2"></i>Тезисы приняты!
+</div>
+
+@elseif($thesis->submitted_status == true)
+<div class="card-footer bg-primary bg-opacity-25">
+    <i class="fas fa-circle-check fa-lg me-2"></i>Тезисы на проверке!
+</div>
+
+@else
+<div class="card-footer">
+    <form id="{{ $formDelete }}" class="" action="{{ route('thesis.delete', $thesis->id) }}" method="post">
+        <div class="d-flex align-items-center justify-content-end">
+        @csrf
+        @method('DELETE')
+    
+        <button form="{{ $formDelete }}" data-id="{{ $thesis->id ?? '' }}" type="submit" class="btn btn-danger me-2"><i class="fa fa-trash"></i></button>
+    
+        <a href="{{ route('thesis.edit', $thesis->id) }}" type="button" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+    </div>
+    </form>
+</div>
+@endif
+
 
 </div>
