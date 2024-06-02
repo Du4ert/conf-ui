@@ -1,6 +1,16 @@
 @php
 $formDelete = $author->id . '-form-delete';
 
+// function formatFullName($lastName, $firstName, $middleName = '') {
+//     $fullName = $lastName . ' ';
+//     $fullName .= mb_substr($firstName, 0, 1) . '.';
+    
+//     if ($middleName) {
+//         $fullName .= ' ' . mb_substr($middleName, 0, 1) . '.';
+//     }
+    
+//     return $fullName;
+// }
 @endphp
 <li class="coauthor-list-item card col-md-12 col-lg-6 mb-1" data-id="{{$author->id}}">
 <div class="card-header d-flex justify-content-between align-items-center">

@@ -43,8 +43,8 @@ return [
     'last_name_en' => 'Фамилия ENG',
     'middle_name' => 'Отчество',
     'middle_name_en' => 'Отчество ENG',
-    'organization_title' => 'Организация',
-    'organization_title_en' => 'Организация ENG',
+    'organization_title' => 'Аффиляция',
+    'organization_title_en' => 'Аффиляция ENG',
     'rank_title' => 'Степень',
     'rank_title_en' => 'Степень ENG',
     'job_title' => 'Должность',
@@ -74,6 +74,7 @@ return [
     'thesis_create' => 'Регистрация доклада',
     'thesis_save' => 'Подать',
     'coauthor_add' => 'Добавить соавтора',
+    'user_organization' => 'Использовать аффиляцию пользователя',
     'thesis_submitted' => 'Тезисы на проверке',
     'thesis_accepted' => 'Тезисы приняты',
 

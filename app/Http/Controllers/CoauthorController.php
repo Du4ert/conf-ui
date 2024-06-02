@@ -81,12 +81,13 @@ class CoauthorController extends Controller
 
         $validatedData = $request->validate([
             'first_name' => 'required|string|min:2|max:50',
+            'first_name_en' => 'required|string|min:2|max:50',
             'last_name' => 'required|string|min:2|max:50',
+            'last_name_en' => 'required|string|min:2|max:50',
             'middle_name' => 'nullable|string|max:50',
+            'middle_name_en' => 'nullable|string|max:50',
             'organization_title' => 'nullable|string|max:50',
-            'job_title' => 'nullable|string|max:50',
-            'rank_title' => 'nullable|string|max:50',
-            'participate' => 'boolean',
+            'organization_title_en' => 'nullable|string|max:50',
         ]);
 
         $author->update($validatedData);

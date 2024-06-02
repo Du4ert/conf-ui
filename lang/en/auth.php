@@ -42,8 +42,8 @@ return [
     'last_name_en' => 'Last name',
     'middle_name' => 'Surname RUS',
     'middle_name_en' => 'Surname',
-    'organization_title' => 'Organization RUS',
-    'organization_title_en' => 'Organization',
+    'organization_title' => 'Affiliation RUS',
+    'organization_title_en' => 'Affiliation',
     'rank_title' => 'Rank RUS',
     'rank_title_en' => 'Rank',
     'job_title' => 'Job title RUS',
@@ -70,6 +70,7 @@ return [
     'thesis_create' => 'Report registration',
     'thesis_save' => 'Register',
     'coauthor_add' => 'Add the co -authors',
+    'user_organization' => 'Use the user affiliation',
     'thesis_submitted' => 'Theses on the check',
     'thesis_accepted' => 'Theses are accepted',
 
