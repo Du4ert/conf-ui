@@ -73,6 +73,7 @@ return [
     'user_organization' => 'Use the user affiliation',
     'thesis_submitted' => 'Theses on the check',
     'thesis_accepted' => 'Theses are accepted',
+    'thesis_note' => 'Вы можете скопировать текст с форматированием из MS Word',
 
     'documents' => 'Documents',
 

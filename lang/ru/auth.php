@@ -77,6 +77,7 @@ return [
     'user_organization' => 'Использовать аффиляцию пользователя',
     'thesis_submitted' => 'Тезисы на проверке',
     'thesis_accepted' => 'Тезисы приняты',
+    'thesis_note' => 'Вы можете скопировать текст с форматированием из MS Word',
 
     'documents' => 'Документы',
 
