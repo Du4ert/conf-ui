@@ -1,62 +1,66 @@
 @php
-if (!isset($formDelete)) {
-    $formDelete = 'delete-thesis-' . $thesis->id;
-}
+    if (!isset($formDelete)) {
+        $formDelete = 'delete-thesis-' . $thesis->id;
+    }
 
 @endphp
-<div class="card">
-    <div class="card-header">
-        <h5 class="card-title">{{ $thesis->thesis_title }}</h5>
-        <h5 class="card-title">{{ $thesis->thesis_title_en }}</h5>
+<div class="card mb-3">
+    <div class="card-header d-flex align-items-center">
+        <h5 class="card-title">{{ __('auth.thesis') . '-' . $num }}</h5>
+
     </div>
     <div class="card-body">
         <div class="row">
-            <div class="col-md-6">
-                <h6 class="card-title">{{ $thesis->thesis_title }}</h6>
-                  <h6 class="card-title">{{ $thesis->thesis_title_en }}</h6>
-                <form>
-                    <div class="mb-3">
-                        <label for="inputField1" class="form-label">Field 1</label>
-                        <input type="text" class="form-control" id="inputField1" placeholder="Enter Field 1">
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputField2" class="form-label">Field 2</label>
-                        <input type="text" class="form-control" id="inputField2" placeholder="Enter Field 2">
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputField3" class="form-label">Field 3</label>
-                        <input type="text" class="form-control" id="inputField3" placeholder="Enter Field 3">
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputField4" class="form-label">Field 4</label>
-                        <input type="text" class="form-control" id="inputField4" placeholder="Enter Field 4">
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputField5" class="form-label">Field 5</label>
-                        <input type="text" class="form-control" id="inputField5" placeholder="Enter Field 5">
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-6">
-                <!-- Add content here -->
-            </div>
-        </div>
-        <div class="row mb-3 float-end">
-            <div class="col-md-6 offset-md-4">
-                <form id="{{ $formDelete }}" class="d-inline" action="{{ route('thesis.delete', $thesis->id) }}" method="post">
-                    @csrf
-                    @method('DELETE')
+            <div class="col-md-12">
+                <dl class="row">
+                    <dt class="col-4  mb-2">{{ __('auth.thesis_title') }}</dt>
+                    <dd class="col-8">
+                        {{ $thesis->thesis_title }}
+                    </dd>
 
-                        <div class="col-md-6 offset-md-4">
-                            <a href="{{ route('thesis.edit', $thesis->id) }}" type="button" class="btn btn-primary offset-md-6  mb-3 mt-3 float-end">
-                                {{ __('auth.edit') }}<i
-                                class="fa fa-edit ms-2"></i>
-                            </a>
-                        </div>
-                
-                    <button form="{{ $formDelete }}" data-id="{{ $thesis->id ?? '' }}" type="submit" class="btn btn-link text-danger coauthor-delete-button"><i class="fa fa-trash"></i>{{ __('auth.delete') }}</button>
-                </form>
+                    <dt class="col-4  mb-2">{{ __('auth.thesis_title_en') }}</dt>
+                    <dd class="col-8">
+                        {{ $thesis->thesis_title_en }}
+                    </dd>
+
+                    <dt class="col-4  mb-2">{{ __('auth.report_form') }}</dt>
+                    <dd class="col-8">
+                        {{ __('auth.' . $thesis->report_form) }}
+                    </dd>
+
+                    <dt class="col-4  mb-2">{{ __('auth.section') }}</dt>
+                    <dd class="col-8">
+                        {{ __('auth.' . $thesis->section) }}
+                    </dd>
+
+
+                    <dt class="col-4 mb-2">{{ __('auth.thesis_title') }}</dt>
+                    <dd class="col-8">{{ $thesis->thesis_title }}</dd>
+
+                    <dt class="col-4  mb-2">{{ __('auth.thesis_title_en') }}</dt>
+                    <dd class="col-8">{{ $thesis->thesis_title_en }}</dd>
+
+
+                </dl>
+                <div class="col-md-6">
+                    <!-- Add content here -->
+                </div>
             </div>
+
         </div>
     </div>
+
+    <div class="card-footer">
+        <form id="{{ $formDelete }}" class="" action="{{ route('thesis.delete', $thesis->id) }}" method="post">
+            <div class="d-flex align-items-center justify-content-end">
+            @csrf
+            @method('DELETE')
+        
+            <button form="{{ $formDelete }}" data-id="{{ $thesis->id ?? '' }}" type="submit" class="btn btn-danger me-2"><i class="fa fa-trash"></i></button>
+        
+            <a href="{{ route('thesis.edit', $thesis->id) }}" type="button" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+        </div>
+        </form>
+      </div>
+
 </div>

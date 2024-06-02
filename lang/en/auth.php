@@ -32,6 +32,7 @@ return [
     'policy' => 'Policy regarding the work with personal data of conference participants',
 
     'save' => 'Save',
+    'cancel' => 'Cancel',
     'edit' => 'Edit',
 
     'email' => 'Email',
@@ -53,13 +54,13 @@ return [
     'files' => 'Files',
     'coauthors' => 'Coauthors',
     'phone' => 'Phone number',
-    'thesis_title_ru' => 'Report title RU',
-    'thesis_title_en' => 'Report title',
+    'thesis_title_ru' => 'Title RU',
+    'thesis_title_en' => 'Title',
     'russian' => 'Russian',
     'english' => 'English',
 
-    'thesis_text' => 'Thesis text RU',
-    'thesis_text_en' => 'Thesis text',
+    'thesis_text' => 'Text RU',
+    'thesis_text_en' => 'Text',
     'theses' => 'Theses',
     'thesis' => 'Thesis',
     'report' => 'Report',
@@ -71,5 +72,18 @@ return [
     'coauthor_add' => 'Add the co -authors',
 
     'documents' => 'Documents',
+
+        // Report form
+    'report_form' => 'Report form',
+    'oral' => 'Oral report at the section',
+    'poster' => 'Poster presentation',
+    'absentee' => 'Absentee participation',
+
+    // Section
+    'section' => 'Section',
+    'genomics' => 'Genomics, transcriptomics and bioinformatics of plants',
+    'biotechnology' => 'Biotechnology and bioengineering of plants',
+    'breeding' => 'Breeding of agricultural plants',
+    'bioresource' => 'Work with bioresource collections of plants, methods of gene pool conservation',
 
 ];

@@ -2,24 +2,28 @@
 $formDelete = $author->id . '-form-delete';
 
 @endphp
-<li class="coauthor-list-item" data-id="{{$author->id}}">
+<li class="coauthor-list-item card col-md-12 col-lg-6 mb-1" data-id="{{$author->id}}">
+<div class="card-header d-flex justify-content-between align-items-center">
+    <div>{{ formatFullName($author->last_name, $author->first_name, $author->middle_name) }}</div>
 
-<span>{{ $author->last_name }} {{ $author->first_name }} {{ $author->middle_name }}</span>
-<p>
-    <small>{{ $author->job_title }} {{ $author->rank_title }} {{ $author->organization_title }} </small>
-</p>
-
-<div class="coauthor-controls">
-    <button type="button" class="btn btn-link text-primary coauthor-edit-button" data-bs-toggle="modal" data-bs-target="#coauthorModal" data-id="{{$author->id}}"><i class="fa fa-edit"></i>
-    </button>
-    <input type="text" hidden name="coauthor[{{$author->id}}]" value="{{ $author->id }}" form="thesis-form">
-
-    <form id="{{ $formDelete }}" class="d-inline" action="{{ route('coauthor.delete', $author->id) }}" method="post">
-        @csrf
-        @method('DELETE')
+    <div class="coauthor-controls d-flex justify-content-end align-items-center">
+        <button type="button" class="btn btn-link text-primary coauthor-edit-button" data-bs-toggle="modal" data-bs-target="#coauthorModal" data-id="{{$author->id}}"><i class="fa fa-edit"></i>
+        </button>
+        <input type="text" hidden name="coauthor[{{$author->id}}]" value="{{ $author->id }}" form="thesis-form">
     
-        <button form="{{ $formDelete }}" data-id="{{ $author->id ?? '' }}" type="button" class="btn btn-link text-danger coauthor-delete-button"><i class="fa fa-trash"></i></button>
-    </form>
+        <form id="{{ $formDelete }}" class="d-inline" action="{{ route('coauthor.delete', $author->id) }}" method="post">
+            @csrf
+            @method('DELETE')
+        
+            <button form="{{ $formDelete }}" data-id="{{ $author->id ?? '' }}" type="button" class="btn btn-link text-danger coauthor-delete-button"><i class="fa fa-trash"></i></button>
+        </form>
+    </div>
 </div>
+{{-- <div class="card-body">
+<small>{{$author->organization_title}}</small>
+</div> --}}
+{{-- <p>
+    <small>{{ $author->job_title }} {{ $author->rank_title }} {{ $author->organization_title }} </small>
+</p> --}}
 
 </li>

@@ -35,9 +35,11 @@
                 <div class="card-body">
                     @include('user.parts.success')
                     @include('user.parts.error')
-                  @yield('body')
-
+                    @yield('body')
                 </div>
+                  <div class="card-footer">
+                    @yield('footer')
+                  </div>
             </div>
         </div>
     </div>

@@ -23,23 +23,23 @@
     @endif
     @include('user.parts.main')
     </form>
+@endsection
+
+@section('footer')
+    <div class="home-controls d-flex justify-content-end align-items-center">
 
 
-    <div class="d-flex align-items-center mx-4 mb-3 justify-content-between">
         @if (!$editable)
-            <a href="{{ $admin ? route('user.edit', $user->id) : route('editSelf') }}" class="btn btn-warning"
-                role="button"><i class="fa fa-edit"></i> {{ __('auth.edit') }}</a>
+            <a href="{{ $admin ? route('user.edit', $user->id) : route('editSelf') }}" class="btn btn-primary"
+                role="button"><span class="d-none d-sm-inline">{{ __('auth.edit') }}</span><i class="fa fa-edit ms-sm-2"></i></a>
         @else
-            <a href="{{ $admin ? route('user.get', $user->id) : route('home') }}" class="btn btn-warning" role="button"><i
-                    class="fa fa-arrow-left "></i></a>
+            <a href="{{ $admin ? route('user.get', $user->id) : route('home') }}" class="btn btn-secondary me-2"
+                role="button"><span class="d-none d-sm-inline">{{ __('auth.cancel') }}</span><i class="fa fa-cancel ms-sm-2"></i></a>
         @endif
 
         @if ($editable)
-            <button id="submit" type="submit" class="btn btn-primary d-block" form="user-form">
-                <i class="fa fa-save"></i>
-                {{ __('auth.save') }}
+            <button id="submit" type="submit" class="btn btn-primary d-block" form="user-form"><span class="d-none d-sm-inline">{{ __('auth.save') }}</span><i class="fa fa-save ms-sm-2"></i>
             </button>
         @endif
     </div>
-
 @endsection

@@ -2,7 +2,7 @@
 <div class="row mb-2 d-none d-md-flex">
     @include('user.inputs.section', ['form' => 'thesis-form'])
     @include('user.inputs.report_form', ['form' => 'thesis-form'])
-    </div>
+</div>
 
 
 @include('user.parts.languages')
@@ -33,4 +33,3 @@
                       </div>
                 </div>
              </div>
-    </div>

@@ -4,7 +4,7 @@
 @endsection
 
 @section('body')
-    <h4 class="mb-3 text-center">{{ __('auth.thesis_create') }}</h4>
+    <h4 class="mb-3 text-center">{{ __('auth.thesis') }}</h4>
 
     <form id="thesis-form" action="{{ route('thesis.submit', $thesis->id) }}" method="POST">
         @csrf
@@ -12,25 +12,24 @@
     </form>
 
     @include('user.coauthor.list', ['authors' => $authors])
+@endsection
 
-    <div class="row mb-3 float-end">
-        <div class="col-md-6 offset-md-4">
-            <button id="save-button" type="button" data-action="{{ route('thesis.update', $thesis->id) }}"
-                class="btn btn-primary offset-md-6  mb-3 mt-3 float-end">
-                {{ __('auth.save') }}<i class="fa fa-save ms-2"></i>
-            </button>
-        </div>
-    </div>
+@section('footer')
+    <div class="thesis-controls d-flex justify-content-end align-items-center">
+        <a href="{{ route('reports') }}" id="cancel-button" class="btn btn-secondary me-2"><span
+                class="d-none d-sm-inline">{{ __('auth.cancel') }}</span><i class="fa fa-cancel ms-sm-2"></i>
+        </a>
+        
 
-    {{-- Submit --}}
-    <div class="row mb-3 float-end">
-        <div class="col-md-6 offset-md-4">
-            <button form="thesis-form" id="submit-button" type="button"
-                data-action="{{ route('thesis.submit', $thesis->id) }}"
-                class="btn btn-success offset-md-6  mb-3 mt-3 float-end">
-                {{ __('auth.thesis_save') }}<i class="fa fa-save ms-2"></i>
-            </button>
-        </div>
+        <button id="save-button" type="button" data-action="{{ route('thesis.update', $thesis->id) }}"
+            class="btn btn-primary me-2"><span class="d-none d-sm-inline">
+                {{ __('auth.save') }}</span><i class="fa fa-save ms-sm-2"></i>
+        </button>
+
+        <button form="thesis-form" id="submit-button" type="button" data-action="{{ route('thesis.submit', $thesis->id) }}"
+            class="btn btn-success"><span class="d-none d-sm-inline">{{ __('auth.thesis_save') }}</span><i
+                class="fas fa-external-link-alt ms-sm-2"></i>
+        </button>
     </div>
 
     <script type="module">

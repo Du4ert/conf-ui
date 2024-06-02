@@ -17,7 +17,7 @@
 
 
 
-                    @include('user.parts.languages_head')
+                    @include('user.parts.languages')
 
                     <div class="row form-group mb-2">
                         <div class="col-lg-6">
@@ -55,8 +55,8 @@
             </div>
             <div class="modal-footer">
                 <button  class="coauthor-close btn btn-secondary"
-                    data-bs-dismiss="modal">Close</button>
-                <button  type="submit" class="coauthor-save btn btn-primary">Save changes</button>
+                    data-bs-dismiss="modal">Close<i class="fa fa-cancel ms-2"></i></button>
+                <button  type="submit" class="coauthor-save btn btn-primary">Save changes<i class="fa fa-save ms-2"></i></button>
             </div>
         </div>
     </div>

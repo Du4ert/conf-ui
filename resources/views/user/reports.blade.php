@@ -4,12 +4,15 @@
 @endsection
 
 @section('body')
-    <h4 class="mb-3 text-center">{{ __('auth.reports') }}</h4>
+    <h4 class="mb-3 text-center">{{ __('auth.theses') }}</h4>
 
 
 @if ($theses != null)
+@php
+$num = 0;
+@endphp
 @foreach ($theses as $thesis)
-    @include('user.thesis.show')
+    @include('user.thesis.show', ['num' => ++$num])
 @endforeach
 
 @if(count($theses) < 1)

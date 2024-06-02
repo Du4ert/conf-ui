@@ -54,4 +54,3 @@
             @include('user.inputs.field_home', ['field_name' => 'job_title_en', 'form' => 'user-form'])
         </div>
     </div>
-    </div>
