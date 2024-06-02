@@ -29,11 +29,5 @@ $formDelete = $author->id . '-form-delete';
         </form>
     </div>
 </div>
-{{-- <div class="card-body">
-<small>{{$author->organization_title}}</small>
-</div> --}}
-{{-- <p>
-    <small>{{ $author->job_title }} {{ $author->rank_title }} {{ $author->organization_title }} </small>
-</p> --}}
 
 </li>
