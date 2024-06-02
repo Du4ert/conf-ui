@@ -162,6 +162,13 @@ body {
       }
 }
 
+.thesis-text {
+    .nicEdit-main {
+        max-height: 300px;
+        overflow-y: scroll !important;
+    }
+}
+
 
 @media (max-width: 767px) {
     .btn {

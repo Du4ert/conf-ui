@@ -37,9 +37,10 @@ const text = $('#text');
 const textEn = $('#text_en');
 new nicEditor({buttonList : ['bold','italic']});
 
+
 $(document).ready(function() {
-    nicEditors.findEditor('text').setContent(text.html());
-nicEditors.findEditor('text_en').setContent(textEn.html());
+    // nicEditors.findEditor('text').setOptions();
+// nicEditors.findEditor('text_en').setOptions();
 });
 
 

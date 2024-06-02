@@ -22,14 +22,18 @@
                 <div class="col-lg-6">
                     <div class="mb-3">
                         <label for="thesis-form" class="form-label">{{ __('auth.thesis_text') }}</label>
+                        <div class="thesis-text">
                         <textarea id="text" class="form-control" name="text" rows="3">{{ $thesis->text}}</textarea>
+                        </div>
                       </div>
                 </div>
                 
                 <div class="col-lg-6">
                     <div class="mb-3">
                         <label for="thesis-form" class="form-label">{{ __('auth.thesis_text_en') }}</label>
+                        <div class=" thesis-text">
                         <textarea id="text_en" class="form-control" name="text_en" rows="3">{{ $thesis->text_en}}</textarea>
+                          </div>
                       </div>
                 </div>
              </div>

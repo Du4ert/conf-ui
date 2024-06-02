@@ -10,6 +10,7 @@ import '@fortawesome/fontawesome-free/js/all.min.js';
 import './theme';
 
 
+
 $(document).on({
     ajaxStart: function(){
         $('#spinner-div').show();
