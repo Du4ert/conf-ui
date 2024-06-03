@@ -1,3 +1,10 @@
+@php
+ if (auth()->user()->isAdmin()) {
+    $admin = true;
+ } else {
+    $admin = false;
+ }
+@endphp
 @extends('layouts.auth')
 @section('header')
     @include('user.parts.navigation', ['page' => 'reports'])
@@ -29,11 +36,14 @@ $num = 0;
 @endsection
 
 @section('footer')
+@if (!$admin)
+
 @if (count($theses) < 2)
 <div class="add-thesis d-flex justify-content-center">
 <a href="{{ route('thesis.create') }}" class="btn btn-primary" role="button">{{ __('auth.report_add' )}}<i
     class="fa fa-plus ms-2"></i></a>
 </div>
+@endif
 @endif
 @endsection
 

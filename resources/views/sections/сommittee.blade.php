@@ -5,6 +5,30 @@
         <h3 class="section-heading text-center mb-3">Оргкомитет</h3>
         <div class="section-intro text-center single-col-max mx-auto mb-5">Вступительный текст</div>
         <div class="row">
+
+
+            <div class="col-md-6">
+                <div class="d-flex flex-wrap justify-content-between align-items-center">
+                    <img src="{{asset('/images/orgs/org-3.jpg')}}"" class="rounded-circle img-fluid ms-3" alt="Image 1">
+                    <div class="ms-3">
+                        <h5>Э. С. Челебиева</h5>
+                        <p>к. б. н., с.н.с. КГЦ-НБС-ННЦ, ФГБУН «НБС-ННЦ», Ялта
+                            В. А. Цюпка, к. б. н., зав. лаб. геномики растений и биоинформатики, вед.н.с. КГЦ-НБС-ННЦ
+                            ФГБУН «НБС-ННЦ», Ялта</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex flex-wrap justify-content-between align-items-center">
+                    <img src="image2.jpg" class="rounded-circle img-fluid me-3" alt="Image 2">
+                    <div class="me-3">
+                        <h5>Заголовок 2</h5>
+                        <p>Текст 2</p>
+                    </div>
+                </div>
+            </div>
+
+            
             <div class="col-6 col-lg-3 mb-4">
                 <div class="card rounded-0">
                     <img src="{{asset('/images/orgs/org-3.jpg')}}" class="card-img-top rounded-0" alt="">

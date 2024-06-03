@@ -74,9 +74,15 @@ Route::delete('/coauthor/{id}/delete', [CoauthorController::class, 'delete'])->n
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'list'])->name('user.list');
     Route::get('/user/{id}', [AdminController::class, 'getUser'])->name('user.get');
-    Route::get('/user/{id}/edit', [AdminController::class, 'edit'])->name('user.edit');
-    Route::put('/user/{id}/update', [AdminController::class, 'update'])->name('user.update');
+    Route::get('/user/{id}/reports', [AdminController::class, 'reports'])->name('user.get.reports');
+    Route::get('/user/{id}/documents', [AdminController::class, 'documents'])->name('user.get.documents');
+    // Route::get('/user/{id}/edit', [AdminController::class, 'edit'])->name('user.edit');
+    // Route::put('/user/{id}/update', [AdminController::class, 'update'])->name('user.update');
     Route::delete('/user/{id}', [AdminController::class, 'destroy'])->name('user.destroy');
+    Route::get('/thesis/{id}/accept', [AdminController::class, 'thesisAccept'])->name('thesis.accept');
+    Route::get('/thesis/{id}/decline', [AdminController::class, 'thesisDecline'])->name('thesis.decline');
+
+
 });
 
 // Отдельные страницы

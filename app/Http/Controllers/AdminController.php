@@ -7,6 +7,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\User;
+use App\Models\Thesis;
 
 class AdminController extends BaseController
 {
@@ -32,22 +33,40 @@ public function getUser(Request $request, $id)
     return view('admin.home', compact('user', 'fileByTypes', 'coauthors'));
 }
 
-public function edit(Request $request, $id)
+// public function edit(Request $request, $id)
+// {
+//     $user = User::findOrFail($id);
+    
+//     $files = $user->files;
+//     $fileByTypes = $user->fileByTypes($files);
+    
+//     return view('admin.home', compact('user', 'fileByTypes'))->with(['editable' => true]);
+// }
+
+// public function update(Request $request, $id)
+// {
+//     $user = User::findOrFail($id);
+//     $user->update($request->all());
+
+//     return redirect()->route('user.get', ['id' => $id])->with('success', 'Profile updated successfully');
+// }
+
+public function thesisAccept($id)
 {
-    $user = User::findOrFail($id);
-    
-    $files = $user->files;
-    $fileByTypes = $user->fileByTypes($files);
-    
-    return view('admin.home', compact('user', 'fileByTypes'))->with(['editable' => true]);
+    $thesis = Thesis::findOrFail($id);
+    $thesis->accepted_status = true;
+    $thesis->save();
+
+    return back();
 }
 
-public function update(Request $request, $id)
+public function thesisDecline($id)
 {
-    $user = User::findOrFail($id);
-    $user->update($request->all());
+    $thesis = Thesis::findOrFail($id);
+    $thesis->accepted_status = false;
+    $thesis->save();
 
-    return redirect()->route('user.get', ['id' => $id])->with('success', 'Profile updated successfully');
+    return back();
 }
 
 public function destroy($id)
@@ -56,6 +75,25 @@ public function destroy($id)
   $user->delete();
   return redirect()->route('user.list')
     ->with('success', 'Post deleted successfully');
+}
+
+public function reports($id)
+{
+  $user = User::findOrFail($id);
+  $theses = $user->theses;
+
+  return view('user.reports', compact('user', 'theses'));
+}
+
+
+public function documents($id)
+{
+  $user = User::findOrFail($id);
+  $files = $user->files;
+
+  $fileByTypes = $user->fileByTypes($files);
+
+  return view('user.files', compact('user', 'fileByTypes'));
 }
 
 
