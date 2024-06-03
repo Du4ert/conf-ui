@@ -14,6 +14,28 @@ class Coauthor extends Model
         return $this->belongsTo(Thesis::class);
     }
 
+    public function fullName() {
+        $fullName = $this->last_name . ' ';
+        $fullName .= mb_substr($this->first_name, 0, 1) . '.';
+        
+        if ($this->middle_name) {
+            $fullName .= ' ' . mb_substr($this->middle_name, 0, 1) . '.';
+        }
+        
+        return $fullName;
+    }
+
+    public function fullNameEn() {
+        $fullName = $this->last_name_en . ' ';
+        $fullName .= mb_substr($this->first_name_en, 0, 1) . '.';
+        
+        if ($this->middle_name_en) {
+            $fullName .= ' ' . mb_substr($this->middle_name_en, 0, 1) . '.';
+        }
+        
+        return $fullName;
+    }
+
     protected $fillable = [
         'thesis_id',
         'first_name',

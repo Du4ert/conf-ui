@@ -1,20 +1,15 @@
 @php
 $formDelete = $author->id . '-form-delete';
 
-// function formatFullName($lastName, $firstName, $middleName = '') {
-//     $fullName = $lastName . ' ';
-//     $fullName .= mb_substr($firstName, 0, 1) . '.';
-    
-//     if ($middleName) {
-//         $fullName .= ' ' . mb_substr($middleName, 0, 1) . '.';
-//     }
-    
-//     return $fullName;
-// }
 @endphp
 <li class="coauthor-list-item card col-md-12 col-lg-6 mb-1" data-id="{{$author->id}}">
 <div class="card-header d-flex justify-content-between align-items-center">
-    <div>{{ formatFullName($author->last_name, $author->first_name, $author->middle_name) }}</div>
+    {{-- <div>{{ formatFullName($author->last_name, $author->first_name, $author->middle_name) }}</div> --}}
+    @if (config('app.locale') === 'ru')
+    <div>{{ $author->fullName() }}</div>
+    @else
+    <div>{{ $author->fullNameEn() }}</div>
+    @endif
 
     <div class="coauthor-controls d-flex justify-content-end align-items-center">
         <button type="button" class="btn btn-link text-primary coauthor-edit-button" data-bs-toggle="modal" data-bs-target="#coauthorModal" data-id="{{$author->id}}"><i class="fa fa-edit"></i>

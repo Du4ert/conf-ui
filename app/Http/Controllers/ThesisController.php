@@ -85,8 +85,8 @@ class ThesisController extends Controller
             'thesis_title_en' => 'required|string|max:50',
             'section' => 'required|in:genomics,biotechnology,breeding,bioresource',
             'report_form' => 'required|in:oral,poster,absentee',
-            'text' => 'required|string|max:3000',
-            'text_en' => 'required|string|max:3000',
+            'text' => 'required|string|max:4000',
+            'text_en' => 'required|string|max:4000',
         ]);
 
         $thesis = Thesis::findOrFail($id);
@@ -96,7 +96,7 @@ class ThesisController extends Controller
 
 
 
-        return redirect()->route('reports')->with('status', 'Thesis submitted successfully');
+        return redirect()->route('reports');
     }
 
     public function download($id)
@@ -109,7 +109,23 @@ class ThesisController extends Controller
         $pdf = PDF::loadView('user.thesis.downloadPDF', compact('thesis', 'user', 'authors'));
        
         return $pdf->download('thesis.pdf');
+        // return view('user.thesis.downloadPDF', compact('thesis', 'user', 'authors'));
+
 }
+
+public function downloadEn($id)
+{
+    $thesis = Thesis::findOrFail($id);
+
+    $user = $thesis->user;
+    $authors = $thesis->coauthors;
+          
+    $pdf = PDF::loadView('user.thesis.downloadEnPDF', compact('thesis', 'user', 'authors'));
+   
+    return $pdf->download('thesis.pdf');
+    // return view('user.thesis.downloadEnPDF', compact('thesis', 'user', 'authors'));
+}
+
 
 
     public function delete(Request $request, $id)

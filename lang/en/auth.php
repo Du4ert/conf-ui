@@ -73,7 +73,9 @@ return [
     'user_organization' => 'Use the user affiliation',
     'thesis_submitted' => 'Theses on the check',
     'thesis_accepted' => 'Theses are accepted',
-    'thesis_note' => 'You can copy text with formatting from MS Word',
+    'thesis_note' => 'You can copy text with formatting from MS Word, but it is better to copy through a notebook.',
+    'text' => 'Text RU',
+    'text_en' => 'Text',
 
     'documents' => 'Documents',
 

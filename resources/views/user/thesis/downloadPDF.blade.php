@@ -1,57 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Объекты</title>
-  <style>
-    @font-face {
-      font-family: "DejaVu Sans";
-      font-style: normal;
-      font-weight: 400;
-      src: url("~fonts/dejavu-sans/DejaVuSans.ttf");
-      /* IE9 Compat Modes */
-      src: 
-        local("DejaVu Sans"), 
-        local("DejaVu Sans"), 
-        url("~fonts/dejavu-sans/DejaVuSans.ttf") format("truetype");
+@extends('layouts.pdf')
+@php
+$affiliations = [];
+$affiliations[] = $user->organization_title;
+
+foreach ($authors as $author) {
+    $organization = $author->organization_title ? $author->organization_title : $affiliations[0];
+    if (!in_array($organization, $affiliations)) {
+       $affiliations[] = $organization;
     }
-    body { 
-      font-family: "DejaVu Sans";
-      font-size: 12px;
-    }
-  </style>
-</head>
-<body>
-    <h1>{{ $thesis->thesis_title }}</h1>
-    <h1>{{ $thesis->thesis_title_en }}</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.</p>
+}
+@endphp
 
-    <table class="table table-bordered">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-        </tr>
-        
-        <tr>
-            <td>{{ $user->first_name }}</td>
-            <td>{{ $user->last_name }}</td>
-            <td>{{ $user->email }}</td>
-        </tr>
+@section('content')
 
-        @foreach ($authors as $author)
-        <div>{{ formatFullName($author->last_name, $author->first_name, $author->middle_name) }}</div>
-        @endforeach
+<h1 class="title">{{ $thesis->thesis_title}}</h1>
 
-</p>
+<h4 class="authors">
+@if (count($affiliations) <= 1)
+{{ $user->fullName() }}
+@foreach ($authors as $author)
+ {{ ', ' . $author->fullName() }}
+@endforeach
+</h4>
 
-        
-    </table>
+<h4>{{ $affiliations[0] }}</h4>
+@else
 
-    {!! $thesis->text !!}
-  
-</body>
-</html>
+{{ $user->fullName() }} <sup>1</sup>
+@foreach ($authors as $author)
+@php
+ $organization = $author->organization_title ? $author->organization_title : $affiliations[0];
+ $index = in_array($organization, $affiliations) + 1;
+@endphp
+{{ ', ' . $author->fullName() }}  <sup>{{ $index }}</sup>
+@endforeach
+</h4>
 
+<h4 class="affiliations">
+@foreach ($affiliations as $key => $organization)
+<sup>{{ $key + 1 }}</sup> {{ $organization }}<br/>
+@endforeach
+</h4>
+
+<h4 class="email">{{ $user->email }}</h4>
+
+@endif
+<div class="content">
+{!! $thesis->text !!}
+</div>
+@endsection

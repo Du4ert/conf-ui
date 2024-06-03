@@ -21,7 +21,7 @@
             @csrf
             @method('PUT')
     @endif
-    @include('user.parts.main')
+    @include('user.parts.form')
     </form>
 @endsection
 

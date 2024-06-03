@@ -39,6 +39,28 @@ class User extends Authenticatable implements MustVerifyEmail
     //     'thesis2_en',
     // ];
 
+    public function fullName() {
+        $fullName = $this->last_name . ' ';
+        $fullName .= mb_substr($this->first_name, 0, 1) . '.';
+        
+        if ($this->middle_name) {
+            $fullName .= ' ' . mb_substr($this->middle_name, 0, 1) . '.';
+        }
+        
+        return $fullName;
+    }
+
+    public function fullNameEn() {
+        $fullName = $this->last_name_en . ' ';
+        $fullName .= mb_substr($this->first_name_en, 0, 1) . '.';
+        
+        if ($this->middle_name_en) {
+            $fullName .= ' ' . mb_substr($this->middle_name_en, 0, 1) . '.';
+        }
+        
+        return $fullName;
+    }
+
 
     public function fileByTypes ($files)
     {

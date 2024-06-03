@@ -52,13 +52,11 @@
     </div>
     <div class="card-footer d-flex">
         <div class="preview me-auto">
-            <a href="{{ route('thesis.download', $thesis->id) }}" target="_blank" type="button"
-                class="btn btn-primary"><span class="d-none d-sm-inline">Текст</span><i
-                    class="fa fa-file-pdf ms-sm-2"></i></a>
+            <a href="{{ route('thesis.download', $thesis->id) }}" type="button" class="btn btn-primary"><span
+                    class="d-none d-sm-inline">Текст</span><i class="fa fa-file-pdf ms-sm-2"></i></a>
 
-            <a href="{{ route('thesis.download', $thesis->id) }}" target="_blank" type="button"
-                class="btn btn-primary"><span class="d-none d-sm-inline">Текст EN</span><i
-                    class="fa fa-file-pdf ms-sm-2"></i></a>
+            <a href="{{ route('thesis.downloadEn', $thesis->id) }}" type="button" class="btn btn-primary"><span
+                    class="d-none d-sm-inline">Текст EN</span><i class="fa fa-file-pdf ms-sm-2"></i></a>
         </div>
 
         @if ($thesis->accepted_status != true)
@@ -75,6 +73,21 @@
                             class="fa fa-edit"></i></a>
                 </div>
             </form>
+
+            @if ($thesis->submitted_status != true)
+                <form action="{{ route('thesis.submit', $thesis->id) }}" id="submit-form" method="POST">
+                    @csrf
+                    @foreach ($thesis->getFillable() as $property)
+                        <input type="text" hidden name="{{ $property }}" value="{{ $thesis->$property }}">
+                    @endforeach
+
+                    <button form="submit-form" id="submit-button" type="submit" for="submit-form"
+                        class="btn btn-success mb-2 mb-md-0"><span
+                            class="d-md-none d-lg-inline">{{ __('auth.thesis_save') }}</span><i
+                            class="fas fa-external-link-alt ms-2 ms-md-0 ms-lg-2"></i>
+                    </button>
+                </form>
+            @endif
         @endif
     </div>
 
