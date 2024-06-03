@@ -18,8 +18,8 @@
         var locale = '{{ config('app.locale') }}';
     </script>
 
-    <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-    <script type="text/javascript">
+    {{-- <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script> --}}
+    {{-- <script type="text/javascript">
         bkLib.onDomLoaded(function() {
             nicEditors.allTextAreas({
                 buttonList: ['removeformat', 'bold', 'italic', 'underline', 'subscript', 'superscript',
@@ -27,7 +27,7 @@
                 ]
             });
         });
-    </script>
+    </script> --}}
 
 </head>
 

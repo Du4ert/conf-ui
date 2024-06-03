@@ -26,10 +26,14 @@ $num = 0;
 @endif
 @endif
 
+@endsection
+
+@section('footer')
 @if (count($theses) < 2)
+<div class="add-thesis d-flex justify-content-center">
 <a href="{{ route('thesis.create') }}" class="btn btn-primary" role="button">{{ __('auth.report_add' )}}<i
     class="fa fa-plus ms-2"></i></a>
+</div>
 @endif
-
-
 @endsection
+

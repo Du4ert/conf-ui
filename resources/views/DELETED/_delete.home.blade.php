@@ -54,7 +54,7 @@
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active mt-3" id="home" role="tabpanel" aria-labelledby="home-tab">
             {{-- Основные данные --}}
-            @include('user.main')
+            @include('user.form')
     </form>
 
     <div class="tab-pane fade show  mt-3" id="files" role="tabpanel" aria-labelledby="files">

@@ -8,6 +8,16 @@
     <div class="card-header d-flex align-items-center">
         <h5 class="card-title">{{ __('auth.thesis') . '-' . $num }}</h5>
 
+        @if ($thesis->accepted_status == true)
+            <div class="alert bg-success bg-opacity-25 ms-auto my-0">
+                <i class="fas fa-circle-check fa-lg me-2"></i>Тезисы приняты!
+            </div>
+        @elseif($thesis->submitted_status == true)
+            <div class="alert bg-primary bg-opacity-25 ms-auto my-0  p-2">
+                <i class="fas fa-circle-check fa-lg me-2"></i>Тезисы на проверке!
+            </div>
+        @endif
+
     </div>
     <div class="card-body">
         <div class="row">
@@ -40,31 +50,32 @@
 
         </div>
     </div>
+    <div class="card-footer d-flex">
+        <div class="preview me-auto">
+            <a href="{{ route('thesis.download', $thesis->id) }}" target="_blank" type="button"
+                class="btn btn-primary"><span class="d-none d-sm-inline">Текст</span><i
+                    class="fa fa-file-pdf ms-sm-2"></i></a>
 
-@if ($thesis->accepted_status == true)
-<div class="card-footer bg-success bg-opacity-25">
-    <i class="fas fa-circle-check fa-lg me-2"></i>Тезисы приняты!
-</div>
+            <a href="{{ route('thesis.download', $thesis->id) }}" target="_blank" type="button"
+                class="btn btn-primary"><span class="d-none d-sm-inline">Текст EN</span><i
+                    class="fa fa-file-pdf ms-sm-2"></i></a>
+        </div>
 
-@elseif($thesis->submitted_status == true)
-<div class="card-footer bg-primary bg-opacity-25">
-    <i class="fas fa-circle-check fa-lg me-2"></i>Тезисы на проверке!
-</div>
+        @if ($thesis->accepted_status != true)
+            <form id="{{ $formDelete }}" class="" action="{{ route('thesis.delete', $thesis->id) }}"
+                method="post">
+                <div class="d-flex align-items-center justify-content-end">
+                    @csrf
+                    @method('DELETE')
 
-@else
-<div class="card-footer">
-    <form id="{{ $formDelete }}" class="" action="{{ route('thesis.delete', $thesis->id) }}" method="post">
-        <div class="d-flex align-items-center justify-content-end">
-        @csrf
-        @method('DELETE')
-    
-        <button form="{{ $formDelete }}" data-id="{{ $thesis->id ?? '' }}" type="submit" class="btn btn-danger me-2"><i class="fa fa-trash"></i></button>
-    
-        <a href="{{ route('thesis.edit', $thesis->id) }}" type="button" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                    <button form="{{ $formDelete }}" data-id="{{ $thesis->id ?? '' }}" type="submit"
+                        class="btn btn-danger me-2"><i class="fa fa-trash"></i></button>
+
+                    <a href="{{ route('thesis.edit', $thesis->id) }}" type="button" class="btn btn-primary"><i
+                            class="fa fa-edit"></i></a>
+                </div>
+            </form>
+        @endif
     </div>
-    </form>
-</div>
-@endif
-
 
 </div>

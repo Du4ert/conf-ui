@@ -7,6 +7,7 @@
 // @import '@fortawesome/fontawesome-free/scss/solid.scss';
 // @import '@fortawesome/fontawesome-free/scss/brands.scss';
 @import 'theme';
+// @import "~quill/dist/snow.css";
 
 body {
     display: flex;
@@ -168,10 +169,9 @@ body {
 }
 
 .thesis-text {
-    .nicEdit-main {
+    #text_en-editor, #text-editor {
         max-height: 300px;
-        overflow-y: scroll !important;
-        font-size: 10pt;
+        overflow-y: scroll;
     }
 }
 

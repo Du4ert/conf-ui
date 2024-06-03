@@ -57,7 +57,7 @@ class ThesisController extends Controller
     public function edit($id) {
         $thesis = Thesis::findOrFail($id);
 
-        if ($thesis->accepted_status || $thesis->submitted_status ) {
+        if ($thesis->accepted_status ) {
             return abort('404');
         }
 
@@ -85,8 +85,8 @@ class ThesisController extends Controller
             'thesis_title_en' => 'required|string|max:50',
             'section' => 'required|in:genomics,biotechnology,breeding,bioresource',
             'report_form' => 'required|in:oral,poster,absentee',
-            'text' => 'required|string|max:500',
-            'text_en' => 'required|string|max:500',
+            'text' => 'required|string|max:3000',
+            'text_en' => 'required|string|max:3000',
         ]);
 
         $thesis = Thesis::findOrFail($id);
@@ -102,10 +102,6 @@ class ThesisController extends Controller
     public function download($id)
     {
         $thesis = Thesis::findOrFail($id);
-
-        if ($thesis->accepted_status || $thesis->submitted_status ) {
-            return abort('404');
-        }
 
         $user = $thesis->user;
         $authors = $thesis->coauthors;
