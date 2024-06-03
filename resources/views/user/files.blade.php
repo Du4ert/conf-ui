@@ -10,11 +10,11 @@
     @include('user.parts.error')
     
     <div class="alert alert-danger" role="alert">
-        <i class="fas fa-exclamation-circle fa-lg me-2"></i>Не оплачивайте участие, пока не утвердили ваши тезисы.
+        <i class="fas fa-exclamation-circle fa-lg me-2"></i>{{ __('auth.thesis_absence_warning')}}
     </div>
     
     <div class="alert alert-warning" role="alert">
-        <i class="fas fa-exclamation-circle fa-lg me-2"></i>Реквизиты для оплаты участия и договора будут добавлены позднее.
+        <i class="fas fa-exclamation-circle fa-lg me-2"></i>{{ __('auth.requisites_warning')}}
     </div>
 
     @isset ($fileByTypes)

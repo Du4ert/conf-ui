@@ -177,7 +177,11 @@ body {
 }
 
 
-
+#committee-section {
+    .card {
+        height: 100%;
+    } 
+}
 
 @media (max-width: 767px) {
     .btn {

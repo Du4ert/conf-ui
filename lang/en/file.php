@@ -24,6 +24,6 @@ return [
     'agreement' => 'Agreement',
     'payment' => 'Payment',
     'size_max' => 'Max size',
-    'extensions' => 'Допустимые расширения',
+    'extensions' => 'Allowed file extensions',
 
 ];
