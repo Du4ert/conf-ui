@@ -30,7 +30,7 @@ foreach ($authors as $author) {
 @foreach ($authors as $author)
 @php
  $organization = $author->organization_title ? $author->organization_title : $affiliations[0];
- $index = in_array($organization, $affiliations) + 1;
+ $index = array_search($organization, $affiliations) + 1;
 @endphp
 {{ ', ' . $author->fullName() }}  <sup>{{ $index }}</sup>
 @endforeach

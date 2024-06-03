@@ -51,9 +51,8 @@
     @include('common.footer')
 
     <div id="spinner-div" class="pt-5 justify-content-center align-items-center">
-        <i class="fas fa-spinner"></i>
-        {{-- <div class="spinner-border text-primary" role="status"> --}}
-        {{-- </div> --}}
+        {{-- <div><i class="fas fa-spinner"></i></div> --}}
+        <div class="spinner-border text-primary" role="status"></div>
     </div>
 </body>
 

@@ -50,6 +50,7 @@ class FileController extends Controller
             return back()->withErrors('User can only have one file for each type.');
             }
         }
+        
 
 
         $extension = $file->extension();
@@ -72,6 +73,8 @@ class FileController extends Controller
             return back()->with('success', 'Тезис успешно сохранен.');
         }
     }
+
+    
 
         public function download($id, $type = 'file')
     {
@@ -103,6 +106,55 @@ class FileController extends Controller
             return back()->with('success', 'File deleted');
         }
         
+    }
+
+
+
+    public function storePoster(Request $request, $thesisId)
+    {
+        $file = $request->file;
+        $userId = auth()->user()->id;
+        
+
+        $validatedData = $request->validate([
+            'type' => 'required|string|max:50',
+            'file' => 'required|mimes:doc,docx,pdf|max:10240',
+        ]);
+
+        
+        $type = $validatedData['type'];
+
+        $sameTypes = File::where('thesis_id', $thesisId)->where('type', $type)->count();
+        if ( $sameTypes >= 1) {
+
+            if ($request->ajax()) {
+                return response()->json(['errors' => 'User can only have one file for each type.']);
+            } else {
+            return back()->withErrors('User can only have one file for each type.');
+            }
+        }
+        
+
+        $extension = $file->extension();
+
+        $fileName = $type . '-' . time() . '.' . $extension;
+        $file->storeAs('public/' . $userId . '/', $fileName);
+
+        $file = new File([
+            'type' => $type,
+            'file' => $fileName,
+            'user_id' => $userId,
+            'thesis_id' => $thesisId,
+        ]);
+
+        $file->save();
+        $newId = $file->id;
+
+        if ($request->ajax()) {
+            return response()->json(['success' => 'Тезис успешно сохранен.', 'id' => $newId, 'extension' => $extension, 'name' => $fileName]);
+        } else {
+            return back()->with('success', 'Тезис успешно сохранен.');
+        }
     }
 
 

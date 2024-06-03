@@ -11,10 +11,11 @@ class Thesis extends Model
 
     protected $sections = ['genomics', 'biotechnology', 'breeding', 'bioresource'];
     protected $reportForms = ['oral', 'poster', 'absentee'];
+    protected $fileTypes = ['poster'];
 
-    public function poster()
+    public function file()
     {
-        return $this->hasOne(Poster::class);
+        return $this->hasOne(File::class);
     }
 
     public function coauthors()

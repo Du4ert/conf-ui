@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('thesis_id')->nullable();
             $table->string('type');
             $table->string('file');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

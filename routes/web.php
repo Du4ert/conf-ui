@@ -57,6 +57,7 @@ Route::get('/thesis/{id}/downloadEn', [ThesisController::class, 'downloadEn'])->
 // Операции с файлами
 Route::get('/file/{userId}/download', [FileController::class, 'download'])->name('file.download');
 Route::post('/{userId}/file/store', [FileController::class, 'store'])->name('file.store');
+Route::post('/{thesisId}/poster/store', [FileController::class, 'storePoster'])->name('poster.store');
 Route::delete('/file/{id}/delete', [FileController::class, 'delete'])->name('file.delete');
 
 // Операции с соавторами

@@ -68,7 +68,7 @@
     <div class="thesis-controls d-md-flex flex-wrap flex-md-nowrap justify-content-end align-items-center">
 
 
-        <div class="preview d-flex justify-content-between me-md-2  mb-2 mb-md-0">
+        {{-- <div class="preview d-flex justify-content-between me-md-2  mb-2 mb-md-0">
             <a href="{{ route('thesis.download', $thesis->id) }}" target="_blank" type="button"
                 class="btn btn-primary  me-md-2"><span class="d-md-none d-lg-inline">{{ __('auth.text') }}</span><i
                     class="fa fa-file-pdf ms-2 ms-md-0 ms-lg-2"></i></a>
@@ -76,7 +76,7 @@
             <a href="{{ route('thesis.downloadEn', $thesis->id) }}" target="_blank" type="button"
                 class="btn btn-primary"><span class="d-md-none d-lg-inline">{{ __('auth.text_en') }}</span><i
                     class="fa fa-file-pdf ms-2 ms-md-0 ms-lg-2"></i></a>
-        </div>
+        </div> --}}
 
         <a href="{{ route('reports') }}" id="cancel-button" class="btn btn-secondary ms-auto me-md-2 mb-2 mb-md-0"><span
                 class="d-md-none d-lg-inline">{{ __('auth.cancel') }}</span><i class="fa fa-cancel ms-2 ms-md-0 ms-lg-2"></i>

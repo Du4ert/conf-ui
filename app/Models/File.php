@@ -13,11 +13,16 @@ class File extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function thesis()
+    {
+        return $this->belongsTo(Thesis::class);
+    }
     
     protected $fillable = [
         'type',
         'file',
         'user_id',
-        // 'thesis_id',
+        'thesis_id',
     ];
 }
