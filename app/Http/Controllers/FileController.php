@@ -35,7 +35,7 @@ class FileController extends Controller
 
         $validatedData = $request->validate([
             'type' => 'required|string|max:50',
-            'file' => 'required|mimes:doc,docx,pdf,txt,jpg,png,gif',
+            'file' => 'required|mimes:doc,docx,pdf|max:10240',
         ]);
 
         

@@ -139,10 +139,8 @@
                                 <input class="form-check-input" type="checkbox" id="policy" name="policy"
                                     onchange="toggleSubmit();">
                                 <label class="form-check-label text-secondary" for="policy">
-                                    Я согласен с политикой обработки персональных данных <a href="#policy.pdf"
-                                        target="_blank">(политика
-                                        в отношении работы с
-                                        персональными данными участников конференции)</a>.
+                                    {{ __('auth.policy_agreement')}}Я согласен с политикой обработки персональных данных <a href="#policy.pdf"
+                                        target="_blank">({{ __('auth.policy') }})</a>.
                                 </label>
                             </div>
                         </div>

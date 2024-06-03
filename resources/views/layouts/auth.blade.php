@@ -18,17 +18,6 @@
         var locale = '{{ config('app.locale') }}';
     </script>
 
-    {{-- <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script> --}}
-    {{-- <script type="text/javascript">
-        bkLib.onDomLoaded(function() {
-            nicEditors.allTextAreas({
-                buttonList: ['removeformat', 'bold', 'italic', 'underline', 'subscript', 'superscript',
-                    'center', 'right', 'justify', 'ol', 'ul'
-                ]
-            });
-        });
-    </script> --}}
-
 </head>
 
 <body>
@@ -62,8 +51,9 @@
     @include('common.footer')
 
     <div id="spinner-div" class="pt-5 justify-content-center align-items-center">
-        <div class="spinner-border text-primary" role="status">
-        </div>
+        <i class="fas fa-spinner"></i>
+        {{-- <div class="spinner-border text-primary" role="status"> --}}
+        {{-- </div> --}}
     </div>
 </body>
 

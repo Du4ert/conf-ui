@@ -50,13 +50,17 @@
 
         </div>
     </div>
-    <div class="card-footer d-flex">
-        <div class="preview me-auto">
-            <a href="{{ route('thesis.download', $thesis->id) }}" type="button" class="btn btn-primary"><span
-                    class="d-none d-sm-inline">Текст</span><i class="fa fa-file-pdf ms-sm-2"></i></a>
+    <div class="card-footer d-md-flex">
 
-            <a href="{{ route('thesis.downloadEn', $thesis->id) }}" type="button" class="btn btn-primary"><span
-                    class="d-none d-sm-inline">Текст EN</span><i class="fa fa-file-pdf ms-sm-2"></i></a>
+
+        <div class="preview d-flex justify-content-between me-md-auto">
+            <a href="{{ route('thesis.download', $thesis->id) }}" target="_blank" type="button"
+                class="btn btn-primary mb-2 mb-lg-0 me-2"><span class="d-md-none d-lg-inline">{{ __('auth.text') }}</span><i
+                    class="fa fa-file-pdf ms-2 ms-md-0 ms-lg-2"></i></a>
+
+            <a href="{{ route('thesis.downloadEn', $thesis->id) }}" target="_blank" type="button"
+                class="btn btn-primary mb-2 m-lg-0"><span class="d-md-none d-lg-inline">{{ __('auth.text_en') }}</span><i
+                    class="fa fa-file-pdf ms-2 ms-md-0 ms-lg-2"></i></a>
         </div>
 
         @if ($thesis->accepted_status != true)
@@ -70,7 +74,7 @@
                         class="btn btn-danger me-2"><i class="fa fa-trash"></i></button>
 
                     <a href="{{ route('thesis.edit', $thesis->id) }}" type="button" class="btn btn-primary"><i
-                            class="fa fa-edit"></i></a>
+                            class="fa fa-edit "></i></a>
                 </div>
             </form>
 
@@ -80,13 +84,13 @@
                     @foreach ($thesis->getFillable() as $property)
                         <input type="text" hidden name="{{ $property }}" value="{{ $thesis->$property }}">
                     @endforeach
-
                     <button form="submit-form" id="submit-button" type="submit" for="submit-form"
-                        class="btn btn-success mb-2 mb-md-0"><span
-                            class="d-md-none d-lg-inline">{{ __('auth.thesis_save') }}</span><i
-                            class="fas fa-external-link-alt ms-2 ms-md-0 ms-lg-2"></i>
-                    </button>
+                    class="btn btn-success ms-md-2 mt-2 mt-md-0 mb-sm-0 d-block d-lg-inline"><span
+                        class="d-md-none d-lg-inline">{{ __('auth.thesis_save') }}</span><i
+                        class="fas fa-external-link-alt ms-2 ms-md-0 ms-lg-2"></i>
+        </button>
                 </form>
+
             @endif
         @endif
     </div>

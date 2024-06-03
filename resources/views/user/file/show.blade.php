@@ -51,7 +51,7 @@
             class="delete-button btn btn-danger px-4" role="{{ __('file.delete') }}"><i class="fas fa-trash"></i></button>
 
         </div>
-        <div class="text-muted ms-3"><small>{{ __('file.extensions') }} (.doc, .docx, .pdf, .txt)</small></div>
+        <div class="text-muted ms-3"><small>{{ __('file.extensions') }} (.doc, .docx, .pdf) {{ __('file.size_max') }} 10MB</small></div>
     </div>
 
 </form>

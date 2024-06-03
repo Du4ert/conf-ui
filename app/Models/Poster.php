@@ -14,4 +14,10 @@ class Poster extends Model
         return $this->belongsTo(Thesis::class);
     }
     
+    
+    protected $fillable = [
+        'file',
+        'thesis_id',
+    ];
+
 }
