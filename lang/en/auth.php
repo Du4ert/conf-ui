@@ -13,7 +13,7 @@ return [
     |
     */
     'login' => 'Login',
-    'home' => 'Home',
+    'home' => 'Profile',
     'profile' => 'Profile',
     'logout' => 'Logout',
     'register' => 'Register',
@@ -103,5 +103,10 @@ return [
     'admin_last_name' => 'Last Name',
     'admin_filter' => 'Filter',
     'admin_delete' => 'Delete user',
+    'pay_accepted' => 'Payment is accepted',
+    'participate_accept' => 'Participation approved',
+    'admin_user_accept' => 'Approve participation',
+    'admin_accept' => 'Approve',
+    'admin_cancel' => 'Cancel',
 
 ];

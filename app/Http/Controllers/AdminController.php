@@ -153,7 +153,7 @@ $users = User::whereRaw("lower(last_name) like ? or lower(last_name_en) like ?",
         })->paginate(15);
   
 
-  return view('admin.index', compact('users'));
+  return view('admin.list', compact('users'));
 }
 
 }
