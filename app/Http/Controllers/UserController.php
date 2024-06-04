@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -33,6 +34,10 @@ class UserController extends Controller
     {
       $user = auth()->user();
       $files = $user->files;
+
+      if (Auth::user()->isAdmin()) {
+        return redirect()->route('user.list');
+      }
     //   $coauthors = $user->coauthors;
 
       // $fileByTypes = $user->fileByTypes($files);
