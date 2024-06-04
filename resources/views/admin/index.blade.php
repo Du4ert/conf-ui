@@ -1,10 +1,37 @@
 @extends('layouts.auth')
 @section('header')
-    {{ __('Dashboard') }}
+    {{-- {{ __('Dashboard') }} --}}
+
+<!-- Filter Form -->
+<form action="{{ route('user.list') }}" class="w-100" method="get">
+  <div class="filter d-md-flex align-items-center justify-content-between">
+  @csrf
+
+  
+  <div class="form-group">
+      <label for="has_thesis" class="me-1">Thesis:</label>
+      <input type="checkbox" name="has_thesis" id="has_thesis" {{ request()->has('has_thesis') ? 'checked' : '' }}>
+  </div>
+  <div class="form-group">
+      <label for="accepted_status" class="me-1">Accepted:</label>
+      <input type="checkbox" name="accepted_status" id="accepted_status" {{ request()->has('accepted_status') ? 'checked' : '' }}>
+  </div>
+  <div class="form-group">
+      <label for="pay_status" class="me-1">Pay:</label>
+      <input type="checkbox" name="pay_status" id="pay_status" {{ request()->has('pay_status') ? 'checked' : '' }}>
+  </div>
+
+  <div class="form-group">
+    <label for="search">Last name:</label>
+    <input type="text" name="search" id="search" value="{{ request()->input('search') }}">
+  </div>
+  <button type="submit" class="btn btn-primary">Filter</button>
+</div>
+</form>
+
 @endsection
 
 @section('body')
-    <h1>Hello admin</h1>
     @foreach ($users as $user)
         @if ($user->role === 'admin')
             @continue

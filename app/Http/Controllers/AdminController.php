@@ -96,45 +96,34 @@ public function documents($id)
   return view('user.files', compact('user', 'fileByTypes'));
 }
 
-
 // public function list()
 // {
 //   $query = request()->query();
 
-//   $users = User::paginate(5);
-
-//   if (isset($query['has_thesis']) && $query['has_thesis']) {
-//       $users = User::whereNOTNULL('email_verified_at')->has('theses')->paginate(5);
-//   } else {
-//       $users = User::whereNOTNULL('email_verified_at')->paginate(5);
-//   }
-  
-//   if (isset($query['accepted_status']) && $query['accepted_status']) {
-//       $users = $users->where('accepted_status', true);
-//   }
-  
-//   if (isset($query['pay_status']) && $query['pay_status']) {
-//       $users = $users->where('pay_status', true);
-//   }
-  
-//   $users = $users->sortBy('organization_title')->sortByDesc('last_name');
+// $users = User::when(request()->has('has_thesis'), function ($query) {
+//             return $query->whereNotNull('email_verified_at')->has('theses');
+//         })->when(request()->has('accepted_status'), function ($query) {
+//             return $query->where('accepted_status', true);
+//         })->when(request()->has('pay_status'), function ($query) {
+//             return $query->where('pay_status', true);
+//         })->paginate(15);
   
 
 //   return view('admin.index', compact('users'));
 // }
 
-
 public function list()
 {
   $query = request()->query();
 
-$users = User::when(request()->has('has_thesis'), function ($query) {
+$users = User::whereRaw("lower(last_name) like ? or lower(last_name_en) like ?", ['%' . request()->input('search') . '%', '%' . request()->input('search') . '%'])
+          ->when(request()->has('has_thesis'), function ($query) {
             return $query->whereNotNull('email_verified_at')->has('theses');
         })->when(request()->has('accepted_status'), function ($query) {
             return $query->where('accepted_status', true);
         })->when(request()->has('pay_status'), function ($query) {
             return $query->where('pay_status', true);
-        })->paginate(5);
+        })->paginate(15);
   
 
   return view('admin.index', compact('users'));
