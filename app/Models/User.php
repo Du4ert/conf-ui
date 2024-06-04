@@ -28,6 +28,15 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
 
+    protected $adminSearchModifiers = [
+        'has_thesis',
+        'has_poster',
+        'pay_status',
+        'has_agreement',
+        'accepted_status',
+    ];
+
+
 
     public function regalia() {
         $regalia = '';
