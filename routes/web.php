@@ -81,7 +81,8 @@ Route::prefix('admin')->group(function () {
     Route::delete('/user/{id}', [AdminController::class, 'destroy'])->name('user.destroy');
     Route::get('/thesis/{id}/accept', [AdminController::class, 'thesisAccept'])->name('thesis.accept');
     Route::get('/thesis/{id}/decline', [AdminController::class, 'thesisDecline'])->name('thesis.decline');
-
+    Route::get('/user/{id}/pay/{status}', [AdminController::class, 'paymentToggle'])->name('user.pay');
+    Route::get('/user/{id}/accept/{status}', [AdminController::class, 'participationAccept'])->name('user.accept');
 
 });
 

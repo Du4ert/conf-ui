@@ -51,6 +51,33 @@ public function getUser(Request $request, $id)
 //     return redirect()->route('user.get', ['id' => $id])->with('success', 'Profile updated successfully');
 // }
 
+public function paymentToggle($id, $status)
+{
+  $user = User::findOrFail($id);
+  if ($status) {
+    $user->pay_status = true;
+  } else {
+    $user->pay_status = false;
+  }
+    $user->save();
+
+    return back();
+}
+
+public function participationAccept($id, $status)
+{
+  $user = User::findOrFail($id);
+  if ($status) {
+    $user->accepted_status = true;
+  } else {
+    $user->accepted_status = false;
+  }
+    $user->save();
+
+    return back();
+}
+
+
 public function thesisAccept($id)
 {
     $thesis = Thesis::findOrFail($id);

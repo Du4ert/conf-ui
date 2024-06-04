@@ -96,4 +96,12 @@ return [
     'thesis_absence_warning' => 'Do not pay for participation until your theses have approved.',
     'requisites_warning' => 'Details to pay for participation and contract will be added later.',
 
+    'admin_show' => 'Profile',
+    'admin_thesis' => 'Theses',
+    'admin_accepted' => 'Accepted',
+    'admin_pay' => 'Payed',
+    'admin_last_name' => 'Last Name',
+    'admin_filter' => 'Filter',
+    'admin_delete' => 'Delete user',
+
 ];

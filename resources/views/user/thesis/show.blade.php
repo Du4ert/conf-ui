@@ -47,8 +47,6 @@ if (auth()->user()->isAdmin()) {
 
                     <dt class="col-4  mb-2">{{ __('auth.thesis_title_en') }}</dt>
                     <dd class="col-8">{{ $thesis->thesis_title_en }}</dd>
-
-
                 </dl>
 
                 <div class="col-lg-6">
@@ -67,12 +65,12 @@ if (auth()->user()->isAdmin()) {
 
         <div class="preview d-flex justify-content-between me-md-auto">
             <a href="{{ route('thesis.download', $thesis->id) }}" target="_blank" type="button"
-                class="btn btn-primary mb-2 mb-lg-0 me-2"><span
+                class="btn btn-outline-light text-secondary mb-2 mb-lg-0 me-2"><span
                     class="d-md-none d-lg-inline">{{ __('auth.text') }}</span><i
                     class="fa fa-file-pdf ms-2 ms-md-0 ms-lg-2"></i></a>
 
             <a href="{{ route('thesis.downloadEn', $thesis->id) }}" target="_blank" type="button"
-                class="btn btn-primary mb-2 m-lg-0"><span
+                class="btn btn-outline-light text-secondary mb-2 m-lg-0"><span
                     class="d-md-none d-lg-inline">{{ __('auth.text_en') }}</span><i
                     class="fa fa-file-pdf ms-2 ms-md-0 ms-lg-2"></i></a>
         </div>

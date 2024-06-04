@@ -104,5 +104,20 @@ return [
     'requisites_warning' => 'Реквизиты для оплаты участия и договора будут добавлены позднее.',
 
 
+    'admin_show'=> 'Профиль',
+    'admin_thesis'=> 'Тезисы',
+    'admin_accepted'=> 'Одобрен',
+    'admin_pay'=> 'Оплачен',
+    'admin_last_name'=> 'Фамилия',
+    'admin_filter'=> 'Фильтр',
+    'admin_delete' => 'Удалить пользователя',
+    'pay_accepted' => 'Оплата принята',
+    'participate_accept' => 'Участие одобрено',
+    'admin_user_accept' => 'Одобрить участие',
+    'admin_accept' => 'Одобрить',
+    'admin_cancel' => 'Отменить',
+    
+    
+
 
 ];

@@ -1,3 +1,10 @@
+@php
+ if (auth()->user()->isAdmin()) {
+    $admin = true;
+ } else {
+    $admin = false;
+ }
+@endphp
 @extends('layouts.auth')
 @section('header')
     @include('user.parts.navigation', ['page' => 'documents'])
@@ -27,5 +34,21 @@
 @endsection
 
 @section('footer')
+@if ($admin)
+<div class="d-flex justify-content-start align-items-center mt-4">
+    @if ($user->pay_status == true)
+        <div class="alert bg-success bg-opacity-25 my-0 me-4">
+            <i class="fas fa-circle-check fa-lg me-2"></i>{{ __('auth.pay_accepted') }}
+        </div>
+        <a form="accept-thesises" type="button" href="{{ route('user.pay', ['id' => $user->id, 'status' => 0]) }}"
+            class="btn btn-danger me-2"><i class="fa fa-cancel me-1"></i>{{ __('auth.admin_cancel') }}</a>
+    @endif
+    
+    @if ($user->pay_status != true )
+        <a form="accept-thesises" type="button" href="{{ route('user.pay', ['id' => $user->id, 'status' => 1]) }}"
+            class="btn btn-success me-2"><i class="fa fa-check me-1"></i>{{ __('auth.admin_accept') }}</a>
+    @endif
+    </div>
+@endif
 
 @endsection

@@ -57,10 +57,10 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function fullNameExtend() {
         $fullName = $this->last_name;
-        $fullName .= $this->first_name;
+        $fullName .= ' ' . $this->first_name;
         
         if ($this->middle_name) {
-            $fullName .= $this->middle_name;
+            $fullName .= ' ' . $this->middle_name;
         }
         
         return $fullName;
