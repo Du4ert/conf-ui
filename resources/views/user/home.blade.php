@@ -18,20 +18,23 @@
     <h4 class="mb-3 text-center">{{ $user->email }}</h4>
 
     {{-- Основные данные --}}
-    @if ($editable)
+    @if (!$editable)
+        @include('user.parts.info')
+    @else
         <form id="user-form" action="{{ route('updateSelf') }}" method="post">
             @csrf
             @method('PUT')
-    @endif
+    
     @include('user.parts.form')
     </form>
+    @endif
 @endsection
 
 @section('footer')
     <div class="home-controls d-flex justify-content-end align-items-center">
 
 
-@if (Route::currentRouteName() == 'home')
+@if (!$admin)
 
 
         @if (!$editable )

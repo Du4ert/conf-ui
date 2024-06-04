@@ -183,23 +183,7 @@ body {
     } 
 }
 
-@media (max-width: 767px) {
-    .btn {
-      display: block;
-      width: 100%;
-    }
 
-
-  }
-
-@media (min-width: 1200px) {
-
-  .banner {
-    .carousel-item.active {
-    background-position-y: -135px;
-    }
-}
-}
 
 // .footer {
 //     background-image: url('~images/background/bg-flowers-black.png')

@@ -11,7 +11,7 @@
     
 
 @endphp
-<strong class="me-sm-auto d-none d-md-inline">{{ __('auth.dashboard') }}</strong>
+<strong class="me-sm-auto d-none d-lg-inline">{{ __('auth.dashboard') }}</strong>
 
 <a href="{{ $admin ? route('user.get', $user->id) : route('home') }}" type="button" class="btn text-secondary btn-light @if ($page === 'home') active  @endif" role="button"><i
         class="fa fa-home me-sm-2"></i><span class="d-none d-md-inline"> {{ __('auth.home') }}</span></a>

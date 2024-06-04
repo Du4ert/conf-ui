@@ -49,6 +49,8 @@ return [
     'rank_title_en' => 'Степень ENG',
     'job_title' => 'Должность',
     'job_title_en' => 'Должность ENG',
+    'participant' => 'Участник',
+    'participant_en' => 'Участник ENG',
 
 
 
@@ -58,9 +60,9 @@ return [
     'coauthors' => 'Соавторы',
     'phone' => 'Номер телефона',
     'thesis_title' => 'Название',
-    'thesis_title_en' => 'Название EN',
+    'thesis_title_en' => 'Название ENG',
     'thesis_text' => 'Текст',
-    'thesis_text_en' => 'Текст EN',
+    'thesis_text_en' => 'Текст ENG',
 
     'russian' => 'Русский',
     'english' => 'Английский',
@@ -79,7 +81,7 @@ return [
     'thesis_accepted' => 'Тезисы приняты',
     'thesis_note' => 'Вы можете скопировать текст с форматированием из MS Word, но лучше скопировать через блокнот.',
     'text' => 'Текст',
-    'text_en' => 'Текст EN',
+    'text_en' => 'Текст ENG',
 
 
     'documents' => 'Документы',
@@ -100,6 +102,7 @@ return [
 
     'thesis_absence_warning' => 'Не оплачивайте участие, пока не утвердили ваши тезисы.',
     'requisites_warning' => 'Реквизиты для оплаты участия и договора будут добавлены позднее.',
+
 
 
 ];

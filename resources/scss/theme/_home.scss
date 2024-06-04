@@ -641,10 +641,15 @@
 	
 }
 
+
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
 	
-		
+	.banner {
+		.carousel-item.active {
+		background-position-y: -135px;
+		}
+	}
 		
 }
 
@@ -656,6 +661,15 @@
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) { 
+
+	.btn {
+		display: block;
+		width: 100%;
+	  }
+  
+	  .banner {
+		  height: 150px;
+	  }
 	
 	.header {
 		background: rgba($theme-text-color-primary, 0.95);

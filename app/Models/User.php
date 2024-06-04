@@ -23,22 +23,50 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     protected $fileTypes = [
-        // 'thesis_ru',
-        // 'thesis_en',
-        // 'thesis2_ru',
-        // 'thesis2_en',
-        // 'poster',
-        // 'poster2',
         'agreement',
         'payment',
     ];
 
-    // protected $thesisTypes = [
-    //     'thesis_ru',
-    //     'thesis_en',
-    //     'thesis2_ru',
-    //     'thesis2_en',
-    // ];
+
+
+    public function regalia() {
+        $regalia = '';
+        $regalia .= $this->rank_title;
+        $regalia .= $regalia ? ', ' . $this->job_title : $this->job_title;
+
+        return $regalia;
+    }
+
+    public function regaliaEn() {
+        $regalia = '';
+        $regalia .= $this->rank_title_en;
+        $regalia .= $regalia ? ', ' . $this->job_title_en : $this->job_title_en;
+
+        return $regalia;
+    }
+    
+
+    public function fullNameExtend() {
+        $fullName = $this->last_name;
+        $fullName .= $this->first_name;
+        
+        if ($this->middle_name) {
+            $fullName .= $this->middle_name;
+        }
+        
+        return $fullName;
+    }
+
+    public function fullNameExtendEn() {
+        $fullName = $this->last_name_en;
+        $fullName .= $this->first_name_en;
+        
+        if ($this->middle_name_en) {
+            $fullName .= $this->middle_name_en;
+        }
+        
+        return $fullName;
+    }
 
     public function fullName() {
         $fullName = $this->last_name . ' ';
