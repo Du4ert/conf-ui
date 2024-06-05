@@ -76,6 +76,7 @@ return [
     'thesis_submitted' => 'Theses on the check',
     'thesis_accepted' => 'Theses are accepted',
     'thesis_note' => 'You can copy text with formatting from MS Word, but it is better to copy through a notebook.',
+    'thesis_size' => 'The volume of theses should not exceed 1 page.',
     'text' => 'Text RUS',
     'text_en' => 'Text',
 

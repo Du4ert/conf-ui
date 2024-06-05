@@ -54,7 +54,7 @@
                     </div>
                 </div>
             </div>
-
+            <small class="text-muted">{{ __('auth.thesis_size') }}</small><br/>
             <small class="text-muted">{{ __('auth.thesis_note') }}</small>
         </div>
 
