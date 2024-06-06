@@ -81,8 +81,8 @@ class ThesisController extends Controller
         
 
         $validatedData = $request->validate([
-            'thesis_title' => 'required|string|max:50',
-            'thesis_title_en' => 'required|string|max:50',
+            'thesis_title' => 'required|string|max:500',
+            'thesis_title_en' => 'required|string|max:500',
             'section' => 'required|in:genomics,biotechnology,breeding,bioresource',
             'report_form' => 'required|in:oral,poster,absentee',
             'text' => 'required|string|max:4000',
