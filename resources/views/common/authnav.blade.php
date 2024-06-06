@@ -35,12 +35,4 @@
         </div>
     </li>
 @endguest
-
-@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-@if ($localeCode !== LaravelLocalization::getCurrentLocale())
-<li class="nav-item ms-2">
-    <a class="nav-link language-flag flag-{{ $localeCode }}" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, []) }}"></a>
-</li>
-@endif
-@endforeach
 </ul>

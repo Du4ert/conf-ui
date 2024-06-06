@@ -40,6 +40,14 @@ function setClass($class_name = 'scrollto') {
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#sponsors-section')}}">{{ __('navigation.partners') }}</a></li>
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#contacts-section')}}">{{ __('navigation.contacts') }}</a></li>
 
+		@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+@if ($localeCode !== LaravelLocalization::getCurrentLocale())
+<li class="nav-item ms-2 ms-lg-4 ms-auto">
+    <a class="nav-link language-flag flag-{{ $localeCode }}" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, []) }}"></a>
+</li>
+@endif
+@endforeach
+
 	</ul><!--//nav-->
 	
 	
