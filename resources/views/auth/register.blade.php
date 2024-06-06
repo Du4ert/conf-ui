@@ -58,7 +58,7 @@
         {{-- Submit --}}
         <div class="row mb-3 float-end">
             <div class="col-md-6 offset-md-4">
-                <button form="user-form" disabled id="submit" type="submit" class="btn btn-primary offset-md-6  mb-3 mt-3 float-end">
+                <button form="user-form" disabled id="submit" type="submit" class="btn btn-success offset-md-6  mb-3 mt-3 float-end">
                     {{ __('auth.register') }}
                 </button>
             </div>
