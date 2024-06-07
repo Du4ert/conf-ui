@@ -37,7 +37,7 @@
                 <div class="mb-3">
                     <label for="thesis-form" class="form-label  ms-2">{{ __('auth.thesis_text') }}</label>
                     <div class="thesis-text">
-                        <div id="text-editor"></div>
+                        <div id="text-editor" ></div>
                         {{-- <textarea hidden id="text" class="form-control" name="text" rows="3">{{ $thesis->text}}</textarea> --}}
                         <input type="text" id="text" name="text" hidden>
                     </div>
@@ -48,7 +48,7 @@
                 <div class="mb-3">
                     <label for="thesis-form" class="form-label  ms-2">{{ __('auth.thesis_text_en') }}</label>
                     <div class=" thesis-text">
-                        <div id="text_en-editor"></div>
+                        <div id="text_en-editor" spellcheck="false"></div>
                         <input type="text" id="text_en" name="text_en" hidden>
                         {{-- <textarea hidden id="text_en" class="form-control" name="text_en" rows="3">{{ $thesis->text_en}}</textarea> --}}
                     </div>
@@ -110,23 +110,15 @@
                 theme: 'snow',
                 modules: {
                     toolbar: toolbarOptions,
+                    toggleFullscreen: true
                 }
             }
 
-            const quillOptionsEn = {
-                theme: 'snow',
-                modules: {
-                    toolbar: toolbarOptions,
-                    languageTool: {
-                        language: "en-US",
-                        },
-                }
-            }
 
-            const maxLength = 3000;
+            const maxLength = 5000;
 
             const quillText = new Quill('#text-editor', quillOptions);
-            const quillTextEn = new Quill('#text_en-editor', quillOptionsEn);
+            const quillTextEn = new Quill('#text_en-editor', quillOptions);
 
             // Prefill quil
             quillText.root.innerHTML = '{!! $thesis->text !!}';

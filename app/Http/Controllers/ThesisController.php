@@ -85,8 +85,8 @@ class ThesisController extends Controller
             'thesis_title_en' => 'required|string|max:500',
             'section' => 'required|in:genomics,biotechnology,breeding,bioresource',
             'report_form' => 'required|in:oral,poster,absentee',
-            'text' => 'required|string|max:4000',
-            'text_en' => 'required|string|max:4000',
+            'text' => 'required|string|max:5000',
+            'text_en' => 'required|string|max:5000',
         ]);
 
         $thesis = Thesis::findOrFail($id);

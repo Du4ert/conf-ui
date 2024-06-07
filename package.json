@@ -21,6 +21,7 @@
         "gumshoejs": "^5.1.2",
         "popper.js": "^1.16.1",
         "quill": "^2.0.2",
+        "quill-toggle-fullscreen-button": "^0.1.2",
         "smoothscroll": "^0.4.0"
     }
 }

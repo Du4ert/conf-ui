@@ -18,6 +18,7 @@ import CodeBlock from 'quill/formats/code'
 import Script from 'quill/formats/script'
 import Image from 'quill/formats/image'
 import Link from 'quill/formats/link'
+import QuillToggleFullscreenButton from 'quill-toggle-fullscreen-button';
 
 Quill.register({
   'modules/toolbar': Toolbar,
@@ -33,6 +34,7 @@ Quill.register({
   'formats/script' : Script,
   'formats/image' : Image,
   'formats/link' : Link,
+  'modules/toggleFullscreen' : QuillToggleFullscreenButton,
 });
 
 
