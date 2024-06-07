@@ -27,6 +27,9 @@ return [
     'dashboard' => 'Dashboard',
     'password_field' => 'Password',
     'password_confirm' => 'Confirm password',
+    'organization_full' => 'Enter the full name of your organization.',
+    'required_alert' => 'Mandatory fields are marked',
+
 
     'policy_agreement' => 'I agree with the policy of processing personal data',
     'policy' => 'Policy regarding the work with personal data of conference participants',

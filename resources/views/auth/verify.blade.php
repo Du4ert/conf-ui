@@ -17,4 +17,6 @@
                         @csrf
                         <button type="submit" class="btn btn-link p-0 m-0 align-baseline text-primary">{{ __('email.click') }}</button>.
                     </form>
+                    <br />
+                    <span class="text-muted">{{ __('email.spam_alert' )}}</span>
 @endsection

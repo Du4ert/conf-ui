@@ -6,36 +6,18 @@
 @section('body')
 
     {{-- Show validtion errors --}}
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
     <form id="user-form" method="POST" action="{{ route('register') }}">
         @csrf
 
         @include('auth.main')
 
-        {{-- @include('user.inputs.field', ['field_name' => 'last_name', 'required' => true, 'form' => 'user-form'])
-        @include('user.inputs.field', ['field_name' => 'last_name_en', 'required' => true, 'form' => 'user-form'])
-        @include('user.inputs.field', ['field_name' => 'first_name', 'required' => true, 'form' => 'user-form'])
-        @include('user.inputs.field', ['field_name' => 'first_name_en', 'required' => true, 'form' => 'user-form'])
-        @include('user.inputs.field', ['field_name' => 'middle_name', 'form' => 'user-form'])
-        @include('user.inputs.field', ['field_name' => 'middle_name_en', 'form' => 'user-form'])
-        @include('user.inputs.field', ['field_name' => 'organization_title', 'required' => true, 'form' => 'user-form'])
-        @include('user.inputs.field', ['field_name' => 'organization_title_en', 'required' => true, 'form' => 'user-form'])
-        @include('user.inputs.field', ['field_name' => 'rank_title', 'form' => 'user-form'])
-        @include('user.inputs.field', ['field_name' => 'rank_title_en', 'form' => 'user-form'])
-        @include('user.inputs.field', ['field_name' => 'job_title', 'form' => 'user-form'])
-        @include('user.inputs.field', ['field_name' => 'job_title_en', 'form' => 'user-form']) --}}
 
         @include('user.inputs.email', ['form' => 'user-form'])
         @include('user.inputs.password', ['form' => 'user-form'])
+        <div class="row">
+            <p class="text-center text-muted">{{ __('auth.required_alert')}} <span class="text-danger">*</span></p>
+        </div>
 
 
         {{-- Policy --}}
