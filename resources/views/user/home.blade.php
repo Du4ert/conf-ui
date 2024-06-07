@@ -46,12 +46,14 @@
             @endif
         @endif
 
-        @if (auth()->user()->isAdmin() and $user->accepted_status != true)
+        @if (auth()->user()->isAdmin())
+         @if ($user->accepted_status != true)
             <a form="accept-user" type="button" href="{{ route('user.accept', $user->id) }}"
                 class="btn btn-success me-2"><i class="fa fa-check me-1"></i>{{__('auth.admin_user_accept')}}</a>
                 @else
                 <a form="accept-user" type="button" href="{{ route('user.decline', $user->id) }}"
                     class="btn btn-danger me-2"><i class="fa fa-cancel me-1"></i>{{__('auth.admin_user_cancel')}}</a>
+        @endif
         @endif
 
     </div>

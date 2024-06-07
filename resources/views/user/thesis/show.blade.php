@@ -78,7 +78,7 @@
 
 @if ($thesis->accepted_status != true and $thesis->submitted_status == true)
 <a form="accept-thesises" type="button" href="{{ route('thesis.accept', $thesis->id) }}"
-    class="btn btn-success me-2"><i class="fa fa-check me-1"></i>{{__('auth.admin_)accept')}}</a>
+    class="btn btn-success me-2"><i class="fa fa-check me-1"></i>{{__('auth.admin_accept')}}</a>
 
 
     
