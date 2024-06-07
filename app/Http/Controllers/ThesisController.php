@@ -106,10 +106,10 @@ class ThesisController extends Controller
         $user = $thesis->user;
         $authors = $thesis->coauthors;
               
-        $pdf = PDF::loadView('user.thesis.downloadPDF', compact('thesis', 'user', 'authors'));
+        $pdf = PDF::loadView('pdf.downloadPDF', compact('thesis', 'user', 'authors'));
        
         return $pdf->download('thesis.pdf');
-        // return view('user.thesis.downloadPDF', compact('thesis', 'user', 'authors'));
+        // return view('pdf.downloadPDF', compact('thesis', 'user', 'authors'));
 
 }
 
@@ -120,10 +120,10 @@ public function downloadEn($id)
     $user = $thesis->user;
     $authors = $thesis->coauthors;
           
-    $pdf = PDF::loadView('user.thesis.downloadEnPDF', compact('thesis', 'user', 'authors'));
+    $pdf = PDF::loadView('pdf.downloadEnPDF', compact('thesis', 'user', 'authors'));
    
     return $pdf->download('thesis.pdf');
-    // return view('user.thesis.downloadEnPDF', compact('thesis', 'user', 'authors'));
+    // return view('pdf.downloadEnPDF', compact('thesis', 'user', 'authors'));
 }
 
 

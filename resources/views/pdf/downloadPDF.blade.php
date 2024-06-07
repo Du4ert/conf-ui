@@ -15,7 +15,6 @@ foreach ($authors as $author) {
 
 <h1 class="title">{{ $thesis->thesis_title}}</h1>
 
-<h4 class="authors">
 @if (count($affiliations) <= 1)
 {{ $user->fullName() }}
 @foreach ($authors as $author)
@@ -23,9 +22,10 @@ foreach ($authors as $author) {
 @endforeach
 </h4>
 
-<h4>{{ $affiliations[0] }}</h4>
+<h4 class="affiliations">{{ $affiliations[0] }}</h4>
 @else
 
+<h4 class="affiliations">
 {{ $user->fullName() }} <sup>1</sup>
 @foreach ($authors as $author)
 @php

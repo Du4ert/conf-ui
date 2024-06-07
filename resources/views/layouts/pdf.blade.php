@@ -54,12 +54,14 @@
 }
 
 .content {
+  text-indent: 1em;
   font-size: 8pt;
   width: 100%;
   text-align: justify;
 }
 
 p {
+  text-indent: 2em;
   margin-bottom: 1pt;
 }
 
