@@ -1,7 +1,7 @@
 <section id="payment-section" class="payment-section section conf-bg-light">
     <div class="container">
         <h3 class="section-heading text-center mb-3">Организационный взнос </h3>
-        <div class="section-intro single-col-max mx-auto mb-4">Оргвзнос включает расходы на публикацию, комплект участника, кофе-брейки и welcomeparty.Оплату проживания, проезд и питание участники осуществляют самостоятельно. Заочным участникам будут отправлены все материалы конференции после завершения работы конференции </div>
+        <div class="section-intro single-col-max mx-auto mb-4">Оргвзнос включает расходы на публикацию, комплект участника, кофе-брейки и welcomeparty. Оплату проживания, проезд и питание участники осуществляют самостоятельно. Заочным участникам будут отправлены все материалы конференции после завершения работы конференции </div>
         
 
         <ul class="list-group mx-auto">
