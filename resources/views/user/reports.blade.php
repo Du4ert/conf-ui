@@ -1,10 +1,3 @@
-@php
- if (auth()->user()->isAdmin()) {
-    $admin = true;
- } else {
-    $admin = false;
- }
-@endphp
 @extends('layouts.auth')
 @section('header')
     @include('user.parts.navigation', ['page' => 'reports'])
@@ -36,7 +29,7 @@ $num = 0;
 @endsection
 
 @section('footer')
-@if (!$admin)
+@if (!auth()->user()->isAdmin())
 
 @if (count($theses) < 2)
 <div class="add-thesis d-flex justify-content-center">

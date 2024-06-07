@@ -29,6 +29,9 @@ return [
     'password_confirm' => 'Подтвердите пароль',
     'organization_full' => 'Введите полное название вашей организации.',
     'required_alert' => 'Обязательные поля отмечены',
+    'list' => 'Пользователи',
+
+
 
 
     'policy_agreement' => 'Я согласен с политикой обработки персональных данных',
@@ -118,6 +121,7 @@ return [
     'pay_accepted' => 'Оплата принята',
     'participate_accept' => 'Участие одобрено',
     'admin_user_accept' => 'Одобрить участие',
+    'admin_user_cancel' => 'Отменить участие',
     'admin_accept' => 'Одобрить',
     'admin_cancel' => 'Отменить',
     

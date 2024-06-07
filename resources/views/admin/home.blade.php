@@ -1,1 +1,0 @@
-@include('user.home', ['admin' => true])

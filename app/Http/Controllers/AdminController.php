@@ -30,7 +30,7 @@ public function getUser(Request $request, $id)
 
     $fileByTypes = $user->fileByTypes($files);
 
-    return view('admin.home', compact('user', 'fileByTypes', 'coauthors'));
+    return view('user.home', compact('user', 'fileByTypes', 'coauthors'));
 }
 
 // public function edit(Request $request, $id)
@@ -51,27 +51,37 @@ public function getUser(Request $request, $id)
 //     return redirect()->route('user.get', ['id' => $id])->with('success', 'Profile updated successfully');
 // }
 
-public function paymentToggle($id, $status)
+public function paymentAccept($id)
 {
   $user = User::findOrFail($id);
-  if ($status) {
     $user->pay_status = true;
-  } else {
-    $user->pay_status = false;
-  }
     $user->save();
 
     return back();
 }
 
-public function participationAccept($id, $status)
+public function paymentDecline($id)
 {
   $user = User::findOrFail($id);
-  if ($status) {
+    $user->pay_status = false;
+    $user->save();
+
+    return back();
+}
+
+public function participationAccept($id)
+{
+  $user = User::findOrFail($id);
     $user->accepted_status = true;
-  } else {
+    $user->save();
+
+    return back();
+}
+
+public function participationDecline($id)
+{
+  $user = User::findOrFail($id);
     $user->accepted_status = false;
-  }
     $user->save();
 
     return back();

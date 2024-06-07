@@ -3,13 +3,6 @@
         $formDelete = 'delete-thesis-' . $thesis->id;
     }
 
-if (auth()->user()->isAdmin()) {
-    $admin = true;
- } else {
-    $admin = false;
- }
-    
-
 @endphp
 <div class="card mb-3">
     <div class="card-header d-flex align-items-center">
@@ -75,7 +68,7 @@ if (auth()->user()->isAdmin()) {
                     class="fa fa-file-pdf ms-2 ms-md-0 ms-lg-2"></i></a>
         </div>
 
-@if ($admin)
+@if (auth()->user()->isAdmin())
 
 @if ($thesis->accepted_status == true and $thesis->submitted_status == true)
 
@@ -85,7 +78,7 @@ if (auth()->user()->isAdmin()) {
 
 @if ($thesis->accepted_status != true and $thesis->submitted_status == true)
 <a form="accept-thesises" type="button" href="{{ route('thesis.accept', $thesis->id) }}"
-    class="btn btn-success me-2"><i class="fa fa-check me-1"></i>Одобрить</a>
+    class="btn btn-success me-2"><i class="fa fa-check me-1"></i>{{__('auth.admin_)accept')}}</a>
 
 
     

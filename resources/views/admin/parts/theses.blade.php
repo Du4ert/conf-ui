@@ -20,8 +20,9 @@
 <div class="alert bg-primary bg-opacity-25 my-0 me-4 p-2">
     <i class="fas fa-circle-check fa-lg me-2"></i>Тезисы на проверке!
 </div>
-@if ($thesis->accepted_status != true and $thesis->submitted_status == true)
+
+@if (auth()->user()->isAdmin() and $thesis->accepted_status != true and $thesis->submitted_status == true)
     <a form="accept-thesises" type="button" href="{{ route('thesis.accept', $thesis->id) }}"
-        class="btn btn-success me-2"><i class="fa fa-check me-1"></i>Одобрить</a>
+        class="btn btn-success me-2"><i class="fa fa-check me-1"></i>{{ __('auth.admin_accept')}}</a>
 @endif
 </div>

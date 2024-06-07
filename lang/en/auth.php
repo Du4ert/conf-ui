@@ -29,6 +29,7 @@ return [
     'password_confirm' => 'Confirm password',
     'organization_full' => 'Enter the full name of your organization.',
     'required_alert' => 'Mandatory fields are marked',
+    'list' => 'Users',
 
 
     'policy_agreement' => 'I agree with the policy of processing personal data',
@@ -110,6 +111,7 @@ return [
     'pay_accepted' => 'Payment is accepted',
     'participate_accept' => 'Participation approved',
     'admin_user_accept' => 'Approve participation',
+    'admin_user_cancel' => 'Cancel participation',
     'admin_accept' => 'Approve',
     'admin_cancel' => 'Cancel',
 
