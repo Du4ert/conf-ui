@@ -15,17 +15,17 @@
 
     <h1 class="title">{{ $thesis->thesis_title }}</h1>
 
-    <h4 class="authors">
+    
     @if (count($affiliations) <= 1)
-        {{ $user->fullName() }}
-        @foreach ($authors as $author)
-            {{ ', ' . $author->fullName() }}
-        @endforeach
+        <h4 class="authors">
+            {{ $user->fullName() }}
+            @foreach ($authors as $author)
+                {{ ', ' . $author->fullName() }}
+            @endforeach
         </h4>
-
         <h4 class="affiliations">{{ $affiliations[0] }}</h4>
     @else
-        <h4 class="affiliations">
+        <h4 class="authors">
             {{ $user->fullName() }} <sup>1</sup>
             @foreach ($authors as $author)
                 @php
@@ -41,9 +41,9 @@
                 <sup>{{ $key + 1 }}</sup> {{ $organization }}<br />
             @endforeach
         </h4>
-
+        @endif
         <h4 class="email">{{ $user->email }}</h4>
-    @endif
+    
     <div class="content">
         {!! $thesis->text !!}
     </div>
