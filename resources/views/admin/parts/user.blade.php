@@ -1,4 +1,4 @@
-<div class="col-sm">
+<div class="col-sm mb-5">
 <div class="card">
     <div class="card-header">
         
@@ -30,13 +30,13 @@
     <div class="card-footer">
         <div class="d-lg-flex justify-content-end">
             <div>
-                <a href="{{ route('user.get', $user->id) }}" class="btn btn-primary btn-sm me-4"><i class="fas fa-user-alt me-2"></i>{{ __('auth.admin_show') }}</a>
+                <a href="{{ route('user.get', $user->id) }}" class="btn btn-outline-light text-secondary btn-sm me-4"><i class="fas fa-user-alt me-2"></i>{{ __('auth.admin_show') }}</a>
             </div>
             <div>
-                <a href="{{ route('user.get.reports', $user->id) }}" class="btn btn-primary btn-sm me-4"><i class="fas fa-chalkboard-teacher me-2"></i>{{ __('auth.reports') }}</a>
+                <a href="{{ route('user.get.reports', $user->id) }}" class="btn btn-outline-light text-secondary btn-sm me-4"><i class="fas fa-chalkboard-teacher me-2"></i>{{ __('auth.reports') }}</a>
             </div>
             <div>
-                <a href="{{ route('user.get.documents', $user->id) }}" class="btn btn-primary btn-sm me-4"><i class="far fas fa-file-word me-2"></i>{{ __('auth.documents') }}</a>
+                <a href="{{ route('user.get.documents', $user->id) }}" class="btn btn-outline-light text-secondary btn-sm me-4"><i class="far fas fa-file-word me-2"></i>{{ __('auth.documents') }}</a>
             </div>
             <div>
                 <form action="{{ route('user.destroy', $user->id) }}" method="post">

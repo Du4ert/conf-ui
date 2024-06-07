@@ -27,21 +27,24 @@
 @endsection
 
 @section('footer')
-@if (auth()->user()->isAdmin())
+
+
+
 <div class="d-flex justify-content-start align-items-center mt-4">
     @if ($user->pay_status == true)
         <div class="alert bg-success bg-opacity-25 my-0 me-4">
             <i class="fas fa-circle-check fa-lg me-2"></i>{{ __('auth.pay_accepted') }}
         </div>
+        @if (auth()->user()->isAdmin())
         <a form="accept-thesises" type="button" href="{{ route('user.payDecline', $user->id) }}"
             class="btn btn-danger me-2"><i class="fa fa-cancel me-1"></i>{{ __('auth.admin_cancel') }}</a>
+        @endif
     @endif
     
-    @if ($user->pay_status != true )
+    @if (auth()->user()->isAdmin() and $user->pay_status != true )
         <a form="accept-thesises" type="button" href="{{ route('user.payAccept', $user->id) }}"
             class="btn btn-success me-2"><i class="fa fa-check me-1"></i>{{ __('auth.admin_accept') }}</a>
     @endif
     </div>
-@endif
 
 @endsection
