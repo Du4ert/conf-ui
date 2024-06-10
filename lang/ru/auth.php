@@ -124,6 +124,7 @@ return [
     'admin_user_cancel' => 'Отменить участие',
     'admin_accept' => 'Одобрить',
     'admin_cancel' => 'Отменить',
+    'admin_delete_confirmation' => 'Вы уверены, что хотите удалить пользователя?',
     
     
 
