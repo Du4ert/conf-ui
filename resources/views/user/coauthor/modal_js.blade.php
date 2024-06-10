@@ -115,6 +115,8 @@
         const orgCheck = modal.find('#user-organization');
         const organization = modal.find('#organization-title');
 
+        
+
         // Users organization use
         orgCheck.change(function(e) {
             if ($(this).is(':checked')) {
@@ -122,13 +124,20 @@
                 organization.find('input').val('');
             } else {
                 organization.removeAttr('hidden');
-                organization.find('input');
             }
+        });
+
+
+        modal.on('show.bs.modal', function() {
+
         });
 
 
         $(document).on('click', '.coauthor-add-button', function(e) {
             // Add coauthor
+            orgCheck.prop('checked', true);
+            organization.attr('hidden', '');
+            organization.find('input').val('');
             form.attr('action', "{{ route('coauthor.store', $thesis->id) }}");
             form.data('action', 'add');
         })
@@ -148,8 +157,14 @@
                 form.find('[name=first_name_en]').val(data.first_name_en);
                 form.find('[name=organization_title]').val(data.organization_title);
                 form.find('[name=organization_title_en]').val(data.organization_title_en);
-                // form.find('[name=rank_title]').val(data.rank_title);
-                // form.find('[name=job_title]').val(data.job_title);
+
+                if (!data.organization_title && !data.organization_title) {
+                    orgCheck.prop('checked', true);
+                    organization.attr('hidden', '');
+                } else {
+                    orgCheck.prop('checked', false);
+                    organization.removeAttr('hidden');
+                }
             });
         })
 
@@ -176,7 +191,6 @@
                 },
                 error: function(response) {}
             });
-
         }
 
         function editCoauthor(action, data) {
