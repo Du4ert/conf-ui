@@ -37,7 +37,7 @@
 
                         <div class="col-12 col-md-8 col-lg-8">
                             <div class="grid-item p-4">
-                                <h5 class="text-white mb-3 title"><i class="fas fa-car me-2"></i>Map</h5>
+                                <h5 class="text-white mb-3 title"><i class="fas fa-map-marked-alt me-2"></i>Map</h5>
                                 <iframe src="https://yandex.ru/map-widget/v1/?lang=ru_RU&amp;scroll=false&amp;source=constructor-api&amp;um=constructor%3Ayu89NHPRT_VstAUyklvf-bYxxaqHUmVd" frameborder="0" allowfullscreen="true" width="100%" height="300px" style="display: block;"></iframe>
                             </div><!--//grid-item-->
                         </div><!--col-->
