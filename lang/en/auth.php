@@ -98,7 +98,7 @@ return [
     'biotechnology' => 'Biotechnology and bioengineering of plants',
     'breeding' => 'Breeding of agricultural plants',
     'bioresource' => 'Work with bioresource collections of plants, methods of gene pool conservation',
-    'thesis_absence_warning' => 'Do not pay for participation until your theses have approved.',
+    'thesis_absence_warning' => 'You can\'t pay for participation until your theses have approved.',
     'requisites_warning' => 'Details to pay for participation and contract will be added later.',
 
     'admin_show' => 'Profile',
