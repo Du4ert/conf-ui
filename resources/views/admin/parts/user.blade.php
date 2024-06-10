@@ -29,6 +29,13 @@
     </div>
     <div class="card-footer">
         <div class="d-lg-flex justify-content-end">
+            <div class="me-auto">
+                <form id="delete-user-{{ $user->id }}" class="delete-user" action="{{ route('user.destroy', $user->id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="button" class="delete-button btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteUserModal"><i class="fa fa-trash me-2"></i>{{ __('auth.admin_delete') }}</button>
+                </form>
+            </div>
             <div>
                 <a href="{{ route('user.get', $user->id) }}" class="btn btn-outline-light text-secondary btn-sm me-4"><i class="fas fa-user-alt me-2"></i>{{ __('auth.admin_show') }}</a>
             </div>
@@ -38,17 +45,12 @@
             <div>
                 <a href="{{ route('user.get.documents', $user->id) }}" class="btn btn-outline-light text-secondary btn-sm me-4"><i class="far fas fa-file-word me-2"></i>{{ __('auth.documents') }}</a>
             </div>
-            <div>
-                <form id="delete-user-{{ $user->id }}" class="delete-user" action="{{ route('user.destroy', $user->id) }}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <button type="button" class="delete-button btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteUserModal"><i class="fa fa-trash me-2"></i>{{ __('auth.admin_delete') }}</button>
-                </form>
-            </div>
         </div>
     </div>
 </div>
 </div>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
