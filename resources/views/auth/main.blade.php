@@ -31,12 +31,13 @@
         </div>
     </div>
     <div class="row form-group mb-2">
-            <div class="col-lg-6">
+    <div class="col-lg-6 mb-0">
             @include('user.inputs.field', ['field_name' => 'organization_title', 'required' => true, 'form' => 'user-form'])
         </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 mb-0">
             @include('user.inputs.field', ['field_name' => 'organization_title_en', 'required' => true, 'form' => 'user-form'])
         </div>
+        <div class="col-md-10 mx-auto mb-4 organization-notice"><small class="text-muted">{{ __('auth.organization_full_notice') }}</small></div> 
     </div>
     <div class="row form-group mb-2">
         <div class="col-lg-6">
