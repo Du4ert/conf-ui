@@ -40,20 +40,20 @@
                 <li class="d-flex align-items-center mb-2">
                     <i class="fas fa-dna fa-lg  me-4"></i>
                     <div>
-                        Геномика, транскриптомика и биоинформатика растений.
+                        Геномика, транскриптомика и биоинформатика растений
                     </div>
                 </li>
                 <li class="d-flex align-items-center mb-2">
                     <i class="fas fa-microscope fa-lg  me-4"></i>
-                    <div>Биотехнология и биоинженерия растений.</div>
+                    <div>Биотехнология и биоинженерия растений</div>
                 </li>
                 <li class="d-flex align-items-center mb-2">
                     <i class="fas fa-seedling fa-lg me-4"></i>
-                    <div>Селекция сельскохозяйственных растений.</div>
+                    <div>Классические и геномные подходы в селекции с/х растений</div>
                 </li>
                 <li class="d-flex align-items-center mb-2">
                     <i class="fas fa-vials fa-lg me-4"></i>
-                    <div>Работа с биоресурсными коллекциями растений, методы сохранения генофонда.</div>
+                    <div>Биоразнообразие, паспортизация и биоресурсные коллекции растений</div>
                 </li>
             </ul>
         </div><!--//areas-list-->
