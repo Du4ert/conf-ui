@@ -9,6 +9,7 @@ use Illuminate\Routing\Controller as BaseController;
 use App\Models\User;
 use App\Models\Thesis;
 
+
 class AdminController extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
@@ -137,7 +138,8 @@ public function documents($id)
 // {
 //   $query = request()->query();
 
-// $users = User::when(request()->has('has_thesis'), function ($query) {
+// $users = User::whereRaw("lower(last_name) like ? or lower(last_name_en) like ?", ['%' . request()->input('search') . '%', '%' . request()->input('search') . '%'])
+//           ->when(request()->has('has_thesis'), function ($query) {
 //             return $query->whereNotNull('email_verified_at')->has('theses');
 //         })->when(request()->has('accepted_status'), function ($query) {
 //             return $query->where('accepted_status', true);
@@ -146,22 +148,35 @@ public function documents($id)
 //         })->paginate(15);
   
 
-//   return view('admin.index', compact('users'));
+//   return view('admin.list', compact('users'));
 // }
 
 public function list()
 {
-  $query = request()->query();
+  // $query = request()->query();
+  $users = User::query();
 
-$users = User::whereRaw("lower(last_name) like ? or lower(last_name_en) like ?", ['%' . request()->input('search') . '%', '%' . request()->input('search') . '%'])
-          ->when(request()->has('has_thesis'), function ($query) {
-            return $query->whereNotNull('email_verified_at')->has('theses');
-        })->when(request()->has('accepted_status'), function ($query) {
-            return $query->where('accepted_status', true);
-        })->when(request()->has('pay_status'), function ($query) {
-            return $query->where('pay_status', true);
-        })->paginate(15);
-  
+  // $users->when(request()->has('search'), function($query) {
+  //   return $query->whereRaw("lower(last_name) like ? or lower(last_name_en) like ?", ['%' . request()->input('search') . '%', '%' . request()->input('search') . '%']);
+  // });
+  $users = $users->when(request()->has('search'), function ($query) {
+    $search = '%' . strtolower(request()->input('search')) . '%';
+    return $query->where(function ($q) use ($search) {
+        $q->where('last_name', 'LIKE', $search)
+          ->orWhere('last_name_en', 'LIKE', $search);
+    });
+});
+  $users->when(request()->has('has_thesis'), function ($query) {
+      return $query->has('theses');
+    });
+  $users->when(request()->has('accepted_status'), function ($query) {
+      return $query->where('accepted_status', true);
+    });
+  $users->when(request()->has('pay_status'), function ($query) {
+      return $query->where('pay_status', true);
+    });
+
+  $users = $users->paginate(15);
 
   return view('admin.list', compact('users'));
 }

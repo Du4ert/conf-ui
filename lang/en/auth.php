@@ -108,6 +108,7 @@ return [
     'admin_pay' => 'Payed',
     'admin_last_name' => 'Last Name',
     'admin_filter' => 'Filter',
+    'filter_any' => 'Any',
     'admin_delete' => 'Delete user',
     'pay_accepted' => 'Payment is accepted',
     'participate_accept' => 'Participation approved',

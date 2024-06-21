@@ -1,7 +1,4 @@
 @php
-if (!isset($field_name)) {
-    $field_name = '';
-}
 
 if (!isset($form)) {
     $form = 'thesis-form';
@@ -17,9 +14,5 @@ if (!isset($form)) {
             <option value="bioresource">{{ __('auth.bioresource') }}
             </option>
         </select>
-        {{-- <script>
-            const sectionSelect = document.querySelector('select[name="section"]');
-            sectionSelect.value = {{ $user->section }}
-        </script> --}}
     </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="col-sm mb-5">
+<div class="col-sm col-md-6 mb-5">
 <div class="card">
     <div class="card-header">
         

@@ -1,8 +1,4 @@
 @php
-if (!isset($field_name)) {
-    $field_name = '';
-}
-
 if (!isset($form)) {
     $form = 'thesis-form';
 }
@@ -18,7 +14,3 @@ if (!isset($form)) {
         </select>
     </div>
 </div>
-{{-- <script>
-    let reportSelect = document.querySelector('select[name="report_form"]');
-    reportSelect.value = {{ $thesis->report_form ?? null }}
-</script> --}}

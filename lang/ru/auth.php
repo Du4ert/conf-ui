@@ -119,6 +119,7 @@ return [
     'admin_pay'=> 'Оплачен',
     'admin_last_name'=> 'Фамилия',
     'admin_filter'=> 'Фильтр',
+    'filter_any' => 'Любой',
     'admin_delete' => 'Удалить пользователя',
     'pay_accepted' => 'Оплата принята',
     'participate_accept' => 'Участие одобрено',
