@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ asset('favicon.ico') }}">
-    <title>GenBio - {{ __('auth.homepage_title') }}</title>
+    <title>GenBio - {{ __('main.documents') }}</title>
 
     <!-- Fonts -->
 

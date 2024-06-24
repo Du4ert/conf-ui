@@ -40,6 +40,8 @@ return [
     'full-time_young' => 'Young scientists (up to 35 years old inclusive), full-time participation',
     'remote' => 'Absentee participation',
     'accompanying' => 'Accompanying persons',
+    'documents' => 'Documents',
+
 
 
 ];

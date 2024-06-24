@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-content-main-part policy">
 
-        <h4 class="text-center">
+        <h4 class="text-center mb-5">
             Политика
             в отношении обработки персональных данных
             участников IV международной научно-практической конференции «Геномика и

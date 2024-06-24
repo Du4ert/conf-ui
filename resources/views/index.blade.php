@@ -3,33 +3,33 @@
 @section('content')
 @if (config('app.locale') === 'ru')
 {{-- @include('sections.stats') --}}
-@include('sections.hero')
-@include('sections.about')
-@include('sections.organizer')
-@include('sections.included')
-@include('sections.сommittee')
+@include('sections.ru.hero')
+@include('sections.ru.about')
+@include('sections.ru.organizer')
+@include('sections.ru.included')
+@include('sections.ru.сommittee')
 {{-- @include('sections.speakers') --}}
-@include('sections.dates')
+@include('sections.ru.dates')
 {{-- @include('sections.schedule') --}}
-@include('sections.payment')
-@include('sections.venue')
-@include('sections.sponsors')
-@include('sections.contacts')
+@include('sections.ru.payment')
+@include('sections.ru.venue')
+@include('sections.ru.sponsors')
+@include('sections.ru.contacts')
 
 @else
 {{-- @include('sections.en.stats') --}}
-@include('sections.en.en_hero')
-@include('sections.en.en_about')
-@include('sections.en.en_organizer')
-@include('sections.en.en_included')
-@include('sections.en.en_committee')
-{{-- @include('sections.en.en_speakers') --}}
-@include('sections.en.en_dates')
+@include('sections.en.hero')
+@include('sections.en.about')
+@include('sections.en.organizer')
+@include('sections.en.included')
+@include('sections.en.committee')
+{{-- @include('sections.en.speakers') --}}
+@include('sections.en.dates')
 {{-- @include('sections.en.schedule') --}}
-@include('sections.en.en_payment')
-@include('sections.en.en_venue')
-@include('sections.en.en_sponsors')
-@include('sections.en.en_contacts')
+@include('sections.en.payment')
+@include('sections.en.venue')
+@include('sections.en.sponsors')
+@include('sections.en.contacts')
 @endif
 
 

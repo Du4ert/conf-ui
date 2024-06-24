@@ -1,11 +1,11 @@
 <footer class="footer py-5 theme-bg-dark text-white">
     <div class="container text-center">
         
-        <ul class="social-list list-inline mb-4"> 
+        {{-- <ul class="social-list list-inline mb-4"> 
             <li class="list-inline-item me-3"><a href="#mailto"><i class="fas fa-envelope"></i></a></li>
             <li class="list-inline-item me-3"><a href="#telegram"><i class="fab fa-telegram fa-fw"></i></a></li>
             <li class="list-inline-item me-3"><a href="#vk"><i class='fab fa-vk'></i></a></li>
-        </ul><!--//social-list-->
+        </ul><!--//social-list--> --}}
         
         
         <ul class="footer-links list-inline mx-auto mb-4">
