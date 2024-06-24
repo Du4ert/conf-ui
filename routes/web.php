@@ -93,6 +93,11 @@ Route::get('/policy', function() {
     return view('pages.policy');
 })->name('policy');
 
+Route::get('/agreement', function() {
+    return view('pages.agreement');
+})->name('agreement');
+
+
 
 
 });

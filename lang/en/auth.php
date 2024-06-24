@@ -118,4 +118,5 @@ return [
     'admin_cancel' => 'Cancel',
     'admin_delete_confirmation' => 'You are sure you want to delete the user?',
 
+
 ];

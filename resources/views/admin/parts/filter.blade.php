@@ -30,10 +30,10 @@
                 class="fa-solid fa-filter me-md-2"></i><span
                 class="d-none d-md-inline">{{ __('auth.admin_filter') }}:</span></button>
     </div>
-    {{-- <div class="row">
+    <div class="row thesis-filters">
         <div class="form-group col-md-6">
-            <select form="filter" class="form-select" name="section" aria-label="Default select example">
-                <option selected value="any">{{ __('auth.filter_any') }}</option>
+            <select {{ request()->input('has_thesis') ? '' : 'disabled' }} id="section" form="filter" class="form-select" name="section" aria-label="Default select example">
+                <option selected value="">{{ __('auth.filter_any') }}</option>
                 <option value="genomics">{{ __('auth.genomics') }}</option>
                 <option value="biotechnology">{{ __('auth.biotechnology') }}</option>
                 <option value="breeding">{{ __('auth.breeding') }}</option>
@@ -43,12 +43,27 @@
         </div>
 
         <div class="form-group col-md-6">
-            <select form="filter" class="form-select" name="report_form" aria-label="Default select example">
-                <option selected value="any">{{ __('auth.filter_any') }}</option>
+            <select {{ request()->input('has_thesis') ? '' : 'disabled' }} id="report_form" form="filter" class="form-select" name="report_form" aria-label="Default select example">
+                <option selected value="">{{ __('auth.filter_any') }}</option>
                 <option value="oral">{{ __('auth.oral') }}</option>
                 <option value="poster">{{ __('auth.poster') }}</option>
                 <option value="absentee">{{ __('auth.absentee') }}</option>
             </select>
         </div>
-    </div> --}}
+    </div>
 </form>
+
+<script type="module">
+const thesisCheck = $('#has_thesis');
+const reportSelect = $('#report_form');
+const sectionSelect = $('#section');
+thesisCheck.on('change', function(e) {
+    if ($(this).is(':checked')) {
+        reportSelect.prop('disabled', false);
+        sectionSelect.prop('disabled', false);
+    } else {
+        reportSelect.prop('disabled', true).val('');
+        sectionSelect.prop('disabled', true).val('');
+    }
+})
+</script>

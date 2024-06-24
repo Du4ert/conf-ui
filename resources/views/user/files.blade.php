@@ -21,11 +21,17 @@
     <i class="fas fa-exclamation-circle fa-lg me-2"></i>{{ __('auth.thesis_absence_warning')}}
 </div>
 @endif
-    
 
-    <div class="alert alert-warning" role="alert">
+@if (config('app.locale') === 'ru')
+На странице <a href="{{ route('agreement') }}" target="_blank">договора на оказание услуг</a>, выберите подходящий вам договор и прикрепите заполненный договор в поле <span class="text-danger">{{ __('file.agreement') }}</span>. Квитанцию об оплате, разместите в поле <span class="text-danger">{{ __('file.payment') }}</span>.
+
+@else
+On the <a href="{{ route('agreement') }}" target="_blank">Agreement for the provision of services</a> page, download the relevant contract. Place the completed agreement in <span class="text-danger">{{ __('file.agreement') }}</span> field. Place the receipt of payment in the <span class="text-danger">{{ __('file.payment') }}</span> field.
+@endif
+    {{-- <div class="alert alert-warning" role="alert">
+        <a href="{{ route('agreement') }}" target="_blank" class="btn btn_link text-primary">Договор участия</a>
         <i class="fas fa-exclamation-circle fa-lg me-2"></i>{{ __('auth.requisites_warning')}}
-    </div>
+    </div> --}}
 
 @endsection
 

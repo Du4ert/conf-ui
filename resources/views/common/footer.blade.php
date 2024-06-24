@@ -9,7 +9,9 @@
         
         
         <ul class="footer-links list-inline mx-auto mb-4">
-            <li class="list-inline-item"><a href="{{ route('policy') }}">{{ __('main.agreement')}}</a></li>
+            <li class="list-inline-item"><a href="{{ route('policy') }}">{{ __('main.confidencial')}}</a></li>
+            <li class="list-inline-item">|</li>
+            <li class="list-inline-item"><a href="{{ route('agreement') }}">{{ __('main.agreement')}}</a></li>
             <li class="list-inline-item">|</li>
             <li class="list-inline-item"><a href="/">{{ __('main.main') }}</a></li>
             <li class="list-inline-item">|</li>

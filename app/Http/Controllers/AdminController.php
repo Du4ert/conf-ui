@@ -134,39 +134,21 @@ public function documents($id)
   return view('user.files', compact('user', 'fileByTypes'));
 }
 
-// public function list()
-// {
-//   $query = request()->query();
-
-// $users = User::whereRaw("lower(last_name) like ? or lower(last_name_en) like ?", ['%' . request()->input('search') . '%', '%' . request()->input('search') . '%'])
-//           ->when(request()->has('has_thesis'), function ($query) {
-//             return $query->whereNotNull('email_verified_at')->has('theses');
-//         })->when(request()->has('accepted_status'), function ($query) {
-//             return $query->where('accepted_status', true);
-//         })->when(request()->has('pay_status'), function ($query) {
-//             return $query->where('pay_status', true);
-//         })->paginate(15);
-  
-
-//   return view('admin.list', compact('users'));
-// }
 
 public function list()
 {
-  // $query = request()->query();
   $users = User::query();
 
-  // $users->when(request()->has('search'), function($query) {
-  //   return $query->whereRaw("lower(last_name) like ? or lower(last_name_en) like ?", ['%' . request()->input('search') . '%', '%' . request()->input('search') . '%']);
-  // });
   $users = $users->when(request()->has('search'), function ($query) {
     $search = '%' . strtolower(request()->input('search')) . '%';
     return $query->where(function ($q) use ($search) {
         $q->where('last_name', 'LIKE', $search)
           ->orWhere('last_name_en', 'LIKE', $search);
     });
-});
+  });
   $users->when(request()->has('has_thesis'), function ($query) {
+      $section = request()->input('section');
+      $section = request()->input('report_form');
       return $query->has('theses');
     });
   $users->when(request()->has('accepted_status'), function ($query) {
@@ -180,5 +162,7 @@ public function list()
 
   return view('admin.list', compact('users'));
 }
+
+
 
 }
