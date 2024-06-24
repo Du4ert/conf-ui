@@ -30,7 +30,7 @@
                 class="fa-solid fa-filter me-md-2"></i><span
                 class="d-none d-md-inline">{{ __('auth.admin_filter') }}:</span></button>
     </div>
-    <div class="row thesis-filters">
+    {{-- <div class="row thesis-filters">
         <div class="form-group col-md-6">
             <select {{ request()->input('has_thesis') ? '' : 'disabled' }} id="section" form="filter" class="form-select" name="section" aria-label="Default select example">
                 <option selected value="">{{ __('auth.filter_any') }}</option>
@@ -50,7 +50,7 @@
                 <option value="absentee">{{ __('auth.absentee') }}</option>
             </select>
         </div>
-    </div>
+    </div> --}}
 </form>
 
 <script type="module">

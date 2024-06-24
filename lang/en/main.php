@@ -27,7 +27,7 @@ return [
     'home' => 'User Profile',
     'individual' => 'Individual',
     'legal' => 'Legal entity',
-    'agreement' => 'Contract',
+    'agreement' => 'Agreement',
     'agreement_title' => 'Agreement for the provision of services for organizing participation in the GenBio 2024 conference',
     'agreement_subtitle' => 'Download the relevant contract. You can place the completed agreement in your account page in the "Documents" section.',
     'pay_category' => 'Participant category
