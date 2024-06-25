@@ -32,7 +32,7 @@
                     </li>
                     <li class="list-inline-item items-list">
                       <div class="px-4">
-                        <div class="event-date badge bg-warning">12 October</div>
+                        <div class="event-date badge bg-warning">7 October</div>
                         <h5 class="pt-2">Start</h5>
                         <p class="text-muted">The beginning of the conference.</br>
                             Welcomeparty!
