@@ -1,7 +1,7 @@
 @extends('layouts.page')
 
 @section('content')
-    <div class="page-content-main-part policy mb-5">
+    <div class="page-content-main-part agreement mb-5">
         <h3 class="text-center mb-3 mt-2">
             {{ __('main.agreement_title')}}
             </h4>
@@ -11,7 +11,7 @@
             </div>
 
 
-            <ul class="list-group mx-auto mt-4 mb-5">
+            <ul class="list-group mx-auto mt-4 mb-5 payment-table">
                 <li class="list-group-item p-3  conf-bg-primary text-white">
                     <div class="row">
                         <div class="col-4">{{ __('main.pay_category') }}</div>

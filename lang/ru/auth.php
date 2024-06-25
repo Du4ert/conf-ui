@@ -66,6 +66,7 @@ return [
     'home' => 'Главное',
     'files' => 'Файлы',
     'coauthors' => 'Соавторы',
+    'coauthor' => 'Соавтор',
     'phone' => 'Номер телефона',
     'thesis_title' => 'Название',
     'thesis_title_en' => 'Название ENG',

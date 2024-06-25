@@ -60,6 +60,7 @@ return [
     'home' => 'Main',
     'files' => 'Files',
     'coauthors' => 'Coauthors',
+    'coauthor' => 'Coauthor',
     'phone' => 'Phone number',
     'thesis_title_ru' => 'Title RUS',
     'thesis_title_en' => 'Title',
