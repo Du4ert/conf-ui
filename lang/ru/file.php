@@ -28,6 +28,6 @@ return [
     'home' => 'Profile page',
 
     'committee' => 'Оргкомитет',
-    'size_max' => 'Максимальный размер' ,
+    'size_max' => 'Максимальный размер',
     'extensions' => 'Допустимые расширения',
 ];

@@ -5,12 +5,13 @@
         <h3 class="text-center mb-5 mt-2">
             {{ __('main.agreement_title')}}
             </h4>
-            <div class="section-intro text-center mb-4">
-                {{ __('main.agreement_subtitle')}}
+            <div class="section-intro  mb-4">
+                <p>{{ __('main.payment_includes')}}</p>
+                <p>{{ __('main.payment_info')}}</p>
             </div>
 
 
-            <ul class="list-group mx-auto">
+            <ul class="list-group mx-auto mt-4 mb-5">
                 <li class="list-group-item p-3  conf-bg-primary text-white">
                     <div class="row">
                         <div class="col-4">{{ __('main.pay_category') }}</div>
@@ -95,6 +96,11 @@
                 </li>
             </ul>
 
+            @if (config('app.locale') === 'ru')
+            @include('pages.parts.ru.instruction')
+            @else
+            @include('pages.parts.en.instruction')
+            @endif
 
 
     </div>

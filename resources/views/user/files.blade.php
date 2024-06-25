@@ -22,11 +22,17 @@
 </div>
 @endif
 
+
 @if (config('app.locale') === 'ru')
-На странице <a href="{{ route('agreement') }}" target="_blank">договора на оказание услуг</a>, выберите подходящий вам договор и прикрепите заполненный договор в поле <span class="text-danger">{{ __('file.agreement') }}</span>. Квитанцию об оплате, разместите в поле <span class="text-danger">{{ __('file.payment') }}</span>.
+<p>Пройдите на страницу <a href="{{ route('agreement') }}" target="_blank">договора на оказание услуг</a> и следуйте приложенной инструкции.</p>
+
+<p>После заключения договора и оплаты, разместите, пожалуйста, договор в поле <span class="text-danger">{{ __('file.agreement') }}</span>. Квитанцию об оплате, разместите в поле <span class="text-danger">{{ __('file.payment') }}</span>.
+</p>
 
 @else
-On the <a href="{{ route('agreement') }}" target="_blank">Agreement for the provision of services</a> page, download the relevant contract. Place the completed agreement in <span class="text-danger">{{ __('file.agreement') }}</span> field. Place the receipt of payment in the <span class="text-danger">{{ __('file.payment') }}</span> field.
+<p>Go to the <a href="{{ route('agreement') }}" target="_blank">Agreement for the provision of services</a> page and follow the attached instructions.</p>
+
+<p>After the conclusion of the contract and payment, please place the completed agreement in <span class="text-danger">{{ __('file.agreement') }}</span> field. Place the receipt of payment in the <span class="text-danger">{{ __('file.payment') }}</span> field.</p>
 @endif
     {{-- <div class="alert alert-warning" role="alert">
         <a href="{{ route('agreement') }}" target="_blank" class="btn btn_link text-primary">Договор участия</a>

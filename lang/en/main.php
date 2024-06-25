@@ -41,6 +41,8 @@ return [
     'remote' => 'Absentee participation',
     'accompanying' => 'Accompanying persons',
     'documents' => 'Documents',
+    'payment_includes' => 'Organisation fee includes publication costs, participant\'s kit, coffee breaks and welcomeparty. Participants are responsible for their own accommodation, travel and meals. All conference materials will be sent to absentee participants after the conference is over.',
+    'payment_info' => 'The organizing committee entered into an agreement with the Scientific Service LLC on the co -organization of the conference, therefore, in terms of payment for the organizational fee, the contract is concluded with this organization.The contract may be concluded with a legal entity or an individual after passing the registration by each participant in the conference. ',
 
 
 
