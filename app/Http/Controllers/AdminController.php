@@ -146,11 +146,22 @@ public function list()
           ->orWhere('last_name_en', 'LIKE', $search);
     });
   });
+  
   $users->when(request()->has('has_thesis'), function ($query) {
-      $section = request()->input('section');
-      $section = request()->input('report_form');
-      return $query->has('theses');
+      $query = $query->whereHas('theses', function($query) {
+        $section = request()->input('section');
+        $report_form = request()->input('report_form');
+        if ($section) {
+          $query->where('section', $section);
+        }
+        if ($report_form) {
+          $query->where('report_form', $report_form);
+        }
+        
+      });
+      return  $query->has('theses');
     });
+
   $users->when(request()->has('accepted_status'), function ($query) {
       return $query->where('accepted_status', true);
     });

@@ -121,6 +121,8 @@ return [
     'admin_last_name'=> 'Фамилия',
     'admin_filter'=> 'Фильтр',
     'filter_any' => 'Любой',
+    'filter_section' => 'Любая секция',
+    'filter_report_form' => 'Любая форма доклада',
     'admin_delete' => 'Удалить пользователя',
     'pay_accepted' => 'Оплата принята',
     'participate_accept' => 'Участие одобрено',
