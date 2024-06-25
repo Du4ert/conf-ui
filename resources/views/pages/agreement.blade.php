@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="page-content-main-part agreement mb-5">
-        <h3 class="text-center mb-3 mt-2">
+        <h3 class="text-center mb-4 mt-2">
             {{ __('main.agreement_title')}}
             </h4>
             <div class="section-intro  mb-4">
