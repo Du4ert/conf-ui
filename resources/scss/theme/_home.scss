@@ -677,9 +677,14 @@ label {
 		width: 100%;
 	  }
   
-	  .banner {
-		  height: 150px;
-	  }
+		.banner {
+			height: 150px;
+			.carousel-item {
+				background-size: auto !important;
+			}
+		}
+
+
 	
 	.header {
 		background: rgba($theme-text-color-primary, 0.95);
