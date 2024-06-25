@@ -108,7 +108,7 @@ class ThesisController extends Controller
               
         $pdf = PDF::loadView('pdf.downloadPDF', compact('thesis', 'user', 'authors'));
        
-        return $pdf->download('thesis.pdf');
+        return $pdf->download($user->last_name . '.pdf');
         // return view('pdf.downloadPDF', compact('thesis', 'user', 'authors'));
 
 }
