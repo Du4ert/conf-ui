@@ -122,7 +122,7 @@ public function downloadEn($id)
           
     $pdf = PDF::loadView('pdf.downloadEnPDF', compact('thesis', 'user', 'authors'));
    
-    return $pdf->download('thesis.pdf');
+    return $pdf->download($user->last_name . '_EN.pdf');
     // return view('pdf.downloadEnPDF', compact('thesis', 'user', 'authors'));
 }
 
