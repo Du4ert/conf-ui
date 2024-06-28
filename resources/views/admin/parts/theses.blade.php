@@ -21,7 +21,7 @@
 
 <div class="col-md-4">
 @if ($thesis->accepted_status == true and $thesis->submitted_status == true)
-    <div class="alert bg-success bg-opacity-25 my-0 me-4">
+    <div class="alert bg-success bg-opacity-25 my-0">
         <i class="fas fa-circle-check fa-lg me-2"></i>Тезисы приняты!
     </div>
     <a form="accept-thesises" type="button" href="{{ route('thesis.decline', $thesis->id) }}"
@@ -29,7 +29,7 @@
 @endif
 
 @if($thesis->submitted_status == true and $thesis->accepted_status != true)
-<div class="alert bg-primary bg-opacity-25 my-0 me-4 p-2">
+<div class="alert bg-primary bg-opacity-25 my-0 p-2">
     <i class="fas fa-circle-check fa-lg me-2"></i>Тезисы на проверке!
 </div>
 
