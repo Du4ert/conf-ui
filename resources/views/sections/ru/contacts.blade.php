@@ -12,7 +12,7 @@
             <p><i class="fa fa-phone"></i> +7 (978) 803-81-98</p>
             <p>Элина Челебиева</p>
             <p><i class="fa fa-phone"></i> +7 (978) 801-30-73</p>
-         <p><i class="fa fa-envelope"></i> <a href="mailto:conf@genbio.nikitsad.ru">conf@genbio.nikitsad.ru</a></p>
+         <p><i class="fa fa-envelope"></i> <a href="mailto:genbio-conf2024@yandex.ru">genbio-conf2024@yandex.ru</a></p>
         </div>
         
 
