@@ -127,6 +127,7 @@ return [
     'admin_accept' => 'Approve',
     'admin_cancel' => 'Cancel',
     'admin_delete_confirmation' => 'You are sure you want to delete the user?',
+    'admin_vavilov_article' => 'Article',
 
 
 ];

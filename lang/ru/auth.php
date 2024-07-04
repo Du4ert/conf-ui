@@ -138,6 +138,7 @@ return [
     'admin_accept' => 'Одобрить',
     'admin_cancel' => 'Отменить',
     'admin_delete_confirmation' => 'Вы уверены, что хотите удалить пользователя?',
+    'admin_vavilov_article' => 'Статья',
     
     
 

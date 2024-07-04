@@ -168,6 +168,9 @@ public function list()
   $users->when(request()->has('pay_status'), function ($query) {
       return $query->where('pay_status', true);
     });
+    $users->when(request()->has('vavilov_article'), function ($query) {
+      return $query->where('vavilov_article', true);
+    });
 
   $users = $users->paginate(15);
 

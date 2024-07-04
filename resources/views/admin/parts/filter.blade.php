@@ -3,7 +3,7 @@
     <div class="filter d-md-flex align-items-center justify-content-between">
         @csrf
 
-        <div class="thesis-filters">
+        <div class="thesis-filters me-md-4">
         
             <div class="form-group">
                 <label for="has_thesis" class="me-1">{{ __('auth.admin_thesis') }}:</label>
@@ -43,6 +43,12 @@
         </div>
 
         <div class="form-group">
+            <label for="vavilov_article" class="me-1">{{ __('auth.admin_vavilov_article') }}:</label>
+            <input type="checkbox" name="vavilov_article" id="vavilov_article"
+                {{ request()->has('vavilov_article') ? 'checked' : '' }}>
+        </div>
+
+        <div class="form-group">
             <label for="search">{{ __('auth.admin_last_name') }}:</label>
             <input type="text" name="search" id="search" value="{{ request()->input('search') }}" size="10">
         </div>
@@ -50,7 +56,7 @@
 
     <button type="submit" class="btn btn-primary d-inline mt-2 mt-md-0"><i
         class="fa-solid fa-filter me-md-2"></i><span
-        class="d-none d-md-inline">{{ __('auth.admin_filter') }}:</span></button>
+        class="d-none d-md-inline">{{ __('auth.admin_filter') }}</span></button>
 </div>
 </form>
 
