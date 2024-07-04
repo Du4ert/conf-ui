@@ -34,6 +34,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'pay_status',
         'has_agreement',
         'accepted_status',
+        'vavilov_article',
     ];
 
 
@@ -144,12 +145,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'phone',
         'pay_status',
         'accepted_status',
+        'vavilov_article',
     ];
 
     // Fields with default values
     protected $attributes = [
         'pay_status' => false,
         'accepted_status' => false,
+        'vavilov_article' => false,
     ];
 
     /**

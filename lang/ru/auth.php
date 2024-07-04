@@ -12,6 +12,10 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    'yes' => 'Да',
+    'no' => 'Нет',
+    'new_field_alert' => 'Добавилось новое поле:',
+    'new_field_instructions' => 'Пожалуйста, нажмите «редактировать» и обновите значение.',
     'login' => 'Войти',
     'home' => 'Профиль',
     'profile' => 'Профиль',
@@ -31,6 +35,8 @@ return [
     'required_alert' => 'Обязательные поля отмечены',
     'organization_full_notice' =>'Введите полное название вашей организации, например ФГБУН «Никитский ботанический сад – Национальный научный центр РАН», Ялта',
     'list' => 'Пользователи',
+
+    
 
 
 
@@ -59,7 +65,8 @@ return [
     'participant' => 'Участник',
     'participant_en' => 'Участник ENG',
     
-
+    'vavilov_info' => 'Полнотекстовая статья в Вавиловском журнале',
+    'vavilov_form' => 'Вы планируете подачу полнотекстовой статьи в Вавиловский журнал генетики и селекции (WoS CC Q3, Scopus Q2)?',
 
 
     'homepage_title' => 'Личный кабинет',

@@ -12,17 +12,19 @@
 
         @include('auth.main')
 
-
+        <hr class="mb-4" />
         @include('user.inputs.email', ['form' => 'user-form'])
         @include('user.inputs.password', ['form' => 'user-form'])
+
         <div class="row">
             <p class="text-center text-muted">{{ __('auth.required_alert')}} <span class="text-danger">*</span></p>
         </div>
+        
 
 
         {{-- Policy --}}
             <div class="row mb-3">
-                <div class="col-md-6 offset-md-4">
+                <div class="col-md-10 offset-md-2">
                     <div class="form-check">
                         <input form="user-form" class="form-check-input" type="checkbox" id="policy" name="policy"
                             onchange="toggleSubmit();">

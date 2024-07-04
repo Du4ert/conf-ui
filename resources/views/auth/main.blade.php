@@ -55,4 +55,9 @@
             @include('user.inputs.field', ['field_name' => 'job_title_en', 'form' => 'user-form'])
         </div>
     </div>
+
+    <div class="row mb-4">
+        <div class="col-md-10 mx-auto">
+        @include('user.inputs.vavilov_article')
     </div>
+</div>

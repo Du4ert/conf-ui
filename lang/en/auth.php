@@ -12,6 +12,10 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    'yes' => 'Yes',
+    'no' => 'No',
+    'new_field_instructions' => 'Please click "edit" and update the value.',
+    'new_field_alert' => 'A new field was added:',
     'login' => 'Login',
     'home' => 'Profile',
     'profile' => 'Profile',
@@ -55,6 +59,9 @@ return [
     'job_title_en' => 'Job title',
     'participant' => 'Participant RUS',
     'participant_en' => 'Participant',
+
+    'vavilov_info' => 'Полнотекстовая статья в Вавиловском журнале',
+    'vavilov_form' => 'Are you planning to submit a full-text article to the Vavilov Journal of Genetics and Breeding? (WoS CC Q3, Scopus Q2)?',
 
     'homepage_title' => 'User dashboard',
     'home' => 'Main',

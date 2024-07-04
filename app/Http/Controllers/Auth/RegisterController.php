@@ -68,6 +68,7 @@ class RegisterController extends Controller
             'rank_title_en' => 'nullable|string|max:300',
             'pay_status' => 'nullable|boolean',
             'accepted_status' => 'nullable|boolean',
+            'vavilov_article' => 'nullable|boolean',
         ]);
     }
 
@@ -96,6 +97,7 @@ class RegisterController extends Controller
             'rank_title_en' => $data['rank_title_en'] ?? null,
             'pay_status' => $data['pay_status'] ?? false,
             'accepted_status' => $data['accepted_status'] ?? false,
+            'vavilov_article' => $data['vavilov_article'] ?? false,
 
         ]);
     }

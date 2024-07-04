@@ -38,7 +38,6 @@
                         class="d-none d-sm-inline">{{ __('auth.cancel') }}</span><i class="fa fa-cancel ms-sm-2"></i></a>
             @endif
 
-
             @if ($editable)
                 <button id="submit" type="submit" class="btn btn-primary d-block" form="user-form"><span
                         class="d-none d-sm-inline">{{ __('auth.save') }}</span><i class="fa fa-save ms-sm-2"></i>
