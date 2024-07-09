@@ -32,7 +32,7 @@ return [
     'agreement_subtitle' => 'Download the relevant contract. You can place the completed agreement in your account page in the "Documents" section.',
     'pay_category' => 'Participant category
                 and form of participation',
-    'pay_early' => 'Early payment (until 01.07.2024), RUB.',
+    'pay_early' => 'Early payment (until 01.08.2024), RUB.',
     'pay_late' => 'Late payment
                 (till 20.09.2024), RUB.',
     'full-time' => 'Scientists over 35 years of age,
