@@ -10,14 +10,14 @@
                   <ul class="list-inline items">
                     <li class="list-inline-item items-list">
                       <div class="px-4">
-                        <div class="event-date badge bg-info">1 июля</div>
+                        <div class="event-date badge bg-info">1 августа</div>
                         <h5 class="pt-2">Регистрация</h5>
                         <p class="text-muted">Последний день принятия регистрационной формы. </p>
                       </div>
                     </li>
                     <li class="list-inline-item items-list">
                       <div class="px-4">
-                        <div class="event-date badge bg-success">1 июля</div>
+                        <div class="event-date badge bg-success">1 августа</div>
                         <h5 class="pt-2">Ранняя оплата</h5>
                         <p class="text-muted">Последний день ранней оплаты регистрационного взноса. 
                         </p>
