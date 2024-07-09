@@ -25,7 +25,7 @@
             <h1 class="hero-heading mb-2">GenBio</h1>
             <div class="hero-meta mb-3"><i class="far fa-calendar-alt me-2"></i>07 - 11 {{ __('main.month_oct')}} <i
                     class="fas fa-map-marker-alt mx-2"></i>{{ __('main.location') }}</div>
-            <div class="hero-intro mb-4">{{ __('main.center_full') }} <br>{{ __('main.conf') }}</div>
+            <div class="hero-intro mb-4">Kurchatov Genome Center <br/> of the Nikitsky Botanical Garden <br>{{ __('main.conf') }}</div>
             <div class="hero-cta"><a class="btn btn-primary btn-lg" href="{{ LaravelLocalization::localizeUrl('/register') }}">{{ __('main.participate')}}</a>
             </div>
 
