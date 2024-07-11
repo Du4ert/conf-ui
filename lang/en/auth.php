@@ -130,6 +130,10 @@ return [
     'admin_vavilov_article' => 'Article',
     'admin_found' => 'Found',
     'admin_users' => 'users',
+    'filter_thesis_status' => 'Any status',
+    'filter_thesis_status_accepted' => 'Accepted',
+    'filter_thesis_status_submitted' => 'At the check',
+    'filter_thesis_status_saved' => 'Started',
 
 
 ];

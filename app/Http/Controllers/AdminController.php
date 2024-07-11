@@ -150,12 +150,26 @@ public function list()
       $query = $query->whereHas('theses', function($query) {
         $section = request()->input('section');
         $report_form = request()->input('report_form');
+        $thesis_status = request()->input('thesis_status');
         if ($section) {
           $query->where('section', $section);
         }
         if ($report_form) {
           $query->where('report_form', $report_form);
         }
+        if ($thesis_status) {
+          switch ($thesis_status) {
+            case 'accepted': 
+              $query->where('accepted_status', true);
+              break;
+            case 'submitted':
+              $query->where(['accepted_status' => false, 'submitted_status' => true]);
+              break;
+            case 'saved':
+              $query->where(['accepted_status' => false, 'submitted_status' => false]);
+              break;
+            }
+          }
         
       });
       return  $query->has('theses');

@@ -140,7 +140,11 @@ return [
     'admin_delete_confirmation' => 'Вы уверены, что хотите удалить пользователя?',
     'admin_vavilov_article' => 'Статья',
     'admin_found' => 'Найдено',
-    'admin_users' => 'пользователя(ей)',
+    'admin_users' => 'пользователей',
+    'filter_thesis_status' => 'Любой статус',
+    'filter_thesis_status_accepted' => 'Приняты',
+    'filter_thesis_status_submitted' => 'На проверке',
+    'filter_thesis_status_saved' => 'Начаты',
     
     
 
