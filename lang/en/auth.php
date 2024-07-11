@@ -128,6 +128,8 @@ return [
     'admin_cancel' => 'Cancel',
     'admin_delete_confirmation' => 'You are sure you want to delete the user?',
     'admin_vavilov_article' => 'Article',
+    'admin_found' => 'Found',
+    'admin_users' => 'users',
 
 
 ];

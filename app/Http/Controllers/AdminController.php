@@ -111,8 +111,7 @@ public function destroy($id)
 {
   $user = User::findOrFail($id);
   $user->delete();
-  return redirect()->route('user.list')
-    ->with('success', 'Post deleted successfully');
+  return redirect()->back()->with('success', 'User deleted successfully');
 }
 
 public function reports($id)
@@ -137,7 +136,7 @@ public function documents($id)
 
 public function list()
 {
-  $users = User::query();
+  $users = User::query()->where('role', 'user')->orderBy('id', 'desc');
 
   $users = $users->when(request()->has('search'), function ($query) {
     $search = '%' . strtolower(request()->input('search')) . '%';

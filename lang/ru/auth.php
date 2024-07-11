@@ -139,6 +139,8 @@ return [
     'admin_cancel' => 'Отменить',
     'admin_delete_confirmation' => 'Вы уверены, что хотите удалить пользователя?',
     'admin_vavilov_article' => 'Статья',
+    'admin_found' => 'Найдено',
+    'admin_users' => 'пользователя(ей)',
     
     
 

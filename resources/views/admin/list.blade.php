@@ -7,6 +7,11 @@
 @endsection
 
 @section('body')
+<div class="row mb-4">
+  <div class="col-md-12">
+  <h5 class="text-center">{{ __('auth.admin_found') }} <span>{{ @count($users) }}</span> {{__('auth.admin_users') }}:</h5>
+</div>
+</div>
 <div class="row">
     @foreach ($users as $user)
     @if ($user->role === 'admin')
