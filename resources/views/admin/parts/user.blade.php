@@ -99,7 +99,7 @@
                 {{ __('auth.admin_delete_confirmation') }}
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"
+                <button type="button" class="btn btn-primary"
                     data-bs-dismiss="modal">{{ __('auth.cancel') }}</button>
                 <button type="button" class="btn btn-danger" form="delete-user">{{ __('auth.admin_delete') }}</button>
             </div>
