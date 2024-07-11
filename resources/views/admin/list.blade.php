@@ -9,7 +9,7 @@
 @section('body')
 <div class="row mb-4">
   <div class="col-md-12">
-  <h5 class="text-center">{{ __('auth.admin_found') }} <span>{{ @count($users) }}</span> {{__('auth.admin_users') }}:</h5>
+  <h5 class="text-center">{{ __('auth.admin_found') }} <span>{{ $users->total() }}</span> {{__('auth.admin_users') }}:</h5>
 </div>
 </div>
 <div class="row">
