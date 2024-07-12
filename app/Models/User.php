@@ -21,6 +21,11 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Thesis::class);
     }
+    
+    public function hasAcceptedThesis()
+    {
+        return $this->theses()->where('accepted_status', true)->exists();
+    }
 
     protected $fileTypes = [
         'agreement',
@@ -113,15 +118,6 @@ class User extends Authenticatable implements MustVerifyEmail
           return $fileByTypes;
     }
 
-    // public function thesisByTypes ($theses)
-    // {
-    //     $thesisByTypes = [];
-    //     foreach ($this->thesisTypes as $type) {
-    //         $thesisByTypes[$type] = $theses->where('type', $type)->first();
-    //     }
-
-    //       return $thesisByTypes;
-    // }
 
     /**
      * The attributes that are mass assignable.

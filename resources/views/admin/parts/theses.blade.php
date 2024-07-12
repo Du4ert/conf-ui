@@ -19,23 +19,31 @@
     </div>
 </div>
 
+@if (!$user->accepted_status)
 <div class="col-md-4">
 @if ($thesis->accepted_status == true and $thesis->submitted_status == true)
-    <div class="alert bg-success bg-opacity-25 my-0">
+<div class="alert bg-success d-flex align-items-center justify-content-between bg-opacity-25 my-0">
+    <div class="w-100">
         <i class="fas fa-circle-check fa-lg me-2"></i>Тезисы приняты!
     </div>
     <a form="accept-thesises" type="button" href="{{ route('thesis.decline', $thesis->id) }}"
-        class="btn btn-danger btn-sm me-2"><i class="fa fa-cancel me-1"></i>Отменить</a>
+        class="btn btn-lg me-md-2 pe-0 py-0"><i class="fa fa-cancel me-1 text-dark"></i></a>
+    </div>
+
 @endif
 
 @if($thesis->submitted_status == true and $thesis->accepted_status != true)
-<div class="alert bg-primary bg-opacity-25 my-0 p-2">
+<div class="alert bg-success d-flex align-items-center justify-content-between bg-opacity-25 my-0">
+    <div class="w-100">
     <i class="fas fa-circle-check fa-lg me-2"></i>Тезисы на проверке!
-</div>
+    </div>
+
 
     <a form="accept-thesises" type="button" href="{{ route('thesis.accept', $thesis->id) }}"
-        class="btn btn-success btn-sm me-2"><i class="fa fa-check me-1"></i>{{ __('auth.admin_accept')}}</a>
+        class="btn btn-success btn-lg me-md-2"><i class="fa fa-check me-1"></i></a>
+    </div>
 @endif
 </div>
+@endif
 
 </div>

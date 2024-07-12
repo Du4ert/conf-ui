@@ -47,12 +47,15 @@
 
 <div class="d-flex justify-content-start align-items-center mt-4">
     @if ($user->pay_status == true)
-        <div class="alert bg-success bg-opacity-25 my-0 me-4">
+    <div class="alert bg-success d-flex align-items-center justify-content-between bg-opacity-25 my-0">
+        <div class="w-100">
             <i class="fas fa-circle-check fa-lg me-2"></i>{{ __('auth.pay_accepted') }}
         </div>
+        
         @if (auth()->user()->isAdmin())
-        <a form="accept-thesises" type="button" href="{{ route('user.payDecline', $user->id) }}"
-            class="btn btn-danger me-2"><i class="fa fa-cancel me-1"></i>{{ __('auth.admin_cancel') }}</a>
+        <a form="accept-pay" type="button" href="{{ route('user.payDecline', $user->id) }}"
+            class="btn btn-lg me-md-2 pe-0 py-0"><i class="fa fa-cancel me-1 text-dark"></i></a>
+        </div>
         @endif
     @endif
     

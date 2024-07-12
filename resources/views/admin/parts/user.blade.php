@@ -1,26 +1,11 @@
 <div class="col-md-12 mb-5">
     <div class="card">
         <div class="card-header">
-
-
-            {{-- <div class="d-flex justify-content-start align-items-center mt-4">
-    <h5 class="card-title me-auto">{{ $user->email }}</h5>
-    @if ($user->accepted_status)
-        <div class="alert bg-success bg-opacity-25 my-0 me-4">
-            <i class="fas fa-circle-check fa-lg me-2"></i>{{ __('auth.participate_accept') }}
-        </div>
-        <a form="accept-thesises" type="button" href="{{ route('user.decline', $user->id) }}"
-            class="btn btn-danger me-2"><i class="fa fa-cancel me-1"></i>{{ __('auth.admin_cancel') }}</a>
-    @else
-        <a form="accept-thesises" type="button" href="{{ route('user.accept', $user->id) }}"
-            class="btn btn-success me-2"><i class="fa fa-check me-1"></i>{{ __('auth.admin_user_accept') }}</a>
-    @endif
-</div> --}}
-
             <div class="row">
                 <h5 class="col-md-4 card-title me-auto">{{ $user->email }}</h5>
                 <div class="col-sm-8">
                     <div class="row align-items-center">
+                        
                         @if ($user->accepted_status)
                             <div class="col-sm-8">
                                 <div class="alert bg-success bg-opacity-25 my-0">
@@ -33,11 +18,13 @@
                                         class="fa fa-cancel me-1"></i>{{ __('auth.admin_cancel') }}</a>
                             </div>
                         @else
+                        @if ($user->hasAcceptedThesis() && $user->pay_status)
                             <div class="col-sm-12 text-end">
                                 <a form="accept-thesises" type="button" href="{{ route('user.accept', $user->id) }}"
                                     class="btn btn-success ms-auto  me-2"><i
                                         class="fa fa-check me-1"></i>{{ __('auth.admin_user_accept') }}</a>
                             </div>
+                            @endif
                         @endif
                     </div>
                 </div>
@@ -47,10 +34,16 @@
         </div>
         <div class="card-body">
             @include('user.parts.info')
+            @if ($user->theses()->exists())
             <div class="theses me-auto">
+                Тезисы:
                 @foreach ($user->theses as $thesis)
                     @include('admin.parts.theses')
                 @endforeach
+            </div>
+            @endif
+            <div class="documents me-auto">
+                @include('admin.parts.files')
             </div>
         </div>
         <div class="card-footer">
@@ -61,7 +54,7 @@
                         @csrf
                         @method('DELETE')
                         <button type="button" class="delete-button btn btn-danger btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#deleteUserModal"><i
+                            data-bs-target="#deleteUserModal" {{$user->accepted_status ? 'disabled' : '' }}><i
                                 class="fa fa-trash me-2"></i>{{ __('auth.admin_delete') }}</button>
                     </form>
                 </div>
