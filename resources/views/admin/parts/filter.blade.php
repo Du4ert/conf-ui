@@ -4,46 +4,26 @@
         @csrf
 
         <div class="user-filters  col-md-4 px-md-4">
-            <div class="form-group  mb-2">
-                <label for="search">{{ __('auth.admin_last_name') }}:</label>
-                <input type="text" name="search" id="search" value="{{ request()->input('search') }}" size="20">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group  mb-2">
+                        <label for="search">{{ __('auth.admin_last_name') }}:</label>
+                        <input type="text" name="search" id="search" value="{{ request()->input('search') }}" size="20">
+                    </div>
+                </div>
             </div>
-            <div class="form-group d-flex w-25 justify-content-between  mb-2 mb-md-0">
-                <label for="accepted_status" class="me-1">{{ __('auth.admin_accepted') }}:</label>
-                <input type="checkbox" name="accepted_status" id="accepted_status"
-                    {{ request()->has('accepted_status') ? 'checked' : '' }}>
-            </div>
-            <div class="form-group d-flex w-25 justify-content-between  mb-2 mb-md-0">
-                <label for="pay_status" class="me-1">{{ __('auth.admin_pay') }}:</label>
-                <input type="checkbox" name="pay_status" id="pay_status"
-                    {{ request()->has('pay_status') ? 'checked' : '' }}>
-            </div>
-    
-            <div class="form-group d-flex w-25 justify-content-between  mb-2 mb-md-0">
-                <label for="vavilov_article" class="me-1">{{ __('auth.admin_vavilov_article') }}:</label>
-                <input type="checkbox" name="vavilov_article" id="vavilov_article" class="ms-auto"
-                    {{ request()->has('vavilov_article') ? 'checked' : '' }}>
-            </div>
-
-            <div class="form-group d-flex w-25 justify-content-between  mb-2 mb-md-0">
-                <label for="school_participation" class="me-1">{{ __('auth.admin_school_participation') }}:</label>
-                <input type="checkbox" name="school_participation" id="school_participation" class="ms-auto"
-                    {{ request()->has('school_participation') ? 'checked' : '' }}>
-            </div>
-
-            <div class="form-group d-flex w-25 justify-content-between  mb-2 mb-md-0">
-                <label for="young_scientist" class="me-1">{{ __('auth.admin_young_scientist') }}:</label>
-                <input type="checkbox" name="young_scientist" id="young_scientist" class="ms-auto"
-                    {{ request()->has('young_scientist') ? 'checked' : '' }}>
+            <div class="row">
+                <div class="col-md-6">@include('admin.parts.check', ['field_name' => 'accepted_status'])
+                    @include('admin.parts.check', ['field_name' => 'pay_status'])
+                    @include('admin.parts.check', ['field_name' => 'vavilov_article'])</div>
+                <div class="col-md-6">@include('admin.parts.check', ['field_name' => 'school_participation'])
+                    @include('admin.parts.check', ['field_name' => 'young_scientist'])</div>
             </div>
         </div>
 
         <div class="thesis-filters col-md-4 ms-md-2">
-        
-            <div class="form-group d-flex w-25 justify-content-between   mb-2 mb-md-0">
-                <label for="has_thesis" class="me-1">{{ __('auth.admin_thesis') }}:</label>
-                <input type="checkbox" name="has_thesis" id="has_thesis" {{ request()->has('has_thesis') ? 'checked' : '' }}>
-            </div>
+            
+            @include('admin.parts.check', ['field_name' => 'has_thesis'])
 
             <div class="form-group mb-2 mb-md-0">
                 <select data-selected="{{ request()->input('thesis_status') }}" {{ request()->input('has_thesis') ? '' : 'disabled' }} id="thesis_status" form="filter" class="form-select" name="thesis_status" aria-label="Default select example">

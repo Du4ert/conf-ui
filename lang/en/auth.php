@@ -109,8 +109,11 @@ return [
 
     'admin_show' => 'Profile',
     'admin_thesis' => 'Theses',
+    'admin_has_thesis' => 'Theses',
     'admin_accepted' => 'Accepted',
+    'admin_accepted_status' => 'Accepted',
     'admin_pay' => 'Payed',
+    'admin_pay_status' => 'Payed',
     'admin_last_name' => 'Last Name',
     'admin_filter' => 'Filter',
     'filter_any' => 'Any',

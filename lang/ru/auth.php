@@ -120,8 +120,11 @@ return [
 
     'admin_show'=> 'Профиль',
     'admin_thesis'=> 'Тезисы',
+    'admin_has_thesis'=> 'Тезисы',
     'admin_accepted'=> 'Одобрен',
+    'admin_accepted_status'=> 'Одобрен',
     'admin_pay'=> 'Оплачен',
+    'admin_pay_status'=> 'Оплачен',
     'admin_last_name'=> 'Фамилия',
     'admin_filter'=> 'Фильтр',
     'filter_any' => 'Любой',
