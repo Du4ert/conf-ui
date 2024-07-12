@@ -14,6 +14,7 @@ return [
     */
 
     'about' => 'About conference',
+    'sections' => 'Sections',
     'program' => "Program",
     'people' => 'Speakers',
     'partners' => 'Partners',

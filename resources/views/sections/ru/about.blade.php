@@ -35,25 +35,72 @@
     <div class="container single-col-max">
         <div class="areas-list  mb-4 lead">
             <h4 class="text-center text-white mb-5">Программа конференции включает следующие направления:</h4>
-            <ul class="list-group list-unstyled text-start d-inline-block">
+            <ul class="list-group list-unstyled text-start d-inline-block accordion" id="accordionSections">
 
-                <li class="d-flex align-items-center mb-2">
-                    <i class="fas fa-dna fa-lg  me-4"></i>
-                    <div>
-                        Геномика, транскриптомика и биоинформатика растений
+                <li class="mb-2">
+                    <a data-bs-toggle="collapse" href="#section-1" role="button" aria-expanded="false"
+                        class="d-block text-white collapse-link collapsed" aria-controls="section-1">
+                        <div class="d-flex align-items-center ">
+                            <i class="fas fa-dna fa-lg  me-4"></i>
+                            <div>
+                                Геномика, транскриптомика и биоинформатика растений
+                            </div>
+                            <span class="ms-2"><i class="fas fa-angle-up rotate-icon"></i></span>
+                        </div>
+                    </a>
+                    <div id="section-1" class="section-more collapse ms-5 mt-2 mb-4">
+                        Секция посвящена исследованиям в области эволюционной, структурной и функциональной геномики
+                        растений, анализу транскриптомных данных, реконструкции генных сетей и др., а также алгоритмам
+                        биоинформатики и вычислительной биологии в области омиксных технологий (в том числе и феномики).
                     </div>
                 </li>
-                <li class="d-flex align-items-center mb-2">
-                    <i class="fas fa-microscope fa-lg  me-4"></i>
-                    <div>Биотехнология и биоинженерия растений</div>
+                <li class="mb-2">
+                    <a data-bs-toggle="collapse" href="#section-2" role="button" aria-expanded="false"
+                        class="d-block text-white collapse-link collapsed" aria-controls="section-2">
+                        <div class="d-flex align-items-center ">
+                            <i class="fas fa-microscope fa-lg  me-4"></i>
+                            <div>Биотехнология и биоинженерия растений</div>
+                            <span class="ms-2"><i class="fas fa-angle-up rotate-icon"></i></span>
+                        </div>
+                    </a>
+
+                    <div id="section-2" class="section-more collapse ms-5 mt-2 mb-4">
+                        В рамках этой секции будут обсуждаться методы получения и культивирования различных типов
+                        клеток, тканей и
+                        органов растений; методы генетической инженерии и модификация геномов растений, включая геномное
+                        редактирование, создание новых сортов и форм с искомыми признаками.
+                    </div>
                 </li>
-                <li class="d-flex align-items-center mb-2">
-                    <i class="fas fa-seedling fa-lg me-4"></i>
-                    <div>Классические и геномные подходы в селекции с/х растений</div>
+                <li class="mb-2">
+                    <a data-bs-toggle="collapse" href="#section-3" role="button" aria-expanded="false"
+                        class="d-block text-white collapse-link collapsed" aria-controls="section-3">
+                        <div class="d-flex align-items-center ">
+                            <i class="fas fa-seedling fa-lg me-4"></i>
+                            <div>Классические и геномные подходы в селекции с/х растений</div>
+                            <span class="ms-2"><i class="fas fa-angle-up rotate-icon"></i></span>
+                        </div>
+                    </a>
+                    <div id="section-3" class="section-more collapse ms-5 mt-2 mb-4">
+                        В данной секции рассматриваются вопросы по получению новых сортов и форм с улучшенными
+                        признаками как с применением геномных технологий (МОС, геномная селекция, GWAS), так и с помощью
+                        методов классической селекции растений (гибридизация, полиплоидия, мутагенез и др).
+                    </div>
                 </li>
-                <li class="d-flex align-items-center mb-2">
-                    <i class="fas fa-vials fa-lg me-4"></i>
-                    <div>Биоразнообразие, паспортизация и биоресурсные коллекции растений</div>
+                <li class="mb-2">
+                    <a data-bs-toggle="collapse" href="#section-4" role="button" aria-expanded="false"
+                        class="d-block text-white collapse-link collapsed" aria-controls="section-4">
+                        <div class="d-flex align-items-center ">
+                            <i class="fas fa-vials fa-lg me-4"></i>
+                            <div>Биоразнообразие, паспортизация и биоресурсные коллекции растений</div>
+                            <span class="ms-2"><i class="fas fa-angle-up rotate-icon"></i></span>
+                        </div>
+                    </a>
+                    <div id="section-4" class="section-more collapse ms-5 mt-2 mb-4">
+                        На секции будут представлены доклады, раскрывающие вопросы изучения и сохранения биоразнообразия
+                        растений; создания и ведения коллекций живых растений; паспортизации и инвентаризации
+                        коллекционных фондов; методов в сохранении и размножении редких видов растений; создания баз
+                        данных и информационных систем для управления коллекциями растений.
+                    </div>
                 </li>
             </ul>
         </div><!--//areas-list-->

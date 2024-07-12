@@ -108,6 +108,14 @@ body {
 }
 
 
+.collapse-link.collapsed .rotate-icon {
+    transform: rotate(180deg);
+  }
+
+.section-more {
+    font-size: $small-font-size;
+}
+
 
 @mixin bg-before($img) {
     &::before {

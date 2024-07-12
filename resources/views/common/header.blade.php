@@ -28,9 +28,10 @@ function setClass($class_name = 'scrollto') {
 		
 		<div id="navigation" class="navbar-collapse collapse  justify-content-lg-end me-lg-3">
 		
-	
+			
 	<ul class="nav navbar-nav">					
-		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#about-section')}}">{{ __('navigation.about') }}</a></li>                                              
+		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#about-section')}}">{{ __('navigation.about') }}</a></li>
+		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#sections-section')}}">{{ __('navigation.sections') }}</a></li>                                               
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#organizer-section')}}">{{ __('navigation.organizer') }}</a></li>
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#committee-section')}}">{{ __('navigation.committee') }}</a></li>
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#dates-section')}}">{{ __('navigation.dates') }}</a></li>
