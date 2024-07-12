@@ -35,6 +35,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'has_agreement',
         'accepted_status',
         'vavilov_article',
+        'school_participation',
+        'young_scientist',
     ];
 
 
@@ -146,6 +148,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'pay_status',
         'accepted_status',
         'vavilov_article',
+        'school_participation',
+        'young_scientist',
     ];
 
     // Fields with default values
@@ -153,6 +157,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'pay_status' => false,
         'accepted_status' => false,
         'vavilov_article' => false,
+        'school_participation' => false,
+        'young_scientist' => false,
     ];
 
     /**

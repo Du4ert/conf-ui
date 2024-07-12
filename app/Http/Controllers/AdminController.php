@@ -184,6 +184,12 @@ public function list()
     $users->when(request()->has('vavilov_article'), function ($query) {
       return $query->where('vavilov_article', true);
     });
+    $users->when(request()->has('school_participation'), function ($query) {
+      return $query->where('school_participation', true);
+    });
+    $users->when(request()->has('young_scientist'), function ($query) {
+      return $query->where('young_scientist', true);
+    });
 
   $users = $users->paginate(15);
 

@@ -96,6 +96,8 @@ class UserController extends Controller
           'rank_title' => 'nullable|string|max:300',
           'rank_title_en' => 'nullable|string|max:300',
           'vavilov_article' => 'nullable|boolean',
+          'school_participation' => 'nullable|boolean',
+          'young_scientist' => 'nullable|boolean',
           // 'pay_status' => 'nullable|boolean',
           // 'accepted_status' => 'nullable|boolean',
         ]);

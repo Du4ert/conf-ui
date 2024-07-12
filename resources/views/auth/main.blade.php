@@ -58,6 +58,16 @@
 
     <div class="row mb-4">
         <div class="col-md-10 mx-auto">
-        @include('user.inputs.vavilov_article')
+        @include('user.inputs.radio', ['field_name' => 'vavilov_article'])
+    </div>
+</div>
+    <div class="row mb-4">
+        <div class="col-md-10 mx-auto">
+        @include('user.inputs.radio', ['field_name' => 'school_participation'])
+    </div>
+</div>
+    <div class="row mb-4">
+        <div class="col-md-10 mx-auto">
+        @include('user.inputs.radio', ['field_name' => 'young_scientist'])
     </div>
 </div>

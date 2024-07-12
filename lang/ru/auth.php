@@ -64,9 +64,6 @@ return [
     'job_title_en' => 'Должность ENG',
     'participant' => 'Участник',
     'participant_en' => 'Участник ENG',
-    
-    'vavilov_info' => 'Полнотекстовая статья в Вавиловском журнале',
-    'vavilov_form' => 'Вы планируете подачу полнотекстовой статьи в Вавиловский журнал генетики и селекции (WoS CC Q3, Scopus Q2)?',
 
 
     'homepage_title' => 'Личный кабинет',
@@ -138,14 +135,24 @@ return [
     'admin_accept' => 'Одобрить',
     'admin_cancel' => 'Отменить',
     'admin_delete_confirmation' => 'Вы уверены, что хотите удалить пользователя?',
-    'admin_vavilov_article' => 'Статья',
     'admin_found' => 'Найдено',
     'admin_users' => 'пользователей',
     'filter_thesis_status' => 'Любой статус',
     'filter_thesis_status_accepted' => 'Приняты',
     'filter_thesis_status_submitted' => 'На проверке',
     'filter_thesis_status_saved' => 'Начаты',
-    
+
+    'admin_vavilov_article' => 'Статья',
+    'vavilov_article_info' => 'Полнотекстовая статья в Вавиловском журнале',
+    'vavilov_article_form' => 'Вы планируете подачу полнотекстовой статьи в Вавиловский журнал генетики и селекции (WoS CC Q3, Scopus Q2)?',
+
+    'admin_school_participation' => 'Школа',
+    'school_participation_info' => 'Участие в школе «Геномика и биотехнология растений»',
+    'school_participation_form' => 'Вы планируете участие в школе молодых ученых «Геномика и биотехнология растений»?',
+
+    'admin_young_scientist' => 'Молодой учёный',
+    'young_scientist_info' => 'Молодой ученый (до 35 лет включительно)',
+    'young_scientist_form' => 'Являетесь ли вы молодым учёным (до 35 лет включительно)',
     
 
 

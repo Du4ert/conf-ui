@@ -60,9 +60,6 @@ return [
     'participant' => 'Participant RUS',
     'participant_en' => 'Participant',
 
-    'vavilov_info' => 'Полнотекстовая статья в Вавиловском журнале',
-    'vavilov_form' => 'Are you planning to submit a full-text article to the Vavilov Journal of Genetics and Breeding? (WoS CC Q3, Scopus Q2)?',
-
     'homepage_title' => 'User dashboard',
     'home' => 'Main',
     'files' => 'Files',
@@ -127,13 +124,24 @@ return [
     'admin_accept' => 'Approve',
     'admin_cancel' => 'Cancel',
     'admin_delete_confirmation' => 'You are sure you want to delete the user?',
-    'admin_vavilov_article' => 'Article',
     'admin_found' => 'Found',
     'admin_users' => 'users',
     'filter_thesis_status' => 'Any status',
     'filter_thesis_status_accepted' => 'Accepted',
     'filter_thesis_status_submitted' => 'At the check',
     'filter_thesis_status_saved' => 'Started',
+
+    'admin_vavilov_article' => 'Article',
+    'vavilov_article_info' => 'Full-text article in the Vavilov Journal',
+    'vavilov_article_form' => 'Are you planning to submit a full-text article to the Vavilov Journal of Genetics and Breeding? (WoS CC Q3, Scopus Q2)?',
+
+    'admin_school_participation' => 'School',
+    'school_participation_info' => 'Participation in the school "Genomics and Plant Biotechnology"',
+    'school_participation_form' => 'Are you planning to participate in the school for young scientists "Genomics and Plant Biotechnology"?',
+
+    'admin_young_scientist' => 'Young scientist',
+    'young_scientist_info' => 'Young scientist (up to 35 years)',
+    'young_scientist_form' => 'Are you a young scientist (up to 35 years)?',
 
 
 ];

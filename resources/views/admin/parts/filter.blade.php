@@ -24,6 +24,18 @@
                 <input type="checkbox" name="vavilov_article" id="vavilov_article" class="ms-auto"
                     {{ request()->has('vavilov_article') ? 'checked' : '' }}>
             </div>
+
+            <div class="form-group d-flex w-25 justify-content-between  mb-2 mb-md-0">
+                <label for="school_participation" class="me-1">{{ __('auth.admin_school_participation') }}:</label>
+                <input type="checkbox" name="school_participation" id="school_participation" class="ms-auto"
+                    {{ request()->has('school_participation') ? 'checked' : '' }}>
+            </div>
+
+            <div class="form-group d-flex w-25 justify-content-between  mb-2 mb-md-0">
+                <label for="young_scientist" class="me-1">{{ __('auth.admin_young_scientist') }}:</label>
+                <input type="checkbox" name="young_scientist" id="young_scientist" class="ms-auto"
+                    {{ request()->has('young_scientist') ? 'checked' : '' }}>
+            </div>
         </div>
 
         <div class="thesis-filters col-md-4 ms-md-2">

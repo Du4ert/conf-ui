@@ -79,4 +79,13 @@
     </div>
 </div>
 
-@include('user.inputs.vavilov_article')
+<div class="mb-2">
+@include('user.inputs.radio', ['field_name' => 'vavilov_article'])
+</div>
+<div class="mb-2">
+@include('user.inputs.radio', ['field_name' => 'school_participation'])
+</div>
+<div class="mb-2">
+@include('user.inputs.radio', ['field_name' => 'young_scientist'])
+</div>
+

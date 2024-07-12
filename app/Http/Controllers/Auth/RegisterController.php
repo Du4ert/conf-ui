@@ -69,6 +69,8 @@ class RegisterController extends Controller
             'pay_status' => 'nullable|boolean',
             'accepted_status' => 'nullable|boolean',
             'vavilov_article' => 'nullable|boolean',
+            'school_participation' => 'nullable|boolean',
+            'young_scientist' => 'nullable|boolean',
         ]);
     }
 
@@ -98,6 +100,8 @@ class RegisterController extends Controller
             'pay_status' => $data['pay_status'] ?? false,
             'accepted_status' => $data['accepted_status'] ?? false,
             'vavilov_article' => $data['vavilov_article'] ?? false,
+            'school_participation' => $data['school_participation'] ?? false,
+            'young_scientist' => $data['young_scientist'] ?? false,
 
         ]);
     }
