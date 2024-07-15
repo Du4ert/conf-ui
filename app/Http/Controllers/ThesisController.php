@@ -97,8 +97,8 @@ class ThesisController extends Controller
         $validatedData['submitted_status'] = true;
         $thesis->update($validatedData);
 
-        // $admins = User::where('role', 'admin')->get('email');
-        // Mail::cc($admins)->send(new ThesisSubmitted($thesis->user));
+        $admins = User::where('role', 'admin')->get('email');
+        Mail::cc($admins)->send(new ThesisSubmitted($thesis->user));
 
         return redirect()->route('reports');
     }

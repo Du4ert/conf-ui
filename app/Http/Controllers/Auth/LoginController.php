@@ -27,7 +27,8 @@ class LoginController extends Controller
      */
     protected function redirectTo()
     {
-        return route('home');
+        $intendedUrl = session()->pull('url.intended');
+        return $intendedUrl ?: route('home');
     }
 
     /**
@@ -39,4 +40,5 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    
 }

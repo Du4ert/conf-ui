@@ -21,7 +21,9 @@ class AdminCheck
             return $next($request);
         }
     
-        abort(403, 'Доступ запрещен');
+        $request->session()->put('url.intended', $request->url());
+        return redirect()->route('login');
+        // abort(403, 'Доступ запрещен');
     }
 }
 
