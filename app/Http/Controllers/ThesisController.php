@@ -7,6 +7,7 @@ use App\Models\Thesis;
 use App\Models\Coauthor;
 use App\Models\User;
 use App\Mail\ThesisSubmitted;
+use App\Notifications\ThesisSubmittedNotification;
 use Illuminate\Support\Facades\Mail;
 use PDF;
 
@@ -98,7 +99,11 @@ class ThesisController extends Controller
         $thesis->update($validatedData);
 
         $admins = User::where('role', 'admin')->get('email');
-        Mail::cc($admins)->send(new ThesisSubmitted($thesis->user));
+        // Mail::cc($admins)->send(new ThesisSubmitted($thesis->user));
+        foreach ($admins as $admin) {
+            $admin->notify(new ThesisSubmittedNotification($thesis->user));
+        }
+        
 
         return redirect()->route('reports');
     }
