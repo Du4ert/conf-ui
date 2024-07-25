@@ -24,13 +24,13 @@
 
 
 @if (config('app.locale') === 'ru')
-<p>Пройдите на страницу <a href="{{ route('agreement') }}" target="_blank">договора на оказание услуг</a> и следуйте приложенной инструкции.</p>
+<p>Пройдите на страницу <a href="{{ route('agreement') }}" target="_blank">выбора договора</a> и следуйте приложенной инструкции.</p>
 
 <p>После заключения договора и оплаты, разместите, пожалуйста, договор в поле <span class="text-danger">{{ __('file.agreement') }}</span>. Квитанцию об оплате, разместите в поле <span class="text-danger">{{ __('file.payment') }}</span>.
 </p>
 
 @else
-<p>Go to the <a href="{{ route('agreement') }}" target="_blank">Agreement for the provision of services</a> page and follow the attached instructions.</p>
+<p>Go to the <a href="{{ route('agreement') }}" target="_blank">Agreement for the provision of services page</a> and follow the attached instructions.</p>
 
 <p>After the conclusion of the contract and payment, please place the completed agreement in <span class="text-danger">{{ __('file.agreement') }}</span> field. Place the receipt of payment in the <span class="text-danger">{{ __('file.payment') }}</span> field.</p>
 @endif

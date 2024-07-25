@@ -1,7 +1,12 @@
 <section id="payment-section" class="payment-section section conf-bg-light">
     <div class="container">
         <h3 class="section-heading text-center mb-3">Organisation fee </h3>
-        <div class="section-intro single-col-max mx-auto mb-4">{{ __('main.payment_includes')}}</div>
+        <div class="section-intro single-col-max mx-auto mb-4">{{ __('main.payment_includes')}}
+<p class="mt-2">
+  <p>To conclude a contract, go to the <a href="{{ route('agreement') }}" target="_blank">Agreement for the provision of services page</a>  and follow the attached instructions.</p>
+</p>
+
+        </div>
         
 
         <ul class="list-group mx-auto">

@@ -1,7 +1,14 @@
 <section id="payment-section" class="payment-section section conf-bg-light">
     <div class="container">
         <h3 class="section-heading text-center mb-3">Организационный взнос </h3>
-        <div class="section-intro single-col-max mx-auto mb-4">{{ __('main.payment_includes')}}</div>
+        <div class="section-intro single-col-max mx-auto mb-4">
+          {{ __('main.payment_includes')}}
+          <p class="mt-2">
+            Для заключения договора и оплаты участия, пройдите, пожалуйста, на страницу <a href="{{ route('agreement') }}" target="_blank">выбора договора</a> и следуйте приложенной инструкции.
+          </p>
+        </div>
+        
+
         
 
         <ul class="list-group mx-auto">
@@ -41,8 +48,6 @@
             </div>
           </li>
         </ul>
-      
-
 
     </div><!--//container-->
 </section><!--//payment-section-->
