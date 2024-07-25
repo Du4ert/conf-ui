@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\User;
 use App\Models\Thesis;
+use App\Notifications\ThesisAcceptedNotification;
+
 
 
 class AdminController extends BaseController
@@ -94,6 +96,9 @@ public function thesisAccept($id)
     $thesis = Thesis::findOrFail($id);
     $thesis->accepted_status = true;
     $thesis->save();
+
+    $user = $thesis->user;
+    $user->notify(new ThesisAcceptedNotification($user, $thesis));
 
     return back();
 }

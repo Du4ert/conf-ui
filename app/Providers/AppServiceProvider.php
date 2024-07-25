@@ -31,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
                 ->subject('Genbio2024 - Подтвердите email / Genbio2024 - Verify Email')
                 ->greeting('Здравствуйте! / Hello!')
                 ->line('Спасибо за регистрацию на сайте конференции GenBio2024. Нажмите на кнопку, для завершения регистрации.')
+                ->line('---')
                 ->line('Thank you for registration on the Genbio2024 conference website. Click on the button to complete the registration.')
                 ->action('Подтвердите / Verify', $url);
         });
