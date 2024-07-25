@@ -10,17 +10,17 @@
     @include('user.parts.error')
     
 
-@if ($user->theses()->where('accepted_status', true)->exists())
+{{-- @if ($user->theses()->where('accepted_status', true)->exists()) --}}
     @isset ($fileByTypes)
     @foreach ($fileByTypes as $type => $file)
     @include('user.file.show', ['file' => $file ?? null, 'type' => $type])
     @endforeach
     @endif
-@else
-<div class="alert alert-danger" role="alert">
-    <i class="fas fa-exclamation-circle fa-lg me-2"></i>{{ __('auth.thesis_absence_warning')}}
-</div>
-@endif
+{{-- @else --}}
+{{-- <div class="alert alert-danger" role="alert"> --}}
+    {{-- <i class="fas fa-exclamation-circle fa-lg me-2"></i>{{ __('auth.thesis_absence_warning')}} --}}
+{{-- </div> --}}
+{{-- @endif --}}
 
 
 @if (config('app.locale') === 'ru')
