@@ -10,7 +10,7 @@
                   <ul class="list-inline items">
                     <li class="list-inline-item items-list">
                       <div class="px-4">
-                        <div class="event-date badge bg-info">1 августа</div>
+                        <div class="event-date badge bg-info">15 августа</div>
                         <h5 class="pt-2">Регистрация</h5>
                         <p class="text-muted">Последний день принятия регистрационной формы. </p>
                       </div>
@@ -25,7 +25,7 @@
                     </li>
                     <li class="list-inline-item items-list">
                       <div class="px-4">
-                        <div class="event-date badge bg-danger">15 августа</div>
+                        <div class="event-date badge bg-danger">20 августа</div>
                         <h5 class="pt-2">Тезисы</h5>
                         <p class="text-muted">Последний день приема тезисов для публикации.</p>
                       </div>
