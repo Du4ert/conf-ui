@@ -90,7 +90,7 @@ class UserController extends Controller
           'middle_name' => 'nullable|string|max:100',
           'middle_name_en' => 'nullable|string|max:100',
           'organization_title' => 'required|string|max:300',
-          'organization_title' => 'required|string|max:300',            
+          'organization_title_en' => 'required|string|max:300',            
           'job_title' => 'nullable|string|max:300',
           'job_title_en' => 'nullable|string|max:300',
           'rank_title' => 'nullable|string|max:300',
