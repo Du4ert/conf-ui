@@ -196,7 +196,7 @@ public function list()
       return $query->where('young_scientist', true);
     });
 
-  $users = $users->paginate(15);
+  $users = $users->paginate(15)->withQueryString();
 
   return view('admin.list', compact('users'));
 }
