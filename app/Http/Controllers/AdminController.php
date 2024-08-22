@@ -9,6 +9,7 @@ use Illuminate\Routing\Controller as BaseController;
 use App\Models\User;
 use App\Models\Thesis;
 use App\Notifications\ThesisAcceptedNotification;
+use App\Notifications\BulkUsersNotification;
 
 
 
@@ -104,13 +105,29 @@ public function thesisAccept($id)
 }
 
 
-public function bulkNotification($users)
+public function bulkNotification(Request $request)
 {
-    foreach ($users as $user) {
-      $user->notify(new ThesisAcceptedNotification($user, 'message'));
+    $message = $request->input('message');
+    $message_en = $request->input('message_en');
+    $userIds = $request->input('users');
+    $selectedUsers = $request->input('selectedUsers');
+
+    if ($userIds == null) {
+      return back();
+    }
+
+    if ($selectedUsers == 1) {
+      $users = User::whereIn('id', $userIds)->get();
+    } elseif ($selectedUsers == 2) {
+      $users = User::whereNotIn('id', $userIds)->get();
     }
     
-
+    foreach ($users as $user) {
+      if ($user->email_verified_at != null && $user->role == 'user') {
+         $user->notify(new BulkUsersNotification($user, $message, $message_en));
+      }
+    }
+  
     return back();
 }
 
@@ -207,9 +224,10 @@ public function list()
       return $query->where('young_scientist', true);
     });
 
+  $allUsers = $users->get();
   $users = $users->paginate(15)->withQueryString();
 
-  return view('admin.list', compact('users'));
+  return view('admin.list', compact('users', 'allUsers'));
 }
 
 

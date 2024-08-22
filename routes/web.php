@@ -85,7 +85,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/user/{id}/payDecline', [AdminController::class, 'paymentDecline'])->name('user.payDecline');
     Route::get('/user/{id}/accept', [AdminController::class, 'participationAccept'])->name('user.accept');
     Route::get('/user/{id}/decline', [AdminController::class, 'participationDecline'])->name('user.decline');
-
+    Route::post('/email', [AdminController::class, 'bulkNotification'])->name('bulk.email');
 });
 
 // Отдельные страницы

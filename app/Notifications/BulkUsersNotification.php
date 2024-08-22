@@ -9,14 +9,14 @@ use Illuminate\Notifications\Notification;
 use App\Models\User;
 
 
-class ThesisAcceptedNotification extends Notification
+class BulkUsersNotification extends Notification
 {
     use Queueable;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct(public User $user, public $message)
+    public function __construct(public User $user, public $message, public $message_en)
     {
         //
     }
@@ -46,15 +46,12 @@ class ThesisAcceptedNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->subject('Уведомление с conf-genbio.ru / Notification from conf-genbio.ru!')
-                    ->greeting('Уведомление с conf-genbio.ru / Notification from conf-genbio.ru!')
-                    ->line('Уважаемый ' . $this->firstMiddleName() . ',')
-                    ->line($message)
-                    ->line($this->thesis->thesis_title)
+                    ->subject('Notification from conf-genbio.ru')
+                    ->line('Уважаемый(ая) ' . $this->firstMiddleName() . ',')
+                    ->line($this->message)
                     ->line('---')
                     ->line('Dear ' . $this->user->first_name_en . ',')
-                    ->line($message)
-                    ->line($this->thesis->thesis_title_en)
+                    ->line($this->message_en)
                     ->action('Перейти / Go to site', route('user.get.reports', $this->user->id));
     }
 

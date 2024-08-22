@@ -1,12 +1,13 @@
 @extends('layouts.admin')
 @section('header')
     {{-- {{ __('Dashboard') }} --}}
-
 @include('admin.parts.filter')
+
 
 @endsection
 
 @section('body')
+@include('admin.parts.email')
 <div class="row mb-4">
   <div class="col-md-12">
   <h5 class="text-center">{{ __('auth.admin_found') }} <span>{{ $users->total() }}</span> {{__('auth.admin_users') }}:</h5>
