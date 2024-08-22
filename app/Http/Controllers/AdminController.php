@@ -103,6 +103,17 @@ public function thesisAccept($id)
     return back();
 }
 
+
+public function bulkNotification($users)
+{
+    foreach ($users as $user) {
+      $user->notify(new ThesisAcceptedNotification($user, 'message'));
+    }
+    
+
+    return back();
+}
+
 public function thesisDecline($id)
 {
     $thesis = Thesis::findOrFail($id);
