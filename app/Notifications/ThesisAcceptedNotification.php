@@ -49,7 +49,7 @@ class ThesisAcceptedNotification extends Notification
         return (new MailMessage)
                     ->subject('Тезисы утверждены! / Thesis accepted!')
                     ->greeting('Тезисы утверждены! / Thesis accepted!')
-                    ->line('Уважаемый ' . $this->firstMiddleName() . ',')
+                    ->line('Уважаемый(ая) ' . $this->firstMiddleName() . ',')
                     ->line('Ваши тезисы утверждены.')
                     ->line($this->thesis->thesis_title)
                     ->line('---')
