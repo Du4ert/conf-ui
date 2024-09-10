@@ -15,18 +15,18 @@ use App\Notifications\BulkUsersNotification;
 
 class AdminController extends BaseController
 {
-    use AuthorizesRequests, ValidatesRequests;
+  use AuthorizesRequests, ValidatesRequests;
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('verified');
-        $this->middleware('admin');
-    }
+  public function __construct()
+  {
+    $this->middleware('auth');
+    $this->middleware('verified');
+    $this->middleware('admin');
+  }
 
-// Admin
-public function getUser(Request $request, $id)
-{
+  // Admin
+  public function getUser(Request $request, $id)
+  {
     $user = User::findOrFail($id);
 
     $files = $user->files;
@@ -35,65 +35,65 @@ public function getUser(Request $request, $id)
     $fileByTypes = $user->fileByTypes($files);
 
     return view('user.home', compact('user', 'fileByTypes', 'coauthors'));
-}
+  }
 
-// public function edit(Request $request, $id)
-// {
-//     $user = User::findOrFail($id);
-    
-//     $files = $user->files;
-//     $fileByTypes = $user->fileByTypes($files);
-    
-//     return view('admin.home', compact('user', 'fileByTypes'))->with(['editable' => true]);
-// }
+  // public function edit(Request $request, $id)
+  // {
+  //     $user = User::findOrFail($id);
 
-// public function update(Request $request, $id)
-// {
-//     $user = User::findOrFail($id);
-//     $user->update($request->all());
+  //     $files = $user->files;
+  //     $fileByTypes = $user->fileByTypes($files);
 
-//     return redirect()->route('user.get', ['id' => $id])->with('success', 'Profile updated successfully');
-// }
+  //     return view('admin.home', compact('user', 'fileByTypes'))->with(['editable' => true]);
+  // }
 
-public function paymentAccept($id)
-{
-  $user = User::findOrFail($id);
+  // public function update(Request $request, $id)
+  // {
+  //     $user = User::findOrFail($id);
+  //     $user->update($request->all());
+
+  //     return redirect()->route('user.get', ['id' => $id])->with('success', 'Profile updated successfully');
+  // }
+
+  public function paymentAccept($id)
+  {
+    $user = User::findOrFail($id);
     $user->pay_status = true;
     $user->save();
 
     return back();
-}
+  }
 
-public function paymentDecline($id)
-{
-  $user = User::findOrFail($id);
+  public function paymentDecline($id)
+  {
+    $user = User::findOrFail($id);
     $user->pay_status = false;
     $user->save();
 
     return back();
-}
+  }
 
-public function participationAccept($id)
-{
-  $user = User::findOrFail($id);
+  public function participationAccept($id)
+  {
+    $user = User::findOrFail($id);
     $user->accepted_status = true;
     $user->save();
 
     return back();
-}
+  }
 
-public function participationDecline($id)
-{
-  $user = User::findOrFail($id);
+  public function participationDecline($id)
+  {
+    $user = User::findOrFail($id);
     $user->accepted_status = false;
     $user->save();
 
     return back();
-}
+  }
 
 
-public function thesisAccept($id)
-{
+  public function thesisAccept($id)
+  {
     $thesis = Thesis::findOrFail($id);
     $thesis->accepted_status = true;
     $thesis->save();
@@ -102,11 +102,11 @@ public function thesisAccept($id)
     $user->notify(new ThesisAcceptedNotification($user, $thesis));
 
     return back();
-}
+  }
 
 
-public function bulkNotification(Request $request)
-{
+  public function bulkNotification(Request $request)
+  {
     $message = $request->input('message');
     $message_en = $request->input('message_en');
     $userIds = $request->input('users');
@@ -121,80 +121,82 @@ public function bulkNotification(Request $request)
     } elseif ($selectedUsers == 2) {
       $users = User::whereNotIn('id', $userIds)->get();
     }
-    
+
     foreach ($users as $user) {
       if ($user->email_verified_at != null && $user->role == 'user') {
-         $user->notify(new BulkUsersNotification($user, $message, $message_en));
+        $user->notify(new BulkUsersNotification($user, $message, $message_en));
       }
     }
-  
-    return back();
-}
 
-public function thesisDecline($id)
-{
+    return back();
+  }
+
+  public function thesisDecline($id)
+  {
     $thesis = Thesis::findOrFail($id);
     $thesis->accepted_status = false;
     $thesis->save();
 
     return back();
-}
+  }
 
-public function destroy($id)
-{
-  $user = User::findOrFail($id);
-  $user->delete();
-  return redirect()->back()->with('success', 'User deleted successfully');
-}
+  public function destroy($id)
+  {
+    $user = User::findOrFail($id);
+    $user->delete();
+    return redirect()->back()->with('success', 'User deleted successfully');
+  }
 
-public function reports($id)
-{
-  $user = User::findOrFail($id);
-  $theses = $user->theses;
+  public function reports($id)
+  {
+    $user = User::findOrFail($id);
+    $theses = $user->theses;
 
-  return view('user.reports', compact('user', 'theses'));
-}
-
-
-public function documents($id)
-{
-  $user = User::findOrFail($id);
-  $files = $user->files;
-
-  $fileByTypes = $user->fileByTypes($files);
-
-  return view('user.files', compact('user', 'fileByTypes'));
-}
+    return view('user.reports', compact('user', 'theses'));
+  }
 
 
-public function list()
-{
-  $users = User::query()->where('role', 'user')->orderBy('id', 'desc');
+  public function documents($id)
+  {
+    $user = User::findOrFail($id);
+    $files = $user->files;
 
-  $users = $users->when(request()->has('search'), function ($query) {
-    $search = '%' . strtolower(request()->input('search')) . '%';
-    return $query->where(function ($q) use ($search) {
+    $fileByTypes = $user->fileByTypes($files);
+
+    return view('user.files', compact('user', 'fileByTypes'));
+  }
+
+
+  public function list()
+  {
+    $users = User::query()->where('role', 'user')->orderBy('id', 'desc');
+
+    $users = $users->when(request()->has('search'), function ($query) {
+      $search = '%' . strtolower(request()->input('search')) . '%';
+      return $query->where(function ($q) use ($search) {
         $q->where('last_name', 'LIKE', $search)
           ->orWhere('last_name_en', 'LIKE', $search);
+      });
     });
-  });
-  
-  $users->when(request()->has('has_thesis'), function ($query) {
-      $query = $query->whereHas('theses', function($query) {
+
+    $users->when(request()->has('has_thesis'), function ($query) {
+      $query = $query->whereHas('theses', function ($query) {
         $section = request()->input('section');
         $report_form = request()->input('report_form');
         $thesis_status = request()->input('thesis_status');
         $expert = request()->input('expert');
 
         if ($expert) {
-        $query->whereHas('files', function($query) use ($expert) {
           if ($expert == 'has') {
-            $query->where('type', 'expert');
+            $query->whereHas('files', function ($query) use ($expert) {
+              $query->where('type', 'expert');
+            });
           } elseif ($expert == 'none') {
-            $query->whereNot('type', 'expert');
+            $query->whereDoesntHave('files', function ($query) use ($expert) {
+              $query->where('type', 'expert');
+            });
           }
-        });
-      }
+        }
 
         if ($section) {
           $query->where('section', $section);
@@ -204,7 +206,7 @@ public function list()
         }
         if ($thesis_status) {
           switch ($thesis_status) {
-            case 'accepted': 
+            case 'accepted':
               $query->where('accepted_status', true);
               break;
             case 'submitted':
@@ -213,17 +215,16 @@ public function list()
             case 'saved':
               $query->where(['accepted_status' => false, 'submitted_status' => false]);
               break;
-            }
           }
-        
+        }
       });
       return  $query->has('theses');
     });
 
-  $users->when(request()->has('accepted_status'), function ($query) {
+    $users->when(request()->has('accepted_status'), function ($query) {
       return $query->where('accepted_status', true);
     });
-  $users->when(request()->has('pay_status'), function ($query) {
+    $users->when(request()->has('pay_status'), function ($query) {
       return $query->where('pay_status', true);
     });
     $users->when(request()->has('vavilov_article'), function ($query) {
@@ -236,12 +237,9 @@ public function list()
       return $query->where('young_scientist', true);
     });
 
-  $allUsers = $users->get();
-  $users = $users->paginate(15)->withQueryString();
+    $allUsers = $users->get();
+    $users = $users->paginate(15)->withQueryString();
 
-  return view('admin.list', compact('users', 'allUsers'));
-}
-
-
-
+    return view('admin.list', compact('users', 'allUsers'));
+  }
 }
