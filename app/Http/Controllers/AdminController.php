@@ -184,6 +184,18 @@ public function list()
         $section = request()->input('section');
         $report_form = request()->input('report_form');
         $thesis_status = request()->input('thesis_status');
+        $expert = request()->input('expert');
+
+        if ($expert) {
+        $query->whereHas('files', function($query) use ($expert) {
+          if ($expert == 'has') {
+            $query->where('type', 'expert');
+          } elseif ($expert == 'none') {
+            $query->whereNot('type', 'expert');
+          }
+        });
+      }
+
         if ($section) {
           $query->where('section', $section);
         }

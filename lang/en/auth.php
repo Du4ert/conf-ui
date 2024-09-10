@@ -146,5 +146,9 @@ return [
     'young_scientist_info' => 'Young scientist (up to 35 years)',
     'young_scientist_form' => 'Are you a young scientist (up to 35 years)?',
 
+    'filter_expert' => 'Expert opinion (Doesn\'t matter)',
+    'expert_has' => 'Expert opinion (Has)',
+    'expert_none' => 'Expert opinion (None)',
+
 
 ];

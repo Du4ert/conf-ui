@@ -54,6 +54,14 @@
                     <option value="absentee">{{ __('auth.absentee') }}</option>
                 </select>
             </div>
+
+            <div class="form-group  mb-2 mb-md-0">
+                <select data-selected="{{ request()->input('expert') }}" {{ request()->input('has_thesis') ? '' : 'disabled' }} id="expert" form="filter" class="form-select" name="expert" aria-label="Default select example">
+                    <option selected value="">{{ __('auth.filter_expert') }}</option>
+                    <option value="has">{{ __('auth.expert_has') }}</option>
+                    <option value="none">{{ __('auth.expert_none') }}</option>
+                </select>
+            </div>
         </div>
         
 
@@ -74,10 +82,12 @@ const thesisCheck = $('#has_thesis');
 const reportSelect = $('#report_form');
 const sectionSelect = $('#section');
 const statusSelect = $('#thesis_status');
+const expertSelect = $('#expert');
 
 reportSelect.val(reportSelect.data('selected'));
 sectionSelect.val(sectionSelect.data('selected'));
 statusSelect.val(statusSelect.data('selected'));
+expertSelect.val(expertSelect.data('selected'));
 
 
 thesisCheck.on('change', function(e) {
@@ -85,10 +95,12 @@ thesisCheck.on('change', function(e) {
         reportSelect.prop('disabled', false);
         sectionSelect.prop('disabled', false);
         statusSelect.prop('disabled', false);
+        expertSelect.prop('disabled', false);
     } else {
         reportSelect.prop('disabled', true).val('');
         sectionSelect.prop('disabled', true).val('');
         statusSelect.prop('disabled', true).val('');
+        expertSelect.prop('disabled', true).val('');
     }
 })
 </script>
