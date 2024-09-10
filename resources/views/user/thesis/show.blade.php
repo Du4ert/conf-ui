@@ -42,14 +42,14 @@
                     <dd class="col-8">{{ $thesis->thesis_title_en }}</dd>
                 </dl>
 
-                <div class="col-lg-6">
+                <div class="col-lg-9">
                     @if ($thesis->report_form == 'poster')
                         <div>
                             @include('user.file.poster', ['type' => 'poster', 'file' => $thesis->file])
                         </div>
                     @endif
                 </div>
-                <div>
+                <div class="col-lg-9">
                     @include('user.file.expert', ['type' => 'expert', 'file' => $thesis->file])
                 </div>
             </div>

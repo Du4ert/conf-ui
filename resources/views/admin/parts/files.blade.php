@@ -3,6 +3,9 @@
     @if ($user->files()->exists())
     <div class="col-md-8">
         @foreach ($user->files as $file)
+        @if ($file->type != 'payment' and $file->type != 'agreement')
+          @continue
+        @endif
         {{-- @include('user.file.show', ['file' => $file ?? null, 'type' => $file->type]) --}}
         <a href="{{ route('file.download', $file->id) }}"
           class="download-link btn btn-primary mb-2 mb-md-0" role="{{ __('file.download') }}">{{ __('file.' . $file->type) }}<i class="fa fa-download ms-2"></i></a>

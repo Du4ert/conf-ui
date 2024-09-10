@@ -18,6 +18,11 @@ class Thesis extends Model
         return $this->hasOne(File::class);
     }
 
+    public function files()
+    {
+        return $this->hasMany(File::class);
+    }
+
     public function coauthors()
     {
         return $this->hasMany(Coauthor::class);
