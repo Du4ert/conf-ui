@@ -25,5 +25,6 @@ return [
     'payment' => 'Payment',
     'size_max' => 'Max size',
     'extensions' => 'Allowed file extensions',
+    'expert' => 'Expert opinion',
 
 ];

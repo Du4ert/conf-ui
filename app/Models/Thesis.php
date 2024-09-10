@@ -11,7 +11,7 @@ class Thesis extends Model
 
     protected $sections = ['genomics', 'biotechnology', 'breeding', 'bioresource'];
     protected $reportForms = ['oral', 'poster', 'absentee'];
-    protected $fileTypes = ['poster'];
+    protected $fileTypes = ['poster', 'expert'];
 
     public function file()
     {

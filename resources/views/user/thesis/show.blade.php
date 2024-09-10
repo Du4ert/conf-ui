@@ -49,6 +49,9 @@
                         </div>
                     @endif
                 </div>
+                <div>
+                    @include('user.file.expert', ['type' => 'expert', 'file' => $thesis->file])
+                </div>
             </div>
 
         </div>
