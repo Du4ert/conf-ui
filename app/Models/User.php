@@ -65,9 +65,12 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function fullNameExtend() {
         $fullName = $this->last_name;
-        $fullName .= ' ' . $this->first_name;
+
+        if ($this->first_name !== '-') {
+          $fullName .= ' ' . $this->first_name;
+        }
         
-        if ($this->middle_name) {
+        if ($this->middle_name && $this->middle_name !== '-') {
             $fullName .= ' ' . $this->middle_name;
         }
         
@@ -76,9 +79,12 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function fullNameExtendEn() {
         $fullName = $this->last_name_en;
-        $fullName .= ' ' . $this->first_name_en;
+
+        if ($this->first_name_en !== '-') {
+            $fullName .= ' ' . $this->first_name_en;
+        }
         
-        if ($this->middle_name_en) {
+        if ($this->middle_name_en && $this->middle_name_en !== '-') {
             $fullName .= ' ' . $this->middle_name_en;
         }
         
@@ -86,23 +92,31 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     public function fullName() {
-        $fullName = $this->last_name . ' ';
-        $fullName .= mb_substr($this->first_name, 0, 1) . '.';
-        
-        if ($this->middle_name) {
+        $fullName = $this->last_name;
+
+        if ($this->first_name !== '-') {
+            $fullName .= ' ' . mb_substr($this->first_name, 0, 1) . '.';
+        }
+            
+        if ($this->middle_name && $this->middle_name !== '-') {
             $fullName .= ' ' . mb_substr($this->middle_name, 0, 1) . '.';
         }
+        
         
         return $fullName;
     }
 
     public function fullNameEn() {
-        $fullName = $this->last_name_en . ' ';
-        $fullName .= mb_substr($this->first_name_en, 0, 1) . '.';
-        
-        if ($this->middle_name_en) {
+        $fullName = $this->last_name_en;
+
+        if ($this->first_name_en !== '-') {
+            $fullName .= ' ' . mb_substr($this->first_name_en, 0, 1) . '.';
+        }
+            
+        if ($this->middle_name_en  && $this->middle_name_en !== '-') {
             $fullName .= ' ' . mb_substr($this->middle_name_en, 0, 1) . '.';
         }
+        
         
         return $fullName;
     }

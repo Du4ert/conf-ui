@@ -80,8 +80,8 @@ class CoauthorController extends Controller
         $author = Coauthor::findOrFail($id);
 
         $validatedData = $request->validate([
-            'first_name' => 'required|string|min:2|max:50',
-            'first_name_en' => 'required|string|min:2|max:50',
+            'first_name' => 'required|string|min:1|max:50',
+            'first_name_en' => 'required|string|min:1|max:50',
             'last_name' => 'required|string|min:2|max:50',
             'last_name_en' => 'required|string|min:2|max:50',
             'middle_name' => 'nullable|string|max:50',

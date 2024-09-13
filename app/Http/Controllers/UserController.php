@@ -83,8 +83,8 @@ class UserController extends Controller
         $validatedData = $request->validate([
           // 'email' => 'required|string|email|max:255|unique:users',
           // 'password' => 'required|string|min:8|confirmed',
-          'first_name' => 'required|string|min:2',
-          'first_name_en' => 'required|string|min:2',
+          'first_name' => 'required|string|min:1',
+          'first_name_en' => 'required|string|min:1',
           'last_name' => 'required|string|min:2',
           'last_name_en' => 'required|string|min:2',
           'middle_name' => 'nullable|string|max:100',
