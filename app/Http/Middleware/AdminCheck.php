@@ -17,7 +17,7 @@ class AdminCheck
      */
     public function handle(Request $request, Closure $next, string ...$guards): Response
     {
-        if (auth()->check() && auth()->user()->isAdmin()) {
+        if (auth()->check() && auth()->user()->isAdmin() || session()->has('impersonator')) {
             return $next($request);
         }
     

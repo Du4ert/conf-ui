@@ -12,6 +12,10 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    'impersonate_start' => 'Enter as user',
+    'impersonate_stop' => 'Exit to admin',
+
+
     'yes' => 'Yes',
     'no' => 'No',
     'new_field_instructions' => 'Please click "edit" and update the value.',

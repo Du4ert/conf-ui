@@ -23,6 +23,11 @@
             <a class="dropdown-item" href="{{ route('home') }}">
                 {{ __('auth.profile') }}
             </a>
+            @if (session()->has('impersonator'))
+                <a class="dropdown-item" href="{{ route('impersonate.stop') }}">
+                {{ __('auth.impersonate_stop')}}
+                </a>
+            @endif
             <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">

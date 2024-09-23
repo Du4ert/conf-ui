@@ -87,6 +87,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/user/{id}/accept', [AdminController::class, 'participationAccept'])->name('user.accept');
     Route::get('/user/{id}/decline', [AdminController::class, 'participationDecline'])->name('user.decline');
     Route::post('/email', [AdminController::class, 'bulkNotification'])->name('bulk.email');
+
+    Route::get('/impersonate/{id}', [AdminController::class, 'impersonate'])->name('impersonate.start');
+    Route::get('/stop-impersonation', [AdminController::class, 'stopImpersonation'])->name('impersonate.stop');
 });
 
 // Отдельные страницы
@@ -97,8 +100,6 @@ Route::get('/policy', function() {
 Route::get('/agreement', function() {
     return view('pages.agreement');
 })->name('agreement');
-
-
 
 
 });

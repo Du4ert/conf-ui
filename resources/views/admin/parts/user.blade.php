@@ -2,7 +2,10 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <h5 class="col-md-4 card-title me-auto">{{ $user->email }}</h5>
+                <h5 class="col-md-4 card-title me-auto ms-auto ms-md-0"><a href="{{ route('impersonate.start', $user->id) }}" 
+                    class="text-success"><i
+                        class="fas fa-user-friends me-2"></i></a>{{ $user->email }}
+                </h5>
                 <div class="col-sm-8">
                     <div class="row align-items-center">
                         

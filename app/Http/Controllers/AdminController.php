@@ -10,8 +10,9 @@ use App\Models\User;
 use App\Models\Thesis;
 use App\Notifications\ThesisAcceptedNotification;
 use App\Notifications\BulkUsersNotification;
+use Illuminate\Support\Facades\Auth;
 
-
+use function Psy\debug;
 
 class AdminController extends BaseController
 {
@@ -242,4 +243,27 @@ class AdminController extends BaseController
 
     return view('admin.list', compact('users', 'allUsers'));
   }
+
+
+  public function impersonate($id)
+  {
+      $adminId = Auth::id(); // Store current admin ID
+      session(['impersonator' => $adminId]); // Save it in the session
+  
+      $user = User::findOrFail($id);
+      Auth::login($user);
+      return redirect('/home');
+  }
+
+    public function stopImpersonation()
+  {
+      if (session()->has('impersonator')) {
+          $adminId = session('impersonator');
+          $admin = User::findOrFail($adminId);
+          Auth::login($admin); // Log back in as the original admin
+          session()->forget('impersonator'); // Clear the impersonator session
+      }
+      return redirect('/admin'); // Redirect to desired page
+  }
+
 }

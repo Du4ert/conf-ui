@@ -12,6 +12,9 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    'impersonate_start' => 'Войти',
+    'impersonate_stop' => 'Выйти в админ-меню',
+
     'yes' => 'Да',
     'no' => 'Нет',
     'new_field_alert' => 'Добавилось новое поле:',
@@ -161,6 +164,7 @@ return [
     'filter_expert' => 'Экспертное (Неважно)',
     'expert_has' => 'Экспертное (Есть)',
     'expert_none' => 'Экспертное (Нет)',
+    
     
 
 

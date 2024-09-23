@@ -4,7 +4,18 @@
  }
 
 @endphp
+@if (session()->has('impersonator'))
+      <a href="{{ route('impersonate.stop') }}" type="button" class="btn text-danger btn-light" role="button"><i
+         class="fas fa-user-times  me-sm-2"></i><span class="d-none d-md-inline"> {{ __('auth.impersonate_stop') }}</span></a>
+@else
+@if (auth()->user()->isAdmin())
+   <a href="{{ route('impersonate.start', $user->id) }}" type="button" class="btn text-success btn-light" role="button"><i
+   class="fas fa-user-friends  me-sm-2"></i><span class="d-none d-md-inline"> {{ __('auth.impersonate_start') }}</span></a>
+@else
 <strong class="me-sm-auto d-none d-lg-inline">{{ __('auth.dashboard') }}</strong>
+@endif
+@endif
+
 @if ($user->accepted_status)
 <div class="alert bg-success bg-opacity-25 my-0 me-4">
    <i class="fas fa-circle-check fa-lg me-2"></i>{{ __('auth.participate_accept') }}
