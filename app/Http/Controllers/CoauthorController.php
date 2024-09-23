@@ -50,8 +50,8 @@ class CoauthorController extends Controller
             'last_name_en' => 'required|string|min:2|max:50',
             'middle_name' => 'nullable|string|max:50',
             'middle_name_en' => 'nullable|string|max:50',
-            'organization_title' => 'nullable|string|max:50',
-            'organization_title_en' => 'nullable|string|max:50',
+            'organization_title' => 'nullable|string|max:3000',
+            'organization_title_en' => 'nullable|string|max:3000',
         ]);
 
         $author = new Coauthor([
@@ -86,8 +86,8 @@ class CoauthorController extends Controller
             'last_name_en' => 'required|string|min:2|max:50',
             'middle_name' => 'nullable|string|max:50',
             'middle_name_en' => 'nullable|string|max:50',
-            'organization_title' => 'nullable|string|max:50',
-            'organization_title_en' => 'nullable|string|max:50',
+            'organization_title' => 'nullable|string|max:1000',
+            'organization_title_en' => 'nullable|string|max:1000',
         ]);
 
         $author->update($validatedData);

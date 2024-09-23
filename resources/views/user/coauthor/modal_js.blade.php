@@ -76,6 +76,7 @@
                                 'form' => 'modal-coauthor-form',
                                 'field_name' => 'organization_title_en',
                             ])</div>
+                            <div class="col-md-10 mx-auto mb-4 organization-notice"><small class="text-muted">{{ __('auth.organization_full_notice') }} <br /> {{ __('auth.organization_multiple_notice') }} "<strong>; </strong>" </small></div> 
                         </div>
 
 

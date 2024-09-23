@@ -34,6 +34,7 @@ return [
     'organization_full' => 'Enter the full name of your organization.',
     'required_alert' => 'Mandatory fields are marked',
     'organization_full_notice' =>'Please enter the full name of your organization, e.g. FGBUN "Order of the Red Banner of Labour Nikita Botanical Garden - National Scientific Centre of the Russian Academy of Sciences", Yalta',
+    'organization_multiple_notice' =>'If there are several organizations, list them through',
     'list' => 'Users',
 
 
