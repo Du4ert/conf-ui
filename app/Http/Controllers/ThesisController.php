@@ -108,45 +108,7 @@ class ThesisController extends Controller
         return redirect()->route('reports');
     }
 
-    // public function getUserAffiliations($lang = 'ru') {
-    //     $title = 'organization_title';
-    //     if ($lang === 'en') {
-    //         $title = 'organization_title_en';
-    //     }
-
-    //     $user = $this->user();
-
-    //     $user_affiliations = [];
-    //     $user_affiliations = array_map('trim', explode(';', $user->$title));
-
-    //     return $user_affiliations;
-    // }
-
-    // public function setAllAffiliations($authors, $lang = 'ru') {
-    //     $title = 'organization_title';
-    //     if ($lang === 'en') {
-    //         $title = 'organization_title_en';
-    //     }
-
-    //     $all_affiliations = $this->getUserAffiliations($lang);
     
-    //     foreach ($authors as $author) {
-    //         if (!$author->$title) {
-    //             continue;
-    //         }
-    
-    //             $author_affiliations = array_map('trim', explode(';', $author->$title));
-    
-    //             foreach ($author_affiliations as $affiliation) {
-    
-    //                 if (!in_array($affiliation, $all_affiliations)) {
-    //                 $all_affiliations[] = $affiliation;
-    //             }
-    //         }
-    //     }
-    //     return $all_affiliations;
-    // }
-
     public function download($id)
     {
         $thesis = Thesis::findOrFail($id);
@@ -156,10 +118,7 @@ class ThesisController extends Controller
               
         $pdf = PDF::loadView('pdf.downloadPDF', compact('thesis', 'user', 'authors'));
        
-        // return $pdf->download($user->last_name . '.pdf');
-        // !DEBUG
-        return view('pdf.downloadPDF', compact('thesis', 'user', 'authors'));
-
+        return $pdf->stream($user->last_name . '.pdf');
 }
 
 public function downloadEn($id)
@@ -171,9 +130,7 @@ public function downloadEn($id)
           
     $pdf = PDF::loadView('pdf.downloadEnPDF', compact('thesis', 'user', 'authors'));
    
-    // return $pdf->download($user->last_name . '_EN.pdf');
-    // !DEBUG
-    return view('pdf.downloadEnPDF', compact('thesis', 'user', 'authors'));
+    return $pdf->stream($user->last_name . '_EN.pdf');
 }
 
 
