@@ -20,6 +20,8 @@ return [
     'conf' => 'Conference',
     'month_oct' => 'Oct',
     'participate' => 'Participate',
+    'program' => 'Conference program',
+    'program_download' => 'Download program',
     'policy' => 'Policy',
     'terms' => 'Terms',
     'confidencial' => 'Confidential',

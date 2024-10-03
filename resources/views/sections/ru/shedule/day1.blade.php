@@ -1,8 +1,3 @@
-<div class="shedule-day-header mb-3">
-    <h4>Название секции</h4>
-    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, voluptatibus.</h4>
-    <h6>Модераторы</h4>
-</div>
 <div class="tab-pane active" id="tab-1-content" role="tabpanel" aria-labelledby="tab-1">
     <div class="item">
         <div class="content">

@@ -26,6 +26,8 @@
     </div><!--//container-->
 </section><!--//about-section-->
 
+
+
 <section id="sections-section" class="sections-section position-relative mx-auto  section conf-bg-primary   text-white">
     <div class="container single-col-max">
         <div class="areas-list  mb-4 lead">

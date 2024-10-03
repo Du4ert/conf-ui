@@ -20,6 +20,8 @@ return [
     'conf' => 'Конференция',
     'month_oct' => 'Окт.',
     'participate' => 'Принять участие',
+    'program' => 'Программа конференции',
+    'program_download' => 'Скачать программу',
     'policy' => 'Соглашение',
     'terms' => 'Условия',
     'confidencial' => 'Политика',

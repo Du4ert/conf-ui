@@ -1,12 +1,13 @@
-<section id="schedule-section" class="schedule-section section">
+<section id="schedule-section" class="schedule-section section  conf-bg-gold">
     <div class="container">
 
         <h3 class="section-heading text-center mb-5">Расписание</h3>
+        <div class="schedule-cta text-center mx-auto"><a href="{{ asset('documents/GenBio2024_program.pdf') }}" class="btn btn-success" download><i class="fa fa-file-pdf me-2"></i>Скачать программу</a></div>
         
         <!-- Nav tabs -->
         <ul class="schedule-nav nav nav-pills nav-fill" id="myTab" role="tablist">
             <li class="nav-item me-2">
-                <a class="nav-link active btn-primary" id="tab-1" data-bs-toggle="tab" href="#tab-1-content" role="tab" aria-controls="tab-1-content" aria-selected="true">
+                <a class="nav-link active" id="tab-1" data-bs-toggle="tab" href="#tab-1-content" role="tab" aria-controls="tab-1-content" aria-selected="true">
                     <span class="heading">День 1</span>
                     <span class="meta">(7 октября)</span>
                 </a>
@@ -51,6 +52,5 @@
                 <h4 class="text-center py-5 text-muted">Day 3 Agenda Coming Soon...</h4>
             </div><!--//tab-3-content-->
         </div><!--//schedule-tab-content-->
-        <div class="schedule-cta text-center mx-auto"><a href="{{ asset('documents/GenBio2024_program.pdf') }}" class="btn btn-success" download><i class="fa fa-file-pdf me-2"></i>Скачать программу</a></div>
     </div><!--//container-->
 </section><!--//schedule-section-->

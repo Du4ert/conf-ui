@@ -26,6 +26,7 @@ return [
     'organizer' => 'Organizers',
     'contacts' => 'Contacts',
     'committee' => 'Committee',
+    'program' => 'Program',
 
 
 

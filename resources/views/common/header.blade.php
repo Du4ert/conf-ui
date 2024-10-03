@@ -34,7 +34,8 @@ function setClass($class_name = 'scrollto') {
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#sections-section')}}">{{ __('navigation.sections') }}</a></li>                                               
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#organizer-section')}}">{{ __('navigation.organizer') }}</a></li>
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#committee-section')}}">{{ __('navigation.committee') }}</a></li>
-		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#dates-section')}}">{{ __('navigation.dates') }}</a></li>
+		{{-- <li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#dates-section')}}">{{ __('navigation.dates') }}</a></li> --}}
+		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#program-section')}}">{{ __('navigation.program') }}</a></li>
 		{{-- <li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#schedule-section')}}">{{ __('navigation.dates') }}</a></li> --}}
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#payment-section')}}">{{ __('navigation.fee') }}</a></li>
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#venue-section')}}">{{ __('navigation.venue') }}</a></li>

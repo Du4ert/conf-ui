@@ -33,7 +33,7 @@ Route::get('/', function () {
 
 
 // Регистрация, аутентификация
-Auth::routes(['verify' => true]);
+Auth::routes(['verify' => true, 'register' =>false]);
 // Для обычных пользователей
 
 // Страница зарегистрированного пользователя

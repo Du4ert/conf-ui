@@ -140,6 +140,23 @@ body {
     @include bg-before('~images/background/bg-green.jpg');
 }
 
+.program-section {
+    li {
+        background: none;
+    }
+
+    h4 {
+        color: $theme-bg-primary;
+    }
+}
+
+.conf-bg-gold { 
+    position: relative;
+    background-color: rgba($white, 0.65);
+    
+    @include bg-before('~images/background/bg-gold.jpg');
+}
+
 .conf-bg-light { 
     position: relative;
     background-color: rgba($theme-bg-light, 1);

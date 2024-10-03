@@ -25,5 +25,6 @@ return [
     'organizer' => 'Организаторы',
     'contacts' => 'Контакты',
     'committee' => 'Оргкомитет',
+    'program' => 'Программа',
 
 ];

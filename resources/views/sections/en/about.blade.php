@@ -63,7 +63,6 @@
 
 
 
-
 <section id="tasks-section" class="tasks-section  mx-auto section">
     <div class="container single-col-max">
 
