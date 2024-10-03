@@ -10,7 +10,7 @@
 @include('sections.ru.сommittee')
 {{-- @include('sections.speakers') --}}
 @include('sections.ru.dates')
-{{-- @include('sections.schedule') --}}
+@include('sections.ru.schedule')
 @include('sections.ru.payment')
 @include('sections.ru.venue')
 @include('sections.ru.sponsors')
@@ -25,7 +25,7 @@
 @include('sections.en.committee')
 {{-- @include('sections.en.speakers') --}}
 @include('sections.en.dates')
-{{-- @include('sections.en.schedule') --}}
+@include('sections.en.schedule')
 @include('sections.en.payment')
 @include('sections.en.venue')
 @include('sections.en.sponsors')

@@ -8,7 +8,7 @@
         <li><span class="icon-holder me-3"><i class="fas fa-user-tie"></i></span>Обсуждение перспективных направлений совместных работ</li>
         <li><span class="icon-holder me-3"><i class="fas fa-chalkboard-teacher"></i></span>Школа молодых ученых "Геномика и биотехнология растений"</li>
         <li><span class="icon-holder me-3"><i class="fas fa-glass-cheers"></i></span>Welcomeparty</li>
-        <li><span class="icon-holder me-3"><i class="	fas fa-coffee"></i></span>Кофе-брейки</li>
+        <li><span class="icon-holder me-3"><i class="fas fa-coffee"></i></span>Кофе-брейки</li>
         <li><span class="icon-holder me-3"><i class="fas fa-book-open"></i></span>Статьи в изданиях: Вавиловский журнал генетики и селекции</li>
         <li><span class="icon-holder me-3"><i class="fas fa-book"></i></span>Сборник в РИНЦ, присвоен DOI </li>
         <li><span class="icon-holder me-3"><i class="fas fa-award"></i></span>Сертификат участника</li>
