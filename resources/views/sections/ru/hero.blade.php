@@ -18,8 +18,8 @@
                         alt="">
                 </div>
                 <div class="col-md-10">
-                    <div class="event-countdown text-center mb-3"></div>
-                    <div id="countdown-box" class="countdown-box"></div>
+                    {{-- <div class="event-countdown text-center mb-3"></div> --}}
+                    {{-- <div id="countdown-box" class="countdown-box"></div> --}}
                 </div><!--//event-countdown-->
             </div>
             <h1 class="hero-heading mb-2">GenBio</h1>
@@ -37,7 +37,7 @@
 </div><!--//hero-block-->
 
 
-<script>
+{{-- <script>
     /* ======= Countdown ========= */
 // set the date we're counting down to
 var target_date = new Date("Oct 7, 2024").getTime();
@@ -97,4 +97,4 @@ setInterval(function () {
  
 }, 1000);
 
-</script>
+</script> --}}
