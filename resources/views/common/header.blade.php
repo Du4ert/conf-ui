@@ -29,7 +29,7 @@ function setClass($class_name = 'scrollto') {
 		<div id="navigation" class="navbar-collapse collapse  justify-content-lg-end me-lg-3">
 		
 			
-	<ul class="nav navbar-nav">					
+	<ul class="nav navbar-nav">				
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#about-section')}}">{{ __('navigation.about') }}</a></li>
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#sections-section')}}">{{ __('navigation.sections') }}</a></li>                                               
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#organizer-section')}}">{{ __('navigation.organizer') }}</a></li>
@@ -41,6 +41,7 @@ function setClass($class_name = 'scrollto') {
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#venue-section')}}">{{ __('navigation.venue') }}</a></li>
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#sponsors-section')}}">{{ __('navigation.partners') }}</a></li>
 		<li class="nav-item"><a class="nav-link {{ setClass('scrollto') }}" href="{{ navUrl('#contacts-section')}}">{{ __('navigation.contacts') }}</a></li>
+		<li class="nav-item"><a class="nav-link"  target="_blank"  href="https://disk.yandex.ru/d/x1Q3nXCra4q9Ug"><img class="me-2" width="30" src="{{asset('/images/green-yandex-disk.svg')}}">{{ __('main.photos_view')}}</a></li>	
 
 		@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
 @if ($localeCode !== LaravelLocalization::getCurrentLocale())

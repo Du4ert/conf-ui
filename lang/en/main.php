@@ -12,7 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    'photos_view' => 'Photos',
     'conf_name' => 'GenBio',
     'center_abbr' => 'NBC-NNC',
     'center_full' => 'Kurchatov Genome Center of the Nikitsky Botanical Garden',

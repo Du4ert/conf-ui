@@ -1,5 +1,7 @@
 <section id="about-section" class="about-section  mx-auto section">
     <div class="container single-col-max"">
+        <h4 class="section-intro mb-4 text-center"><a class="btn btn-outline-light btn-lg text-secondary"  target="_blank"  href="https://disk.yandex.ru/d/x1Q3nXCra4q9Ug"><img class="mb-2" width="80" src="{{asset('/images/green-yandex-disk.svg')}}"><br />Conference photos on Yandex disk</a></h4>
+        <hr>
         <h4 class="section-heading text-center mb-4">About conference</h2>
             <div class="section-intro  mb-4">
                 <h4 class="text-center">We invite you to take part in IV International Scientific and Practical Conference</p>
