@@ -1,7 +1,5 @@
 <section id="about-section" class="about-section  mx-auto section conf-bg-white">
     <div class="container single-col-max">
-            <h4 class="section-intro mb-4 text-center"><a class="btn btn-outline-light btn-lg text-secondary" target="_blank" href="https://disk.yandex.ru/d/x1Q3nXCra4q9Ug"><img class="mb-2" width="80" src="{{asset('/images/green-yandex-disk.svg')}}"><br />Фотографии конференции на яндекс диске</a></h4>
-            <hr>
         <h4 class="section-heading text-center mb-4">О конференции</h2>
             <div class="section-intro  mb-4">
                 <h4 class="text-center">Мы рады приветствовать Вас на сайте конференции Курчатовского
@@ -19,12 +17,24 @@
                         сельскохозяйственной биотехнологии (г. Москва, ФГБНУ ВНИИСБ)
                     </strong>.</p>
 
-                <div class="languages mb-3">
+                <div class="languages mb-5">
                     Рабочие языки конференции: русский и английский.
                 </div>
-
+                <div class="row d-float align-items-center mt-3">
+                    <div class="col-md-6 text-center">
+                        <h4 class="text-center">
+                        <a  class="btn btn-outline-light btn-lg text-secondary" href="{{ asset('documents/GenBio2024_theses.pdf') }}" target="_blank">
+                            <img  src="{{ asset('/images/GenBio2024_theses.png') }}" class="img-fluid w-75 shadow mb-2" alt="Материалы конференции GenBio2024"><br />Материалы конференции (скачать)</a>
+                        </a>
+                        </h4>
+                        <hr class="d-md-none">
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h4 class="section-intro mb-4 text-center"><a class="btn btn-outline-light btn-lg text-secondary" target="_blank" href="https://disk.yandex.ru/d/x1Q3nXCra4q9Ug"><img class="mb-2" width="80" src="{{asset('/images/green-yandex-disk.svg')}}"><br />Фотографии конференции на яндекс диске</a></h4>
+                    </div>
+                    {{-- <hr> --}}
+                </div>
             </div>
-
     </div><!--//container-->
 </section><!--//about-section-->
 
