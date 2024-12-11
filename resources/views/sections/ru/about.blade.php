@@ -23,8 +23,8 @@
                 <div class="row d-float align-items-center mt-3">
                     <div class="col-md-6 text-center">
                         <h4 class="text-center">
-                        <a  class="btn btn-outline-light btn-lg text-secondary" href="{{ asset('documents/GenBio2024_theses.pdf') }}" target="_blank">
-                            <img  src="{{ asset('/images/GenBio2024_theses.png') }}" class="img-fluid w-75 shadow mb-2" alt="Материалы конференции GenBio2024"><br />Материалы конференции (скачать)</a>
+                        <a  class="btn btn-outline-light btn-lg text-secondary" href="{{ asset('documents/GenBio2024_materials.pdf') }}" target="_blank">
+                            <img  src="{{ asset('/images/GenBio2024_materials.png') }}" class="img-fluid w-75 shadow mb-2" alt="Материалы конференции GenBio2024"><br />Материалы конференции (скачать)</a>
                         </a>
                         </h4>
                         <hr class="d-md-none">
@@ -32,7 +32,6 @@
                     <div class="col-md-6 text-center">
                         <h4 class="section-intro mb-4 text-center"><a class="btn btn-outline-light btn-lg text-secondary" target="_blank" href="https://disk.yandex.ru/d/x1Q3nXCra4q9Ug"><img class="mb-2" width="80" src="{{asset('/images/green-yandex-disk.svg')}}"><br />Фотографии конференции на яндекс диске</a></h4>
                     </div>
-                    {{-- <hr> --}}
                 </div>
             </div>
     </div><!--//container-->

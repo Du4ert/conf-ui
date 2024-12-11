@@ -1,7 +1,5 @@
 <section id="about-section" class="about-section  mx-auto section">
     <div class="container single-col-max"">
-        <h4 class="section-intro mb-4 text-center"><a class="btn btn-outline-light btn-lg text-secondary"  target="_blank"  href="https://disk.yandex.ru/d/x1Q3nXCra4q9Ug"><img class="mb-2" width="80" src="{{asset('/images/green-yandex-disk.svg')}}"><br />Conference photos on Yandex disk</a></h4>
-        <hr>
         <h4 class="section-heading text-center mb-4">About conference</h2>
             <div class="section-intro  mb-4">
                 <h4 class="text-center">We invite you to take part in IV International Scientific and Practical Conference</p>
@@ -10,8 +8,22 @@
                 <p><strong>In 2024</strong> the conference will be held at the All-Russian Research Institute of Agricultural Biotechnology (Moscow, FGBNU VNIISB). 
                     </strong>.</p>
 
-                <div class="languages mb-3">
+                <div class="languages mb-5">
                     The working language of the conference is Russian and English.
+                </div>
+
+                <div class="row d-float align-items-center mt-3">
+                    <div class="col-md-6 text-center">
+                        <h4 class="text-center">
+                        <a  class="btn btn-outline-light btn-lg text-secondary" href="{{ asset('documents/GenBio2024_materials.pdf') }}" target="_blank">
+                            <img  src="{{ asset('/images/GenBio2024_materials.png') }}" class="img-fluid w-75 shadow mb-2" alt="Conference materials GenBio2024"><br />Conference materials (download)</a>
+                        </a>
+                        </h4>
+                        <hr class="d-md-none">
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h4 class="section-intro mb-4 text-center"><a class="btn btn-outline-light btn-lg text-secondary"  target="_blank"  href="https://disk.yandex.ru/d/x1Q3nXCra4q9Ug"><img class="mb-2" width="80" src="{{asset('/images/green-yandex-disk.svg')}}"><br />Conference photos on Yandex disk</a></h4>
+                    </div>
                 </div>
 
             </div>
